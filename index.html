@@ -384,6 +384,15 @@
         .ew .ew-btn-secondary:hover{background:var(--gray-50,#f9fafb)}
         .ew .ew-btn-ghost{background:transparent;color:var(--gray-600,#4b5563)}
         .ew .ew-btn-ghost:hover{background:var(--gray-100,#f3f4f6)}
+
+        /* Retention Hub - minimal custom styles (timeline only, rest is Tailwind) */
+        .ret-timeline { position: relative; padding-left: 24px; }
+        .ret-timeline::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: #e5e7eb; }
+        .ret-tl-item { position: relative; margin-bottom: 20px; }
+        .ret-tl-item::before { content: ''; position: absolute; left: -20px; top: 4px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #273c91; background: white; }
+        .ret-tl-item.done::before { background: #273c91; }
+        .ret-tl-date { font-size: 11px; color: #9ca3af; margin-bottom: 2px; }
+        .ret-tl-text { font-size: 13px; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -415,6 +424,11 @@
 
                 <div class="text-xs font-semibold text-blue-300 uppercase mt-6 mb-2 px-3">Admissions</div>
                 <button class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-left text-blue-400 opacity-50 cursor-not-allowed"><span style="width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center;"><i class="far fa-id-card" style="font-size: 16px;"></i></span> Centralised Admissions</button>
+
+                <div class="text-xs font-semibold text-blue-300 uppercase mt-6 mb-2 px-3">Retention</div>
+                <button @click="view='retention'; mobileMenu=false" :class="view==='retention'?'bg-blue-700 text-white':'hover:bg-blue-800 text-[#e5e7eb]'" class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-left"><span style="width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center;"><i class="fas fa-user-shield" style="font-size: 16px;"></i></span> Student Retention</button>
+
+                <div class="text-xs font-semibold text-blue-300 uppercase mt-6 mb-2 px-3">Settings</div>
                 <button class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-left text-blue-400 opacity-50 cursor-not-allowed"><span style="width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center;"><i class="far fa-user" style="font-size: 16px;"></i></span> Team Management</button>
             </nav>
         </div>
@@ -422,16 +436,16 @@
 
     <!-- Main -->
     <div class="flex-1 flex flex-col min-w-0">
-        <div class="h-14 px-4 lg:px-6 bg-white border-b border-gray-200 flex justify-between items-center">
-            <div class="flex items-center gap-3">
+        <div class="h-14 px-4 lg:px-6 bg-white border-b border-gray-200 flex justify-between items-center relative z-20 flex-shrink-0">
+            <div class="flex items-center gap-3 overflow-hidden">
                 <!-- Mobile Menu Button -->
                 <button @click="mobileMenu = !mobileMenu" class="mobile-menu-btn p-2 -ml-2 rounded-lg hover:bg-gray-100 lg:hidden">
                     <i class="fas fa-bars text-gray-600 text-lg"></i>
                 </button>
-                <img class="h-12 hidden sm:block" src="images/demo-school-trust-logo.png" alt="Demo School Trust Logo" />
-                <div class="hidden sm:flex flex-col">
-                    <div class="text-black text-lg font-bold leading-tight">Demo School Trust</div>
-                    <div class="text-gray-700 text-sm">39 Schools • 4 Regions • 30,000+ Students</div>
+                <div class="hidden sm:flex w-8 h-8 bg-white rounded items-center justify-center flex-shrink-0 border border-gray-200"><span class="text-blue-900 font-bold text-xs">DST</span></div>
+                <div class="hidden sm:flex flex-col min-w-0">
+                    <div class="text-black text-sm font-bold leading-tight truncate">Demo School Trust</div>
+                    <div class="text-gray-500 text-xs truncate">39 Schools • 4 Regions • 30,000+ Students</div>
                 </div>
             </div>
             <div class="flex items-center gap-2">
@@ -13142,8 +13156,6 @@ www.arkschools.org | Registered Charity No. 1137931</textarea>
                 </div>
 
             </div>
-        </div>
-    </div>
 
 
     <!-- MODALS -->
@@ -14318,6 +14330,444 @@ www.arkschools.org | Registered Charity No. 1137931</textarea>
         </div>
     </div>
 
+    <!-- ==================== STUDENT RETENTION ==================== -->
+    <div x-show="view==='retention'" x-cloak>
+        <!-- Page Header -->
+        <div class="mb-4">
+            <h2 class="text-lg font-bold">Student Retention</h2>
+            <p class="text-sm text-gray-600">Track and improve student retention across transition points</p>
+        </div>
+        <!-- Sub-tabs -->
+        <div class="flex gap-0 border-b-2 border-gray-200 mb-6 overflow-x-auto">
+            <button @click="retentionTab='dashboard'" :class="retentionTab==='dashboard' ? 'active' : ''" class="tab-item px-4">Dashboard</button>
+            <button @click="retentionTab='pipeline'" :class="retentionTab==='pipeline' ? 'active' : ''" class="tab-item px-4">Pipeline</button>
+            <button @click="retentionTab='flightrisk'" :class="retentionTab==='flightrisk' ? 'active' : ''" class="tab-item px-4">Flight Risk</button>
+            <button @click="retentionTab='engagement'" :class="retentionTab==='engagement' ? 'active' : ''" class="tab-item px-4">Engagement</button>
+            <button @click="retentionTab='competitors'" :class="retentionTab==='competitors' ? 'active' : ''" class="tab-item px-4">Competitors</button>
+        </div>
+
+        <!-- ===== DASHBOARD TAB ===== -->
+        <div x-show="retentionTab==='dashboard'">
+            <div class="bg-amber-50 border border-amber-300 rounded-lg p-3 mb-6 flex items-center gap-3 text-sm text-amber-900">
+                ⚠️ <strong x-text="retStudents.filter(s=>s.risk==='high').length + ' students flagged as high flight risk'"></strong> for Year 7 transition —
+                <span x-text="retStudents.filter(s=>s.risk==='high' && s.engagementScore<=1).length + ' have not engaged with any trust secondary events.'"></span>
+                <a href="#" @click.prevent="retentionTab='flightrisk'" class="font-semibold underline ml-1">View details →</a>
+            </div>
+            <!-- KPI Cards - clickable -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-xl border p-5 cursor-pointer hover:shadow-md transition-shadow" @click="retDashFilter=retDashFilter==='all'?null:'all'">
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Trust-Wide Retention Rate</div>
+                    <div class="text-3xl font-bold text-green-600 mt-1">78%</div>
+                    <div class="text-sm text-green-600 mt-1">↑ 3% vs last year</div>
+                </div>
+                <div class="bg-white rounded-xl border p-5 cursor-pointer hover:shadow-md transition-shadow" @click="retDashFilter=retDashFilter==='total'?null:'total'">
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Students at Transition</div>
+                    <div class="text-3xl font-bold mt-1">487</div>
+                    <div class="text-sm text-gray-500 mt-1">Across 3 phases</div>
+                </div>
+                <div class="bg-white rounded-xl border p-5 cursor-pointer hover:shadow-md transition-shadow" @click="retDashFilter=retDashFilter==='highrisk'?null:'highrisk'; if(retDashFilter==='highrisk') retentionTab='flightrisk'">
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Flight Risk (High)</div>
+                    <div class="text-3xl font-bold text-red-600 mt-1" x-text="retStudents.filter(s=>s.risk==='high').length"></div>
+                    <div class="text-sm text-red-600 mt-1">↑ 4 since last month</div>
+                </div>
+                <div class="bg-white rounded-xl border p-5 cursor-pointer hover:shadow-md transition-shadow" @click="retDashFilter=retDashFilter==='revenue'?null:'revenue'">
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Est. Revenue at Risk</div>
+                    <div class="text-3xl font-bold text-amber-600 mt-1" x-text="'£' + (retStudents.filter(s=>s.risk==='high').length * 6600 * 5 / 1000).toFixed(0) + 'K'"></div>
+                    <div class="text-sm text-gray-500 mt-1">Over 5-year period</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6">
+                <div class="bg-white rounded-xl border">
+                    <div class="px-5 py-4 border-b flex items-center justify-between"><h3 class="text-sm font-semibold">Retention by Transition Phase</h3><span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">Live Tracking</span></div>
+                    <div class="p-5">
+                        <div class="flex gap-0 items-end">
+                            <div class="flex-1 text-center"><div class="w-14 mx-auto rounded-t-lg bg-blue-900" style="height:160px"></div><div class="text-2xl font-bold mt-2">312</div><div class="text-xs text-gray-500">Year 6</div><div class="text-xs text-gray-400">in trust primaries</div></div>
+                            <div class="flex-1 text-center"><div class="w-14 mx-auto rounded-t-lg bg-green-600" style="height:128px"></div><div class="text-2xl font-bold mt-2">249</div><div class="text-xs text-gray-500">→ Year 7</div><div class="text-xs text-green-600">80% retained</div></div>
+                            <div class="flex-1 text-center"><div class="w-14 mx-auto rounded-t-lg bg-blue-900" style="height:100px"></div><div class="text-2xl font-bold mt-2">175</div><div class="text-xs text-gray-500">Year 11</div><div class="text-xs text-gray-400">in trust secondaries</div></div>
+                            <div class="flex-1 text-center"><div class="w-14 mx-auto rounded-t-lg bg-amber-500" style="height:68px"></div><div class="text-2xl font-bold mt-2">118</div><div class="text-xs text-gray-500">→ Year 12</div><div class="text-xs text-amber-600">67% retained</div></div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t text-sm text-gray-500"><strong>Biggest leakage:</strong> Year 11 → Sixth Form — 57 students at risk of leaving to FE colleges</div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border">
+                    <div class="px-5 py-4 border-b"><h3 class="text-sm font-semibold">Retention Trend (5 Years)</h3></div>
+                    <div class="p-5">
+                        <div class="flex gap-6 mb-4">
+                            <div><span class="inline-block w-3 h-3 bg-blue-900 rounded-sm mr-1"></span><span class="text-sm">Primary → Secondary</span></div>
+                            <div><span class="inline-block w-3 h-3 bg-amber-500 rounded-sm mr-1"></span><span class="text-sm">Secondary → Sixth Form</span></div>
+                        </div>
+                        <div class="flex items-end gap-3" style="height:180px;padding-top:20px">
+                            <template x-for="yr in [{y:'21/22',p:70,s:55},{y:'22/23',p:72,s:58},{y:'23/24',p:75,s:60},{y:'24/25',p:77,s:63},{y:'25/26',p:80,s:67}]">
+                                <div class="flex-1 text-center">
+                                    <div class="flex gap-1 items-end justify-center" style="height:150px">
+                                        <div class="w-6 bg-blue-900 rounded-t" :style="'height:'+yr.p*1.5+'px'"></div>
+                                        <div class="w-6 bg-amber-500 rounded-t" :style="'height:'+yr.s*1.5+'px'"></div>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1" x-text="yr.y"></div>
+                                    <div class="text-xs text-gray-400" x-text="yr.p+'% / '+yr.s+'%'"></div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                <!-- School-Level Retention -->
+                <div class="bg-white rounded-xl border">
+                    <div class="px-5 py-4 border-b"><h3 class="text-sm font-semibold">School-Level Retention</h3></div>
+                    <div class="p-5 overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead><tr class="bg-gray-50"><th class="text-left text-xs font-semibold text-gray-500 uppercase p-2">School</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-2">Phase</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-2">Students</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-2">Retention</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-2">Trend</th></tr></thead>
+                            <tbody class="divide-y">
+                                <template x-for="sch in retSchoolStats">
+                                    <tr class="hover:bg-gray-50 cursor-pointer" @click="retPipelineSchool=sch.name; retentionTab='pipeline'">
+                                        <td class="p-2 font-medium" x-text="sch.name"></td>
+                                        <td class="p-2 text-gray-600" x-text="sch.phase"></td>
+                                        <td class="p-2" x-text="sch.students"></td>
+                                        <td class="p-2"><div class="flex items-center gap-2"><div class="w-24 h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full rounded-full" :class="sch.retention>=80?'bg-green-500':sch.retention>=70?'bg-amber-500':'bg-red-500'" :style="'width:'+sch.retention+'%'"></div></div><span class="text-xs" x-text="sch.retention+'%'"></span></div></td>
+                                        <td class="p-2 text-xs" :class="sch.trend.startsWith('↑')?'text-green-600':'text-red-600'" x-text="sch.trend"></td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Upcoming Actions -->
+                <div class="bg-white rounded-xl border">
+                    <div class="px-5 py-4 border-b flex items-center justify-between"><h3 class="text-sm font-semibold">Upcoming Actions</h3><span class="px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800">This Week</span></div>
+                    <div class="p-5">
+                        <div class="ret-timeline">
+                            <div class="ret-tl-item done"><div class="ret-tl-date">Mon 10 Feb</div><div class="ret-tl-text">✅ Year 5 parent survey sent (Demo Tindal Primary) — 67% response rate</div></div>
+                            <div class="ret-tl-item done"><div class="ret-tl-date">Mon 10 Feb</div><div class="ret-tl-text">✅ Sixth form taster day invites sent to 175 Year 11 students</div></div>
+                            <div class="ret-tl-item"><div class="ret-tl-date">Wed 12 Feb</div><div class="ret-tl-text">📧 Trigger re-engagement email to high-risk Year 6 families</div></div>
+                            <div class="ret-tl-item"><div class="ret-tl-date">Thu 13 Feb</div><div class="ret-tl-text">🏫 Demo Academy open evening — track attendance of trust feeder students</div></div>
+                            <div class="ret-tl-item"><div class="ret-tl-date">Fri 14 Feb</div><div class="ret-tl-text">📊 Weekly retention report to trust board</div></div>
+                            <div class="ret-tl-item"><div class="ret-tl-date">1 Mar</div><div class="ret-tl-text">🎯 National Offer Day — Year 7 allocation results published</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PIPELINE TAB ===== -->
+        <div x-show="retentionTab==='pipeline'">
+            <div class="flex flex-wrap gap-3 mb-5">
+                <select x-model="retPipelinePhase" class="px-3 py-2 border rounded-lg text-sm">
+                    <option value="yr6">Year 6 → Year 7</option>
+                    <option value="yr11">Year 11 → Year 12</option>
+                </select>
+                <select x-model="retPipelineSchool" class="px-3 py-2 border rounded-lg text-sm">
+                    <option value="">All Feeder Schools</option>
+                    <template x-for="sch in [...new Set(retStudents.filter(s=>s.phase===retPipelinePhase).map(s=>s.school))].sort()"><option :value="sch" x-text="sch"></option></template>
+                </select>
+                <select x-model="retPipelineIntent" class="px-3 py-2 border rounded-lg text-sm">
+                    <option value="">All Intents</option>
+                    <option value="Staying">Staying</option>
+                    <option value="Undecided">Undecided</option>
+                    <option value="Leaving">Likely Leaving</option>
+                </select>
+                <button class="px-3 py-2 border rounded-lg text-sm text-gray-600 hover:bg-gray-50" @click="retPipelineSchool='';retPipelineIntent='';retPipelinePhase='yr6'">Reset</button>
+            </div>
+            <!-- Pipeline KPIs -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-xl border p-5">
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Total in Cohort</div>
+                    <div class="text-3xl font-bold mt-1" x-text="retFilteredStudents.length"></div>
+                </div>
+                <div class="bg-white rounded-xl border p-5">
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Intent to Stay</div>
+                    <div class="text-3xl font-bold text-green-600 mt-1" x-text="retFilteredStudents.filter(s=>s.intent==='Staying').length"></div>
+                    <div class="text-sm text-gray-500 mt-1" x-text="retFilteredStudents.length ? Math.round(retFilteredStudents.filter(s=>s.intent==='Staying').length/retFilteredStudents.length*100)+'% of cohort' : ''"></div>
+                </div>
+                <div class="bg-white rounded-xl border p-5">
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Undecided</div>
+                    <div class="text-3xl font-bold text-amber-600 mt-1" x-text="retFilteredStudents.filter(s=>s.intent==='Undecided').length"></div>
+                    <div class="text-sm text-gray-500 mt-1">opportunity zone</div>
+                </div>
+                <div class="bg-white rounded-xl border p-5">
+                    <div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Likely Leaving</div>
+                    <div class="text-3xl font-bold text-red-600 mt-1" x-text="retFilteredStudents.filter(s=>s.intent==='Leaving').length"></div>
+                </div>
+            </div>
+            <!-- Funnel visual -->
+            <div class="bg-white rounded-xl border mb-6">
+                <div class="px-5 py-4 border-b"><h3 class="text-sm font-semibold">Cohort Pipeline — <span x-text="retPipelinePhase==='yr6'?'Year 6 → Year 7 (2026 Entry)':'Year 11 → Year 12 (2026 Entry)'"></span></h3></div>
+                <div class="p-5">
+                    <div class="flex gap-2 items-stretch">
+                        <div class="flex-1 bg-blue-50 rounded-lg p-4 text-center cursor-pointer hover:bg-blue-100" @click="retPipelineIntent=''">
+                            <div class="text-3xl font-bold text-blue-900" x-text="retFilteredStudents.length"></div>
+                            <div class="text-xs text-gray-500 mt-1">Total Cohort</div>
+                        </div>
+                        <div class="flex items-center text-2xl text-gray-300">→</div>
+                        <div class="flex-1 bg-green-50 rounded-lg p-4 text-center cursor-pointer hover:bg-green-100" @click="retPipelineIntent='Staying'">
+                            <div class="text-3xl font-bold text-green-600" x-text="retFilteredStudents.filter(s=>s.intent==='Staying').length"></div>
+                            <div class="text-xs text-gray-500 mt-1">Intent to Stay</div>
+                        </div>
+                        <div class="flex items-center text-2xl text-gray-300">→</div>
+                        <div class="flex-1 bg-amber-50 rounded-lg p-4 text-center cursor-pointer hover:bg-amber-100" @click="retPipelineIntent='Undecided'">
+                            <div class="text-3xl font-bold text-amber-600" x-text="retFilteredStudents.filter(s=>s.intent==='Undecided').length"></div>
+                            <div class="text-xs text-gray-500 mt-1">Undecided</div>
+                        </div>
+                        <div class="flex items-center text-2xl text-gray-300">→</div>
+                        <div class="flex-1 bg-red-50 rounded-lg p-4 text-center cursor-pointer hover:bg-red-100" @click="retPipelineIntent='Leaving'">
+                            <div class="text-3xl font-bold text-red-600" x-text="retFilteredStudents.filter(s=>s.intent==='Leaving').length"></div>
+                            <div class="text-xs text-gray-500 mt-1">Likely Leaving</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Student table -->
+            <div class="bg-white rounded-xl border">
+                <div class="px-5 py-4 border-b flex items-center justify-between"><h3 class="text-sm font-semibold">Student-Level Detail</h3><span class="text-xs text-gray-400" x-text="retPipelineFiltered.length+' students'"></span></div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead><tr class="bg-gray-50"><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Student</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">School</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Intent</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Open Evening</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Survey</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Risk</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Action</th></tr></thead>
+                        <tbody class="divide-y">
+                            <template x-for="s in retPipelineFiltered" :key="s.id">
+                                <tr class="hover:bg-gray-50" :class="s.risk==='high'?'bg-red-50':''">
+                                    <td class="p-3 font-medium" x-text="(s.risk==='high'?'🔴 ':'')+s.name"></td>
+                                    <td class="p-3 text-gray-600" x-text="s.school"></td>
+                                    <td class="p-3"><span class="px-2 py-1 text-xs rounded-full font-medium" :class="s.intent==='Staying'?'bg-green-100 text-green-800':s.intent==='Undecided'?'bg-amber-100 text-amber-800':'bg-red-100 text-red-800'" x-text="s.intent"></span></td>
+                                    <td class="p-3" x-text="s.openEvening?'✅ Attended':'❌ Absent'"></td>
+                                    <td class="p-3" x-text="s.surveyText"></td>
+                                    <td class="p-3"><div class="flex gap-0.5"><template x-for="i in 5"><div class="w-2 h-5 rounded-sm" :class="i<=s.riskScore?(s.riskScore>=4?'bg-red-500':s.riskScore>=3?'bg-amber-500':'bg-green-500'):'bg-gray-200'"></div></template></div></td>
+                                    <td class="p-3"><button class="px-2 py-1 text-xs border rounded-lg hover:bg-gray-50" @click="retSelectedStudent=s; showStudentModal=true">View</button></td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FLIGHT RISK TAB ===== -->
+        <div x-show="retentionTab==='flightrisk'">
+            <div class="bg-amber-50 border border-amber-300 rounded-lg p-3 mb-6 flex items-center gap-3 text-sm text-amber-900">
+                ⚠️ <strong x-text="retStudents.filter(s=>s.risk==='high').length + ' students scored as High Flight Risk'"></strong> — based on: no open evening attendance, negative/no survey response, distance from trust secondary, no sibling connection.
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                <div class="bg-white rounded-xl border">
+                    <div class="px-5 py-4 border-b"><h3 class="text-sm font-semibold">Risk Score Breakdown</h3></div>
+                    <div class="p-5">
+                        <div class="mb-5"><div class="flex justify-between mb-2 text-sm"><span>🟢 Low Risk (0-2)</span><strong x-text="retStudents.filter(s=>s.risk==='low').length+' students'"></strong></div><div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-green-500 rounded-full" :style="'width:'+Math.round(retStudents.filter(s=>s.risk==='low').length/retStudents.length*100)+'%'"></div></div></div>
+                        <div class="mb-5"><div class="flex justify-between mb-2 text-sm"><span>🟡 Medium Risk (3-4)</span><strong x-text="retStudents.filter(s=>s.risk==='medium').length+' students'"></strong></div><div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-amber-500 rounded-full" :style="'width:'+Math.round(retStudents.filter(s=>s.risk==='medium').length/retStudents.length*100)+'%'"></div></div></div>
+                        <div class="mb-5"><div class="flex justify-between mb-2 text-sm"><span>🔴 High Risk (5)</span><strong x-text="retStudents.filter(s=>s.risk==='high').length+' students'"></strong></div><div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-red-500 rounded-full" :style="'width:'+Math.round(retStudents.filter(s=>s.risk==='high').length/retStudents.length*100)+'%'"></div></div></div>
+                        <div class="mt-5 pt-4 border-t">
+                            <div class="text-sm font-semibold mb-2">Risk Factors Weighted:</div>
+                            <div class="text-xs text-gray-600 leading-relaxed space-y-1">
+                                <div>📍 Distance from trust secondary: <strong>25%</strong></div>
+                                <div>🏫 Open evening attendance: <strong>20%</strong></div>
+                                <div>📋 Survey response / intent: <strong>20%</strong></div>
+                                <div>👨‍👩‍👦 Sibling at trust school: <strong>15%</strong></div>
+                                <div>📧 Email engagement rate: <strong>10%</strong></div>
+                                <div>⭐ Parent satisfaction (last survey): <strong>10%</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border">
+                    <div class="px-5 py-4 border-b flex items-center justify-between"><h3 class="text-sm font-semibold">High Risk Students</h3><button class="px-3 py-1.5 text-xs bg-orange-500 text-white rounded-lg hover:bg-orange-600">Bulk Email Campaign</button></div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead><tr class="bg-gray-50"><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Student</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">School</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Top Risk Factor</th><th class="p-3"></th></tr></thead>
+                            <tbody class="divide-y">
+                                <template x-for="s in retStudents.filter(s=>s.risk==='high')" :key="s.id">
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="p-3 font-medium" x-text="s.name"></td>
+                                        <td class="p-3 text-gray-600" x-text="s.school"></td>
+                                        <td class="p-3 text-gray-600" x-text="s.topRiskFactor"></td>
+                                        <td class="p-3"><button class="px-2 py-1 text-xs border rounded-lg hover:bg-gray-50" @click="retSelectedStudent=s; showStudentModal=true">View</button></td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== ENGAGEMENT TAB ===== -->
+        <div x-show="retentionTab==='engagement'">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-xl border p-5"><div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Parent Surveys Sent</div><div class="text-3xl font-bold mt-1">312</div><div class="text-sm text-gray-500 mt-1">Year 5 & 6 families</div></div>
+                <div class="bg-white rounded-xl border p-5"><div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Response Rate</div><div class="text-3xl font-bold text-green-600 mt-1">67%</div><div class="text-sm text-green-600 mt-1">↑ 12% vs last year</div></div>
+                <div class="bg-white rounded-xl border p-5"><div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Open Evening Attendance</div><div class="text-3xl font-bold mt-1">74%</div><div class="text-sm text-green-600 mt-1">↑ 8% vs last year</div></div>
+                <div class="bg-white rounded-xl border p-5"><div class="text-xs text-gray-500 font-medium uppercase tracking-wide">Touchpoints Delivered</div><div class="text-3xl font-bold mt-1">1,847</div><div class="text-sm text-gray-500 mt-1">emails, invites, surveys</div></div>
+            </div>
+            <!-- Engagement Journey -->
+            <div class="bg-white rounded-xl border mb-6">
+                <div class="px-5 py-4 border-b flex items-center justify-between"><h3 class="text-sm font-semibold">Engagement Journey — Year 6 Families</h3><span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">Automated Workflows</span></div>
+                <div class="p-5">
+                    <div class="flex gap-0 overflow-x-auto">
+                        <template x-for="(stage, idx) in retEngagementStages" :key="idx">
+                            <div class="flex-1 min-w-[140px] p-4 text-center cursor-pointer hover:bg-gray-50 transition-colors" :class="idx<retEngagementStages.length-1?'border-r-2 border-dashed border-gray-200':''" :style="stage.current?'background:#fef3c7':''" @click="retEngStageDetail=stage">
+                                <div class="text-2xl mb-2" x-text="stage.icon"></div>
+                                <div class="text-sm font-semibold" x-text="stage.name"></div>
+                                <div class="text-xs text-gray-500 mt-1" x-text="stage.date"></div>
+                                <div class="text-xl font-bold mt-1" :class="stage.current?'text-amber-600':stage.value==='Pending'?'text-gray-400':'text-blue-900'" x-text="stage.value"></div>
+                                <div class="text-xs text-gray-400" x-text="stage.label"></div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <!-- Stage detail (shown when clicked) -->
+            <div x-show="retEngStageDetail" class="bg-white rounded-xl border mb-6" x-cloak>
+                <div class="px-5 py-4 border-b flex items-center justify-between">
+                    <h3 class="text-sm font-semibold" x-text="retEngStageDetail?.name+' — Detail'"></h3>
+                    <button @click="retEngStageDetail=null" class="text-gray-400 hover:text-gray-600">✕</button>
+                </div>
+                <div class="p-5 text-sm text-gray-600" x-text="retEngStageDetail?.detail"></div>
+            </div>
+            <!-- Family engagement table -->
+            <div class="bg-white rounded-xl border">
+                <div class="px-5 py-4 border-b flex items-center justify-between"><h3 class="text-sm font-semibold">Engagement Scores by Family</h3><select x-model="retEngFilter" class="px-2 py-1 text-xs border rounded-lg"><option value="">All</option><option value="Highly Engaged">Highly Engaged</option><option value="Warm">Warm</option><option value="Needs Nurture">Needs Nurture</option><option value="Disengaged">Disengaged</option></select></div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead><tr class="bg-gray-50"><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Family</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Student</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">School</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Engagement</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Last Touchpoint</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Status</th><th class="p-3"></th></tr></thead>
+                        <tbody class="divide-y">
+                            <template x-for="s in retEngagementFiltered" :key="s.id">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-medium" x-text="s.family"></td>
+                                    <td class="p-3 text-gray-600" x-text="s.name+' (Yr'+s.yearGroup+')'"></td>
+                                    <td class="p-3 text-gray-600" x-text="s.school"></td>
+                                    <td class="p-3"><div class="flex gap-1"><template x-for="i in 5"><div class="w-2.5 h-2.5 rounded-full" :class="i<=s.engagementScore?'bg-blue-900':'bg-gray-200'"></div></template></div></td>
+                                    <td class="p-3 text-gray-600" x-text="s.lastTouchpoint"></td>
+                                    <td class="p-3"><span class="px-2 py-1 text-xs rounded-full font-medium" :class="s.engStatus==='Highly Engaged'?'bg-green-100 text-green-800':s.engStatus==='Warm'?'bg-blue-100 text-blue-800':s.engStatus==='Needs Nurture'?'bg-amber-100 text-amber-800':'bg-red-100 text-red-800'" x-text="s.engStatus"></span></td>
+                                    <td class="p-3"><button class="px-2 py-1 text-xs border rounded-lg hover:bg-gray-50" @click="retSelectedStudent=s; showStudentModal=true">View</button></td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== COMPETITORS TAB ===== -->
+        <div x-show="retentionTab==='competitors'">
+            <div class="bg-white rounded-xl border mb-6">
+                <div class="px-5 py-4 border-b flex items-center justify-between"><h3 class="text-sm font-semibold">Where Are We Losing Students To?</h3><span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">Competitor Analysis</span></div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead><tr class="bg-gray-50"><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Competitor School</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Type</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Ofsted</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Lost (25/26)</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Lost (24/25)</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Trend</th><th class="text-left text-xs font-semibold text-gray-500 uppercase p-3">Primary Reason</th><th class="p-3"></th></tr></thead>
+                        <tbody class="divide-y">
+                            <template x-for="c in retCompetitors" :key="c.name">
+                                <tr class="hover:bg-gray-50 cursor-pointer" @click="retSelectedCompetitor=retSelectedCompetitor===c?null:c">
+                                    <td class="p-3 font-medium" x-text="c.name"></td>
+                                    <td class="p-3 text-gray-600" x-text="c.type"></td>
+                                    <td class="p-3 text-gray-600" x-text="c.ofsted"></td>
+                                    <td class="p-3 font-bold" :class="c.lost>=15?'text-red-600':'text-amber-600'" x-text="c.lost"></td>
+                                    <td class="p-3 text-gray-600" x-text="c.lastYear"></td>
+                                    <td class="p-3 text-xs" :class="c.trend.includes('improving')?'text-green-600':'text-red-600'" x-text="c.trend"></td>
+                                    <td class="p-3 text-gray-600" x-text="c.reason"></td>
+                                    <td class="p-3"><button class="px-2 py-1 text-xs border rounded-lg hover:bg-gray-50">Detail</button></td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Competitor detail panel -->
+                <div x-show="retSelectedCompetitor" class="border-t p-5 bg-gray-50" x-cloak>
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-semibold text-sm" x-text="retSelectedCompetitor?.name+' — Detail'"></h4>
+                        <button @click="retSelectedCompetitor=null" class="text-gray-400 hover:text-gray-600 text-sm">✕</button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-white rounded-lg border p-3">
+                            <div class="text-xs text-gray-500 mb-1">Students Lost This Year</div>
+                            <div class="text-2xl font-bold text-red-600" x-text="retSelectedCompetitor?.lost"></div>
+                        </div>
+                        <div class="bg-white rounded-lg border p-3">
+                            <div class="text-xs text-gray-500 mb-1">Primary Feeder Schools Affected</div>
+                            <div class="text-sm font-medium" x-text="retSelectedCompetitor?.affectedSchools"></div>
+                        </div>
+                        <div class="bg-white rounded-lg border p-3">
+                            <div class="text-xs text-gray-500 mb-1">Revenue Impact</div>
+                            <div class="text-2xl font-bold text-amber-600" x-text="'£'+(retSelectedCompetitor?.lost*6600*5/1000).toFixed(0)+'K'"></div>
+                            <div class="text-xs text-gray-400">over 5 years</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-sm text-gray-600" x-text="retSelectedCompetitor?.insight"></div>
+                    <div class="mt-3"><h5 class="text-xs font-semibold text-gray-500 mb-2">Students lost to this school:</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <template x-for="s in retStudents.filter(s=>s.competitorSchool===retSelectedCompetitor?.name)" :key="s.id">
+                                <span class="px-2 py-1 text-xs bg-white border rounded-full cursor-pointer hover:bg-blue-50" @click="retSelectedStudent=s; showStudentModal=true" x-text="s.name"></span>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm">📊 <strong>Key insight:</strong> City College is your biggest competitor for sixth form — and it's getting worse. 28 Year 11 students chose vocational routes. Consider: expanding BTEC/T-Level offerings, or a college partnership to keep students in the trust ecosystem.</div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+    <!-- Student Detail Modal -->
+    <div x-show="showStudentModal" x-cloak class="fixed inset-0 z-50 modal-overlay" @click.self="showStudentModal=false">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="relative bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto modal-content" @click.stop>
+                <div class="flex items-center justify-between px-6 py-4 border-b">
+                    <h2 class="text-lg font-semibold" x-text="(retSelectedStudent?.risk==='high'?'🔴 ':'')+(retSelectedStudent?.name||'')+' — '+({high:'Flight Risk',medium:'Watch List',low:'On Track'}[retSelectedStudent?.risk]||'Student')+' Profile'"></h2>
+                    <button @click="showStudentModal=false" class="p-2 hover:bg-gray-200 rounded-full">✕</button>
+                </div>
+                <div class="p-6" x-show="retSelectedStudent">
+                    <!-- Profile header -->
+                    <div class="flex items-center gap-4 mb-5">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-xl font-bold text-blue-900" x-text="retSelectedStudent?.name?.split(' ').map(n=>n[0]).join('')"></div>
+                        <div>
+                            <h3 class="text-lg font-semibold" x-text="retSelectedStudent?.name"></h3>
+                            <p class="text-sm text-gray-500" x-text="'Year '+retSelectedStudent?.yearGroup+' — '+retSelectedStudent?.school+' | DOB: '+retSelectedStudent?.dob"></p>
+                            <div class="flex gap-2 mt-2">
+                                <span class="px-2 py-1 text-xs rounded-full font-medium" :class="retSelectedStudent?.risk==='high'?'bg-red-100 text-red-800':retSelectedStudent?.risk==='medium'?'bg-amber-100 text-amber-800':'bg-green-100 text-green-800'" x-text="({high:'High Flight Risk',medium:'Medium Risk',low:'Low Risk'})[retSelectedStudent?.risk]"></span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800" x-text="'Year '+(retSelectedStudent?.yearGroup==6?'7':'12')+' Transition'"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Risk + Contact grid -->
+                    <div class="grid grid-cols-2 gap-4 mb-5">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="text-xs text-gray-500 mb-2">RISK SCORE</div>
+                            <div class="flex gap-1 mb-1"><template x-for="i in 5"><div class="w-4 h-7 rounded-sm" :class="i<=retSelectedStudent?.riskScore?(retSelectedStudent?.riskScore>=4?'bg-red-500':retSelectedStudent?.riskScore>=3?'bg-amber-500':'bg-green-500'):'bg-gray-200'"></div></template></div>
+                            <div class="text-sm font-semibold mt-1" :class="retSelectedStudent?.riskScore>=4?'text-red-600':retSelectedStudent?.riskScore>=3?'text-amber-600':'text-green-600'" x-text="retSelectedStudent?.riskScore+'/5 — '+(retSelectedStudent?.riskScore>=4?'Critical':retSelectedStudent?.riskScore>=3?'Moderate':'Low')"></div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="text-xs text-gray-500 mb-2">PARENT CONTACT</div>
+                            <div class="text-sm font-medium" x-text="retSelectedStudent?.parentName"></div>
+                            <div class="text-sm text-gray-600" x-text="retSelectedStudent?.parentEmail"></div>
+                            <div class="text-sm text-gray-600" x-text="retSelectedStudent?.parentPhone"></div>
+                        </div>
+                    </div>
+                    <!-- Risk Factors -->
+                    <div class="text-sm font-semibold mb-2">Risk Factors:</div>
+                    <div class="space-y-2 mb-5">
+                        <template x-for="f in retSelectedStudent?.riskFactors||[]">
+                            <div class="p-2 rounded text-sm" :class="f.level==='high'?'bg-red-50':'bg-amber-50'" x-text="(f.level==='high'?'❌ ':'⚠️ ')+f.text"></div>
+                        </template>
+                    </div>
+                    <!-- Recommended Actions -->
+                    <div class="text-sm font-semibold mb-2">Recommended Actions:</div>
+                    <div class="space-y-2 mb-5">
+                        <template x-for="a in retSelectedStudent?.actions||[]">
+                            <button class="w-full px-4 py-2 text-sm border rounded-lg text-left hover:bg-gray-50" x-text="a"></button>
+                        </template>
+                    </div>
+                    <!-- Engagement Timeline -->
+                    <div class="text-sm font-semibold mb-2">Engagement Timeline:</div>
+                    <div class="ret-timeline">
+                        <template x-for="t in retSelectedStudent?.timeline||[]">
+                            <div class="ret-tl-item" :class="t.done?'done':''">
+                                <div class="ret-tl-date" x-text="t.date"></div>
+                                <div class="ret-tl-text" x-text="t.text"></div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Applicant Panel -->
     <div x-show="showApplicant" x-cloak class="fixed inset-0 z-50">
         <div class="absolute inset-0 bg-black/50" @click="showApplicant=false"></div>
@@ -14849,7 +15299,98 @@ function dashboard() {
             parent: 'Parent Area',
             control: 'Application Settings',
             comms: 'Comms Templates',
-            admissions: 'Centralised Admissions'
+            admissions: 'Centralised Admissions',
+            retention: 'Student Retention'
+        },
+        retentionTab: 'dashboard',
+        retDashFilter: null,
+        retPipelinePhase: 'yr6',
+        retPipelineSchool: '',
+        retPipelineIntent: '',
+        retSelectedStudent: null,
+        retSelectedCompetitor: null,
+        retEngStageDetail: null,
+        retEngFilter: '',
+        retSchoolStats: [
+            { name: 'Demo Tindal Primary', phase: 'Yr6→7', students: 124, retention: 86, trend: '↑ 4%' },
+            { name: 'Demo John Archer', phase: 'Yr6→7', students: 98, retention: 79, trend: '↑ 2%' },
+            { name: 'Demo Atwood', phase: 'Yr6→7', students: 90, retention: 72, trend: '↓ 1%' },
+            { name: 'Demo Priory', phase: 'Yr6→7', students: 45, retention: 84, trend: '↑ 3%' },
+            { name: 'Demo Boulton', phase: 'Yr6→7', students: 38, retention: 76, trend: '↑ 1%' },
+            { name: 'Demo Academy', phase: 'Yr11→12', students: 175, retention: 67, trend: '↑ 5%' },
+            { name: 'Demo Kings Academy', phase: 'Yr11→12', students: 120, retention: 71, trend: '↑ 3%' },
+            { name: 'Demo Victoria Academy', phase: 'Yr11→12', students: 95, retention: 64, trend: '↓ 2%' }
+        ],
+        retAllSchools: ['Demo Academy','Demo Kings Academy','Demo Victoria Academy','Demo Tindal Primary','Demo John Archer','Demo Atwood','Demo Priory','Demo Boulton',"Demo St Alban's",'Demo Walworth','Demo Acton','Demo Greenwich'],
+        retStudents: [
+            { id:1, name:'Sophie Williams', school:'Demo John Archer', yearGroup:6, phase:'yr6', intent:'Leaving', risk:'high', riskScore:5, openEvening:false, surveyText:'❌ "Other school"', topRiskFactor:'Declared "Oakfield School" as first choice', engagementScore:1, engStatus:'Disengaged', lastTouchpoint:'Info email opened — 3 Oct', family:'Williams Family', dob:'14 Mar 2015', parentName:'Mrs Rachel Williams', parentEmail:'r.williams@email.com', parentPhone:'07700 900123', competitorSchool:"St Mary's Grammar", riskFactors:[{level:'high',text:'Survey response: "We are considering Oakfield School as first choice"'},{level:'high',text:'Did not attend open evening (Nov 2025)'},{level:'high',text:'Did not attend taster day (Jan 2026)'},{level:'warn',text:'Lives 3.1 miles from Demo Academy (Oakfield is 0.8 miles)'},{level:'warn',text:'No sibling at any trust secondary'}], actions:['📞 Schedule personal call with Mrs Williams','📧 Send personalised invitation to next Demo Academy event','🏫 Arrange 1:1 school tour with Year 7 head','👨‍🏫 Connect with Demo John Archer class teacher'], timeline:[{date:'3 Oct 2025',text:'📧 Info pack email — Opened (but didn\'t click secondary link)',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Did not attend',done:false},{date:'20 Nov 2025',text:'📋 Survey returned — "Considering Oakfield School"',done:false},{date:'15 Jan 2026',text:'🎯 Taster day invite sent — No response',done:false}] },
+            { id:2, name:'Ethan Clarke', school:'Demo Atwood', yearGroup:6, phase:'yr6', intent:'Leaving', risk:'high', riskScore:5, openEvening:false, surveyText:'❌ No response', topRiskFactor:'Lives 4.2mi from nearest trust secondary', engagementScore:0, engStatus:'Disengaged', lastTouchpoint:'Info email — not opened', family:'Clarke Family', dob:'22 Jul 2015', parentName:'Mr David Clarke', parentEmail:'d.clarke@email.com', parentPhone:'07700 900456', competitorSchool:'Oakfield School', riskFactors:[{level:'high',text:'Lives 4.2 miles from Demo Academy'},{level:'high',text:'No survey response'},{level:'high',text:'Zero event attendance'},{level:'warn',text:'No sibling connection'}], actions:['📞 Priority call — discuss transport options','📧 Send personalised info about school bus routes','🏫 Offer private tour with head teacher'], timeline:[{date:'3 Oct 2025',text:'📧 Info pack email — Not opened',done:false},{date:'14 Nov 2025',text:'🏫 Open evening invite — No response',done:false}] },
+            { id:3, name:'Maya Thompson', school:'Demo John Archer', yearGroup:6, phase:'yr6', intent:'Leaving', risk:'high', riskScore:5, openEvening:false, surveyText:'❌ No response', topRiskFactor:'Zero engagement across all touchpoints', engagementScore:0, engStatus:'Disengaged', lastTouchpoint:'No engagement recorded', family:'Thompson Family', dob:'5 Sep 2015', parentName:'Mrs Linda Thompson', parentEmail:'l.thompson@email.com', parentPhone:'07700 900789', competitorSchool:'Riverside Academy', riskFactors:[{level:'high',text:'Zero engagement — no emails opened, no events attended'},{level:'high',text:'No survey response'},{level:'warn',text:'Parent email may be incorrect (bounced)'}], actions:['📞 Urgent: Verify contact details via school office','📧 Send via alternative channel (SMS/letter)','🏫 Ask class teacher to discuss with parent at pickup'], timeline:[{date:'15 Sep 2025',text:'📋 Year 5 survey sent — Not delivered (bounce)',done:false},{date:'3 Oct 2025',text:'📧 Info pack email — Not delivered',done:false}] },
+            { id:4, name:'Oliver Chen', school:'Demo Tindal Primary', yearGroup:6, phase:'yr6', intent:'Undecided', risk:'medium', riskScore:3, openEvening:true, surveyText:'⏳ No response', topRiskFactor:'Attended open evening but no survey response', engagementScore:3, engStatus:'Warm', lastTouchpoint:'Open evening — 14 Nov', family:'Chen Family', dob:'11 Jan 2015', parentName:'Mrs Wei Chen', parentEmail:'w.chen@email.com', parentPhone:'07700 900234', competitorSchool:null, riskFactors:[{level:'warn',text:'Survey not returned despite attending open evening'},{level:'warn',text:'No taster day attendance'}], actions:['📧 Send personalised survey reminder','📞 Follow-up call to discuss impressions from open evening','🎯 Invite to next taster day with personal note'], timeline:[{date:'15 Sep 2025',text:'📋 Year 5 survey sent',done:true},{date:'3 Oct 2025',text:'📧 Info pack email — Opened, clicked link',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended with both parents',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Did not attend',done:false}] },
+            { id:5, name:'Amara Johnson', school:'Demo Tindal Primary', yearGroup:6, phase:'yr6', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "1st choice"', topRiskFactor:'None — fully engaged', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Taster day — 15 Jan', family:'Johnson Family', dob:'28 Apr 2015', parentName:'Mrs Deborah Johnson', parentEmail:'d.johnson@email.com', parentPhone:'07700 900567', competitorSchool:null, riskFactors:[], actions:['✅ No action needed — fully committed','📧 Send welcome pack when place confirmed'], timeline:[{date:'15 Sep 2025',text:'📋 Survey completed — "Demo Academy is our first choice"',done:true},{date:'3 Oct 2025',text:'📧 Info pack email — Opened, downloaded prospectus',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Attended, very positive feedback',done:true}] },
+            { id:6, name:'Kai Patel', school:'Demo Atwood', yearGroup:6, phase:'yr6', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "Definite"', topRiskFactor:'None', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Taster day — 15 Jan', family:'Patel Family', dob:'3 Feb 2015', parentName:'Mr Raj Patel', parentEmail:'r.patel@email.com', parentPhone:'07700 900890', competitorSchool:null, riskFactors:[], actions:['✅ No action needed — sibling at Demo Academy'], timeline:[{date:'15 Sep 2025',text:'📋 Survey — "Definite, sibling already there"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Attended',done:true}] },
+            { id:7, name:'Fatima Hassan', school:'Demo John Archer', yearGroup:6, phase:'yr6', intent:'Undecided', risk:'medium', riskScore:4, openEvening:false, surveyText:'✅ "Considering"', topRiskFactor:'Survey says considering but not attending events', engagementScore:2, engStatus:'Needs Nurture', lastTouchpoint:'Survey completed — 20 Sep', family:'Hassan Family', dob:'17 Jun 2015', parentName:'Mrs Amina Hassan', parentEmail:'a.hassan@email.com', parentPhone:'07700 900345', competitorSchool:null, riskFactors:[{level:'high',text:'Did not attend open evening despite expressing interest'},{level:'warn',text:'Survey says "considering" but not committed'},{level:'warn',text:'No event attendance since survey'}], actions:['📞 Call to understand barriers to attending events','📧 Send personalised invitation to next taster day','🏫 Offer virtual tour as alternative'], timeline:[{date:'20 Sep 2025',text:'📋 Survey completed — "Considering Demo Academy"',done:true},{date:'3 Oct 2025',text:'📧 Info pack — Opened',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Did not attend',done:false}] },
+            { id:8, name:"James O'Brien", school:'Demo Tindal Primary', yearGroup:6, phase:'yr6', intent:'Staying', risk:'low', riskScore:2, openEvening:true, surveyText:'✅ "1st choice"', topRiskFactor:'Minor: lives on catchment border', engagementScore:4, engStatus:'Highly Engaged', lastTouchpoint:'Taster day — 15 Jan', family:"O'Brien Family", dob:'9 Nov 2015', parentName:"Mrs Sarah O'Brien", parentEmail:'s.obrien@email.com', parentPhone:'07700 900678', competitorSchool:null, riskFactors:[{level:'warn',text:'Lives on catchment border — 2.8 miles'}], actions:['✅ Low risk — monitor only'], timeline:[{date:'15 Sep 2025',text:'📋 Survey — "1st choice"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Attended',done:true}] },
+            { id:9, name:'Noah Richards', school:'Demo Atwood', yearGroup:6, phase:'yr6', intent:'Leaving', risk:'high', riskScore:5, openEvening:false, surveyText:'❌ "Grammar school"', topRiskFactor:'Applied to St Mary\'s Grammar', engagementScore:1, engStatus:'Disengaged', lastTouchpoint:'Survey — 20 Sep', family:'Richards Family', dob:'12 Mar 2015', parentName:'Mrs Helen Richards', parentEmail:'h.richards@email.com', parentPhone:'07700 901234', competitorSchool:"St Mary's Grammar", riskFactors:[{level:'high',text:'Applied to St Mary\'s Grammar School'},{level:'high',text:'No trust secondary event attendance'},{level:'warn',text:'High-attaining student — grammar school likely'}], actions:['📞 Call — acknowledge grammar ambition, discuss Demo Academy\'s stretch programme','📧 Share Demo Academy academic results and Oxbridge prep info'], timeline:[{date:'20 Sep 2025',text:'📋 Survey — "Sitting 11+ for St Mary\'s"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Did not attend',done:false}] },
+            { id:10, name:'Isla Brown', school:'Demo Tindal Primary', yearGroup:6, phase:'yr6', intent:'Leaving', risk:'high', riskScore:5, openEvening:false, surveyText:'❌ No response', topRiskFactor:'No survey response + absent from all events', engagementScore:0, engStatus:'Disengaged', lastTouchpoint:'No engagement', family:'Brown Family', dob:'25 Aug 2015', parentName:'Mr James Brown', parentEmail:'j.brown@email.com', parentPhone:'07700 901567', competitorSchool:'Oakfield School', riskFactors:[{level:'high',text:'No survey response'},{level:'high',text:'Absent from open evening and taster day'},{level:'warn',text:'Neighbour\'s child attends Oakfield'}], actions:['📞 Urgent call to parent','📧 Send letter home via school office','🏫 Class teacher to engage parent at school'], timeline:[{date:'3 Oct 2025',text:'📧 Info pack — Not opened',done:false}] },
+            { id:11, name:'Leo Taylor', school:'Demo John Archer', yearGroup:6, phase:'yr6', intent:'Leaving', risk:'high', riskScore:4, openEvening:false, surveyText:'❌ "Sibling elsewhere"', topRiskFactor:'Older sibling at Riverside Academy', engagementScore:1, engStatus:'Disengaged', lastTouchpoint:'Info email opened — 3 Oct', family:'Taylor Family', dob:'7 Dec 2015', parentName:'Mrs Karen Taylor', parentEmail:'k.taylor@email.com', parentPhone:'07700 901890', competitorSchool:'Riverside Academy', riskFactors:[{level:'high',text:'Older sibling at Riverside Academy'},{level:'high',text:'Family likely to choose same school'},{level:'warn',text:'No event attendance'}], actions:['📞 Personal call — understand family preferences','📧 Highlight Demo Academy\'s unique sports facilities','🏫 Invite to sports open day specifically'], timeline:[{date:'3 Oct 2025',text:'📧 Info pack — Opened briefly',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Did not attend',done:false}] },
+            { id:12, name:'Zara Ahmed', school:'Demo Priory', yearGroup:6, phase:'yr6', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "Definitely"', topRiskFactor:'None', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Taster day — 15 Jan', family:'Ahmed Family', dob:'19 May 2015', parentName:'Mrs Nasreen Ahmed', parentEmail:'n.ahmed@email.com', parentPhone:'07700 902123', competitorSchool:null, riskFactors:[], actions:['✅ No action needed'], timeline:[{date:'15 Sep 2025',text:'📋 Survey — "Definitely Demo Academy"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended with grandparents too',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Loved it',done:true}] },
+            { id:13, name:'Chloe Wright', school:'Demo Boulton', yearGroup:6, phase:'yr6', intent:'Undecided', risk:'medium', riskScore:3, openEvening:true, surveyText:'⏳ "Not sure yet"', topRiskFactor:'Expressed uncertainty in survey', engagementScore:3, engStatus:'Warm', lastTouchpoint:'Open evening — 14 Nov', family:'Wright Family', dob:'8 Oct 2015', parentName:'Mr Peter Wright', parentEmail:'p.wright@email.com', parentPhone:'07700 902456', competitorSchool:null, riskFactors:[{level:'warn',text:'Survey: "Not sure yet, looking at options"'},{level:'warn',text:'Did not attend taster day'}], actions:['📧 Send comparison guide: Demo Academy vs alternatives','📞 Follow-up call about concerns'], timeline:[{date:'20 Sep 2025',text:'📋 Survey — "Not sure yet"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Did not attend',done:false}] },
+            { id:14, name:'Aiden Murphy', school:'Demo Tindal Primary', yearGroup:6, phase:'yr6', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "1st choice"', topRiskFactor:'None', engagementScore:4, engStatus:'Highly Engaged', lastTouchpoint:'Taster day — 15 Jan', family:'Murphy Family', dob:'14 Jan 2015', parentName:'Mrs Siobhan Murphy', parentEmail:'s.murphy@email.com', parentPhone:'07700 902789', competitorSchool:null, riskFactors:[], actions:['✅ No action needed'], timeline:[{date:'15 Sep 2025',text:'📋 Survey — "1st choice"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Attended',done:true}] },
+            { id:15, name:'Priya Sharma', school:'Demo Atwood', yearGroup:6, phase:'yr6', intent:'Undecided', risk:'medium', riskScore:3, openEvening:false, surveyText:'✅ "Considering"', topRiskFactor:'Considering but not attending events', engagementScore:2, engStatus:'Needs Nurture', lastTouchpoint:'Survey — 20 Sep', family:'Sharma Family', dob:'30 Jun 2015', parentName:'Dr Anita Sharma', parentEmail:'a.sharma@email.com', parentPhone:'07700 903012', competitorSchool:null, riskFactors:[{level:'warn',text:'Did not attend open evening or taster day'},{level:'warn',text:'Survey says considering but engagement dropping'}], actions:['📞 Call to understand barriers','📧 Send virtual tour link','🏫 Offer flexible visit time'], timeline:[{date:'20 Sep 2025',text:'📋 Survey — "Considering"',done:true},{date:'3 Oct 2025',text:'📧 Info pack — Opened',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Did not attend',done:false}] },
+            { id:16, name:'Ruby Davis', school:'Demo John Archer', yearGroup:6, phase:'yr6', intent:'Staying', risk:'low', riskScore:2, openEvening:true, surveyText:'✅ "Very likely"', topRiskFactor:'Minor distance concern', engagementScore:4, engStatus:'Highly Engaged', lastTouchpoint:'Taster day — 15 Jan', family:'Davis Family', dob:'2 Apr 2015', parentName:'Mrs Claire Davis', parentEmail:'c.davis@email.com', parentPhone:'07700 903345', competitorSchool:null, riskFactors:[{level:'warn',text:'Lives 2.5 miles away — borderline catchment'}], actions:['✅ Low risk — monitor only'], timeline:[{date:'15 Sep 2025',text:'📋 Survey — "Very likely"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Attended',done:true}] },
+            { id:17, name:'Tyler Morrison', school:'Demo Atwood', yearGroup:6, phase:'yr6', intent:'Leaving', risk:'high', riskScore:4, openEvening:false, surveyText:'❌ "Moving area"', topRiskFactor:'Family relocating out of catchment', engagementScore:1, engStatus:'Disengaged', lastTouchpoint:'Survey — 20 Sep', family:'Morrison Family', dob:'18 Aug 2015', parentName:'Mr Craig Morrison', parentEmail:'c.morrison@email.com', parentPhone:'07700 903678', competitorSchool:'Other / Private', riskFactors:[{level:'high',text:'Family relocating out of area'},{level:'high',text:'No event attendance'}], actions:['📞 Confirm relocation timeline','📋 Update records for destination school transfer'], timeline:[{date:'20 Sep 2025',text:'📋 Survey — "We are moving to another area"',done:true}] },
+            { id:18, name:'Grace Kelly', school:'Demo Priory', yearGroup:6, phase:'yr6', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "Definitely"', topRiskFactor:'None', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Taster day — 15 Jan', family:'Kelly Family', dob:'23 Nov 2015', parentName:'Mrs Patricia Kelly', parentEmail:'p.kelly@email.com', parentPhone:'07700 903901', competitorSchool:null, riskFactors:[], actions:['✅ No action needed — sibling in Year 8'], timeline:[{date:'15 Sep 2025',text:'📋 Survey — "Definitely, older child loves it"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Attended',done:true}] },
+            { id:19, name:'Marcus Green', school:'Demo Boulton', yearGroup:6, phase:'yr6', intent:'Undecided', risk:'medium', riskScore:3, openEvening:true, surveyText:'⏳ "Thinking about it"', topRiskFactor:'Undecided despite attending events', engagementScore:3, engStatus:'Warm', lastTouchpoint:'Open evening — 14 Nov', family:'Green Family', dob:'6 Feb 2015', parentName:'Mrs Donna Green', parentEmail:'d.green@email.com', parentPhone:'07700 904234', competitorSchool:null, riskFactors:[{level:'warn',text:'Survey: "Still thinking about it"'},{level:'warn',text:'Did not attend taster day'}], actions:['📞 Follow-up call','📧 Send parent testimonials from current Year 7 families'], timeline:[{date:'20 Sep 2025',text:'📋 Survey — "Thinking about it"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true}] },
+            { id:20, name:'Hannah Wilson', school:'Demo Tindal Primary', yearGroup:6, phase:'yr6', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "Absolutely"', topRiskFactor:'None', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Taster day — 15 Jan', family:'Wilson Family', dob:'29 Mar 2015', parentName:'Mrs Emma Wilson', parentEmail:'e.wilson@email.com', parentPhone:'07700 904567', competitorSchool:null, riskFactors:[], actions:['✅ No action needed'], timeline:[{date:'15 Sep 2025',text:'📋 Survey — "Absolutely, can\'t wait!"',done:true},{date:'14 Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'15 Jan 2026',text:'🎯 Taster day — Attended',done:true}] },
+            { id:21, name:'Liam Cooper', school:'Demo John Archer', yearGroup:6, phase:'yr6', intent:'Leaving', risk:'high', riskScore:4, openEvening:false, surveyText:'❌ "Private school"', topRiskFactor:'Family choosing private education', engagementScore:0, engStatus:'Disengaged', lastTouchpoint:'No engagement', family:'Cooper Family', dob:'15 Jul 2015', parentName:'Mr Simon Cooper', parentEmail:'s.cooper@email.com', parentPhone:'07700 904890', competitorSchool:'Other / Private', riskFactors:[{level:'high',text:'Family pursuing private school options'},{level:'high',text:'No engagement with trust events'}], actions:['📋 Record as private school leaver','📧 Send "door always open" message'], timeline:[{date:'20 Sep 2025',text:'📋 Survey — "Looking at independent schools"',done:true}] },
+            // ===== Year 11 → Year 12 Students =====
+            { id:101, name:'Jessica Moore', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "Sixth form here"', topRiskFactor:'None', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Sixth form taster — 20 Jan', family:'Moore Family', dob:'3 Sep 2009', parentName:'Mrs Laura Moore', parentEmail:'l.moore@email.com', parentPhone:'07700 910123', competitorSchool:null, riskFactors:[], actions:['✅ No action needed — strong candidate'], timeline:[{date:'Oct 2025',text:'📋 Sixth form intent survey — "Definite stay"',done:true},{date:'Nov 2025',text:'🏫 Sixth form open evening — Attended',done:true},{date:'20 Jan 2026',text:'🎯 Sixth form taster day — Attended',done:true}] },
+            { id:102, name:'Ryan Mitchell', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Leaving', risk:'high', riskScore:5, openEvening:false, surveyText:'❌ "Going to college"', topRiskFactor:'Wants vocational BTECs not offered in sixth form', engagementScore:0, engStatus:'Disengaged', lastTouchpoint:'Survey — Oct 2025', family:'Mitchell Family', dob:'15 Nov 2009', parentName:'Mr Kevin Mitchell', parentEmail:'k.mitchell@email.com', parentPhone:'07700 910456', competitorSchool:'City College', riskFactors:[{level:'high',text:'Wants BTEC Construction — not offered in sixth form'},{level:'high',text:'No sixth form event attendance'},{level:'warn',text:'Older sibling went to City College'}], actions:['📞 Discuss new T-Level options for 2026','📧 Share info about Demo Academy construction pathway'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Going to City College for BTECs"',done:true}] },
+            { id:103, name:'Amira Okafor', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "A-Levels here"', topRiskFactor:'None — predicted 8s and 9s', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Sixth form taster — 20 Jan', family:'Okafor Family', dob:'22 Jan 2010', parentName:'Mrs Ngozi Okafor', parentEmail:'n.okafor@email.com', parentPhone:'07700 910789', competitorSchool:null, riskFactors:[], actions:['✅ No action needed — academic high-flyer'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Staying for A-Levels, want Medicine pathway"',done:true},{date:'Nov 2025',text:'🏫 Sixth form evening — Attended with parents',done:true},{date:'20 Jan 2026',text:'🎯 Taster day — Sat in on Biology & Chemistry A-Level',done:true}] },
+            { id:104, name:'Jake Turner', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Leaving', risk:'high', riskScore:4, openEvening:false, surveyText:'❌ "Apprenticeship"', topRiskFactor:'Pursuing apprenticeship in engineering', engagementScore:1, engStatus:'Disengaged', lastTouchpoint:'Careers fair — Dec 2025', family:'Turner Family', dob:'8 May 2009', parentName:'Mrs Sharon Turner', parentEmail:'s.turner@email.com', parentPhone:'07700 911012', competitorSchool:'City College', riskFactors:[{level:'high',text:'Applied for Level 3 apprenticeship'},{level:'high',text:'No interest in A-Levels or T-Levels'},{level:'warn',text:'Predicted Grade 5s — meets sixth form entry but not motivated'}], actions:['📞 Discuss Demo Academy apprenticeship support pathway','📧 Send info on T-Level Engineering option'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Want an apprenticeship"',done:true},{date:'Dec 2025',text:'🎓 Careers fair — Spoke to apprenticeship providers',done:true}] },
+            { id:105, name:'Ella Fitzgerald', school:'Demo Kings Academy', yearGroup:11, phase:'yr11', intent:'Undecided', risk:'medium', riskScore:3, openEvening:true, surveyText:'⏳ "Not sure yet"', topRiskFactor:'Torn between sixth form and college dance course', engagementScore:3, engStatus:'Warm', lastTouchpoint:'Sixth form open evening — Nov 2025', family:'Fitzgerald Family', dob:'14 Mar 2010', parentName:'Mrs Karen Fitzgerald', parentEmail:'k.fitzgerald@email.com', parentPhone:'07700 911345', competitorSchool:'City College', riskFactors:[{level:'warn',text:'Interested in performing arts — college offers specialist course'},{level:'warn',text:'Did not attend sixth form taster day'}], actions:['📞 Connect with Head of Performing Arts','📧 Share info about Demo Kings Academy drama & dance enrichment','🎯 Invite to perform at school showcase'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Thinking about it, love dance"',done:true},{date:'Nov 2025',text:'🏫 Sixth form open evening — Attended',done:true},{date:'Jan 2026',text:'🎯 Taster day — Did not attend',done:false}] },
+            { id:106, name:'Mohammed Ali', school:'Demo Kings Academy', yearGroup:11, phase:'yr11', intent:'Staying', risk:'low', riskScore:2, openEvening:true, surveyText:'✅ "Sixth form"', topRiskFactor:'Minor: wants subject not currently offered', engagementScore:4, engStatus:'Highly Engaged', lastTouchpoint:'Sixth form taster — 20 Jan', family:'Ali Family', dob:'27 Jul 2009', parentName:'Mr Hassan Ali', parentEmail:'h.ali@email.com', parentPhone:'07700 911678', competitorSchool:null, riskFactors:[{level:'warn',text:'Wants A-Level Economics — currently not offered at Demo Kings'}], actions:['📧 Confirm Economics A-Level availability for Sept 2026','📞 Discuss alternative: Business Studies + Maths combo'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Staying, want Economics A-Level"',done:true},{date:'Nov 2025',text:'🏫 Open evening — Attended, asked about Economics',done:true},{date:'20 Jan 2026',text:'🎯 Taster day — Attended Business & Maths',done:true}] },
+            { id:107, name:'Caitlin Murphy', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Leaving', risk:'high', riskScore:5, openEvening:false, surveyText:'❌ "College"', topRiskFactor:'Wants health & social care BTEC', engagementScore:0, engStatus:'Disengaged', lastTouchpoint:'No sixth form engagement', family:'Murphy Family', dob:'19 Oct 2009', parentName:'Mrs Siobhan Murphy', parentEmail:'s.murphy2@email.com', parentPhone:'07700 911901', competitorSchool:'City College', riskFactors:[{level:'high',text:'Wants BTEC Health & Social Care — not offered'},{level:'high',text:'No sixth form event attendance'},{level:'high',text:'Already visited City College'}], actions:['📞 Discuss new Health pathway launching Sept 2026','📧 Share T-Level Health option information'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Going to college for health course"',done:true}] },
+            { id:108, name:'Daniel Osei', school:'Demo Kings Academy', yearGroup:11, phase:'yr11', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "Definitely staying"', topRiskFactor:'None', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Sixth form taster — 20 Jan', family:'Osei Family', dob:'1 Dec 2009', parentName:'Mrs Abena Osei', parentEmail:'a.osei@email.com', parentPhone:'07700 912234', competitorSchool:null, riskFactors:[], actions:['✅ No action needed — school prefect, strong commitment'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Definitely staying, want to be Head Boy"',done:true},{date:'Nov 2025',text:'🏫 Open evening — Attended, helped as student guide',done:true},{date:'20 Jan 2026',text:'🎯 Taster day — Attended',done:true}] },
+            { id:109, name:'Lily Nguyen', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Undecided', risk:'medium', riskScore:3, openEvening:true, surveyText:'⏳ "Comparing options"', topRiskFactor:'Comparing Demo sixth form vs selective sixth form college', engagementScore:3, engStatus:'Warm', lastTouchpoint:'Open evening — Nov 2025', family:'Nguyen Family', dob:'5 Feb 2010', parentName:'Mrs Mai Nguyen', parentEmail:'m.nguyen@email.com', parentPhone:'07700 912567', competitorSchool:"St Mary's Grammar", riskFactors:[{level:'warn',text:'Applied to St Mary\'s Grammar sixth form as well'},{level:'warn',text:'Predicted 7s-9s — grammar school viable'},{level:'warn',text:'Did not attend Demo taster day'}], actions:['📞 Call to discuss Demo Academy A-Level results','📧 Share Oxbridge/Russell Group destination data','🎯 Invite to meet current sixth form students'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Looking at both Demo and St Mary\'s sixth form"',done:true},{date:'Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'Jan 2026',text:'🎯 Taster day — Did not attend',done:false}] },
+            { id:110, name:'Tyler Brooks', school:'Demo Kings Academy', yearGroup:11, phase:'yr11', intent:'Leaving', risk:'high', riskScore:4, openEvening:false, surveyText:'❌ "Work"', topRiskFactor:'Wants to go straight into employment', engagementScore:0, engStatus:'Disengaged', lastTouchpoint:'No engagement', family:'Brooks Family', dob:'30 Aug 2009', parentName:'Mr Steve Brooks', parentEmail:'s.brooks@email.com', parentPhone:'07700 912890', competitorSchool:'Other / Private', riskFactors:[{level:'high',text:'Does not want to continue in education'},{level:'high',text:'Zero engagement with sixth form events'},{level:'warn',text:'Predicted Grade 4s — would need support pathway'}], actions:['📞 Priority: discuss supported internship programme','📧 Share success stories of Demo Kings Academy alumni','🏫 Careers advisor meeting'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Want to get a job"',done:true}] },
+            { id:111, name:'Sophie Anderson', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "Love it here"', topRiskFactor:'None', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Sixth form taster — 20 Jan', family:'Anderson Family', dob:'11 Apr 2010', parentName:'Mrs Claire Anderson', parentEmail:'c.anderson@email.com', parentPhone:'07700 913123', competitorSchool:null, riskFactors:[], actions:['✅ No action needed'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Absolutely staying"',done:true},{date:'Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'20 Jan 2026',text:'🎯 Taster day — Attended 3 subject sessions',done:true}] },
+            { id:112, name:'Marcus Campbell', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Undecided', risk:'medium', riskScore:3, openEvening:false, surveyText:'⏳ "Maybe"', topRiskFactor:'Low engagement despite academic ability', engagementScore:2, engStatus:'Needs Nurture', lastTouchpoint:'Survey — Oct 2025', family:'Campbell Family', dob:'16 Jun 2009', parentName:'Mrs Angela Campbell', parentEmail:'a.campbell@email.com', parentPhone:'07700 913456', competitorSchool:null, riskFactors:[{level:'warn',text:'Survey: "Maybe, depends on results"'},{level:'warn',text:'Did not attend open evening or taster day'},{level:'warn',text:'Predicted 6s — meets entry but not enthusiastic'}], actions:['📞 Call — understand concerns about sixth form','📧 Share info about enrichment and social life','🏫 Peer mentor pairing with current Y12 student'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Maybe, depends on results"',done:true}] },
+            { id:113, name:'Freya Walsh', school:'Demo Kings Academy', yearGroup:11, phase:'yr11', intent:'Leaving', risk:'high', riskScore:5, openEvening:false, surveyText:'❌ "Art college"', topRiskFactor:'Wants specialist art foundation course', engagementScore:1, engStatus:'Disengaged', lastTouchpoint:'Info email opened — Oct 2025', family:'Walsh Family', dob:'21 Sep 2009', parentName:'Ms Rebecca Walsh', parentEmail:'r.walsh@email.com', parentPhone:'07700 913789', competitorSchool:'City College', riskFactors:[{level:'high',text:'Applied to City College Art Foundation'},{level:'high',text:'No sixth form event attendance'},{level:'warn',text:'Talented artist — unlikely to be retained without specialist offer'}], actions:['📞 Connect with Art department head','📧 Share Demo Kings Academy art portfolio + exhibition programme','🎯 Invite to sixth form art showcase'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Going to art college"',done:true},{date:'Oct 2025',text:'📧 Sixth form info email — Opened',done:true}] },
+            { id:114, name:'Haruto Tanaka', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Staying', risk:'low', riskScore:1, openEvening:true, surveyText:'✅ "Staying for sure"', topRiskFactor:'None — top of year group', engagementScore:5, engStatus:'Highly Engaged', lastTouchpoint:'Sixth form taster — 20 Jan', family:'Tanaka Family', dob:'7 Nov 2009', parentName:'Mrs Yuki Tanaka', parentEmail:'y.tanaka@email.com', parentPhone:'07700 914012', competitorSchool:null, riskFactors:[], actions:['✅ No action needed — likely scholarship candidate'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Staying, want to do Further Maths"',done:true},{date:'Nov 2025',text:'🏫 Open evening — Attended',done:true},{date:'20 Jan 2026',text:'🎯 Taster day — Attended Maths & Physics',done:true}] },
+            { id:115, name:'Bethany Price', school:'Demo Kings Academy', yearGroup:11, phase:'yr11', intent:'Undecided', risk:'medium', riskScore:3, openEvening:true, surveyText:'⏳ "Exploring options"', topRiskFactor:'Parents want grammar sixth form, student prefers Demo Kings', engagementScore:3, engStatus:'Warm', lastTouchpoint:'Open evening — Nov 2025', family:'Price Family', dob:'24 Mar 2010', parentName:'Mr Andrew Price', parentEmail:'a.price@email.com', parentPhone:'07700 914345', competitorSchool:"St Mary's Grammar", riskFactors:[{level:'warn',text:'Parents pushing for St Mary\'s Grammar sixth form'},{level:'warn',text:'Student prefers Demo Kings but parents undecided'},{level:'warn',text:'Did not attend taster day'}], actions:['📞 Invite parents for 1:1 meeting with Head of Sixth Form','📧 Share A-Level results and university destinations data','🏫 Arrange for student to shadow a current Y12'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Exploring options, parents want grammar"',done:true},{date:'Nov 2025',text:'🏫 Open evening — Student attended, parents did not',done:true}] },
+            { id:116, name:'Nathan Clarke', school:'Demo Academy', yearGroup:11, phase:'yr11', intent:'Leaving', risk:'high', riskScore:4, openEvening:false, surveyText:'❌ "Leaving London"', topRiskFactor:'Family relocating to Manchester', engagementScore:0, engStatus:'Disengaged', lastTouchpoint:'No engagement', family:'Clarke Family', dob:'12 Jan 2010', parentName:'Mrs Sarah Clarke', parentEmail:'s.clarke2@email.com', parentPhone:'07700 914678', competitorSchool:'Other / Private', riskFactors:[{level:'high',text:'Family relocating to Manchester area'},{level:'high',text:'No sixth form event attendance'}], actions:['📋 Record as relocation — update destination tracking','📧 Provide reference and support for new school application'], timeline:[{date:'Oct 2025',text:'📋 Survey — "Moving to Manchester in summer"',done:true}] }
+        ],
+        retCompetitors: [
+            { name:"St Mary's Grammar", type:'Grammar', ofsted:'Outstanding', lost:18, lastYear:22, trend:'↓ improving', reason:'Academic selection', affectedSchools:'Demo Atwood, Demo John Archer', insight:"Grammar school selection is hard to compete with directly. Focus on showcasing Demo Academy's academic stretch programme and Oxbridge preparation to retain high-attaining students." },
+            { name:'Oakfield School', type:'Academy', ofsted:'Outstanding', lost:14, lastYear:11, trend:'↑ worsening', reason:'Proximity (Demo Atwood families)', affectedSchools:'Demo Atwood primarily', insight:"Oakfield's proximity advantage is significant for Demo Atwood families. Consider: school bus route, after-school pickup service, or highlighting unique Demo Academy programmes." },
+            { name:'Riverside Academy', type:'Academy', ofsted:'Good', lost:12, lastYear:14, trend:'↓ improving', reason:'Specialist sports programme', affectedSchools:'Demo John Archer, Demo Boulton', insight:"Riverside's sports programme is the draw. Our retention improved after launching the Demo Academy Elite Sports pathway. Continue promoting this." },
+            { name:'City College', type:'FE College', ofsted:'Good', lost:28, lastYear:25, trend:'↑ worsening', reason:'Vocational courses (Y11 leavers)', affectedSchools:'Demo Academy, Demo Kings Academy', insight:"Biggest sixth form competitor and getting worse. 28 Year 11 students chose vocational routes. Consider expanding BTEC/T-Level offerings or creating a college partnership." },
+            { name:'Other / Private', type:'Mixed', ofsted:'—', lost:11, lastYear:13, trend:'↓ improving', reason:'Various', affectedSchools:'All schools', insight:"Mixed bag of private schools, relocations, and other reasons. Hard to influence directly but numbers are declining." }
+        ],
+        retEngagementStages: [
+            { icon:'📋', name:'Year 5 Survey', date:'Sep 2025', value:'67%', label:'response rate', current:false, detail:'67% of Year 5/6 families responded to our initial intent survey. 209 out of 312 families. Key insight: Demo Atwood had lowest response rate at 54% — consider sending reminder via school office.' },
+            { icon:'📧', name:'Info Pack Email', date:'Oct 2025', value:'82%', label:'open rate', current:false, detail:'82% open rate across all 312 families. Click-through to prospectus download was 45%. Demo Tindal Primary families were most engaged (89% open rate).' },
+            { icon:'🏫', name:'Open Evening', date:'Nov 2025', value:'74%', label:'attendance', current:false, detail:'231 out of 312 families attended at least one open evening. 12 families attended both Demo Academy and Demo Kings Academy. 81 families did not attend any event.' },
+            { icon:'🎯', name:'Taster Day', date:'Jan 2026', value:'58%', label:'attendance', current:false, detail:'181 families attended taster day sessions. Attendance dropped 16% vs open evening — mainly undecided families who didn\'t progress. 8 previously "undecided" families became "staying" after taster day.' },
+            { icon:'📨', name:'Follow-up Call', date:'Feb 2026', value:'In Progress', label:'targeting undecided', current:true, detail:'Currently contacting 64 undecided families by phone. 23 calls completed so far: 8 converted to "staying", 4 confirmed "leaving", 11 still undecided. Calls scheduled through end of February.' },
+            { icon:'🎉', name:'Offer Day', date:'1 Mar 2026', value:'Pending', label:'national allocations', current:false, detail:'National Offer Day is 1 March 2026. Year 7 allocation results will be published. After this date, we will know final retention numbers and can begin welcome/onboarding for confirmed students.' }
+        ],
+        get retFilteredStudents() {
+            let r = this.retStudents.filter(s => s.phase === this.retPipelinePhase);
+            if (this.retPipelineSchool) r = r.filter(s => s.school === this.retPipelineSchool);
+            return r;
+        },
+        get retPipelineFiltered() {
+            let r = this.retFilteredStudents;
+            if (this.retPipelineIntent) r = r.filter(s => s.intent === this.retPipelineIntent);
+            return r;
+        },
+        get retEngagementFiltered() {
+            let r = this.retStudents;
+            if (this.retEngFilter) r = r.filter(s => s.engStatus === this.retEngFilter);
+            return r;
         },
         // Tabs
         formsTab: 'forms',
@@ -15027,7 +15568,8 @@ function dashboard() {
         showOverride: false,
         showConfirm: false,
         showTemplate: false,
-        showPreview: false
+        showPreview: false,
+        showStudentModal: false
     }
 }
 </script>
