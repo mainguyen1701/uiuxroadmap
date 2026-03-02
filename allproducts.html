@@ -216,6 +216,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .skill-prep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;}
 .skill-tag{background:white;border:1px solid #ddd6fe;border-radius:6px;padding:7px 10px;font-size:11px;color:#5b21b6;font-weight:600;display:flex;align-items:center;gap:6px;}
 .skill-tag::before{content:"↗";font-size:10px;color:#7c3aed;}
+
+.ux-thinking{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border:1px solid #99f6e4;border-radius:10px;padding:14px 18px;margin:14px 0;}
+.ux-thinking-hdr{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#0f766e;margin-bottom:10px;}
+.ux-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.ux-col{background:white;border:1px solid #99f6e4;border-radius:7px;padding:10px 12px;}
+.ux-col-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#0f766e;margin-bottom:5px;}
+.ux-col-body{font-size:11px;color:#134e4a;line-height:1.5;}
+@media(max-width:640px){.ux-cols{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -409,6 +417,24 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
+  <div class="ux-thinking">
+    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 0</div>
+    <div class="ux-cols">
+      <div class="ux-col">
+        <div class="ux-col-label">Research</div>
+        <div class="ux-col-body">Heuristic audit of existing Admissions+ and MAT+ screens. Component inventory across every screen type. Identify where visual drift has accumulated and why.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Design</div>
+        <div class="ux-col-body">Gap analysis between current patterns and DS Lookbook standards. Token mapping — what exists, what conflicts, what is missing. Document everything in the Lookbook before changing anything live.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Validation</div>
+        <div class="ux-col-body">DS Lookbook reviewed with engineering leads. Each component entry peer-reviewed before publishing. Consistency check across 10 representative screens before Phase 1 begins.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="skill-prep">
     <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 0</div>
     <div class="skill-prep-grid">
@@ -457,6 +483,24 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="ph-date">In Progress — March 2026</div>
       <h2>Phase 1 — Quick Wins</h2>
       <p>Apply DS components to improve UI/UX across Settings, Processes, and Customised Areas — without redesigning screens yet. Each item is independently shippable and targets the highest-friction areas school staff encounter daily.</p>
+    </div>
+  </div>
+
+  <div class="ux-thinking">
+    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 1</div>
+    <div class="ux-cols">
+      <div class="ux-col">
+        <div class="ux-col-label">Research</div>
+        <div class="ux-col-body">Short interviews with 3–5 school admin staff on settings friction and daily process pain points. Support ticket analysis to identify the highest-frequency "how do I find X" requests.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Design</div>
+        <div class="ux-col-body">Screen-by-screen component mapping — every element audited against the DS Lookbook. Low-fidelity wireframes for restructured nav and new process flows before any build begins.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Validation</div>
+        <div class="ux-col-body">Prototype walkthroughs with 2–3 school admins per area before shipping. Success metric: staff reach any settings page within 2 clicks. Import errors understood without contacting support.</div>
+      </div>
     </div>
   </div>
 
@@ -552,6 +596,24 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
+  <div class="ux-thinking">
+    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 2</div>
+    <div class="ux-cols">
+      <div class="ux-col">
+        <div class="ux-col-label">Research</div>
+        <div class="ux-col-body">End-to-end journey mapping with school admissions staff and parents. Analysis of application drop-off points, support call transcripts, and offer round processing times. One research sprint per product track before design begins.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Design</div>
+        <div class="ux-col-body">Iterative prototyping — lo-fi to hi-fi per screen. Each redesign tested with real users before handoff to engineering. Design and build run in parallel sprints, not sequentially.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Validation</div>
+        <div class="ux-col-body">Usability testing with 5 school staff per feature (Admissions+ track) and 3 MAT coordinators (MAT+ track). Target: 90% application completion rate, measurable reduction in offer round processing time.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="skill-prep">
     <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 2</div>
     <div class="skill-prep-grid">
@@ -594,6 +656,24 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="ph-date">Parallel with Phase 2 — by April 2026</div>
       <h2>Phase 3 — Scale and Polish</h2>
       <p>The DS foundation built in Phases 0–2 expands to the full Applicaa product ecosystem — 13 products across 6 school types, from Nursery &amp; Primary to Local Authorities. Every product gets shared identity, accessibility compliance, and mobile quality. Governance rules prevent the same inconsistencies from returning as the team grows.</p>
+    </div>
+  </div>
+
+  <div class="ux-thinking">
+    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 3</div>
+    <div class="ux-cols">
+      <div class="ux-col">
+        <div class="ux-col-label">Research</div>
+        <div class="ux-col-body">Cross-product audit: every product in the ecosystem reviewed against DS standards and WCAG 2.1 AA. Real-device testing sessions with staff and parents across iOS, Android, and tablet. Findings prioritised by frequency and severity.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Design</div>
+        <div class="ux-col-body">Product identity system defined collaboratively with product leads — what each product can customise vs what is shared and fixed. DS contribution guide co-authored with engineering. Accessibility fixes applied at DS level, not product by product.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Validation</div>
+        <div class="ux-col-body">Published accessibility statement for each product. Automated linter confirms no legacy patterns in new code. Quarterly DS review cadence established — not a one-time audit.</div>
+      </div>
     </div>
   </div>
 
@@ -776,7 +856,25 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="section-heading">Expected Outcomes</div>
   <div class="section-sub">How we measure whether the roadmap is working.</div>
 
-    <div class="skill-prep">
+    <div class="ux-thinking">
+    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 4</div>
+    <div class="ux-cols">
+      <div class="ux-col">
+        <div class="ux-col-label">Research</div>
+        <div class="ux-col-body">Contextual research with families completing applications — where anxiety is highest, where trust breaks, where the process stalls. Staff interviews on AI comfort levels and override confidence. Benchmark review of AI-native products in adjacent sectors.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Design</div>
+        <div class="ux-col-body">Conversational flow design for the AI application journey — one question at a time, trust arc built over the session, escalation paths designed before the AI is built. AI DS components (chat bubbles, confidence indicators, handoff cards) documented in Lookbook before any product uses them.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Validation</div>
+        <div class="ux-col-body">Prototype testing with families on mobile devices — completion rate, time on task, trust score, escalation rate. Staff trust dashboard tested with admissions coordinators. Target: AI-assisted applications complete in under 15 minutes with 90% confidence.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skill-prep">
     <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 4</div>
     <div class="skill-prep-grid">
       <div class="skill-tag">AI UX design — conversational flows, trust arcs, and confidence signalling</div>
