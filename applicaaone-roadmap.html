@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ApplicaaOne UI/UX Roadmap 2026</title>
+<style>
+:root{
+  --brand:#2D8FC5;--brand-dark:#1E2F72;--brand-light:#e8f4fb;
+  --navy:#263C91;--coral:#EC634B;
+  --green:#16a34a;--green-light:#dcfce7;
+  --amber:#d97706;--amber-light:#fef3c7;
+  --red:#dc2626;--red-light:#fee2e2;
+  --purple:#7e22ce;--purple-light:#f5f3ff;
+  --sky:#0284c7;--sky-light:#e0f2fe;
+  --rose:#be185d;--rose-light:#fce7f3;
+  --g50:#f9fafb;--g100:#f3f4f6;--g200:#e5e7eb;--g300:#d1d5db;
+  --g400:#9ca3af;--g500:#6b7280;--g600:#4b5563;--g700:#374151;--g900:#111827;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--g50);color:var(--g900);font-size:14px;line-height:1.6;}
+
+/* NAV */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-bottom:1px solid var(--g200);overflow-x:auto;display:flex;}
+.sticky-nav a{padding:11px 15px;font-size:12px;font-weight:600;color:var(--g500);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;flex-shrink:0;}
+.sticky-nav a:hover{color:var(--brand-dark);border-color:var(--brand-dark);}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 60%,#3aa8de 100%);color:white;}
+.header-inner{max-width:1100px;margin:0 auto;padding:34px 32px 32px;}
+.header h1{font-size:28px;font-weight:800;letter-spacing:-.5px;margin-bottom:7px;}
+.header p{font-size:14px;opacity:.8;max-width:860px;line-height:1.6;}
+.header-meta{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap;}
+.hm .lbl{font-size:10px;opacity:.5;text-transform:uppercase;letter-spacing:.7px;display:block;}
+.hm .val{font-size:12px;font-weight:600;}
+.header-callout{margin-top:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:9px;padding:11px 15px;font-size:13px;opacity:.9;line-height:1.55;max-width:860px;}
+
+/* CONTAINER */
+.container{max-width:1100px;margin:0 auto;padding:28px 32px 60px;}
+.divider{border:none;border-top:1px solid var(--g200);margin:38px 0;}
+.section-heading{font-size:20px;font-weight:800;letter-spacing:-.3px;margin-bottom:5px;}
+.section-sub{font-size:13px;color:var(--g500);margin-bottom:22px;line-height:1.6;max-width:720px;}
+
+/* PILLS */
+.pill{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;}
+.pill-one{background:var(--brand-light);color:var(--brand-dark);}
+.pill-all{background:var(--g100);color:var(--g700);}
+
+/* OVERVIEW CARDS */
+.ov-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin-bottom:22px;}
+.ov-card{background:white;border:1px solid var(--g200);border-radius:11px;padding:16px 18px;}
+.ov-card .num{font-size:28px;font-weight:800;color:var(--brand-dark);letter-spacing:-1px;}
+.ov-card .desc{font-size:12px;color:var(--g600);margin-top:2px;}
+
+/* SCORECARD */
+.scorecard{background:white;border:1px solid var(--g200);border-radius:11px;overflow:hidden;margin-bottom:24px;}
+.scorecard table{width:100%;border-collapse:collapse;font-size:12px;}
+.scorecard th{background:var(--g50);padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:2px solid var(--g200);}
+.scorecard td{padding:9px 14px;border-bottom:1px solid var(--g100);}
+.scorecard tr:last-child td{border-bottom:none;background:var(--g50);font-weight:700;}
+.score-bar{display:flex;align-items:center;gap:7px;}
+.score-track{flex:1;height:6px;background:var(--g100);border-radius:3px;min-width:60px;}
+.score-fill{height:6px;border-radius:3px;}
+.score-red{background:#dc2626;}
+.score-amber{background:#d97706;}
+.score-green{background:#16a34a;}
+
+/* TIMELINE */
+.tl-strip{display:grid;grid-template-columns:repeat(4,1fr);border-radius:12px;overflow:hidden;border:1px solid var(--g200);margin-bottom:30px;}
+.tl-p{padding:14px 13px;}
+.tl-p:nth-child(1){background:var(--sky-light);}
+.tl-p:nth-child(2){background:var(--amber-light);}
+.tl-p:nth-child(3){background:var(--green-light);}
+.tl-p:nth-child(4){background:var(--purple-light);}
+.tl-p+.tl-p{border-left:1px solid var(--g200);}
+.tl-n{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;}
+.tl-date{font-size:10px;opacity:.6;margin-top:1px;}
+.tl-focus{font-size:12px;font-weight:700;margin-top:5px;line-height:1.3;}
+.tl-desc{font-size:11px;opacity:.6;margin-top:3px;line-height:1.4;}
+.tl-p:nth-child(1) .tl-n{color:var(--sky);}
+.tl-p:nth-child(2) .tl-n{color:var(--amber);}
+.tl-p:nth-child(3) .tl-n{color:var(--green);}
+.tl-p:nth-child(4) .tl-n{color:var(--purple);}
+
+/* PHASE */
+.phase{margin-bottom:40px;}
+.phase-hdr{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:11px;margin-bottom:18px;}
+.ph0{background:linear-gradient(135deg,var(--sky-light),#bae6fd);border:1px solid #7dd3fc;}
+.ph1{background:linear-gradient(135deg,#fff7ed,var(--amber-light));border:1px solid #fed7aa;}
+.ph2{background:linear-gradient(135deg,var(--green-light),#bbf7d0);border:1px solid #86efac;}
+.ph3{background:linear-gradient(135deg,var(--purple-light),#ede9fe);border:1px solid #e9d5ff;}
+.ph-num{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;flex-shrink:0;color:white;}
+.ph0 .ph-num{background:var(--sky);}
+.ph1 .ph-num{background:var(--amber);}
+.ph2 .ph-num{background:var(--green);}
+.ph3 .ph-num{background:var(--purple);}
+.ph-info{flex:1;}
+.ph-info h2{font-size:17px;font-weight:800;margin-bottom:2px;}
+.ph-date{font-size:11px;font-weight:600;opacity:.55;margin-bottom:5px;}
+.ph-info p{font-size:13px;opacity:.75;line-height:1.55;max-width:700px;}
+.slabel{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--g400);padding:7px 0 7px 11px;border-left:3px solid var(--g200);margin:18px 0 11px;}
+
+/* CARDS */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.card{background:white;border:1px solid var(--g200);border-radius:10px;padding:14px 16px;}
+.card-icon{font-size:16px;margin-bottom:4px;}
+.card-title{font-size:13px;font-weight:700;color:var(--g900);margin-bottom:6px;}
+.card-body{font-size:12px;color:var(--g600);line-height:1.55;}
+.divline{border:none;border-top:1px solid var(--g100);margin:8px 0;}
+.outcome{font-size:12px;color:var(--g700);background:var(--green-light);border-radius:6px;padding:8px 10px;line-height:1.5;}
+.outcome::before{content:'✓ ';color:var(--green);font-weight:700;}
+.tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;background:var(--brand-light);color:var(--brand-dark);}
+.impact-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+
+/* AUDIT FINDINGS */
+.finding{background:white;border:1px solid var(--g200);border-radius:10px;padding:14px 16px;margin-bottom:10px;}
+.finding-hdr{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.sev{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.sev-critical{background:var(--red-light);color:var(--red);}
+.sev-high{background:var(--amber-light);color:var(--amber);}
+.sev-medium{background:var(--sky-light);color:var(--sky);}
+.finding-title{font-size:13px;font-weight:700;}
+.finding-body{font-size:12px;color:var(--g600);line-height:1.6;}
+.finding-fix{font-size:12px;color:var(--green);font-weight:600;margin-top:8px;padding:7px 10px;background:var(--green-light);border-radius:6px;}
+.finding-fix::before{content:'Fix: ';}
+
+/* CHECKLIST */
+.cl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--g200);margin-bottom:24px;}
+.cl-table{width:100%;border-collapse:collapse;background:white;font-size:12px;}
+.cl-table th{background:var(--g50);padding:9px 13px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:2px solid var(--g200);}
+.cl-table td{padding:10px 13px;border-bottom:1px solid var(--g100);vertical-align:top;line-height:1.5;}
+.cl-table tr:last-child td{border-bottom:none;}
+.cl-table tr:hover td{background:var(--g50);}
+.cl-num{color:var(--g400);font-weight:700;font-size:11px;white-space:nowrap;}
+.cl-what{font-weight:600;}
+.cl-why{color:var(--g600);}
+.cl-out{color:var(--green);font-weight:500;}
+.ph-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;margin-bottom:10px;}
+.ph-pill-0{background:var(--sky-light);color:var(--sky);}
+.ph-pill-1{background:var(--amber-light);color:var(--amber);}
+.ph-pill-2{background:var(--green-light);color:var(--green);}
+.ph-pill-3{background:var(--purple-light);color:var(--purple);}
+
+/* SUMMARY TABLE */
+.sum-wrap{overflow-x:auto;border-radius:11px;border:1px solid var(--g200);}
+.sum-table{width:100%;border-collapse:collapse;background:white;font-size:12px;}
+.sum-table th{background:var(--g50);padding:9px 13px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:1px solid var(--g200);}
+.sum-table td{padding:11px 13px;border-bottom:1px solid var(--g100);vertical-align:middle;line-height:1.5;}
+.sum-table tr:last-child td{border-bottom:none;}
+.sum-table tr:hover td{background:var(--g50);}
+
+/* FOOTER */
+.footer{text-align:center;padding:28px;color:var(--g400);font-size:11px;border-top:1px solid var(--g200);margin-top:36px;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .ov-grid{grid-template-columns:repeat(3,1fr);}
+  .tl-strip{grid-template-columns:1fr 1fr;}
+  .tl-p+.tl-p{border-left:none;border-top:1px solid var(--g200);}
+  .grid2,.grid3{grid-template-columns:1fr;}
+  .header-inner{padding:26px 20px 24px;}
+  .container{padding:22px 16px 48px;}
+  .cl-table th:nth-child(3),.cl-table td:nth-child(3){display:none;}
+}
+@media(max-width:600px){
+  .ov-grid{grid-template-columns:1fr 1fr;}
+  .tl-strip{grid-template-columns:1fr;}
+  .header-inner{padding:20px 14px 18px;}
+  .header h1{font-size:19px;}
+  .container{padding:16px 12px 40px;}
+  .cl-table th:nth-child(4),.cl-table td:nth-child(4){display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav class="sticky-nav">
+  <a href="#overview">Overview</a>
+  <a href="#audit">Site Audit</a>
+  <a href="#checklist">Checklist</a>
+  <a href="#phase0">Phase 0</a>
+  <a href="#phase1">Phase 1</a>
+  <a href="#phase2">Phase 2</a>
+  <a href="#phase3">Phase 3</a>
+  <a href="#metrics">Outcomes</a>
+</nav>
+
+<div class="header">
+  <div class="header-inner">
+    <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;">
+      <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:6px 11px;font-size:13px;font-weight:700;">ApplicaaOne</div>
+    </div>
+    <h1>ApplicaaOne — UI/UX Improvement Roadmap 2026</h1>
+    <p>A student and parent-facing platform connecting young people to sixth forms and colleges across the UK. This roadmap covers the full UI/UX improvement programme — from fixing critical trust and conversion issues to rebuilding discovery, profiles, and the registration experience.</p>
+    <div class="header-meta">
+      <div class="hm"><span class="lbl">Audience</span><span class="val">Students · Parents · Schools</span></div>
+      <div class="hm"><span class="lbl">Scope</span><span class="val">applicaaone.com — full site</span></div>
+      <div class="hm"><span class="lbl">Phases</span><span class="val">4 (Phase 0 – 3)</span></div>
+      <div class="hm"><span class="lbl">Prepared by</span><span class="val">Emma Nguyen</span></div>
+      <div class="hm"><span class="lbl">Updated</span><span class="val">March 2026</span></div>
+    </div>
+    <div class="header-callout">
+      <strong>Current score: 4.4 / 10 vs industry benchmark of 8.4 / 10.</strong> The audit found critical gaps in trust signals, value proposition, navigation, and conversion — all addressable with a structured improvement programme. This roadmap is separate from the Admissions+ / MAT+ DS Lookbook roadmap. ApplicaaOne runs on its own design system.
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- OVERVIEW -->
+<div id="overview">
+  <div class="ov-grid">
+    <div class="ov-card"><div class="num">4.4</div><div class="desc">Current UX score (out of 10)</div></div>
+    <div class="ov-card"><div class="num">8.4</div><div class="desc">Industry benchmark score</div></div>
+    <div class="ov-card"><div class="num">4</div><div class="desc">Improvement phases</div></div>
+    <div class="ov-card"><div class="num">45k+</div><div class="desc">Courses on platform</div></div>
+    <div class="ov-card"><div class="num">7</div><div class="desc">Pages audited</div></div>
+  </div>
+
+  <div class="tl-strip">
+    <div class="tl-p">
+      <div class="tl-n">Phase 0</div>
+      <div class="tl-date">Mar – Apr</div>
+      <div class="tl-focus">Critical Fixes</div>
+      <div class="tl-desc">Trust signals, value proposition, token cleanup, navigation</div>
+    </div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 1</div>
+      <div class="tl-date">May – Jun</div>
+      <div class="tl-focus">Discovery & Conversion</div>
+      <div class="tl-desc">Course search, events, homepage journey, registration</div>
+    </div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 2</div>
+      <div class="tl-date">Jul – Oct</div>
+      <div class="tl-focus">Product Redesigns</div>
+      <div class="tl-desc">School profiles, course detail, student dashboard</div>
+    </div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 3</div>
+      <div class="tl-date">Nov+</div>
+      <div class="tl-focus">Scale & Personalisation</div>
+      <div class="tl-desc">Accessibility, mobile, personalised recommendations</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- AUDIT -->
+<div id="audit">
+  <div class="section-heading">Site Audit — February 2026</div>
+  <div class="section-sub">Full audit of applicaaone.com across 7 pages. Benchmarked against UCAS, Airbnb, Coursera, Which?, and Ofsted Find a School.</div>
+
+  <div class="slabel">Executive scorecard</div>
+  <div class="scorecard" style="margin-bottom:22px;">
+    <table>
+      <thead><tr><th>Dimension</th><th>Score</th><th>Benchmark</th><th style="width:140px">Gap</th></tr></thead>
+      <tbody>
+        <tr><td>Value Proposition Clarity</td><td style="font-weight:700;color:var(--red);">3/10</td><td>9/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-red" style="width:33%"></div></div><span style="font-size:11px;color:var(--red);font-weight:700;">-6</span></div></td></tr>
+        <tr><td>Trust &amp; Social Proof</td><td style="font-weight:700;color:var(--red);">3/10</td><td>8/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-red" style="width:37%"></div></div><span style="font-size:11px;color:var(--red);font-weight:700;">-5</span></div></td></tr>
+        <tr><td>Information Architecture</td><td style="font-weight:700;color:var(--red);">4/10</td><td>8/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-red" style="width:50%"></div></div><span style="font-size:11px;color:var(--red);font-weight:700;">-4</span></div></td></tr>
+        <tr><td>Visual Design &amp; Consistency</td><td style="font-weight:700;color:var(--red);">4/10</td><td>8/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-red" style="width:50%"></div></div><span style="font-size:11px;color:var(--red);font-weight:700;">-4</span></div></td></tr>
+        <tr><td>Onboarding &amp; Conversion</td><td style="font-weight:700;color:var(--red);">4/10</td><td>8/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-red" style="width:50%"></div></div><span style="font-size:11px;color:var(--red);font-weight:700;">-4</span></div></td></tr>
+        <tr><td>Content Quality</td><td style="font-weight:700;color:var(--red);">4/10</td><td>8/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-red" style="width:50%"></div></div><span style="font-size:11px;color:var(--red);font-weight:700;">-4</span></div></td></tr>
+        <tr><td>Search &amp; Discovery</td><td style="font-weight:700;color:var(--amber);">6/10</td><td>9/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-amber" style="width:67%"></div></div><span style="font-size:11px;color:var(--amber);font-weight:700;">-3</span></div></td></tr>
+        <tr><td>Mobile Experience</td><td style="font-weight:700;color:var(--amber);">6/10</td><td>9/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-amber" style="width:67%"></div></div><span style="font-size:11px;color:var(--amber);font-weight:700;">-3</span></div></td></tr>
+        <tr><td>Accessibility (WCAG 2.1)</td><td style="font-weight:700;color:var(--amber);">5/10</td><td>8/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-amber" style="width:62%"></div></div><span style="font-size:11px;color:var(--amber);font-weight:700;">-3</span></div></td></tr>
+        <tr><td>Technical Health</td><td style="font-weight:700;color:var(--amber);">5/10</td><td>9/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-amber" style="width:56%"></div></div><span style="font-size:11px;color:var(--amber);font-weight:700;">-4</span></div></td></tr>
+        <tr style="background:var(--g50);"><td><strong>Overall</strong></td><td style="font-weight:800;color:var(--red);font-size:14px;">4.4/10</td><td style="font-weight:700;">8.4/10</td><td><div class="score-bar"><div class="score-track"><div class="score-fill score-red" style="width:52%"></div></div><span style="font-size:12px;color:var(--red);font-weight:800;">-4.0</span></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="slabel">Critical findings</div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-critical">Critical</span><span class="finding-title">No value proposition above the fold</span></div>
+    <div class="finding-body">Every page shares the same H1: "Search. Compare. Apply." — a tagline that assumes visitors already know what ApplicaaOne is. First-time visitors from search or social have no context. UCAS and Coursera both lead with a clear headline explaining who the platform is for and what it does.<br><br>Homepage comparison: UCAS says "Find your next step in higher education" — ApplicaaOne says a three-word tagline.</div>
+    <div class="finding-fix">Distinct H1 per page. Homepage: "Find your perfect sixth form or college — and apply in minutes." Courses: "Search 45,000+ Courses Across the UK." Events: "Open Days &amp; Events Near You."</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-critical">Critical</span><span class="finding-title">Trust signals are backfiring — 105 reviews for 45,495 courses</span></div>
+    <div class="finding-body">The stats row prominently shows: <strong>45,495 Courses · 158 Subjects · 105 Reviews · 95% Satisfaction</strong>. A 95% satisfaction rate from 105 reviews is not credible to a modern internet user — that is 0.23% review coverage. The two homepage reviews read "BEST SCHOOL" and "Is good" with placeholder avatars. These undermine trust more than having no reviews at all. Stats are also completely hidden on mobile (<code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">hidden md:grid</code>).</div>
+    <div class="finding-fix">Replace raw review count with credible trust signals: "Trusted by 500+ UK schools", "Join 12,000 students who found their place this year". Minimum 50-word reviews, verified by event attendance. Show 2 condensed stats on mobile.</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-critical">Critical</span><span class="finding-title">Navigation fails first-time visitors — no product nav exists</span></div>
+    <div class="finding-body">The full-width nav contains only: Logo · Log In · Sign Up. No product links — Courses, Events, Careers, For Schools are absent. Users who land on any page other than the homepage have no way to navigate without using the browser back button. The "For Schools" B2B audience is entirely ignored in navigation.</div>
+    <div class="finding-fix">Add primary nav: Find Schools · Browse Courses · Open Days · Careers · For Schools. Make sticky on scroll. Mobile: hamburger drawer + bottom tab bar.</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-critical">Critical</span><span class="finding-title">Design token chaos — 7 ways to reference blue</span></div>
+    <div class="finding-body">Colour audit found: <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">text-primary-5</code> (26 uses), <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">text-brand-blue</code> (5 uses), <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">text-blue-5</code> (3 uses), <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">text-blue-600</code> (3 uses), <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">bg-[#2D8FC5]</code> (1), <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">bg-[#1E2F72]</code> (1), <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">bg-blue-500</code> (1). Changing the brand colour requires touching 7 different class types. Same fragmentation exists in typography — 77 instances of <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">text-sm</code> alongside hardcoded <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">text-[24px]</code> and <code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">text-[32px]</code>.</div>
+    <div class="finding-fix">Consolidate to 3 brand colour tokens: $color-brand-primary (#263C91), $color-brand-secondary (#2D8FC5), $color-brand-dark (#1E2F72). Define 7-level typographic scale and enforce via DS.</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-high">High</span><span class="finding-title">Homepage has no journey — 2 reviews and 1 card below the fold</span></div>
+    <div class="finding-body">Content below the hero: stats row (desktop only) · 2 low-quality reviews · 1 "Career Exploration" card. Airbnb, Coursera, and UCAS all follow a clear pattern: Hero → How it works → Categories → Featured → Proof → CTA. ApplicaaOne ends at the hero for most users.</div>
+    <div class="finding-fix">Full homepage journey: 1) Hero + search, 2) How it works (3 steps), 3) Browse by school type/subject, 4) Featured open days this week, 5) Verified student outcomes, 6) Credible trust signals, 7) CTA banner.</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-high">High</span><span class="finding-title">CTA hierarchy is broken — Log In and Sign Up look identical</span></div>
+    <div class="finding-body">Both nav buttons are solid filled buttons of similar size and weight. Neither reads as primary vs secondary. Across the site, "OK I got it", "Back to Tracking", "Send More Interest", and "Sign Up" all render at similar visual weight — users cannot quickly identify the most important action on any screen.</div>
+    <div class="finding-fix">Primary CTA: Sign Up — filled, brand colour. Secondary: Log In — text-only or ghost. Apply consistent CTA hierarchy across all pages and modals.</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-high">High</span><span class="finding-title">Registration page is blank on server render</span></div>
+    <div class="finding-body">The registration page renders with empty headings — the entire form depends on JavaScript. If JS is slow or fails, users see a blank page. Critical conversion pages must have server-rendered content. Currently unindexable by search engines.</div>
+    <div class="finding-fix">Server-render the registration type selection (Student / School / Parent) as static HTML. Progressively enhance with JS.</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-medium">Medium</span><span class="finding-title">Same boilerplate content on every page</span></div>
+    <div class="finding-body">Every page ends with identical sections: "Recent Reviews From Community" (same 2 reviews) and "More Ways We Can Help You" (same 1 Career Exploration card). The Career Exploration card is irrelevant on a course search page and shows the product was not fully content-designed per page.</div>
+    <div class="finding-fix">Make review section dynamic and page-contextual. Show relevant "More Ways" cards per page type (on /courses show "See Open Days" and "Apply Now").</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr"><span class="sev sev-medium">Medium</span><span class="finding-title">Search bar collapses poorly on mobile</span></div>
+    <div class="finding-body">The pill search bar with 4+ fields was designed for 1200px+. On a 375px phone, 64px horizontal padding leaves only 247px for 4 fields plus a search button. Stats are entirely hidden on mobile (<code style="font-size:10px;background:var(--g100);padding:1px 4px;border-radius:3px;">hidden md:grid</code>). Most student visitors are on their phones.</div>
+    <div class="finding-fix">Simplified mobile search: single "Where are you looking?" field that opens a full-screen filter modal on tap — the pattern used by Airbnb, Booking.com, and Google Flights.</div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-hdr" style="background:var(--green-light);border-radius:7px;padding:8px 11px;border:1px solid #bbf7d0;"><span style="font-size:12px;font-weight:700;color:var(--green);">✓ Best page on site — Careers (/careers_hubs)</span></div>
+    <div class="finding-body" style="margin-top:8px;">The careers page is the strongest on the site: distinct purpose, clear industry categories, growth data, career pathways with subject connections, and a functional search. Improvements: add salary ranges, link careers back to relevant courses and schools, add required A-Levels for each pathway, personalise based on subjects the student is studying.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- MASTER CHECKLIST -->
+<div id="checklist">
+  <div class="section-heading">Master Checklist</div>
+  <div class="section-sub">Every planned improvement across all four phases.</div>
+
+  <div style="display:flex;align-items:center;gap:10px;margin:16px 0 8px;">
+    <span class="ph-pill ph-pill-0">● Phase 0 — Critical Fixes · Mar–Apr</span>
+  </div>
+  <div class="cl-wrap"><table class="cl-table">
+    <thead><tr><th>#</th><th style="width:200px">What</th><th>Why it matters</th><th>Outcome</th></tr></thead>
+    <tbody>
+      <tr><td class="cl-num">0.1</td><td class="cl-what">Distinct H1 per page</td><td class="cl-why">Every page shares "Search. Compare. Apply." — zero page identity, hurts SEO, fails screen reader users.</td><td class="cl-out">Unique, contextual H1 on every page. Homepage, Courses, Events, Schools, Careers each distinct.</td></tr>
+      <tr><td class="cl-num">0.2</td><td class="cl-what">Replace weak trust signals</td><td class="cl-why">105 reviews for 45k courses = 0.23% coverage. "BEST SCHOOL" and "Is good" reviews undermine credibility.</td><td class="cl-out">Credible trust signals: school count, student outcomes, verified reviews (50-word minimum, attendance-gated).</td></tr>
+      <tr><td class="cl-num">0.3</td><td class="cl-what">Add product navigation</td><td class="cl-why">Nav contains only Logo + Log In + Sign Up. No way to navigate the product from any page.</td><td class="cl-out">Primary nav: Find Schools · Courses · Open Days · Careers · For Schools. Sticky on scroll. Mobile drawer + tab bar.</td></tr>
+      <tr><td class="cl-num">0.4</td><td class="cl-what">Consolidate design tokens</td><td class="cl-why">7 ways to reference blue. Changing brand colour requires touching 7 different class types across the codebase.</td><td class="cl-out">3 brand colour tokens. 7-level typographic scale. No hardcoded hex or pixel values.</td></tr>
+      <tr><td class="cl-num">0.5</td><td class="cl-what">Fix CTA hierarchy</td><td class="cl-why">Sign Up and Log In look identical. Users can't identify the primary action on any screen.</td><td class="cl-out">Sign Up = filled primary. Log In = ghost/text secondary. Consistent hierarchy across all pages and modals.</td></tr>
+      <tr><td class="cl-num">0.6</td><td class="cl-what">Server-render registration page</td><td class="cl-why">Registration is blank without JavaScript. Slow connections see an empty page — highest-friction point is the least resilient.</td><td class="cl-out">Static HTML for Student / School / Parent selection. Progressively enhanced with JS. Fully indexable.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div style="display:flex;align-items:center;gap:10px;margin:16px 0 8px;">
+    <span class="ph-pill ph-pill-1">● Phase 1 — Discovery &amp; Conversion · May–Jun</span>
+  </div>
+  <div class="cl-wrap"><table class="cl-table">
+    <thead><tr><th>#</th><th style="width:200px">What</th><th>Why it matters</th><th>Outcome</th></tr></thead>
+    <tbody>
+      <tr><td class="cl-num">1.1</td><td class="cl-what">Homepage full journey</td><td class="cl-why">Below the hero: 2 weak reviews and 1 generic card. No how-it-works, no categories, no featured content, no CTA.</td><td class="cl-out">8-section homepage: Hero · How it works · Browse by type · Featured events · Outcomes · Trust · CTA banner · Footer.</td></tr>
+      <tr><td class="cl-num">1.2</td><td class="cl-what">Mobile search — simplified</td><td class="cl-why">4-field pill bar collapses to 247px on mobile. Most student visitors are on their phones.</td><td class="cl-out">Single field opens full-screen filter modal on tap. Airbnb/Booking.com pattern. Works on any screen size.</td></tr>
+      <tr><td class="cl-num">1.3</td><td class="cl-what">Course discovery — filters</td><td class="cl-why">No filter by level (A-Level, BTEC, T-Level, GCSE). No way to save courses without an account — friction before value.</td><td class="cl-out">Filter by level, subject, location, entry requirements, start date. Wishlist/save without an account (cookie-based).</td></tr>
+      <tr><td class="cl-num">1.4</td><td class="cl-what">Events page redesign</td><td class="cl-why">Same H1 as homepage. No map view. No calendar. Can't RSVP without an account.</td><td class="cl-out">H1: "Open Days &amp; Events Near You". List/Map/Calendar toggle. RSVP without account (email capture). Add to calendar.</td></tr>
+      <tr><td class="cl-num">1.5</td><td class="cl-what">Registration — 3 fields only</td><td class="cl-why">Too much information asked upfront. High drop-off before completing registration.</td><td class="cl-out">Name, email, year group only. All other data at application. Google/Microsoft SSO available.</td></tr>
+      <tr><td class="cl-num">1.6</td><td class="cl-what">Page-contextual content</td><td class="cl-why">Every page ends with the same 2 reviews and 1 Career Exploration card regardless of context.</td><td class="cl-out">Dynamic contextual sections per page type. Reviews show for the relevant school/subject.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div style="display:flex;align-items:center;gap:10px;margin:16px 0 8px;">
+    <span class="ph-pill ph-pill-2">● Phase 2 — Product Redesigns · Jul–Oct</span>
+  </div>
+  <div class="cl-wrap"><table class="cl-table">
+    <thead><tr><th>#</th><th style="width:200px">What</th><th>Why it matters</th><th>Outcome</th></tr></thead>
+    <tbody>
+      <tr><td class="cl-num">2.1</td><td class="cl-what">School profile pages</td><td class="cl-why">All profiles look identical. Nothing differentiates schools — parents and students cannot make informed comparisons.</td><td class="cl-out">Photo hero, key stats, filterable course list, open events, verified reviews, persistent Apply/Book CTA.</td></tr>
+      <tr><td class="cl-num">2.2</td><td class="cl-what">Course detail page</td><td class="cl-why">Course cards link to minimal pages with no entry requirements, no teacher profile, no similar courses.</td><td class="cl-out">Full course detail: entry requirements, qualification info, school context, related courses, direct apply CTA.</td></tr>
+      <tr><td class="cl-num">2.3</td><td class="cl-what">Verified review system</td><td class="cl-why">105 unverified reviews for 45k+ courses. Reviews like "Is good" (2 words) are unconvincing and damaging.</td><td class="cl-out">Reviews gated by confirmed event attendance. 50-word minimum. Trust score surfaced on profile pages and homepage.</td></tr>
+      <tr><td class="cl-num">2.4</td><td class="cl-what">Student dashboard</td><td class="cl-why">No shortlist management, no application tracking, no outcome visibility after sign-up.</td><td class="cl-out">Saved schools, course shortlist, active applications with status, offer management, upcoming events.</td></tr>
+      <tr><td class="cl-num">2.5</td><td class="cl-what">Careers page — enhancements</td><td class="cl-why">Best page on site but missing salary data, course links, and personalisation.</td><td class="cl-out">Salary ranges, required A-Levels, linked courses and schools, personalised by student's current subjects.</td></tr>
+      <tr><td class="cl-num">2.6</td><td class="cl-what">School-facing dashboard</td><td class="cl-why">Schools have no visibility of how their profile performs — views, interest clicks, RSVP rates, application conversions.</td><td class="cl-out">School admin view: profile performance, enquiry pipeline, open day attendance, and actionable improvement tips.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div style="display:flex;align-items:center;gap:10px;margin:16px 0 8px;">
+    <span class="ph-pill ph-pill-3">● Phase 3 — Scale &amp; Personalisation · Nov+</span>
+  </div>
+  <div class="cl-wrap"><table class="cl-table">
+    <thead><tr><th>#</th><th style="width:200px">What</th><th>Why it matters</th><th>Outcome</th></tr></thead>
+    <tbody>
+      <tr><td class="cl-num">3.1</td><td class="cl-what">WCAG 2.1 AA audit and fixes</td><td class="cl-why">Star ratings use icon classes only (no text equivalent). Disabled field has tooltip-only help. Form errors not announced to screen readers.</td><td class="cl-out">All WCAG 2.1 AA critical findings fixed. Accessibility statement published.</td></tr>
+      <tr><td class="cl-num">3.2</td><td class="cl-what">Mobile — full product pass</td><td class="cl-why">Phases 0–2 address the most critical mobile issues. Phase 3 is a full device-tested pass across every screen.</td><td class="cl-out">Every screen tested on iPhone, Android, and iPad. All tap targets meet minimum size. No horizontal overflow.</td></tr>
+      <tr><td class="cl-num">3.3</td><td class="cl-what">Personalised recommendations</td><td class="cl-why">Every student sees the same content regardless of their subjects, location, or year group. No personalisation means no reason to return.</td><td class="cl-out">Recommendations based on subject choices, location, and saved courses. "Because you saved X" content sections.</td></tr>
+      <tr><td class="cl-num">3.4</td><td class="cl-what">DS governance and contribution guide</td><td class="cl-why">7 blue token variants is the result of no contribution process. Without governance, Phase 0–2 improvements will drift again.</td><td class="cl-out">Published guide: naming conventions, documentation requirements, PR criteria. Automated linter blocks hardcoded values.</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<hr class="divider">
+
+<!-- PHASE 0 -->
+<div class="phase" id="phase0">
+  <div class="phase-hdr ph0">
+    <div class="ph-num">0</div>
+    <div class="ph-info">
+      <div class="ph-date">March – April 2026 · 4–6 weeks</div>
+      <h2>Phase 0 — Critical Fixes</h2>
+      <p>Six independently shippable fixes that address the most damaging issues identified in the audit — the ones actively costing conversions and undermining trust right now. No redesign required. Each fix can ship without waiting for anything else.</p>
+    </div>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon">🏷️</div>
+      <div class="card-title">Distinct H1 per page</div>
+      <div class="card-body">Every page currently uses "Search. Compare. Apply." — a three-word tagline that tells first-time visitors nothing about what they're looking at. Google penalises duplicate H1s. Screen reader users can't understand page context. Fix: unique, descriptive H1 on every page.</div>
+      <div class="divline"></div>
+      <div class="outcome">Immediate SEO benefit. Users oriented on every page. Screen reader users understand context.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">⭐</div>
+      <div class="card-title">Replace weak trust signals</div>
+      <div class="card-body">105 reviews for 45,495 courses is 0.23% coverage. The two visible homepage reviews — "BEST SCHOOL" and "Is good" — actively damage credibility. The stats row is hidden on mobile entirely. Replace with credible, verifiable signals: school count, verified student outcomes, partner organisations.</div>
+      <div class="divline"></div>
+      <div class="outcome">Trust signals that hold up to scrutiny. Stats visible on mobile. Credibility where it matters most — above the fold.</div>
+      <div class="impact-row"><span class="tag">↑ Parent confidence</span><span class="tag">↑ Registration conversion</span></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧭</div>
+      <div class="card-title">Product navigation</div>
+      <div class="card-body">The nav bar has no links to the product — only Logo, Log In, Sign Up. Users who land on any page other than the homepage have no way to navigate. The B2B "For Schools" audience is entirely invisible. Fix: full product nav, sticky on scroll, mobile drawer and bottom tab bar.</div>
+      <div class="divline"></div>
+      <div class="outcome">Users can navigate from any page. Schools can find the B2B proposition. Bounce rate from direct and search traffic reduced.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎨</div>
+      <div class="card-title">Design token cleanup</div>
+      <div class="card-body">7 different references to blue. Typography mixes Tailwind scale classes with hardcoded pixel values. Changing the brand colour requires touching 7 different class types. Consolidate to 3 colour tokens and a defined typographic scale — the foundation for all future design work.</div>
+      <div class="divline"></div>
+      <div class="outcome">Consistent visual appearance across the site. Future design changes take hours, not weeks. No more unintentional colour drift.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">👆</div>
+      <div class="card-title">CTA hierarchy fix</div>
+      <div class="card-body">Sign Up and Log In look identical. Across all pages, "OK I got it", "Back to Tracking", "Send More Interest", and "Sign Up" render at similar visual weight. Users scan for the primary action — if they can't find it instantly, they don't complete it. Fix: clear primary vs secondary button distinction everywhere.</div>
+      <div class="divline"></div>
+      <div class="outcome">Sign-up CTA stands out clearly. Users complete intended actions faster. Fewer accidental "Log In" clicks when trying to sign up.</div>
+      <div class="impact-row"><span class="tag">↑ Sign-up rate</span><span class="tag">↓ Navigation errors</span></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <div class="card-title">Server-render registration</div>
+      <div class="card-body">The registration page is blank without JavaScript. A student on a slow school Wi-Fi network sees an empty page on the most critical conversion screen on the site. The page is also unindexable by search engines. Fix: server-rendered HTML for the Student/School/Parent type selection, progressively enhanced with JS.</div>
+      <div class="divline"></div>
+      <div class="outcome">Registration works on slow connections. Page is indexable. No blank-screen abandonment at the most important step.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PHASE 1 -->
+<div class="phase" id="phase1">
+  <div class="phase-hdr ph1">
+    <div class="ph-num">1</div>
+    <div class="ph-info">
+      <div class="ph-date">May – June 2026 · 8 weeks</div>
+      <h2>Phase 1 — Discovery and Conversion</h2>
+      <p>Improve the core user journeys that drive students and parents to engage, register, and apply. Homepage, course search, events, and registration — each redesigned to remove friction and guide users toward a clear next step.</p>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card" style="grid-column:1/-1;">
+      <div class="card-icon">🏠</div>
+      <div class="card-title">Homepage — full content journey</div>
+      <div class="card-body">The homepage currently ends after the hero. Airbnb, Coursera, and UCAS all follow a deliberate journey from hero to conversion. ApplicaaOne needs the same: a hero that explains who this is for, a How It Works section, categories to browse, featured open days this week, verified outcomes, credible trust signals, and a final CTA banner.</div>
+      <div class="divline"></div>
+      <div class="outcome">Students and parents have a reason to scroll and a clear next step at every point. First-time visitors understand the platform in under 10 seconds.</div>
+      <div class="impact-row"><span class="tag">↑ Time on page</span><span class="tag">↑ Search and browse engagement</span><span class="tag">↑ Account creation</span></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <div class="card-title">Mobile search — simplified</div>
+      <div class="card-body">The 4-field pill search bar fits on a 1200px desktop. On a 375px phone, it doesn't work. Most students are on their phones. Replace with a single field ("Where are you looking?") that opens a full-screen filter modal on tap — the same pattern Airbnb, Booking.com, and Google Flights use.</div>
+      <div class="divline"></div>
+      <div class="outcome">Search works on every device. Mobile students can filter by location, type, and subject without a broken layout.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📚</div>
+      <div class="card-title">Course discovery — level filters and save</div>
+      <div class="card-body">No way to filter by qualification level (A-Level, BTEC, T-Level, GCSE). No way to save or bookmark without an account — this adds friction before any value has been delivered. Students should be able to build a shortlist before registering.</div>
+      <div class="divline"></div>
+      <div class="outcome">Filter by level, subject, location, entry requirements. Save to shortlist without an account (cookie-based). Account creation prompted naturally when saving the second course.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <div class="card-title">Events page redesign</div>
+      <div class="card-body">Events currently have no map view (essential for location-based choices), no calendar view (hard to spot clashes), no RSVP without an account (friction before value), and no quick link to the school profile from an event card.</div>
+      <div class="divline"></div>
+      <div class="outcome">List/Map/Calendar toggle. RSVP without account — email capture, convert later. Quick profile link on every event card. Add to calendar button.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">✍️</div>
+      <div class="card-title">Registration — 3 fields only</div>
+      <div class="card-body">Registration asks for too much upfront. Students who have just found a course they're excited about are stopped by a lengthy form. The cognitive load at this moment should be minimal — name, email, year group is all that's needed to create an account.</div>
+      <div class="divline"></div>
+      <div class="outcome">3 fields: name, email, year group. All other data collected at the application stage. Google/Microsoft SSO available. Completion rate significantly improved.</div>
+      <div class="impact-row"><span class="tag">↑ Registration completion</span><span class="tag">↓ Drop-off</span></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📄</div>
+      <div class="card-title">Page-contextual content</div>
+      <div class="card-body">Every page ends with the identical "Recent Reviews" section (2 reviews) and "Career Exploration" card regardless of context. A Career Exploration card at the bottom of a course search page is irrelevant. Content below the fold should reinforce what the user was doing, not redirect them.</div>
+      <div class="divline"></div>
+      <div class="outcome">Reviews section shows relevant school/subject reviews per page. "More Ways" section suggests contextually logical next steps. Each page feels purposeful to the bottom.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PHASE 2 -->
+<div class="phase" id="phase2">
+  <div class="phase-hdr ph2">
+    <div class="ph-num">2</div>
+    <div class="ph-info">
+      <div class="ph-date">July – October 2026 · 12 weeks</div>
+      <h2>Phase 2 — Product Redesigns</h2>
+      <p>Full redesigns of the core product screens: school profiles, course detail, verified reviews, student dashboard, and school-facing analytics. These are the screens where users make decisions — they need to be significantly better than they are today.</p>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <div class="card-icon">🏫</div>
+      <div class="card-title">School profile pages</div>
+      <div class="card-body">All profiles look identical — a name and a list. Parents and students choosing a school for two years of post-16 education need to understand what makes each school different. Photo hero, key stats (Ofsted rating, school size, catchment), filterable course list, upcoming open days, verified reviews, persistent Apply/Book Visit CTA.</div>
+      <div class="divline"></div>
+      <div class="outcome">Differentiated school profiles. Parents make informed comparisons. Open day bookings increase from profile pages.</div>
+      <div class="impact-row"><span class="tag">↑ Open day bookings</span><span class="tag">↑ Application conversion</span></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📖</div>
+      <div class="card-title">Course detail pages</div>
+      <div class="card-body">Course cards link to minimal pages. Students choosing between A-level options need entry requirements, qualification details, teacher information (where available), and related courses at the same school. Currently none of this is available.</div>
+      <div class="divline"></div>
+      <div class="outcome">Full course detail: entry requirements, qualification type and level, school context, related courses, direct apply CTA. Students make confident choices.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">⭐</div>
+      <div class="card-title">Verified review system</div>
+      <div class="card-body">Reviews gated by confirmed open day attendance. Minimum 50 words. Rating across defined dimensions (teaching quality, facilities, pastoral support, distance from home). Reviewer shown as year group only (not name) for privacy. Trust score surfaced prominently on school profiles and in search results.</div>
+      <div class="divline"></div>
+      <div class="outcome">Reviews that hold up to scrutiny. Parents trust them because they know how they were collected. Target: 4,000+ verified reviews in the first academic year.</div>
+      <div class="impact-row"><span class="tag">↑ Parent trust</span><span class="tag">↑ Time on school profiles</span></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Student dashboard</div>
+      <div class="card-body">After registering, students have no reason to return. No shortlist management, no application tracking, no offer visibility. The dashboard needs to become the place students return to throughout the admissions cycle — saved schools, course shortlist, active applications with status, upcoming open days, offer management.</div>
+      <div class="divline"></div>
+      <div class="outcome">Students return to the platform throughout the admissions cycle. High return rate. Application completion improves because students have a single place to track everything.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">💼</div>
+      <div class="card-title">Careers page enhancements</div>
+      <div class="card-body">The strongest page on the site but missing key information students want: salary ranges, required A-Level or vocational qualifications for each career, direct links to relevant courses and schools, and personalisation based on subjects the student is currently studying.</div>
+      <div class="divline"></div>
+      <div class="outcome">Salary ranges added. Each career pathway links directly to relevant courses. Personalised based on saved subjects. Careers → Courses → Apply becomes a coherent journey.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎓</div>
+      <div class="card-title">School-facing dashboard</div>
+      <div class="card-body">Schools have no visibility of how their ApplicaaOne profile performs. How many views? How many interest clicks? How many RSVP-to-application conversions? Without this data, schools cannot improve their profiles and have no reason to invest in them.</div>
+      <div class="divline"></div>
+      <div class="outcome">School admin view: profile views, interest clicks, event RSVP rates, application conversion. Actionable improvement tips. Schools actively invest in their profiles.</div>
+      <div class="impact-row"><span class="tag">↑ School engagement</span><span class="tag">↑ Profile quality</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PHASE 3 -->
+<div class="phase" id="phase3">
+  <div class="phase-hdr ph3">
+    <div class="ph-num">3</div>
+    <div class="ph-info">
+      <div class="ph-date">November 2026 and beyond</div>
+      <h2>Phase 3 — Scale and Personalisation</h2>
+      <p>Platform-wide quality pass and personalisation. Accessibility compliance, full mobile device testing, personalised recommendations based on student profile, and design system governance to ensure the improvements from Phases 0–2 hold up as the team grows.</p>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <div class="card-icon">♿</div>
+      <div class="card-title">WCAG 2.1 AA accessibility audit</div>
+      <div class="card-body">Audit identified: star ratings use icon classes only with no text equivalent, disabled "Search within" field has tooltip-only help, form error announcements missing for screen readers. Full audit across all pages and student flows. All critical findings fixed before exam results day traffic.</div>
+      <div class="divline"></div>
+      <div class="outcome">Platform accessible to students with visual, motor, and cognitive impairments. Accessibility statement published.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <div class="card-title">Mobile — full product pass</div>
+      <div class="card-body">Phases 0–2 address the highest-impact mobile issues (search, navigation, registration). Phase 3 is a comprehensive pass across every screen. Tested on iPhone, Android, and iPad. Tables replaced with card layouts. Tap targets meet minimum size. No horizontal overflow on any screen.</div>
+      <div class="divline"></div>
+      <div class="outcome">Complete mobile experience. Students can use every feature of the platform on their phone without workarounds.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">✨</div>
+      <div class="card-title">Personalised recommendations</div>
+      <div class="card-body">Every student currently sees identical content regardless of their subjects, location, year group, or past behaviour. No personalisation means no reason to return between sessions. Build a recommendation layer: "Because you're studying English and History — here are A-level courses nearby."</div>
+      <div class="divline"></div>
+      <div class="outcome">Personalised homepage and dashboard per student. "Because you saved X" content sections. Students return during the admissions cycle rather than visiting once and leaving.</div>
+      <div class="impact-row"><span class="tag">↑ Return visits</span><span class="tag">↑ Application completion</span></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📖</div>
+      <div class="card-title">DS governance and contribution guide</div>
+      <div class="card-body">7 blue token variants is the direct result of no design contribution process. Without governance, the same fragmentation will return in Phase 0–2 improvements. Publish naming conventions, documentation requirements, and PR criteria. Automated linter blocks hardcoded colour and font values from being merged.</div>
+      <div class="divline"></div>
+      <div class="outcome">Token system stays clean. New contributors follow a clear process. Visual consistency maintained as the team grows.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- OUTCOMES -->
+<div id="metrics">
+  <div class="section-heading">Expected Outcomes</div>
+  <div class="section-sub">How we measure whether the programme is working.</div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-title" style="margin-bottom:12px;">📈 Conversion</div>
+      <div style="font-size:12px;">
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Registration completion rate</span><span style="font-weight:700;color:var(--brand-dark);">↑ 40%</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Homepage scroll depth</span><span style="font-weight:700;color:var(--brand-dark);">↑ 60%</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Course saves before account</span><span style="font-weight:700;color:var(--brand-dark);">New metric</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;"><span style="color:var(--g600);">Event RSVP without login</span><span style="font-weight:700;color:var(--brand-dark);">New metric</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:12px;">⭐ Trust</div>
+      <div style="font-size:12px;">
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Verified reviews</span><span style="font-weight:700;color:var(--brand-dark);">105 → 4,000+</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Average review length</span><span style="font-weight:700;color:var(--brand-dark);">50+ words</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">School profile completeness</span><span style="font-weight:700;color:var(--brand-dark);">↑ 70%</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;"><span style="color:var(--g600);">Parent trust score (survey)</span><span style="font-weight:700;color:var(--brand-dark);">4.5 / 5</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:12px;">🎯 UX Score</div>
+      <div style="font-size:12px;">
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Overall UX score</span><span style="font-weight:700;color:var(--brand-dark);">4.4 → 7.5+</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Value proposition clarity</span><span style="font-weight:700;color:var(--brand-dark);">3 → 8</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Trust &amp; social proof</span><span style="font-weight:700;color:var(--brand-dark);">3 → 8</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;"><span style="color:var(--g600);">Mobile experience</span><span style="font-weight:700;color:var(--brand-dark);">6 → 9</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section-heading" style="margin-bottom:14px;">Roadmap at a Glance</div>
+<div class="sum-wrap"><table class="sum-table">
+  <thead><tr><th>Phase</th><th>When</th><th>Focus</th><th>Key result</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Phase 0</strong><br><span style="font-size:10px;color:var(--g400)">Critical Fixes</span></td><td>Mar–Apr</td><td>Distinct H1s, replace weak trust signals, add navigation, clean up tokens, fix CTA hierarchy, server-render registration.</td><td>Immediate trust and conversion improvements. No redesign required.</td></tr>
+    <tr><td><strong>Phase 1</strong><br><span style="font-size:10px;color:var(--g400)">Discovery &amp; Conversion</span></td><td>May–Jun</td><td>Full homepage journey, mobile search, course filters and save-without-account, events map/calendar/RSVP, simplified registration, contextual page content.</td><td>Students discover and engage. Drop-off reduced at every step.</td></tr>
+    <tr><td><strong>Phase 2</strong><br><span style="font-size:10px;color:var(--g400)">Product Redesigns</span></td><td>Jul–Oct</td><td>School profiles, course detail, verified reviews, student dashboard, careers enhancements, school-facing analytics.</td><td>Differentiated profiles. Verified trust. Students return throughout the admissions cycle.</td></tr>
+    <tr><td><strong>Phase 3</strong><br><span style="font-size:10px;color:var(--g400)">Scale &amp; Personalisation</span></td><td>Nov+</td><td>WCAG 2.1 AA, full mobile pass, personalised recommendations, DS governance.</td><td>Accessible to all students. Personalised experience. System stays consistent as it grows.</td></tr>
+  </tbody>
+</table></div>
+
+</div>
+
+<div class="footer">
+  ApplicaaOne UI/UX Improvement Roadmap 2026 &nbsp;·&nbsp; Emma Nguyen &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; Confidential — prepared for board review
+</div>
+
+</body>
+</html>
