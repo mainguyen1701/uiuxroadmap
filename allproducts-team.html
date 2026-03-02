@@ -213,7 +213,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 .skill-prep{background:linear-gradient(135deg,#fdf4ff,#f3e8ff);border:1px solid #e9d5ff;border-radius:10px;padding:14px 18px;margin:14px 0 20px;}
 .skill-prep-hdr{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#7c3aed;margin-bottom:10px;}
-.skill-prep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;}
+.skill-prep-grid{display:flex;flex-wrap:wrap;gap:6px;}
 .skill-tag{background:white;border:1px solid #ddd6fe;border-radius:6px;padding:7px 10px;font-size:11px;color:#5b21b6;font-weight:600;display:flex;align-items:center;gap:6px;}
 .skill-tag::before{content:"↗";font-size:10px;color:#7c3aed;}
 
@@ -441,7 +441,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="vision-eyebrow">Product Team Reference — How we work, what we're building, and what we need from each other</div>
     <h2 class="vision-headline">Design is what stands between<br><span>good AI and trusted AI.</span></h2>
     <p class="vision-body">
-      This document is the working reference for the product team and managers — phase deliverables, research windows, engineering touchpoints, dependencies, and success metrics. The board version is at <a href="allproducts.html" style="color:#EC634B;">allproducts.html</a>. <strong style="color:white;">Consistency by April. AI begins June.</strong>
+      Working reference for the product team — deliverables, research windows, engineering touchpoints, dependencies, and success metrics. No handoffs — designers build and ship directly. <strong style="color:white;">Consistency by April. AI begins June.</strong>
     </p>
 
     <div class="northstar">
@@ -449,78 +449,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="northstar-text">"A school using any Applicaa product trusts it enough to let AI assist their most important decisions — because the design earned that trust first."</div>
     </div>
 
-    <div class="nowstate">
-      <div class="now-col">
-        <div class="now-col-label red">Where we are today</div>
-        <div class="now-item bad">Components rebuilt differently on every screen</div>
-        <div class="now-item bad">7 different blue colour values across the product</div>
-        <div class="now-item bad">Status badges with no shared meaning (Upcoming = green in some screens)</div>
-        <div class="now-item bad">Settings nav with no active state or logical grouping</div>
-        <div class="now-item bad">13 products with no shared identity layer</div>
-        <div class="now-item bad">Applications abandoned on long single-page forms</div>
-        <div class="now-item bad">AI capabilities planned with no UX framework to support them</div>
-      </div>
-      <div class="now-col">
-        <div class="now-col-label green">Where we will be by June 2026</div>
-        <div class="now-item good">One design system — one source of truth for every team</div>
-        <div class="now-item good">Consistent tokens, colour, type, and spacing across all screens</div>
-        <div class="now-item good">Settings reachable in under 2 clicks from anywhere</div>
-        <div class="now-item good">Application completion rate at 90% with step-by-step flow</div>
-        <div class="now-item good">All 13 products on a shared identity and accessibility standard</div>
-        <div class="now-item good">AI interactions with trust arc, confidence indicators, and human override</div>
-        <div class="now-item good">A team with the skills, processes, and tools to sustain this quality</div>
-      </div>
-    </div>
 
-
-    <div class="role-shift">
-      <div class="role-shift-label">How this team works — Jenny Wen, Future of Design in the AI Era</div>
-      <div class="role-shift-headline">Design as execution partner: building alongside engineering, not waiting to hand off.</div>
-      <div class="role-split">
-        <div class="role-col">
-          <div class="role-col-lbl old">Traditional model</div>
-          <div class="role-col-item strike">60–70% mocking and prototyping</div>
-          <div class="role-col-item strike">Hand off designs, wait for build</div>
-          <div class="role-col-item strike">Designer as gatekeeper</div>
-          <div class="role-col-item strike">Weeks of perfect mocks before anything ships</div>
-        </div>
-        <div class="role-col">
-          <div class="role-col-lbl new">Now — at Applicaa</div>
-          <div class="role-col-item">30–40% prototyping — rest is execution partnership</div>
-          <div class="role-col-item">Build HTML and Tailwind directly alongside engineers</div>
-          <div class="role-col-item">Taste, judgment, and decision accountability</div>
-          <div class="role-col-item">Ship, learn, and iterate — not wait for perfection</div>
-        </div>
-      </div>
-      <div class="accountability-q">
-        <strong>Who is accountable for product decisions when AI generates options?</strong> The designer. Judgment, taste, and the call on what gets built — that is the irreplaceable role. This roadmap is that accountability made visible.
-      </div>
-    </div>
-
-    <div class="vision-divider"></div>
-
-    <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.4);margin-bottom:16px;">Four design principles guiding every decision</div>
-    <div class="vision-principles">
-      <div class="vp">
-        <div class="vp-num">01</div>
-        <div class="vp-title">Consistency over cleverness</div>
-        <div class="vp-body">Familiar patterns that school staff learn once and apply everywhere. Novelty is a cost — every bespoke interaction is something a new user has to relearn.</div>
-      </div>
-      <div class="vp">
-        <div class="vp-num">02</div>
-        <div class="vp-title">Clarity at critical moments</div>
-        <div class="vp-body">Offer rounds, enrolment decisions, and application submissions are high-stakes. The UI at these moments must be unmistakably clear — no ambiguity, no guessing.</div>
-      </div>
-      <div class="vp">
-        <div class="vp-num">03</div>
-        <div class="vp-title">Built for the whole school</div>
-        <div class="vp-body">From the full-time admissions lead to the bursary coordinator who logs in twice a year. Every screen is designed for the least experienced user without slowing down the expert.</div>
-      </div>
-      <div class="vp">
-        <div class="vp-num">04</div>
-        <div class="vp-title">Earn trust through every interaction</div>
-        <div class="vp-body">From import errors to AI recommendations — every system response must feel honest, human, and in control of the situation. Trust is built in the small moments.</div>
-      </div>
     </div>
   </div>
 </section>
@@ -543,7 +472,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="hm"><span class="lbl">Prepared by</span><span class="val">Emma Nguyen</span></div>
       <div class="hm"><span class="lbl">Updated</span><span class="val">March 2026</span></div>
     </div>
-    <div class="header-callout">
+    <div class="header-callout" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><strong>PMs + managers:</strong> Review Cadence → RACI → Delivery Plan. The rest is design detail.</div><div><strong>Design team:</strong> The full document is yours — UX thinking, skill prep, and design team reference panels throughout.</div></div><div class="header-callout" style="display:none;">
       <strong>Focus:</strong> This roadmap covers Applicaa's school admin products — Admissions+, MAT+, and the wider product family. Admissions+ and MAT+ share the <strong>DS Lookbook</strong> (designsaplus.com/lookbook). Phase 3 extends shared standards across all 13 products. ApplicaaOne is covered in a separate UI/UX document.
     </div>
   </div>
@@ -1060,11 +989,11 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <span class="ph-pill ph-pill-0">● Phase 0 — Shared Foundation · Completed Feb 2026 ✓</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
-    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Products</th></tr></thead>
+    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Status</th><th>Products</th></tr></thead>
     <tbody>
-      <tr><td class="cl-num">0.1</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Component library — published in DS Lookbook</td><td class="cl-why">Components used across Admissions+ have no single reference. Developers rebuild them differently on each screen, creating visual drift that compounds over time.</td><td class="cl-out">Every reusable component documented at designsaplus.com/lookbook with live previews, variants, and usage guidance. One reference for the whole team.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">0.2</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Design tokens — colour, type, spacing</td><td class="cl-why">No shared token system means colours, font sizes, and spacing are hardcoded differently across screens. Status colours are especially inconsistent — "Upcoming" currently appears green, same as Completed.</td><td class="cl-out">Full token set published: Navy #263C91, Coral #EC634B, status colour map (Upcoming = blue, Completed = green, Cancelled = red, Full = amber), Inter type scale, spacing system.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">0.3</td><td class="cl-size"><span class="size-s">S</span></td><td class="cl-what">Shared patterns — filtering, states, panels</td><td class="cl-why">Common behaviours — filtering, empty states, loading states, record panels — are each implemented differently per screen. Staff relearn the same interactions in different forms on different screens.</td><td class="cl-out">Patterns documented for the 6 most common interaction types. Applied consistently to every existing screen that uses them.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.1</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Component library — published in DS Lookbook</td><td class="cl-why">Components used across Admissions+ have no single reference. Developers rebuild them differently on each screen, creating visual drift that compounds over time.</td><td class="cl-out">Every reusable component documented at designsaplus.com/lookbook with live previews, variants, and usage guidance. One reference for the whole team.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.2</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Design tokens — colour, type, spacing</td><td class="cl-why">No shared token system means colours, font sizes, and spacing are hardcoded differently across screens. Status colours are especially inconsistent — "Upcoming" currently appears green, same as Completed.</td><td class="cl-out">Full token set published: Navy #263C91, Coral #EC634B, status colour map (Upcoming = blue, Completed = green, Cancelled = red, Full = amber), Inter type scale, spacing system.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.3</td><td class="cl-size"><span class="size-s">S</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Shared patterns — filtering, states, panels</td><td class="cl-why">Common behaviours — filtering, empty states, loading states, record panels — are each implemented differently per screen. Staff relearn the same interactions in different forms on different screens.</td><td class="cl-out">Patterns documented for the 6 most common interaction types. Applied consistently to every existing screen that uses them.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
     </tbody>
   </table></div>
 
@@ -1073,19 +1002,19 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <span class="ph-pill ph-pill-1">● Phase 1 — Quick Wins · Mar 2026 ◉</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
-    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Products</th></tr></thead>
+    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Status</th><th>Products</th></tr></thead>
     <tbody>
       <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Settings</td></tr>
-      <tr><td class="cl-num">1.1</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Restructure settings navigation</td><td class="cl-why">8 top-level sections with no logical grouping. "School Settings" mixes IT admin, finance, and daily-use items. Orphaned sections. Active page barely visible.</td><td class="cl-out">Four audience-based groups: Form & Application, School Admin, Enrolment, Advanced. Descriptions per group. Active state clear.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">1.2</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Active state, wayfinding, and settings search</td><td class="cl-why">No visual indicator for the current page. 20+ pages across 8 sections — browsing to find a known setting wastes time.</td><td class="cl-out">DS active state applied. Breadcrumb above each settings page. Search input returns matching pages with group context instantly.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.1</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Restructure settings navigation</td><td class="cl-why">8 top-level sections with no logical grouping. "School Settings" mixes IT admin, finance, and daily-use items. Orphaned sections. Active page barely visible.</td><td class="cl-out">Four audience-based groups: Form & Application, School Admin, Enrolment, Advanced. Descriptions per group. Active state clear.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.2</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Active state, wayfinding, and settings search</td><td class="cl-why">No visual indicator for the current page. 20+ pages across 8 sections — browsing to find a known setting wastes time.</td><td class="cl-out">DS active state applied. Breadcrumb above each settings page. Search input returns matching pages with group context instantly.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
       <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Processes</td></tr>
-      <tr><td class="cl-num">1.3</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Application Form settings</td><td class="cl-why">Form builder, field configuration, and conditional logic screens use bespoke patterns not aligned to DS. Inputs, toggles, and layout differ from every other settings screen.</td><td class="cl-out">DS form group, section, toggle, and label components applied throughout. Form settings feel like every other settings screen.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">1.4</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Communications — Forms, Surveys, Templates</td><td class="cl-why">Email templates, SMS templates, forms, and surveys each use different editors, preview styles, and save flows. No shared component language across these tools.</td><td class="cl-out">DS rich text editor, preview panel, status badge, and form group components applied consistently across all four. One editing experience, learned once.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">1.5</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Import and export</td><td class="cl-why">Imports run silently with no progress or plain-language errors. Exports have no format choice and no history — a lost file means starting over.</td><td class="cl-out">DS progress bar and error components on import. Format selector and last 5 downloads with re-download links on export.</td><td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td></tr>
+      <tr><td class="cl-num">1.3</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Application Form settings</td><td class="cl-why">Form builder, field configuration, and conditional logic screens use bespoke patterns not aligned to DS. Inputs, toggles, and layout differ from every other settings screen.</td><td class="cl-out">DS form group, section, toggle, and label components applied throughout. Form settings feel like every other settings screen.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.4</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Communications — Forms, Surveys, Templates</td><td class="cl-why">Email templates, SMS templates, forms, and surveys each use different editors, preview styles, and save flows. No shared component language across these tools.</td><td class="cl-out">DS rich text editor, preview panel, status badge, and form group components applied consistently across all four. One editing experience, learned once.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.5</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Import and export</td><td class="cl-why">Imports run silently with no progress or plain-language errors. Exports have no format choice and no history — a lost file means starting over.</td><td class="cl-out">DS progress bar and error components on import. Format selector and last 5 downloads with re-download links on export.</td><td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td></tr>
       <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Customised Areas</td></tr>
-      <tr><td class="cl-num">1.6</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Timetable</td><td class="cl-why">High-traffic during school setup. Uses bespoke layout, form patterns, and table styles not aligned to DS. Feels inconsistent with the rest of the product.</td><td class="cl-out">DS layout, form group, data table, and status badge applied. Timetable builder uses the same patterns staff already know elsewhere.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">1.7</td><td class="cl-size"><span class="size-s">S</span></td><td class="cl-what">Offer management</td><td class="cl-why">All offer states look identical. No pipeline summary. Bulk operations require opening each record individually — time-consuming during peak admissions.</td><td class="cl-out">DS status badges on offer rows. Pipeline summary (metric card). Bulk action bar for multi-row operations.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">1.8</td><td class="cl-size"><span class="size-s">S</span></td><td class="cl-what">Enrolment checklist</td><td class="cl-why">After a student accepts, no way to track enrolment steps. No checklist, no completion visibility, no automated reminders.</td><td class="cl-out">DS card and progress components applied as a per-student enrolment tracker. Completion % on list view. Automated reminders for outstanding steps.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.6</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Timetable</td><td class="cl-why">High-traffic during school setup. Uses bespoke layout, form patterns, and table styles not aligned to DS. Feels inconsistent with the rest of the product.</td><td class="cl-out">DS layout, form group, data table, and status badge applied. Timetable builder uses the same patterns staff already know elsewhere.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.7</td><td class="cl-size"><span class="size-s">S</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Offer management</td><td class="cl-why">All offer states look identical. No pipeline summary. Bulk operations require opening each record individually — time-consuming during peak admissions.</td><td class="cl-out">DS status badges on offer rows. Pipeline summary (metric card). Bulk action bar for multi-row operations.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.8</td><td class="cl-size"><span class="size-s">S</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Enrolment checklist</td><td class="cl-why">After a student accepts, no way to track enrolment steps. No checklist, no completion visibility, no automated reminders.</td><td class="cl-out">DS card and progress components applied as a per-student enrolment tracker. Completion % on list view. Automated reminders for outstanding steps.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
     </tbody>
   </table></div>
 
@@ -1094,17 +1023,17 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <span class="ph-pill ph-pill-2">● Phase 2 — Product Redesigns · by Apr 2026</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
-    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Products</th></tr></thead>
+    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Status</th><th>Products</th></tr></thead>
     <tbody>
       <tr><td colspan="5" class="cl-phase">🎓 Admissions+</td></tr>
-      <tr><td class="cl-num">2.1</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Application form — step-by-step</td><td class="cl-why">Long single-page form with no progress, no auto-save, and no way to return. High abandonment rate reduces school intake directly.</td><td class="cl-out">One section per step. Progress visible throughout. Auto-saves between steps. Save and return from any device. Target: 90% completion.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">2.2</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Parent application status page</td><td class="cl-why">"Has my application been received?" is one of the highest-volume support calls schools receive.</td><td class="cl-out">Self-serve status page: where the application is, what happens next, when to expect a decision.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">2.3</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Offer management — redesigned</td><td class="cl-why">No pipeline overview, no visual status, no bulk offer actions. Critical period in the admissions calendar with inadequate tooling.</td><td class="cl-out">Pipeline summary at top. Colour-coded rows. Bulk actions. Student detail without leaving the page.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">2.4</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Enquiry form builder</td><td class="cl-why">Form builder screens are blank in DS. Staff building forms have no product-level guidance — inconsistent quality across schools.</td><td class="cl-out">Field configuration, section ordering, live preview, and publish to schools flow.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">2.1</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Application form — step-by-step</td><td class="cl-why">Long single-page form with no progress, no auto-save, and no way to return. High abandonment rate reduces school intake directly.</td><td class="cl-out">One section per step. Progress visible throughout. Auto-saves between steps. Save and return from any device. Target: 90% completion.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">2.2</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Parent application status page</td><td class="cl-why">"Has my application been received?" is one of the highest-volume support calls schools receive.</td><td class="cl-out">Self-serve status page: where the application is, what happens next, when to expect a decision.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">2.3</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Offer management — redesigned</td><td class="cl-why">No pipeline overview, no visual status, no bulk offer actions. Critical period in the admissions calendar with inadequate tooling.</td><td class="cl-out">Pipeline summary at top. Colour-coded rows. Bulk actions. Student detail without leaving the page.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">2.4</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Enquiry form builder</td><td class="cl-why">Form builder screens are blank in DS. Staff building forms have no product-level guidance — inconsistent quality across schools.</td><td class="cl-out">Field configuration, section ordering, live preview, and publish to schools flow.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
       <tr><td colspan="5" class="cl-phase">🏫 MAT+</td></tr>
-      <tr><td class="cl-num">2.5</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">MAT dashboard — trust-wide overview</td><td class="cl-why">No executive view of admissions performance across the trust. Data requires manual spreadsheet collation.</td><td class="cl-out">Key metrics across the whole trust with drill-down to any school. Replaces spreadsheet reporting.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
-      <tr><td class="cl-num">2.6</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">School customisation comparison view</td><td class="cl-why">MAT coordinators can't easily see what a school changed in a template without opening records side-by-side manually.</td><td class="cl-out">Changed sections highlighted, unchanged dimmed. Reusable for forms, policies, and offers.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
-      <tr><td class="cl-num">2.7</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Subject-level dashboard</td><td class="cl-why">No visibility of application demand by subject across the trust. Timetabling decisions made without data.</td><td class="cl-out">Application pipeline by subject (A-level, BTEC, T-Level) across all schools. Filter and compare vs trust average.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
+      <tr><td class="cl-num">2.5</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">MAT dashboard — trust-wide overview</td><td class="cl-why">No executive view of admissions performance across the trust. Data requires manual spreadsheet collation.</td><td class="cl-out">Key metrics across the whole trust with drill-down to any school. Replaces spreadsheet reporting.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
+      <tr><td class="cl-num">2.6</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">School customisation comparison view</td><td class="cl-why">MAT coordinators can't easily see what a school changed in a template without opening records side-by-side manually.</td><td class="cl-out">Changed sections highlighted, unchanged dimmed. Reusable for forms, policies, and offers.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
+      <tr><td class="cl-num">2.7</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Subject-level dashboard</td><td class="cl-why">No visibility of application demand by subject across the trust. Timetabling decisions made without data.</td><td class="cl-out">Application pipeline by subject (A-level, BTEC, T-Level) across all schools. Filter and compare vs trust average.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
 
     </tbody>
   </table></div>
@@ -1114,14 +1043,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <span class="ph-pill ph-pill-3">● Phase 3 — Scale &amp; Polish · by Apr 2026 (parallel)</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
-    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Products</th></tr></thead>
+    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Status</th><th>Products</th></tr></thead>
     <tbody>
-      <tr><td class="cl-num">3.1</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Ecosystem-wide DS audit</td><td class="cl-why">Applicaa has 13 products across 6 school types. Each has grown its own visual patterns. A buyer who uses Admissions+ and Options+ experiences two completely different products — no shared identity.</td><td class="cl-out">Every product mapped against DS components. Gaps prioritised. Shared header, navigation, and status patterns adopted by all 13 products.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
-      <tr><td class="cl-num">3.2</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">WCAG 2.1 AA accessibility audit and fixes</td><td class="cl-why">UK public sector procurement requires WCAG 2.1 AA. MATs and Local Authorities are public sector — failing an audit risks losing contracts across the whole portfolio.</td><td class="cl-out">Full audit, all critical findings fixed, accessibility statement published for each product.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
-      <tr><td class="cl-num">3.3</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Mobile and tablet — full pass</td><td class="cl-why">UK schools are BYOD. iPads and Android tablets are primary devices. Screens designed desktop-first fail on these devices — especially in Bursary+, Options+, and Exams+ where parents are the primary user.</td><td class="cl-out">Top 10 screens per product tested on real devices. Tables stack to card layout. Tap targets meet minimum size.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
-      <tr><td class="cl-num">3.4</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Animation and motion standards</td><td class="cl-why">Transitions vary in speed and style across products. A user of multiple Applicaa tools experiences a different "feel" in each one.</td><td class="cl-out">Four standard animation speeds. Consistent across all state changes. Respects reduced-motion system setting.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
-      <tr><td class="cl-num">3.5</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">DS contribution guide and governance</td><td class="cl-why">No documented contribution process across the product family. With 13 products, divergence grows exponentially without a shared standard. Bootstrap leakage in Admissions+ is the symptom — lack of governance is the cause.</td><td class="cl-out">Published guide: naming conventions, documentation requirements, accessibility checklist, PR criteria. Automated linter blocks legacy classes. Applies to every product team.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
-      <tr><td class="cl-num">3.6</td><td class="cl-size"><span class="size-s">S</span></td><td class="cl-what">Product identity system — when to diverge intentionally</td><td class="cl-why">Each product has its own colour personality (e.g. Exams+ gold, Options+ teal, MAT+ purple). Without rules, divergence is inconsistent. With rules, it becomes a feature — not a bug.</td><td class="cl-out">Defined "brand layer" on top of DS: which tokens each product can customise (accent colour, icon set) and which are fixed (spacing, typography, interaction patterns). Bursary+, Futures, and Local Authorities adopted first.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.1</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Ecosystem-wide DS audit</td><td class="cl-why">Applicaa has 13 products across 6 school types. Each has grown its own visual patterns. A buyer who uses Admissions+ and Options+ experiences two completely different products — no shared identity.</td><td class="cl-out">Every product mapped against DS components. Gaps prioritised. Shared header, navigation, and status patterns adopted by all 13 products.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.2</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">WCAG 2.1 AA accessibility audit and fixes</td><td class="cl-why">UK public sector procurement requires WCAG 2.1 AA. MATs and Local Authorities are public sector — failing an audit risks losing contracts across the whole portfolio.</td><td class="cl-out">Full audit, all critical findings fixed, accessibility statement published for each product.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.3</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Mobile and tablet — full pass</td><td class="cl-why">UK schools are BYOD. iPads and Android tablets are primary devices. Screens designed desktop-first fail on these devices — especially in Bursary+, Options+, and Exams+ where parents are the primary user.</td><td class="cl-out">Top 10 screens per product tested on real devices. Tables stack to card layout. Tap targets meet minimum size.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.4</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Animation and motion standards</td><td class="cl-why">Transitions vary in speed and style across products. A user of multiple Applicaa tools experiences a different "feel" in each one.</td><td class="cl-out">Four standard animation speeds. Consistent across all state changes. Respects reduced-motion system setting.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.5</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">DS contribution guide and governance</td><td class="cl-why">No documented contribution process across the product family. With 13 products, divergence grows exponentially without a shared standard. Bootstrap leakage in Admissions+ is the symptom — lack of governance is the cause.</td><td class="cl-out">Published guide: naming conventions, documentation requirements, accessibility checklist, PR criteria. Automated linter blocks legacy classes. Applies to every product team.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.6</td><td class="cl-size"><span class="size-s">S</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Product identity system — when to diverge intentionally</td><td class="cl-why">Each product has its own colour personality (e.g. Exams+ gold, Options+ teal, MAT+ purple). Without rules, divergence is inconsistent. With rules, it becomes a feature — not a bug.</td><td class="cl-out">Defined "brand layer" on top of DS: which tokens each product can customise (accent colour, icon set) and which are fixed (spacing, typography, interaction patterns). Bursary+, Futures, and Local Authorities adopted first.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
     </tbody>
   </table></div>
 
@@ -1130,13 +1059,13 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <span class="ph-pill ph-pill-4">● Phase 4 — AI-Native UX · Stage 1 from Jun 2026 · 3 stages</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
-    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Products</th></tr></thead>
+    <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Size</th><th>Status</th><th>Products</th></tr></thead>
     <tbody>
-      <tr><td class="cl-num">4.1</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">Conversational AI application flow</td><td class="cl-why">The application is a form. For families anxious about their child's future, it's a cold, high-pressure experience with no guidance and no relationship.</td><td class="cl-out">AI-guided conversation: one question at a time, automatic document reading, real-time requirements checking. Voice on mobile. Target: 90% completion, under 15 minutes.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">4.2</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">Staff trust dashboard for AI recommendations</td><td class="cl-why">Staff need to review, question, and override AI recommendations with confidence. Without this, they'll either blindly trust AI (governance risk) or ignore it entirely (wasted investment).</td><td class="cl-out">All AI recommendations shown with confidence levels and reasoning. Override interface. Every override improves the AI. Full audit trail for compliance.</td><td><span class="pill pill-mat">MAT+</span> <span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">4.3</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">AI confidence indicators</td><td class="cl-why">Without knowing how confident the AI is, staff and parents either blindly trust it or ignore it. Confidence levels make AI feel transparent rather than opaque.</td><td class="cl-out">Three levels: high (confident), medium (double-checking), low (needs your help). Applied consistently across all AI interactions.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">4.4</td><td class="cl-size"><span class="size-m">M</span></td><td class="cl-what">AI error recovery design</td><td class="cl-why">AI will get things wrong. How the system recovers determines whether users rebuild trust or abandon the product entirely.</td><td class="cl-out">Every failure mode has a designed response: rephrase offer, plain-language explanation, human handoff, or data mismatch resolution.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">4.5</td><td class="cl-size"><span class="size-l">L</span></td><td class="cl-what">AI DS component set</td><td class="cl-why">Without shared AI interface patterns, each team builds AI interactions differently. Inconsistent AI personalities undermine trust across the platform.</td><td class="cl-out">Chat bubbles, confidence indicators, AI thinking state, human handoff card — documented in DS and used identically across all products.</td><td><span class="pill pill-all">All</span></td></tr>
+      <tr><td class="cl-num">4.1</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Conversational AI application flow</td><td class="cl-why">The application is a form. For families anxious about their child's future, it's a cold, high-pressure experience with no guidance and no relationship.</td><td class="cl-out">AI-guided conversation: one question at a time, automatic document reading, real-time requirements checking. Voice on mobile. Target: 90% completion, under 15 minutes.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">4.2</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">Staff trust dashboard for AI recommendations</td><td class="cl-why">Staff need to review, question, and override AI recommendations with confidence. Without this, they'll either blindly trust AI (governance risk) or ignore it entirely (wasted investment).</td><td class="cl-out">All AI recommendations shown with confidence levels and reasoning. Override interface. Every override improves the AI. Full audit trail for compliance.</td><td><span class="pill pill-mat">MAT+</span> <span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">4.3</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">AI confidence indicators</td><td class="cl-why">Without knowing how confident the AI is, staff and parents either blindly trust it or ignore it. Confidence levels make AI feel transparent rather than opaque.</td><td class="cl-out">Three levels: high (confident), medium (double-checking), low (needs your help). Applied consistently across all AI interactions.</td><td><span class="pill pill-all">All</span></td></tr>
+      <tr><td class="cl-num">4.4</td><td class="cl-size"><span class="size-m">M</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">AI error recovery design</td><td class="cl-why">AI will get things wrong. How the system recovers determines whether users rebuild trust or abandon the product entirely.</td><td class="cl-out">Every failure mode has a designed response: rephrase offer, plain-language explanation, human handoff, or data mismatch resolution.</td><td><span class="pill pill-all">All</span></td></tr>
+      <tr><td class="cl-num">4.5</td><td class="cl-size"><span class="size-l">L</span></td><td style="font-size:10px;color:#9ca3af;white-space:nowrap;">Not started</td><td class="cl-what">AI DS component set</td><td class="cl-why">Without shared AI interface patterns, each team builds AI interactions differently. Inconsistent AI personalities undermine trust across the platform.</td><td class="cl-out">Chat bubbles, confidence indicators, AI thinking state, human handoff card — documented in DS and used identically across all products.</td><td><span class="pill pill-all">All</span></td></tr>
     </tbody>
   </table></div>
 </div>
@@ -1168,23 +1097,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
-  <div class="ux-thinking">
-    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 0</div>
-    <div class="ux-cols">
-      <div class="ux-col">
-        <div class="ux-col-label">Research</div>
-        <div class="ux-col-body">Heuristic audit of existing Admissions+ and MAT+ screens. Component inventory across every screen type. Identify where visual drift has accumulated and why.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Design</div>
-        <div class="ux-col-body">Gap analysis between current patterns and DS Lookbook standards. Token mapping — what exists, what conflicts, what is missing. Document everything in the Lookbook before changing anything live.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Validation</div>
-        <div class="ux-col-body">DS Lookbook reviewed with engineering leads. Each component entry peer-reviewed before publishing. Consistency check across 10 representative screens before Phase 1 begins.</div>
-      </div>
-    </div>
-  </div>
+  <div class="ux-thinking"><div class="ux-thinking-hdr">🔍 UX thinking — Phase 0</div><div style="font-size:12px;color:#0f766e;line-height:1.6;">Heuristic audit of Admissions+ and MAT+ screens · component inventory · token mapping · DS Lookbook peer-reviewed with engineering before Phase 1 begins</div></div>
 
   <div class="skill-prep">
     <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 0</div>
@@ -1237,34 +1150,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
-  <div class="ux-thinking">
-    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 1</div>
-    <div class="ux-cols">
-      <div class="ux-col">
-        <div class="ux-col-label">Research</div>
-        <div class="ux-col-body">Short interviews with 3–5 school admin staff on settings friction and daily process pain points. Support ticket analysis to identify the highest-frequency "how do I find X" requests.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Design</div>
-        <div class="ux-col-body">Screen-by-screen component mapping — every element audited against the DS Lookbook. Low-fidelity wireframes for restructured nav and new process flows before any build begins.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Validation</div>
-        <div class="ux-col-body">Prototype walkthroughs with 2–3 school admins per area before shipping. Success metric: staff reach any settings page within 2 clicks. Import errors understood without contacting support.</div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="skill-prep">
-    <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 1</div>
-    <div class="skill-prep-grid">
-      <div class="skill-tag">Component-first thinking — applying DS before writing bespoke styles</div>
-      <div class="skill-tag">Figma-to-DS mapping — identifying which DS component fits each screen element</div>
-      <div class="skill-tag">Accessibility basics — contrast, focus states, keyboard navigation in DS patterns</div>
-      <div class="skill-tag">Stakeholder communication — presenting DS changes to non-design colleagues</div>
-    </div>
-  </div>
+  <div class="ux-thinking"><div class="ux-thinking-hdr">🔍 UX thinking — Phase 1</div><div style="font-size:12px;color:#0f766e;line-height:1.6;">3–5 staff interviews on settings friction · support ticket analysis · screen-by-screen component mapping · low-fi wireframes before build · each item tested with 2–3 staff before ship</div></div>
 
   <div class="slabel">Settings</div>
   <div class="raci">
@@ -1371,25 +1257,10 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
-  <div class="ux-thinking">
-    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 2</div>
-    <div class="ux-cols">
-      <div class="ux-col">
-        <div class="ux-col-label">Research</div>
-        <div class="ux-col-body">End-to-end journey mapping with school admissions staff and parents. Analysis of application drop-off points, support call transcripts, and offer round processing times. One research sprint per product track before design begins.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Design</div>
-        <div class="ux-col-body">Iterative prototyping — lo-fi to hi-fi per screen. Each redesign tested with real users before handoff to engineering. Design and build run in parallel sprints, not sequentially.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Validation</div>
-        <div class="ux-col-body">Usability testing with 5 school staff per feature (Admissions+ track) and 3 MAT coordinators (MAT+ track). Target: 90% application completion rate, measurable reduction in offer round processing time.</div>
-      </div>
-    </div>
-  </div>
+  <div class="ux-thinking"><div class="ux-thinking-hdr">🔍 UX thinking — Phase 2</div><div style="font-size:12px;color:#0f766e;line-height:1.6;">5+ school staff per track · support ticket synthesis · AI-accelerated prototyping (DS Lookbook as design spec) · moderated testing · 80% task success threshold before handoff</div></div>
 
   <div class="ai-design">
+  <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.35);margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:8px;">📐 Design team reference — background reading</div>
     <div class="ai-design-label">Research synthesis — NN/G 2025 · MIT study · Vercel AI SDK</div>
     <div class="ai-design-headline">AI compresses Phase 2 from months to weeks — if the DS foundation is solid.</div>
     <div class="ai-design-sub">Phase 0 built the DS Lookbook: documented components, tokens, patterns, and design language. That documentation is now the design spec — the context AI needs to generate high-quality outputs. MIT research shows professionals using AI for design work are <strong style="color:white;">59% more productive</strong> and produce <strong style="color:white;">higher-quality outputs</strong> than those who do not. Phase 2 is where that advantage compounds.</div>
@@ -1535,23 +1406,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
-  <div class="ux-thinking">
-    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 3</div>
-    <div class="ux-cols">
-      <div class="ux-col">
-        <div class="ux-col-label">Research</div>
-        <div class="ux-col-body">Cross-product audit: every product in the ecosystem reviewed against DS standards and WCAG 2.1 AA. Real-device testing sessions with staff and parents across iOS, Android, and tablet. Findings prioritised by frequency and severity.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Design</div>
-        <div class="ux-col-body">Product identity system defined collaboratively with product leads — what each product can customise vs what is shared and fixed. DS contribution guide co-authored with engineering. Accessibility fixes applied at DS level, not product by product.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Validation</div>
-        <div class="ux-col-body">Published accessibility statement for each product. Automated linter confirms no legacy patterns in new code. Quarterly DS review cadence established — not a one-time audit.</div>
-      </div>
-    </div>
-  </div>
+  <div class="ux-thinking"><div class="ux-thinking-hdr">🔍 UX thinking — Phase 3</div><div style="font-size:12px;color:#0f766e;line-height:1.6;">Screen export audit across 13 products · WCAG 2.1 AA check · accessibility linter · governance framework review with all product leads · DS contribution guide published</div></div>
 
   <div class="skill-prep">
     <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 3</div>
@@ -1678,23 +1533,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
-  <div class="ux-thinking">
-    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 4</div>
-    <div class="ux-cols">
-      <div class="ux-col">
-        <div class="ux-col-label">Research</div>
-        <div class="ux-col-body">Contextual research with families completing applications — where anxiety is highest, where trust breaks, where the process stalls. Staff interviews on AI comfort levels and override confidence. Benchmark review of AI-native products in adjacent sectors.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Design</div>
-        <div class="ux-col-body">Conversational flow design, trust arc, escalation paths, and confidence indicator patterns — all designed and prototype-tested before engineering builds. AI DS components documented in Lookbook before any product implements them.</div>
-      </div>
-      <div class="ux-col">
-        <div class="ux-col-label">Validation</div>
-        <div class="ux-col-body">Prototype testing with school staff and families at each stage. Success metrics: task completion rate, override confidence score, time to first AI action. Every AI pattern validated before it goes live.</div>
-      </div>
-    </div>
-  </div>
+  <div class="ux-thinking"><div class="ux-thinking-hdr">🔍 UX thinking — Phase 4</div><div style="font-size:12px;color:#0f766e;line-height:1.6;">AI diary studies (NN/G) · intent mapping per AI feature · confidence + override UI research · trust arc testing with 3+ school staff per stage · escalation pathway validation</div></div>
 
   <div class="skill-prep">
     <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 4</div>
@@ -1709,6 +1548,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 
   <div class="conv-section">
+  <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.35);margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:8px;">📐 Design team reference — background reading</div>
     <div class="conv-section-label">Research foundation — Nielsen Norman Group, 2025</div>
     <div class="conv-section-headline">AI is the third UI paradigm in 60 years. Conversational design is not a feature — it is a new interaction model.</div>
     <div class="conv-section-sub">For 60 years, interfaces were command-based. AI introduces intent-based outcome specification — users state what they want, the system works out how. This is not a chat window on existing UI. It requires designing outcomes and constraints, not screens and flows.</div>
