@@ -50,6 +50,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .pill-one{background:var(--navy-light);color:var(--navy);}
 .pill-mat{background:#f0fdf4;color:#15803d;}
 .pill-all{background:var(--g100);color:var(--g700);}
+.pill-ecosystem{background:#fdf4ff;color:#7e22ce;}
 .pill-dot{width:5px;height:5px;border-radius:50%;background:currentColor;}
 
 /* OVERVIEW CARDS */
@@ -235,9 +236,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <span>Applicaa</span>
     </div>
     <h1>UI/UX Revamp Roadmap — 2026</h1>
-    <p>Five phases covering Admissions+, ApplicaaOne, and MAT+ — from fixing today's inconsistencies and building a shared design language, through product redesigns and AI-native admissions.</p>
+    <p>Five phases covering the full Applicaa product family — from fixing today's inconsistencies and building a shared design language, through product redesigns, ecosystem-wide polish, and AI-native admissions. Phases 0–2 focus on Post-16: Admissions+, MAT+, and ApplicaaOne. Phase 3 scales the foundation to all 13 products across 6 school types.</p>
     <div class="header-meta">
-      <div class="hm"><span class="lbl">Products</span><span class="val">Admissions+ · ApplicaaOne · MAT+</span></div>
+      <div class="hm"><span class="lbl">Products</span><span class="val">13 products · 6 school types</span></div>
       <div class="hm"><span class="lbl">Horizon</span><span class="val">March – December 2026+</span></div>
       <div class="hm"><span class="lbl">Phases</span><span class="val">5 (Phase 0 – 4)</span></div>
       <div class="hm"><span class="lbl">Prepared by</span><span class="val">Emma Nguyen</span></div>
@@ -254,7 +255,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <!-- OVERVIEW -->
 <div id="overview">
   <div class="ov-grid">
-    <div class="ov-card"><div class="num">3</div><div class="desc">Products in scope</div></div>
+    <div class="ov-card"><div class="num">13</div><div class="desc">Products in ecosystem</div></div>
     <div class="ov-card"><div class="num">5</div><div class="desc">Delivery phases</div></div>
     <div class="ov-card"><div class="num">15+</div><div class="desc">DS components to build</div></div>
     <div class="ov-card"><div class="num">40+</div><div class="desc">Planned improvements</div></div>
@@ -284,7 +285,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="tl-n">Phase 3</div>
       <div class="tl-date">Nov</div>
       <div class="tl-focus">Scale &amp; Polish</div>
-      <div class="tl-desc">Accessibility, mobile, animation, governance</div>
+      <div class="tl-desc">DS extends to all 13 products · accessibility · mobile · governance</div>
     </div>
     <div class="tl-p">
       <div class="tl-n">Phase 4</div>
@@ -380,11 +381,12 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
     <tbody>
-      <tr><td class="cl-num">3.1</td><td class="cl-what">WCAG 2.1 AA accessibility audit and fixes</td><td class="cl-why">UK public sector procurement requires WCAG 2.1 AA. MATs are public sector — failing an audit risks losing contracts.</td><td class="cl-out">Full audit, all critical findings fixed, accessibility statement published for each product.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">3.2</td><td class="cl-what">Mobile and tablet — full pass</td><td class="cl-why">UK schools are BYOD. iPads and Android tablets are primary devices. Screens designed desktop-first fail on these devices.</td><td class="cl-out">Top 10 screens per product tested on real devices. Tables stack to card layout. Tap targets meet minimum size.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">3.3</td><td class="cl-what">Animation and motion standards</td><td class="cl-why">Transitions vary in speed and style across the product. The interface feels inconsistent when moving between screens.</td><td class="cl-out">Four standard animation speeds. Consistent across all state changes. Respects reduced-motion system setting.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">3.4</td><td class="cl-what">DS contribution guide and governance</td><td class="cl-why">No documented contribution process. This is how Bootstrap leakage and colour inconsistencies happened. Without standards, Phase 0–2 fixes will return.</td><td class="cl-out">Published guide: naming conventions, required DS documentation, accessibility checklist, PR criteria. Automated linter for legacy classes.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">3.5</td><td class="cl-what">Dark mode groundwork</td><td class="cl-why">Staff work evenings. Parents register at night. Dark mode is now an expectation on professional software — but adding it later to a hard-coded system would require a rebuild.</td><td class="cl-out">All colours converted to semantic tokens. Light values live. Dark values ready. When the decision is made, activating dark mode is a single configuration change.</td><td><span class="pill pill-all">All</span></td></tr>
+      <tr><td class="cl-num">3.1</td><td class="cl-what">Ecosystem-wide DS audit</td><td class="cl-why">Applicaa has 13 products across 6 school types. Each has grown its own visual patterns. A buyer who uses Admissions+ and Options+ experiences two completely different products — no shared identity.</td><td class="cl-out">Every product mapped against DS components. Gaps prioritised. Shared header, navigation, and status patterns adopted by all 13 products.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.2</td><td class="cl-what">WCAG 2.1 AA accessibility audit and fixes</td><td class="cl-why">UK public sector procurement requires WCAG 2.1 AA. MATs and Local Authorities are public sector — failing an audit risks losing contracts across the whole portfolio.</td><td class="cl-out">Full audit, all critical findings fixed, accessibility statement published for each product.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.3</td><td class="cl-what">Mobile and tablet — full pass</td><td class="cl-why">UK schools are BYOD. iPads and Android tablets are primary devices. Screens designed desktop-first fail on these devices — especially in Bursary+, Options+, and Exams+ where parents are the primary user.</td><td class="cl-out">Top 10 screens per product tested on real devices. Tables stack to card layout. Tap targets meet minimum size.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.4</td><td class="cl-what">Animation and motion standards</td><td class="cl-why">Transitions vary in speed and style across products. A user of multiple Applicaa tools experiences a different "feel" in each one.</td><td class="cl-out">Four standard animation speeds. Consistent across all state changes. Respects reduced-motion system setting.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.5</td><td class="cl-what">DS contribution guide and governance</td><td class="cl-why">No documented contribution process across the product family. With 13 products, divergence grows exponentially without a shared standard. Bootstrap leakage in Admissions+ is the symptom — lack of governance is the cause.</td><td class="cl-out">Published guide: naming conventions, documentation requirements, accessibility checklist, PR criteria. Automated linter blocks legacy classes. Applies to every product team.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
+      <tr><td class="cl-num">3.6</td><td class="cl-what">Product identity system — when to diverge intentionally</td><td class="cl-why">Each product has its own colour personality (e.g. Exams+ gold, Options+ teal, MAT+ purple). Without rules, divergence is inconsistent. With rules, it becomes a feature — not a bug.</td><td class="cl-out">Defined "brand layer" on top of DS: which tokens each product can customise (accent colour, icon set) and which are fixed (spacing, typography, interaction patterns). Bursary+, Futures, and Local Authorities adopted first.</td><td><span class="pill pill-ecosystem">All 13 products</span></td></tr>
     </tbody>
   </table></div>
 
@@ -653,44 +655,102 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="phase-hdr ph3">
     <div class="ph-num">3</div>
     <div class="ph-info">
-      <div class="ph-date">November 2026 · 4 weeks</div>
+      <div class="ph-date">November 2026 · 4–6 weeks</div>
       <h2>Phase 3 — Scale and Polish</h2>
-      <p>Platform-wide quality pass: accessibility compliance, mobile usability, animation standards, and design governance. Ensures everything built in Phases 0–2 holds up legally, works on every device, and stays consistent as the team grows.</p>
+      <p>The DS foundation built in Phases 0–2 expands to the full Applicaa product ecosystem — 13 products across 6 school types, from Nursery &amp; Primary to Local Authorities. Every product gets shared identity, accessibility compliance, and mobile quality. Governance rules prevent the same inconsistencies from returning as the team grows.</p>
+    </div>
+  </div>
+
+  <div class="slabel">The full Applicaa product ecosystem</div>
+  <div style="background:white;border:1px solid var(--g200);border-radius:10px;padding:16px 18px;margin-bottom:18px;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;font-size:12px;">
+      <div style="padding:10px 14px;border-right:1px solid var(--g100);">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--g400);margin-bottom:8px;">Nursery &amp; Primary</div>
+        <div style="color:var(--g700);margin-bottom:4px;">Admissions+ for Early Years</div>
+      </div>
+      <div style="padding:10px 14px;border-right:1px solid var(--g100);">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--g400);margin-bottom:8px;">Secondary</div>
+        <div style="color:var(--g700);margin-bottom:4px;">Admissions+ for Secondary</div>
+        <div style="color:var(--g700);margin-bottom:4px;">Exams+</div>
+        <div style="color:var(--g700);margin-bottom:4px;">Options+</div>
+        <div style="color:var(--g700);">Applicaa Futures</div>
+      </div>
+      <div style="padding:10px 14px;">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--g400);margin-bottom:8px;">Post-16</div>
+        <div style="color:var(--g700);margin-bottom:4px;">Admissions+ for Post-16</div>
+        <div style="color:var(--g700);margin-bottom:4px;">Bursary16+</div>
+        <div style="color:var(--g700);">ApplicaaOne</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;font-size:12px;border-top:1px solid var(--g100);">
+      <div style="padding:10px 14px;border-right:1px solid var(--g100);">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--g400);margin-bottom:8px;">Independent</div>
+        <div style="color:var(--g700);margin-bottom:4px;">Admissions+ for Independents</div>
+        <div style="color:var(--g700);">Bursary+</div>
+      </div>
+      <div style="padding:10px 14px;border-right:1px solid var(--g100);">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--g400);margin-bottom:8px;">Multi-Academy Trust</div>
+        <div style="color:var(--g700);">MAT Management+</div>
+      </div>
+      <div style="padding:10px 14px;">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--g400);margin-bottom:8px;">Local Authorities</div>
+        <div style="color:var(--g700);">Applicaa for Local Authorities</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;padding:10px 12px;background:var(--sky-light);border-radius:7px;font-size:12px;color:var(--sky);font-weight:600;">
+      Phase 3 extends the DS foundation to all 13 products. Phases 0–2 focused on Post-16 (Admissions+, MAT+, ApplicaaOne). Phase 3 brings the rest of the family into a shared design language.
     </div>
   </div>
 
   <div class="grid2">
+    <div class="card" style="grid-column:1/-1;">
+      <div class="card-icon">🗂️</div>
+      <div class="card-title">Ecosystem-wide DS audit</div>
+      <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
+      <div class="card-body">Applicaa's 13 products have grown independently. A school buying Admissions+ Post-16 and Options+ experiences two completely different visual languages. Common elements — headers, status badges, tables, filters — look and behave differently in each product. No product team can reuse what another has built.<br><br>This audit maps every product's screens against the DS component library. It identifies what each product can adopt immediately, what needs adapting, and what's genuinely unique to that product.</div>
+      <div class="divline"></div>
+      <div class="outcome">Shared header, navigation, and status patterns adopted by all 13 products. Every team knows what's in the DS and how to use it. Reuse replaces rebuild.</div>
+      <div class="impact-row"><span class="tag">Shorter build time per product</span><span class="tag">Consistent cross-product UX</span><span class="tag">Shared identity for Applicaa brand</span></div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎨</div>
+      <div class="card-title">Product identity system</div>
+      <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
+      <div class="card-body">Each product has its own colour personality — Exams+ gold, Options+ teal, MAT+ purple. Without rules, this is inconsistency. With rules, it becomes a feature: every product feels distinctly Applicaa while still being recognisably itself.<br><br>The DS defines a "brand layer": which visual tokens each product can customise (accent colour, product icon) and which are fixed across the whole family (spacing, typography, interaction patterns, accessibility standards).</div>
+      <div class="divline"></div>
+      <div class="outcome">Clear rules distinguishing shared standards from intentional product differentiation. Adopted first by Bursary+, Applicaa Futures, and Local Authorities — the products furthest from the current DS.</div>
+    </div>
     <div class="card">
       <div class="card-icon">♿</div>
       <div class="card-title">WCAG 2.1 AA accessibility audit</div>
-      <div class="card-products"><span class="pill pill-all">All products</span></div>
-      <div class="card-body">UK public sector procurement requires WCAG 2.1 AA compliance. MATs are public sector. Failing an audit risks losing contracts. Covers: text contrast, keyboard navigation, screen reader compatibility, focus management, skip links, form error announcements.</div>
+      <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
+      <div class="card-body">UK public sector procurement requires WCAG 2.1 AA. MATs and Local Authorities are public sector — failing an audit risks losing contracts across the whole portfolio. Parent-facing products (Exams+, Bursary16+) must work for users with visual, motor, and cognitive impairments. Covers: text contrast, keyboard navigation, screen reader compatibility, focus management, form error announcements.</div>
       <div class="divline"></div>
       <div class="outcome">All critical findings fixed. Accessibility statement published for each product.</div>
     </div>
     <div class="card">
       <div class="card-icon">📱</div>
       <div class="card-title">Mobile and tablet — full pass</div>
-      <div class="card-products"><span class="pill pill-all">All products</span></div>
-      <div class="card-body">UK schools are BYOD — iPads and Android tablets are primary devices for school staff. Phase 1 covered critical Admissions+ screens. This pass covers MAT+ and ApplicaaOne. Tested on real devices, not simulators.</div>
+      <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
+      <div class="card-body">Parent-facing products (Exams+, Bursary16+, ApplicaaOne, Admissions+ for Early Years) are used primarily on phones — at school pickup, at home, on the bus. Phase 1 covered Admissions+ Post-16 critical screens. This pass covers every other product. Tested on real devices, not simulators.</div>
       <div class="divline"></div>
-      <div class="outcome">Top 10 screens per product. Tables stack to card layout. Buttons meet minimum tap target size.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">✨</div>
-      <div class="card-title">Animation and motion standards</div>
-      <div class="card-products"><span class="pill pill-all">All products</span></div>
-      <div class="card-body">Transitions (panels, dialogs, notifications) vary in speed and style. The interface feels inconsistent when moving between screens. Four standard speeds defined and applied consistently everywhere. Respects reduced-motion system setting.</div>
-      <div class="divline"></div>
-      <div class="outcome">Consistent motion language across all state transitions in all three products.</div>
+      <div class="outcome">Top 10 screens per product. Tables stack to card layout. Buttons meet minimum tap target size. Parent flows work thumb-only.</div>
     </div>
     <div class="card">
       <div class="card-icon">📖</div>
       <div class="card-title">DS contribution guide and governance</div>
-      <div class="card-products"><span class="pill pill-all">All products</span></div>
-      <div class="card-body">No documented contribution process — how Bootstrap leakage and colour inconsistencies accumulated in the first place. Without standards, Phase 0–2 fixes will reappear.</div>
+      <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
+      <div class="card-body">No documented contribution process. Bootstrap leakage in Admissions+ is the visible symptom — lack of governance is the cause. With 13 product teams contributing to a shared DS without rules, divergence grows exponentially. What Phase 0 fixed will return.</div>
       <div class="divline"></div>
-      <div class="outcome">Published guide: naming conventions, documentation requirements, accessibility checklist, PR criteria. Automated linter blocks legacy classes from being merged.</div>
+      <div class="outcome">Published guide: naming conventions, documentation requirements, accessibility checklist, PR criteria. Automated linter blocks legacy classes from being merged by any team.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">✨</div>
+      <div class="card-title">Animation and motion standards</div>
+      <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
+      <div class="card-body">Transitions (panels, dialogs, notifications) vary in speed and style across all 13 products. A user switching between Admissions+ and Options+ on the same day experiences two different "feels". Four standard animation speeds defined and applied consistently. Respects reduced-motion system setting.</div>
+      <div class="divline"></div>
+      <div class="outcome">Consistent motion language across every product. Feels like one platform.</div>
     </div>
   </div>
 </div>
@@ -902,9 +962,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <tr>
       <td><strong>Phase 3</strong><br><span style="font-size:10px;color:var(--g400)">Scale &amp; Polish</span></td>
       <td>Nov</td>
-      <td>WCAG 2.1 AA accessibility audit. Mobile and tablet pass. Motion standards. DS contribution guide. Dark mode groundwork.</td>
-      <td><span class="pill pill-all">All</span></td>
-      <td>Legal compliance. Works on every device. Stays consistent as the team grows.</td>
+      <td>DS foundation extends to all 13 products across 6 school types. Ecosystem audit, product identity system, WCAG 2.1 AA, mobile pass, motion standards, governance guide.</td>
+      <td><span class="pill pill-ecosystem">All 13 products</span></td>
+      <td>One coherent platform. Legal compliance. Works on every device. Every team building from the same foundation.</td>
     </tr>
     <tr>
       <td><strong>Phase 4</strong><br><span style="font-size:10px;color:var(--g400)">AI-Native</span></td>
