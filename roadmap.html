@@ -255,18 +255,160 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 /* FOOTER */
 .footer{text-align:center;padding:36px;color:var(--g400);font-size:12px;border-top:1px solid var(--g200);margin-top:48px;}
 
+/* ── TABLET (≤960px) ── */
 @media(max-width:960px){
-  .exec-grid,.items-grid,.items-grid-3,.lanes,.tracks-grid,.research-phases,.metrics-grid,.devplan-grid,.strategy-grid{grid-template-columns:1fr;}
-  .tl-strip{grid-template-columns:1fr 1fr 1fr;}
+  /* Layout */
+  .container{padding:28px 16px 60px;}
+  .header{padding:32px 20px 28px;}
+  .header h1{font-size:24px;}
+  .header p{font-size:14px;}
+  .header-callout{font-size:13px;padding:13px 15px;}
+  .header-meta{gap:16px;}
+
+  /* Nav */
+  .sticky-nav{padding:0 12px;}
+  .sticky-nav a{padding:10px 10px;font-size:11px;}
+
+  /* Grids → single column */
+  .exec-grid{grid-template-columns:1fr 1fr;}
+  .items-grid,.items-grid-3,.lanes,.tracks-grid,.research-phases,.metrics-grid,.devplan-grid,.strategy-grid{grid-template-columns:1fr;}
+
+  /* Timeline → 2 cols */
+  .tl-strip{grid-template-columns:1fr 1fr;}
   .tl-p+.tl-p{border-left:none;border-top:1px solid var(--g200);}
+
+  /* Trust / journey arcs → single col */
   .trust-arc,.journey-arc{grid-template-columns:1fr;}
   .arc-step+.arc-step,.ja-step+.ja-step{border-left:none;border-top:1px solid var(--g200);}
-  .phase-stats{display:none;}
+
+  /* Escalation → vertical */
   .escalation{flex-direction:column;}
   .esc-step+.esc-step{border-left:none;border-top:1px solid var(--g200);}
-  .header{padding:36px 24px 32px;}
-  .header h1{font-size:26px;}
-  .container{padding:32px 20px 60px;}
+
+  /* Phase */
+  .phase-stats{display:none;}
+  .phase-header{padding:18px 18px;}
+  .phase-info h2{font-size:17px;}
+
+  /* Section labels */
+  .slabel{font-size:11px;}
+
+  /* Checklist tables — hide Why column, keep What + Outcome + Products */
+  .cl-table th:nth-child(3),.cl-table td:nth-child(3){display:none;}
+  .cl-table th,.cl-table td{padding:10px 12px;}
+  .cl-table th:nth-child(2){width:auto;}
+
+  /* Error table — hide middle column */
+  .etable th:nth-child(2),.etable td:nth-child(2){display:none;}
+
+  /* Summary table — collapse middle columns */
+  .summary-table th:nth-child(3),.summary-table td:nth-child(3){display:none;}
+
+  /* Phase label rows wrap */
+  div[style*="display:flex;align-items:center;gap:12px"]{flex-direction:column;align-items:flex-start;gap:6px;}
+
+  /* Metrics */
+  .metrics-grid{grid-template-columns:1fr;}
+}
+
+/* ── MOBILE (≤600px) ── */
+@media(max-width:600px){
+  /* Layout */
+  .container{padding:20px 12px 48px;}
+  .header{padding:24px 16px 22px;}
+  .header h1{font-size:20px;letter-spacing:-.3px;}
+  .header p{font-size:13px;}
+  .header-meta{flex-direction:column;gap:10px;}
+  .header-callout{font-size:12px;padding:11px 13px;}
+  .section-heading{font-size:19px;}
+  .section-sub{font-size:13px;}
+
+  /* Nav — scrollable, compact */
+  .sticky-nav{padding:0 8px;}
+  .sticky-nav a{padding:9px 8px;font-size:10px;}
+
+  /* Exec cards → 1 col */
+  .exec-grid{grid-template-columns:1fr;}
+  .ov-card .num{font-size:28px;}
+
+  /* Timeline → 1 col */
+  .tl-strip{grid-template-columns:1fr;}
+  .tl-p{border-top:1px solid var(--g200);}
+  .tl-p:first-child{border-top:none;}
+
+  /* Phase header */
+  .phase-header{flex-wrap:wrap;padding:16px;}
+  .phase-info h2{font-size:16px;}
+  .phase-info p{font-size:13px;}
+  .phase-why{font-size:12px;}
+  .phase-num{width:38px;height:38px;font-size:15px;}
+
+  /* Items */
+  .item{padding:14px;}
+  .item-title{font-size:13px;}
+  .item-problem,.item-outcome{font-size:12px;}
+  .item-icon{font-size:17px;}
+
+  /* Lane items */
+  .lane-item-title{font-size:12px;}
+  .lane-item-desc{font-size:11px;}
+
+  /* Checklist tables — also hide Products column on very small screens, show only # What Outcome */
+  .cl-table th:nth-child(4),.cl-table td:nth-child(4){display:none;}
+  .cl-table th:nth-child(5),.cl-table td:nth-child(5){display:none;}
+  .cl-table{font-size:12px;}
+  .cl-table th,.cl-table td{padding:9px 10px;}
+  .cl-num{font-size:11px;}
+  .cl-what{font-size:12px;}
+
+  /* Summary table — show Phase + Key result only */
+  .summary-table th:nth-child(2),.summary-table td:nth-child(2){display:none;}
+  .summary-table th:nth-child(4),.summary-table td:nth-child(4){display:none;}
+  .summary-table{font-size:12px;}
+  .summary-table th,.summary-table td{padding:10px 10px;}
+
+  /* Error table */
+  .etable{font-size:12px;}
+  .etable th,.etable td{padding:9px 10px;}
+
+  /* Growth tracks */
+  .track-header h3{font-size:14px;}
+  .track-body ul{font-size:12px;}
+
+  /* Dev plan */
+  .dp-title{font-size:13px;}
+  .dp-card ul{font-size:12px;}
+
+  /* Confidence indicators */
+  .ci{font-size:12px;padding:8px 10px;}
+
+  /* Research cards */
+  .rp-body{font-size:12px;}
+
+  /* Metrics */
+  .metric-card h3{font-size:11px;}
+  .metric-row{font-size:12px;}
+  .metric-value{font-size:13px;}
+
+  /* AI cards */
+  .ai-card{padding:14px;}
+  .ai-card-desc{font-size:11px;}
+  .ai-card ul{font-size:11px;}
+
+  /* Trust / journey */
+  .arc-quote,.ja-response,.ja-feeling{font-size:10px;}
+  .arc-label,.ja-state{font-size:12px;}
+
+  /* Pills / badges */
+  .pill{font-size:10px;padding:2px 6px;}
+  .badge{font-size:10px;padding:2px 6px;}
+  .impact-tag{font-size:10px;}
+
+  /* Phase heading labels */
+  .ph-label{font-size:11px;padding:4px 10px;}
+
+  /* Footer */
+  .footer{font-size:11px;padding:24px 16px;}
 }
 </style>
 </head>
@@ -383,7 +525,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="section-sub">Every planned improvement across all six phases — organised by priority and product. Each item includes what we're fixing, why it matters, and the expected outcome for staff, parents, or students.</div>
 
   <style>
-    .cl-table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden;border:1px solid var(--g200);margin-bottom:32px;font-size:13px;}
+    .cl-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--g200);margin-bottom:32px;}
+    .cl-table{width:100%;border-collapse:collapse;background:white;border-radius:0;overflow:hidden;font-size:13px;}
     .cl-table thead tr{background:var(--g50);}
     .cl-table th{padding:12px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:2px solid var(--g200);}
     .cl-table td{padding:13px 16px;border-bottom:1px solid var(--g100);vertical-align:top;line-height:1.55;}
@@ -409,7 +552,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <span class="ph-label ph-label-0">● Phase 0 — Shared Foundation · March–April</span>
     <span style="font-size:12px;color:var(--g400);">Fix the inconsistencies that exist across all three products today before building anything new</span>
   </div>
-  <table class="cl-table">
+  <div class="cl-table-wrap"><table class="cl-table">
     <thead><tr><th style="width:32px">#</th><th style="width:220px">What we're doing</th><th>Why it matters</th><th>Expected outcome</th><th style="width:110px">Products</th></tr></thead>
     <tbody>
       <tr>
@@ -483,14 +626,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <td><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <!-- PHASE 1 -->
   <div style="display:flex;align-items:center;gap:12px;margin:28px 0 12px;">
     <span class="ph-label ph-label-1">● Phase 1 — Quick Wins · May</span>
     <span style="font-size:12px;color:var(--g400);">High-impact fixes to daily workflows — each ships independently, no item waits for another</span>
   </div>
-  <table class="cl-table">
+  <div class="cl-table-wrap"><table class="cl-table">
     <thead><tr><th style="width:32px">#</th><th style="width:220px">What we're doing</th><th>Why it matters</th><th>Expected outcome</th><th style="width:110px">Products</th></tr></thead>
     <tbody>
       <tr>
@@ -592,14 +735,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <td><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <!-- PHASE 2 -->
   <div style="display:flex;align-items:center;gap:12px;margin:28px 0 12px;">
     <span class="ph-label ph-label-2">● Phase 2 — Building Blocks · June–July</span>
     <span style="font-size:12px;color:var(--g400);">Shared interface elements needed before Phase 3 product redesigns can begin</span>
   </div>
-  <table class="cl-table">
+  <div class="cl-table-wrap"><table class="cl-table">
     <thead><tr><th style="width:32px">#</th><th style="width:220px">What we're doing</th><th>Why it matters</th><th>Expected outcome</th><th style="width:110px">Products</th></tr></thead>
     <tbody>
       <tr>
@@ -652,14 +795,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <td><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <!-- PHASE 3 -->
   <div style="display:flex;align-items:center;gap:12px;margin:28px 0 12px;">
     <span class="ph-label ph-label-3">● Phase 3 — Product Redesigns · August–October</span>
     <span style="font-size:12px;color:var(--g400);">Three parallel redesign tracks — each product ships independently</span>
   </div>
-  <table class="cl-table">
+  <div class="cl-table-wrap"><table class="cl-table">
     <thead><tr><th style="width:32px">#</th><th style="width:220px">What we're doing</th><th>Why it matters</th><th>Expected outcome</th><th style="width:110px">Products</th></tr></thead>
     <tbody>
       <tr class="cl-phase-row"><td colspan="5">🎓 Admissions+ track</td></tr>
@@ -764,14 +907,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <td><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <!-- PHASE 4 -->
   <div style="display:flex;align-items:center;gap:12px;margin:28px 0 12px;">
     <span class="ph-label ph-label-4">● Phase 4 — Scale & Polish · November</span>
     <span style="font-size:12px;color:var(--g400);">Accessibility compliance, mobile quality, and long-term maintainability</span>
   </div>
-  <table class="cl-table">
+  <div class="cl-table-wrap"><table class="cl-table">
     <thead><tr><th style="width:32px">#</th><th style="width:220px">What we're doing</th><th>Why it matters</th><th>Expected outcome</th><th style="width:110px">Products</th></tr></thead>
     <tbody>
       <tr>
@@ -810,14 +953,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <td><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <!-- PHASE 5 -->
   <div style="display:flex;align-items:center;gap:12px;margin:28px 0 12px;">
     <span class="ph-label ph-label-5">● Phase 5 — AI-Native Evolution · December+</span>
     <span style="font-size:12px;color:var(--g400);">Redesign how parents, students, and staff interact with Applicaa using AI</span>
   </div>
-  <table class="cl-table">
+  <div class="cl-table-wrap"><table class="cl-table">
     <thead><tr><th style="width:32px">#</th><th style="width:220px">What we're doing</th><th>Why it matters</th><th>Expected outcome</th><th style="width:110px">Products</th></tr></thead>
     <tbody>
       <tr>
@@ -863,7 +1006,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <td><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 </div>
 
 <hr class="divider">
@@ -1440,7 +1583,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 
   <div class="slabel">When AI gets it wrong — graceful error recovery</div>
-  <table class="etable">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="etable">
     <thead><tr><th>What goes wrong</th><th>Effect on the user</th><th>How we design the response</th></tr></thead>
     <tbody>
       <tr><td><strong>AI misunderstands the input</strong></td><td>Frustration</td><td>Offer a rephrased suggestion and show an example of what to say</td></tr>
@@ -1450,7 +1593,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <tr><td><strong>Document fails to upload</strong></td><td>Fear of lost work</td><td>Confirm what was saved before the error, offer a simple retry</td></tr>
       <tr><td><strong>Language barrier</strong></td><td>Exclusion</td><td>Offer translation and a simplified plain-language mode immediately</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <div class="slabel">Escalation pathway — from AI to human, seamlessly</div>
   <div class="escalation">
@@ -1750,7 +1893,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- SUMMARY -->
 <div class="section-heading" style="margin-bottom:16px;">Roadmap at a Glance</div>
-<table class="summary-table">
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;"><table class="summary-table">
   <thead>
     <tr><th>Phase</th><th>When</th><th>What we're doing</th><th>Who benefits</th><th>Key result</th></tr>
   </thead>
@@ -1808,7 +1951,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <td><strong>200+ schools · 45,000+ course listings · Millions of parent and student interactions</strong></td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 </div>
 
