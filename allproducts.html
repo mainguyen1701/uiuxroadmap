@@ -325,12 +325,47 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .gantt-row.divider-row .gantt-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--g400);}
 .gantt-today{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--coral);border-radius:1px;z-index:10;}
 .gantt-today::before{content:"Now";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:8px;font-weight:800;color:var(--coral);white-space:nowrap;}
+
+.human-section{background:#fff;border:1px solid var(--g200);border-radius:13px;padding:28px 30px;margin:0 0 0;}
+.human-section-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:var(--coral);margin-bottom:6px;}
+.human-section-headline{font-size:18px;font-weight:900;color:var(--g900);margin-bottom:8px;line-height:1.3;letter-spacing:-.3px;}
+.human-section-sub{font-size:12px;color:var(--g500);margin-bottom:24px;line-height:1.65;max-width:800px;}
+.user-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+.user-card{border-radius:10px;padding:18px 20px;border:1px solid var(--g200);}
+.user-card.staff{background:linear-gradient(135deg,#eff6ff,#dbeafe);}
+.user-card.parent{background:linear-gradient(135deg,#fdf4ff,#f3e8ff);}
+.user-card-name{font-size:13px;font-weight:800;color:var(--g900);margin-bottom:3px;}
+.user-card-role{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--g400);margin-bottom:12px;}
+.empathy-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.eq{background:white;border-radius:7px;padding:10px 12px;border:1px solid var(--g100);}
+.eq-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+.eq-label.says{color:#2563eb;}
+.eq-label.thinks{color:#7c3aed;}
+.eq-label.does{color:#059669;}
+.eq-label.feels{color:#dc2626;}
+.eq-body{font-size:11px;color:var(--g600);line-height:1.5;font-style:italic;}
+.trust-principles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px;}
+.trust-p{background:var(--g50);border-radius:8px;padding:12px 14px;border-top:3px solid var(--navy);}
+.trust-p-num{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin-bottom:5px;}
+.trust-p-title{font-size:11px;font-weight:800;color:var(--g900);margin-bottom:5px;}
+.trust-p-body{font-size:11px;color:var(--g500);line-height:1.5;}
+.tone-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px;}
+.tone-dim{background:var(--g50);border-radius:8px;padding:12px 14px;}
+.tone-dim-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--g400);margin-bottom:8px;}
+.tone-scale{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.tone-end{font-size:10px;font-weight:700;color:var(--g500);}
+.tone-bar{flex:1;height:4px;background:var(--g200);border-radius:2px;margin:0 8px;position:relative;}
+.tone-dot{position:absolute;top:-4px;width:12px;height:12px;border-radius:50%;background:var(--navy);border:2px solid white;box-shadow:0 0 0 1px var(--navy);}
+.tone-note{font-size:10px;color:var(--g400);line-height:1.4;}
+.human-source{font-size:10px;color:var(--g300);margin-top:16px;font-style:italic;}
+@media(max-width:700px){.user-cards,.trust-principles,.tone-row{grid-template-columns:1fr 1fr;}.empathy-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
 <nav class="sticky-nav">
   <a href="#vision">Vision</a>
+  <a href="#human">People</a>
   <a href="#overview">Overview</a>
   <a href="#timeline">Timeline</a>
   <a href="#checklist">Checklist</a>
@@ -463,6 +498,104 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 </div>
 
 <div class="container">
+
+<div class="human-section" id="human">
+  <div class="human-section-label">Human-centred design — who we are designing for</div>
+  <div class="human-section-headline">Consistency is the foundation. Empathy is the ceiling.</div>
+  <div class="human-section-sub">Phases 0–3 make Applicaa consistent. But consistency alone does not make software feel human. The second dimension of this roadmap is designing for the emotional reality of the people using it — a school admin under pressure, a parent anxious about their child's future. Understanding that emotional state is what separates a product that works from one people trust.</div>
+
+  <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--g400);margin-bottom:12px;">Who we design for — empathy maps (NN/G framework: Says · Thinks · Does · Feels)</div>
+  <div class="user-cards">
+    <div class="user-card staff">
+      <div class="user-card-name">The school admissions coordinator</div>
+      <div class="user-card-role">Primary user — Admissions+ and MAT+</div>
+      <div class="empathy-grid">
+        <div class="eq"><div class="eq-label says">Says</div><div class="eq-body">"Where is that setting again?" · "Why is this import failing?" · "I need this done before 3pm."</div></div>
+        <div class="eq"><div class="eq-label thinks">Thinks</div><div class="eq-body">I'm responsible if this goes wrong. I shouldn't need to call support for this. This should be faster.</div></div>
+        <div class="eq"><div class="eq-label does">Does</div><div class="eq-body">Screenshots settings to remember them. Keeps a spreadsheet alongside the product. Calls colleagues for help navigating the UI.</div></div>
+        <div class="eq"><div class="eq-label feels">Feels</div><div class="eq-body"><strong style="color:#dc2626;">Time pressure.</strong> Accountability without clarity. Relief when things save. Frustration when errors give no explanation.</div></div>
+      </div>
+    </div>
+    <div class="user-card parent">
+      <div class="user-card-name">The parent applying for their child</div>
+      <div class="user-card-role">End user — Admissions+ application flow (Phase 2+)</div>
+      <div class="empathy-grid">
+        <div class="eq"><div class="eq-label says">Says</div><div class="eq-body">"Did it submit?" · "What do I do next?" · "I don't have that document right now."</div></div>
+        <div class="eq"><div class="eq-label thinks">Thinks</div><div class="eq-body">This is my child's future. What if I make a mistake? Is this safe? Will someone actually read this?</div></div>
+        <div class="eq"><div class="eq-label does">Does</div><div class="eq-body">Reads everything twice before clicking. Abandons and returns. Takes screenshots of confirmation. Calls the school to check it arrived.</div></div>
+        <div class="eq"><div class="eq-label feels">Feels</div><div class="eq-body"><strong style="color:#dc2626;">Anxiety about consequences.</strong> Uncertainty about the process. Relief at clear confirmation. Trust built through transparency.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--g400);margin-bottom:12px;">Four trust factors — stable since 1999, still true today (NN/G)</div>
+  <div class="trust-principles">
+    <div class="trust-p">
+      <div class="trust-num">01</div>
+      <div class="trust-p-title">Design quality signals legitimacy</div>
+      <div class="trust-p-body">A typo on a homepage, misaligned components, or inconsistent colours all communicate the same thing: lack of attention to detail. Visual quality is the first trust signal — before a user reads a single word.</div>
+    </div>
+    <div class="trust-p">
+      <div class="trust-num">02</div>
+      <div class="trust-p-title">Upfront disclosure builds confidence</div>
+      <div class="trust-p-body">Hidden information destroys trust the moment it is discovered. Show import status. Explain what happens after an offer is made. Tell the parent exactly where their application is. No surprises.</div>
+    </div>
+    <div class="trust-p">
+      <div class="trust-num">03</div>
+      <div class="trust-p-title">Accurate, current content</div>
+      <div class="trust-p-body">Error messages that say nothing. Status badges that mean different things on different screens. Loading states with no explanation. Each one erodes trust. Accurate, current feedback is not a nice-to-have — it is the minimum.</div>
+    </div>
+    <div class="trust-p">
+      <div class="trust-num">04</div>
+      <div class="trust-p-title">Compassion, not sympathy</div>
+      <div class="trust-p-body">Sympathy acknowledges a user's problem. Compassion compels you to fix it. The goal is not longer error messages apologising for failures — it is designing so the failure does not occur, and when it does, recovery is instant.</div>
+    </div>
+  </div>
+
+  <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--g400);margin:20px 0 12px;">Applicaa tone of voice — four dimensions (NN/G framework)</div>
+  <div class="tone-row">
+    <div class="tone-dim">
+      <div class="tone-dim-label">Formal vs Casual</div>
+      <div class="tone-scale">
+        <span class="tone-end">Formal</span>
+        <div class="tone-bar"><div class="tone-dot" style="left:30%;"></div></div>
+        <span class="tone-end">Casual</span>
+      </div>
+      <div class="tone-note">Professional but not cold. "Your application has been received" not "Yay, you're in!"</div>
+    </div>
+    <div class="tone-dim">
+      <div class="tone-dim-label">Serious vs Funny</div>
+      <div class="tone-scale">
+        <span class="tone-end">Serious</span>
+        <div class="tone-bar"><div class="tone-dot" style="left:20%;"></div></div>
+        <span class="tone-end">Funny</span>
+      </div>
+      <div class="tone-note">Always serious. Children's education futures are never the place for humour.</div>
+    </div>
+    <div class="tone-dim">
+      <div class="tone-dim-label">Respectful vs Irreverent</div>
+      <div class="tone-scale">
+        <span class="tone-end">Respectful</span>
+        <div class="tone-bar"><div class="tone-dot" style="left:10%;"></div></div>
+        <span class="tone-end">Irreverent</span>
+      </div>
+      <div class="tone-note">Deeply respectful. The user is under pressure. Treat every interaction accordingly.</div>
+    </div>
+    <div class="tone-dim">
+      <div class="tone-dim-label">Matter-of-fact vs Enthusiastic</div>
+      <div class="tone-scale">
+        <span class="tone-end">Neutral</span>
+        <div class="tone-bar"><div class="tone-dot" style="left:35%;"></div></div>
+        <span class="tone-end">Enthusiastic</span>
+      </div>
+      <div class="tone-note">Warm but not performative. Clear next steps always. Never just "Something went wrong."</div>
+    </div>
+  </div>
+
+  <div class="human-source">Sources: Nielsen Norman Group — "Trustworthiness in Web Design: 4 Credibility Factors", "Sympathy vs Empathy in UX", "Empathy Mapping: The First Step in Design Thinking", "The Four Dimensions of Tone of Voice"</div>
+</div>
+
+<hr class="divider">
 
 <!-- OVERVIEW -->
 <div id="overview">
