@@ -359,6 +359,30 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .tone-note{font-size:10px;color:var(--g400);line-height:1.4;}
 .human-source{font-size:10px;color:var(--g300);margin-top:16px;font-style:italic;}
 @media(max-width:700px){.user-cards,.trust-principles,.tone-row{grid-template-columns:1fr 1fr;}.empathy-grid{grid-template-columns:1fr;}}
+
+.trust-section{background:linear-gradient(160deg,#0f172a,#1a2744);border-radius:14px;padding:26px 28px;margin:20px 0 26px;}
+.trust-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:#f472b6;margin-bottom:6px;}
+.trust-headline{font-size:16px;font-weight:900;color:white;margin-bottom:8px;line-height:1.3;}
+.trust-sub{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:22px;line-height:1.65;max-width:800px;}
+.trust-points{display:flex;flex-direction:column;gap:16px;}
+.trust-point{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;overflow:hidden;}
+.trust-point-hdr{display:grid;grid-template-columns:36px 1fr;align-items:start;gap:12px;padding:16px 18px 12px;}
+.trust-point-num{width:28px;height:28px;border-radius:50%;background:rgba(244,114,182,.2);border:1px solid rgba(244,114,182,.4);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#f472b6;flex-shrink:0;margin-top:1px;}
+.trust-point-title{font-size:13px;font-weight:800;color:white;line-height:1.3;margin-bottom:4px;}
+.trust-point-thesis{font-size:11px;color:rgba(255,255,255,.6);line-height:1.55;}
+.trust-execution{background:rgba(244,114,182,.06);border-top:1px solid rgba(244,114,182,.15);padding:14px 18px 14px 66px;}
+.trust-exec-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#f472b6;margin-bottom:9px;}
+.trust-exec-items{display:flex;flex-direction:column;gap:5px;}
+.trust-exec-item{font-size:11px;color:rgba(255,255,255,.7);line-height:1.5;display:flex;gap:8px;}
+.trust-exec-item::before{content:"→";color:#f472b6;font-weight:800;flex-shrink:0;}
+.trust-exec-vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+.trust-vs-col{background:rgba(255,255,255,.04);border-radius:6px;padding:9px 11px;}
+.trust-vs-col.bad .trust-vs-lbl{color:#f87171;}
+.trust-vs-col.good .trust-vs-lbl{color:#34d399;}
+.trust-vs-lbl{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
+.trust-vs-item{font-size:11px;color:rgba(255,255,255,.65);padding:2px 0;line-height:1.4;}
+.trust-source{font-size:10px;color:rgba(255,255,255,.25);margin-top:18px;font-style:italic;}
+@media(max-width:700px){.trust-execution{padding-left:18px;}.trust-exec-vs{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -1306,6 +1330,128 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </div>
     </div>
     <div class="conv-source">Sources: Nielsen Norman Group — "AI: First New UI Paradigm in 60 Years" and "Generative UI and Outcome-Oriented Design" (2025)</div>
+  </div>
+
+  <div class="trust-section">
+    <div class="trust-label">Designing with AI for trust and empathy</div>
+    <div class="trust-headline">AI cannot feel empathy. But the experience of being understood can be designed.</div>
+    <div class="trust-sub">These five principles shape how every AI interaction in Phase 4 is designed — from the first moment a family opens an application to the moment a school coordinator approves a recommendation.</div>
+
+    <div class="trust-points">
+
+      <div class="trust-point">
+        <div class="trust-point-hdr">
+          <div class="trust-point-num">1</div>
+          <div>
+            <div class="trust-point-title">Empathy is designed, not programmed</div>
+            <div class="trust-point-thesis">The feeling of being understood does not require the AI to understand. It requires the designer to understand — and encode that understanding into every interaction, state, and moment of friction.</div>
+          </div>
+        </div>
+        <div class="trust-execution">
+          <div class="trust-exec-label">How to execute</div>
+          <div class="trust-exec-items">
+            <div class="trust-exec-item">Run empathy mapping before designing any AI flow. Fill the Thinks quadrant first — what is the user afraid to say out loud? For a family filling an application: "Am I doing this wrong? Will my child miss out because of me?" That fear must shape every micro-copy choice.</div>
+            <div class="trust-exec-item">Design reassurance into the idle state. If a user pauses on a question for more than 30 seconds, the AI offers help proactively — not with an apology, with a shortcut: "Most families complete this by uploading their last school report. Want to try that?"</div>
+            <div class="trust-exec-item">Use progress signals that feel human. Not "Step 3 of 8" — "You're about halfway. The next section is short." Language that acknowledges effort, not just position.</div>
+            <div class="trust-exec-item">Design for the person behind the task. A school admin processing offers at 7pm is tired and time-pressured. The AI surfaces the three most urgent actions first — unprompted. That is designed empathy.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-point">
+        <div class="trust-point-hdr">
+          <div class="trust-point-num">2</div>
+          <div>
+            <div class="trust-point-title">Trust with AI forms faster and breaks faster than with humans</div>
+            <div class="trust-point-thesis">NN/G research: users form their trust model of an AI in the first 3 interactions. A confident wrong answer in interaction 1 can end the relationship entirely. The designer's job is to earn trust early and protect it deliberately.</div>
+          </div>
+        </div>
+        <div class="trust-execution">
+          <div class="trust-exec-label">How to execute</div>
+          <div class="trust-exec-items">
+            <div class="trust-exec-item">Design the first interaction as a trust demo, not a task. The Admissions Copilot's first action should be something impressive and low-risk — "I've pre-filled your school name and year group from last year's data. Does that look right?" shows capability without asking for anything.</div>
+            <div class="trust-exec-item">Never let AI be confident and wrong. Every AI output that could be incorrect must show a confidence indicator. If the AI is below 80% confident, it asks rather than states. "I think the deadline is 14 March — is that right?" is trustworthy. "The deadline is 14 March." followed by a correction is trust-breaking.</div>
+            <div class="trust-exec-item">Celebrate early wins visibly. When the AI correctly reads a document, summarises an application, or catches an anomaly — surface that success explicitly: "I spotted something you might want to check." This is the AI showing its value, not claiming it.</div>
+            <div class="trust-exec-item">Design the recovery moment. When AI gets something wrong, the recovery interaction is more important than the error itself. One-tap correction, plain acknowledgement ("Thanks — I'll remember that"), and no repeat of the same mistake in the same session.</div>
+          </div>
+          <div class="trust-exec-vs">
+            <div class="trust-vs-col bad">
+              <div class="trust-vs-lbl">Trust-breaking</div>
+              <div class="trust-vs-item">"The deadline is 14 March."</div>
+              <div class="trust-vs-item">"I'm sorry, I made an error."</div>
+              <div class="trust-vs-item">Confident answer with no source</div>
+              <div class="trust-vs-item">Repeats the same mistake</div>
+            </div>
+            <div class="trust-vs-col good">
+              <div class="trust-vs-lbl">Trust-building</div>
+              <div class="trust-vs-item">"I think it's 14 March — can you confirm?"</div>
+              <div class="trust-vs-item">"Got it, corrected. What should I do next time?"</div>
+              <div class="trust-vs-item">Confidence level shown next to every answer</div>
+              <div class="trust-vs-item">Adapts within the same session</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-point">
+        <div class="trust-point-hdr">
+          <div class="trust-point-num">3</div>
+          <div>
+            <div class="trust-point-title">Users don't reach for AI even when it can help</div>
+            <div class="trust-point-thesis">NN/G diary study: only 7% of needs were addressed by AI — even though 62% could have been. The gap is not capability. It is visibility and trust. Users don't know what the AI can do, or they don't believe it will work until they've seen it work.</div>
+          </div>
+        </div>
+        <div class="trust-execution">
+          <div class="trust-exec-label">How to execute</div>
+          <div class="trust-exec-items">
+            <div class="trust-exec-item">Make AI capabilities visible at the moment of need. When a staff member is on the application list page, the Copilot surface shows: "Ask me anything about these applications." Not buried in a menu — contextual, present, specific to the current screen.</div>
+            <div class="trust-exec-item">Use suggested prompts to show possibility. The natural language query interface should pre-populate 3 example questions relevant to the current screen: "How many applications are missing a reference?" "Which applicants haven't RSVPd to the open day?" Users discover capability through examples, not documentation.</div>
+            <div class="trust-exec-item">Design the first-use moment deliberately. The first time any staff member sees the Copilot, it should proactively do something useful — without being asked. Show don't tell. An unprompted insight lands harder than any onboarding screen.</div>
+            <div class="trust-exec-item">Track and surface usage. If a coordinator has never used natural language queries, the system can surface: "Did you know you can ask me questions about your pipeline?" — once, at the right moment, not as a persistent badge.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-point">
+        <div class="trust-point-hdr">
+          <div class="trust-point-num">4</div>
+          <div>
+            <div class="trust-point-title">Empathy mapping surfaces what users will never put in a support ticket</div>
+            <div class="trust-point-thesis">NN/G: the Thinks quadrant captures what users are feeling but won't say out loud — self-doubt, fear, anxiety. For Applicaa users, those feelings are hidden but consequential. Designing for them is the difference between a product that works and one that actually helps.</div>
+          </div>
+        </div>
+        <div class="trust-execution">
+          <div class="trust-exec-label">How to execute</div>
+          <div class="trust-exec-items">
+            <div class="trust-exec-item">Run an empathy mapping session before Phase 2 redesign begins for each product. For Admissions+: "A parent filling in an application form for the first time." For MAT+: "A trust coordinator preparing the board report the night before it's due." Map Says / Thinks / Does / Feels — spend 80% of the session on Thinks.</div>
+            <div class="trust-exec-item">Design for the unspoken anxiety of the application form. Families fear: making a mistake that affects their child's place. Every save confirmation, every validation message, and every error should speak to that fear directly: "Your application is saved automatically — you won't lose anything." Not just a toast notification.</div>
+            <div class="trust-exec-item">Design for the unspoken anxiety of the AI recommendation. Staff fear: being held responsible for a decision the AI made. The approval interface must make the human feel like they genuinely made the call — not just rubber-stamped a machine. Show reasoning, not just recommendation.</div>
+            <div class="trust-exec-item">Add a Thinks column to the Phase 2 design brief for every screen. Before designing any screen, document: "What is the user afraid of at this moment?" That answer shapes the micro-copy, the state design, and the error handling — not just the layout.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-point">
+        <div class="trust-point-hdr">
+          <div class="trust-point-num">5</div>
+          <div>
+            <div class="trust-point-title">Empower, don't apologise</div>
+            <div class="trust-point-thesis">NN/G: "The goal of design is not to be nice to users, but to empower them." Sympathy says sorry. Empathy fixes the problem. Every AI failure mode, error state, and recovery moment must be designed to move the user forward — not to make the product feel better about itself.</div>
+          </div>
+        </div>
+        <div class="trust-execution">
+          <div class="trust-exec-label">How to execute</div>
+          <div class="trust-exec-items">
+            <div class="trust-exec-item">Rewrite every AI error state as an action. "I couldn't understand that" becomes "Here are two ways I can help — which is closer to what you meant?" The user is never left with a dead end. Every failure surfaces a path forward.</div>
+            <div class="trust-exec-item">Replace apology language with action language across all phases. Phase 1 import errors: not "Something went wrong with your file" — "Row 14 has a missing email address. Fix it and re-upload, or skip that row." Phase 4 AI: not "I'm sorry, I made a mistake" — "I got that wrong — here's the correct answer."</div>
+            <div class="trust-exec-item">Design the override as empowerment, not correction. When a staff member overrides an AI recommendation, the interface should feel like the human won — not that the AI failed. "Your call — updated." And offer: "Should I factor this in next time?" That is the AI learning, not the AI apologising.</div>
+            <div class="trust-exec-item">Audit every error message across Phases 1–4 against one question: does this move the user forward, or does it just describe what went wrong? Every message that only describes the problem is a sympathy response. Every message that provides a next action is an empathy response.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="trust-source">Sources: Nielsen Norman Group — "Sympathy vs. Empathy in UX", "Empathy Mapping", "What Could an Intelligent Assistant Do for You?", "Trustworthiness in Web Design" (2025)</div>
   </div>
 
   <div class="slabel">Shared AI design foundations — built before any stage ships</div>
