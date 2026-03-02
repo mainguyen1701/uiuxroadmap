@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Applicaa UI/UX Revamp Roadmap 2026</title>
+<title>Applicaa UI/UX Strategy and Delivery Plan 2026</title>
 <style>
 :root{
   --navy:#263C91;--navy-dark:#1a2d6e;--navy-light:#e8ecf8;
@@ -408,12 +408,13 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <a href="#human">People</a>
   <a href="#overview">Overview</a>
   <a href="#timeline">Timeline</a>
-  <a href="#checklist">Checklist</a>
+  <a href="#checklist">Delivery Plan</a>
   <a href="#phase0">Phase 0</a>
   <a href="#phase1">Phase 1</a>
   <a href="#phase2">Phase 2</a>
   <a href="#phase3">Phase 3</a>
   <a href="#phase4">Phase 4</a>
+  <a href="#risks">Risks</a>
   <a href="#aiskills">AI Skills</a>
   <a href="#metrics">Outcomes</a>
 </nav>
@@ -636,11 +637,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <div id="overview">
   
 
+<div style="background:#fef2f2;border:2px solid #EC634B;border-radius:10px;padding:16px 22px;max-width:900px;margin:0 auto 0;">
+  <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#EC634B;margin-bottom:6px;">Board ask</div>
+  <div style="font-size:13px;color:#1f2937;line-height:1.65;">We are asking the board to <strong>approve this plan</strong> and confirm the two milestones — <strong>consistency by April 2026</strong> and <strong>AI-native design beginning June 2026</strong> — as fixed delivery commitments aligned with the engineering roadmap.</div>
+</div>
+
 <div class="ov-grid">
     <div class="ov-card"><div class="num">13</div><div class="desc">Products in ecosystem</div></div>
     <div class="ov-card"><div class="num">5</div><div class="desc">Delivery phases</div></div>
     <div class="ov-card"><div class="num">1</div><div class="desc">Shared design system — DS Lookbook</div></div>
-    <div class="ov-card"><div class="num">29</div><div class="desc">Planned improvements</div></div>
+    <div class="ov-card"><div class="num" style="font-size:18px;letter-spacing:-1px;">Feb–Jun</div><div class="desc">2026 delivery horizon</div></div>
     <div class="ov-card"><div class="num">3</div><div class="desc">Core products — Phases 0–2</div></div>
   </div>
 
@@ -750,8 +756,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- MASTER CHECKLIST -->
 <div id="checklist">
-  <div class="section-heading">Master Checklist</div>
-  <div class="section-sub">Every planned improvement across all five phases — what we're doing, why it matters, and the expected outcome.</div>
+  <div class="section-heading">Delivery Plan</div>
+  <div class="section-sub">Every planned improvement across all five phases — what we're building, why it matters, and the expected outcome.</div>
 
   <!-- Phase 0 -->
   <div style="display:flex;align-items:center;gap:10px;margin:20px 0 10px;">
@@ -1714,6 +1720,30 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <hr class="divider">
 
+<div id="risks">
+  <div class="section-heading">Risks and Mitigations</div>
+  <div class="section-sub">Three risks the team has identified and how each is managed.</div>
+  <div style="display:flex;flex-direction:column;gap:10px;max-width:900px;margin-top:16px;">
+    <div style="display:grid;grid-template-columns:24px 1fr 1fr;gap:14px;background:var(--g50);border:1px solid var(--g200);border-radius:9px;padding:14px 16px;align-items:start;">
+      <div style="font-size:18px;">⏱️</div>
+      <div><div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">Timeline risk</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Phase 2 and Phase 3 run in parallel in March–April. If research synthesis or engineering availability slips, the April milestone moves.</div></div>
+      <div><div style="font-size:11px;font-weight:800;color:#15803d;margin-bottom:4px;">Mitigation</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">AI-accelerated prototyping (v0, Cursor, Claude) compresses Phase 2 from months to weeks. Phase 2 scope is prototypes only — not builds. If one product track slips, the other ships independently.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:24px 1fr 1fr;gap:14px;background:var(--g50);border:1px solid var(--g200);border-radius:9px;padding:14px 16px;align-items:start;">
+      <div style="font-size:18px;">🔧</div>
+      <div><div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">Engineering dependency</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Phases 1–3 require engineering capacity to implement validated designs. If engineering is unavailable or reprioritised, shipped designs may lag.</div></div>
+      <div><div style="font-size:11px;font-weight:800;color:#15803d;margin-bottom:4px;">Mitigation</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Designers build HTML and Tailwind prototypes directly — reducing engineering effort on each item. Phase 1 items are independently shippable, so the team can flex around engineering capacity without losing the whole phase.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:24px 1fr 1fr;gap:14px;background:var(--g50);border:1px solid var(--g200);border-radius:9px;padding:14px 16px;align-items:start;">
+      <div style="font-size:18px;">🤖</div>
+      <div><div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">AI capability uncertainty</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Phase 4 AI features depend on engineering building the underlying models on schedule (AR 2 roadmap). If AI capabilities ship later, Phase 4 UX design stages shift accordingly.</div></div>
+      <div><div style="font-size:11px;font-weight:800;color:#15803d;margin-bottom:4px;">Mitigation</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Phase 4 UX design leads engineering — shared AI DS components, confidence patterns, and escalation flows are designed and in the Lookbook before any AI feature ships. Design is never the blocker.</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
 <!-- AI SKILLS -->
 <div id="aiskills">
   <div class="section-heading">AI Skills Plan</div>
@@ -1922,7 +1952,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 </div>
 
 <div class="footer">
-  Applicaa UI/UX Revamp Roadmap 2026 &nbsp;·&nbsp; Emma Nguyen &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; Confidential — prepared for board review
+  Applicaa UI/UX Strategy and Delivery Plan 2026 &nbsp;·&nbsp; Emma Nguyen &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; Confidential — prepared for board review
 </div>
 
 </body>
