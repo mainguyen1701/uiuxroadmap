@@ -532,26 +532,83 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <div class="slabel">Processes — recurring workflows staff do every day</div>
   <div class="items-grid">
+
+    <!-- 1. DATA IMPORT & EXPORT -->
     <div class="item">
-      <div class="item-header"><div class="item-title">Bromcom import — progress feedback</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Data imports run silently. Staff don't know if import succeeded, is running, or failed until they navigate away and back. High-anxiety action with no feedback.</div>
-      <div class="item-solution">Add <code>tw-progress</code> (indeterminate), success/fail <code>tw-inline-notification</code>, error rows in diff-style table. Turbo Streams for real-time updates — no reload.</div>
+      <div class="item-header"><div class="item-title">1. Data import &amp; export process</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px;margin-left:4px">MAT+</span></div></div>
+      <div class="item-problem">
+        <strong>Import problems:</strong> Bromcom, CSV, and MIS imports run silently — no progress, no success confirmation, no actionable error detail. Staff navigate away and back just to check if it worked. Errors surface as raw stack text with no remediation guidance.
+        <br><br>
+        <strong>Export problems:</strong> Exports trigger a download with no status, no format choice at point of export, and no way to re-download a recent export without rerunning the whole process.
+      </div>
+      <div class="item-solution">
+        <strong>Import:</strong> Add <code>tw-progress</code> bar (indeterminate while running), real-time row counts via Turbo Streams ("287 of 340 students processed"), success summary card, and error rows in diff-style table with specific fix guidance per error type. Show last-import timestamp on the trigger screen.
+        <br><br>
+        <strong>Export:</strong> Add format selector (CSV, XLSX, PDF) before triggering. Show export history (last 5 exports with download link). Email notification with download link for large exports that take &gt;30 seconds.
+      </div>
     </div>
+
+    <!-- 2. OFFER & ENROLMENT -->
     <div class="item">
-      <div class="item-header"><div class="item-title">Offer management — status clarity</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Offers — conditional, unconditional, waitlisted, declined — show as dense rows with no visual differentiation. Every offer state looks the same.</div>
-      <div class="item-solution">Status-coloured badge per row. KPI row at top (made/accepted/declined) using <code>tw-info-grid-inline</code>. Bulk offer actions. Offer state change triggers timeline entry.</div>
+      <div class="item-header"><div class="item-title">2. Offer &amp; enrolment management process</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
+      <div class="item-problem">
+        <strong>Offer problems:</strong> Conditional, unconditional, waitlisted, and declined offers all look identical in the list — same row, no colour, no icon. Staff must open each record to check status. Bulk offer actions require selecting rows one by one. No top-level overview of pipeline state.
+        <br><br>
+        <strong>Enrolment problems:</strong> Offer accepted → enrolled transition is manual and untriggered. No checklist for what enrolment requires (forms signed, fees paid, timetable assigned). Status falls off a cliff after offer — nothing signals enrolment progress.
+      </div>
+      <div class="item-solution">
+        <strong>Offers:</strong> Status-coloured badge per row (Conditional → amber, Unconditional → green, Waitlisted → blue, Declined → red). KPI stat row at top: made / accepted / declined / pending response using <code>tw-stat-card</code>. Bulk offer action via <code>tw-bulk-bar</code> (make offer, withdraw, move to waitlist). Offer state change auto-adds a timeline entry.
+        <br><br>
+        <strong>Enrolment:</strong> Post-offer enrolment checklist with per-student progress (Forms signed, Fees, Timetable, ID verified). Enrolment completion % visible on the list. Trigger automated email nudges for incomplete items.
+      </div>
     </div>
+
+    <!-- 3. EVENT MANAGEMENT -->
     <div class="item">
-      <div class="item-header"><div class="item-title">Event booking — push workflow</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Push to Schools modal — flat list, no phase filter, no "select all visible" for a filtered subset, per-school date config buried.</div>
-      <div class="item-solution">Apply <code>tw-filter-chip</code> (Phase 0) for phase filtering. "Select All Visible" respects active filter. Per-school date toggle in-step — no extra modal.</div>
+      <div class="item-header"><div class="item-title">3. Event management process</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px;margin-left:4px">Admissions+</span></div></div>
+      <div class="item-problem">
+        <strong>Create &amp; push:</strong> Push to Schools modal shows a flat list of all schools — no phase filter chips, no "select all visible" for a filtered subset, per-school date configuration buried two steps deep. Staff managing 10+ schools must scroll and click individually.
+        <br><br>
+        <strong>Manage RSVPs:</strong> RSVP list is a 15-column table — overflows on every laptop and all iPads. QR code column takes space in every row even when not needed. No bulk RSVP confirmation or cancellation.
+        <br><br>
+        <strong>Event status:</strong> No visual distinction between Upcoming, Live, Full, Cancelled, and Completed events in the calendar or list view. Staff must read text to distinguish status.
+        <br><br>
+        <strong>Post-event:</strong> No attendance confirmation step, no follow-up action trigger (send thank-you, send application link), no event report.
+      </div>
+      <div class="item-solution">
+        <strong>Push:</strong> Apply <code>tw-filter-chip</code> for phase filtering. "Select All Visible" respects active filter. Per-school date toggle inline — no separate modal.
+        <br><br>
+        <strong>RSVPs:</strong> Reduce to 7 default columns. Move QR code to action dropdown. Add bulk confirm/cancel via <code>tw-bulk-bar</code>. RSVP detail in <code>tw-panel</code> slide-out.
+        <br><br>
+        <strong>Status:</strong> Colour-coded badges (Upcoming → blue, Live → green, Full → amber, Cancelled → red, Completed → grey) on calendar pills and list rows. Legend in page header.
+        <br><br>
+        <strong>Post-event:</strong> "Close event" action triggers attendance step (mark attended/no-show from RSVP list), then offers follow-up email send to attendees and/or no-shows.
+      </div>
     </div>
+
+    <!-- 4. ENQUIRY RECORD -->
     <div class="item">
-      <div class="item-header"><div class="item-title">Enquiry record — log call &amp; task UX</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Log Call and Add Task use plain text inputs for dates and double-selects for time. After Phase 0 builds the pickers, these need wiring up.</div>
-      <div class="item-solution">Replace all date/time fields with <code>tw-date-picker</code> and <code>tw-time-picker</code>. Wire task reminders to <code>reminders_controller</code> from Phase 0.</div>
+      <div class="item-header"><div class="item-title">4. Enquiry record</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
+      <div class="item-problem">
+        <strong>Log Call / Add Task:</strong> Date and time fields use plain <code>&lt;input type="text"&gt;</code> and double <code>&lt;select&gt;</code> — no picker, no format validation, no timezone safety. Task reminders use raw <code>onclick="addDateReminder()"</code> bypassing Stimulus — untestable, unreusable.
+        <br><br>
+        <strong>Timeline:</strong> Activity type filter buttons (All, Emails, SMS, Calls, Notes, Tasks, Events) are bespoke inline buttons — not <code>tw-filter-chip</code>. No count badge per type. No date range filter.
+        <br><br>
+        <strong>SMS:</strong> "Messages remaining / Recipients / UK phone numbers" shown as bare <code>&lt;p&gt;</code> tags with Bootstrap classes. Character counter is raw text. Both have zero DS coverage.
+        <br><br>
+        <strong>SMS bubble preview:</strong> Raw Tailwind with no component. Not documented or reusable.
+      </div>
+      <div class="item-solution">
+        <strong>Log Call / Add Task:</strong> Replace all date/time fields with <code>tw-date-picker</code> and <code>tw-time-picker</code> (built Phase 0). Wire task reminders to <code>reminders_controller</code> via Stimulus.
+        <br><br>
+        <strong>Timeline:</strong> Replace type buttons with <code>tw-filter-chip-group</code>. Add count badge per type. Add date range picker for timeline scoping.
+        <br><br>
+        <strong>SMS stats:</strong> Build <code>tw-sms-stat-row</code> component and <code>tw-character-counter</code> (attaches to textarea, warning at 80%, danger at 100%). Remove all Bootstrap class remnants (<code>fw-bold</code>, <code>text-danger</code>).
+        <br><br>
+        <strong>SMS preview:</strong> Wrap in <code>tw-sms-bubble</code> component — reusable across enquiry record and any future SMS preview surface.
+      </div>
     </div>
+
   </div>
 
   <div class="slabel">Filters &amp; navigation — the most-used interaction in every list view</div>
