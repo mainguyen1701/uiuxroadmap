@@ -60,7 +60,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .ov-card .desc{font-size:12px;color:var(--g600);margin-top:2px;}
 
 /* TIMELINE */
-.tl-strip{display:grid;grid-template-columns:repeat(5,1fr);border-radius:12px;overflow:hidden;border:1px solid var(--g200);margin-bottom:30px;}
+.tl-strip{display:grid;grid-template-columns:repeat(4,1fr);border-radius:12px;overflow:hidden;border:1px solid var(--g200);margin-bottom:30px;}
 .tl-p{padding:14px 13px;}
 .tl-p:nth-child(1){background:var(--purple-light);}
 .tl-p:nth-child(2){background:#eff6ff;}
@@ -182,14 +182,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 /* FOOTER */
 .footer{text-align:center;padding:28px;color:var(--g400);font-size:11px;border-top:1px solid var(--g200);margin-top:36px;}
 
-/* STATUS BADGES */
-.status{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
-.status-completed{background:var(--green-light);color:var(--green);}
-.status-completed::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);}
-.status-in-progress{background:var(--navy-light);color:var(--navy);}
-.status-in-progress::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--navy);animation:pulse 2s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
-
 /* RESPONSIVE */
 @media(max-width:960px){
   .ov-grid{grid-template-columns:repeat(3,1fr);}
@@ -246,7 +238,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <p>Five phases covering the full Applicaa product family. Admissions+ and MAT+ share the DS Lookbook design system. Phase 3 scales shared standards to all 13 products in the ecosystem. ApplicaaOne is covered in a separate UI/UX document.</p>
     <div class="header-meta">
       <div class="hm"><span class="lbl">Products</span><span class="val">Admissions+ · MAT+ · Full ecosystem</span></div>
-      <div class="hm"><span class="lbl">Horizon</span><span class="val">February – June 2026</span></div>
+      <div class="hm"><span class="lbl">Horizon</span><span class="val">Feb – Jun 2026</span></div>
       <div class="hm"><span class="lbl">Phases</span><span class="val">5 (Phase 0 – 4)</span></div>
       <div class="hm"><span class="lbl">Prepared by</span><span class="val">Emma Nguyen</span></div>
       <div class="hm"><span class="lbl">Updated</span><span class="val">March 2026</span></div>
@@ -270,33 +262,27 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 
   <div class="tl-strip">
-    <div class="tl-p">
-      <div class="tl-n">Phase 0</div>
-      <div class="tl-date">Feb <span class="status status-completed">Completed</span></div>
+    <div class="tl-p" style="opacity:.7;">
+      <div class="tl-n">Phase 0 ✓</div>
+      <div class="tl-date">Completed — Feb 2026</div>
       <div class="tl-focus">Shared Foundation</div>
-      <div class="tl-desc">Convert to DS language, fix existing inconsistencies</div>
+      <div class="tl-desc">DS Lookbook established. Component library, tokens, patterns.</div>
     </div>
-    <div class="tl-p">
-      <div class="tl-n">Phase 1</div>
-      <div class="tl-date">Mar <span class="status status-in-progress">In Progress</span></div>
+    <div class="tl-p" style="border:2px solid var(--navy);border-radius:4px;">
+      <div class="tl-n" style="color:var(--navy);">Phase 1 ◉ In Progress</div>
+      <div class="tl-date">Now — Mar 2026</div>
       <div class="tl-focus">Quick Wins</div>
-      <div class="tl-desc">Settings · Processes · Customised Areas — DS applied, no redesign</div>
+      <div class="tl-desc">Settings · Processes · Customised Areas</div>
     </div>
     <div class="tl-p">
-      <div class="tl-n">Phase 2</div>
-      <div class="tl-date">Mar – Apr · Parallel with Phase 3</div>
-      <div class="tl-focus">Product Redesigns</div>
-      <div class="tl-desc">Full screen redesigns per product in parallel</div>
-    </div>
-    <div class="tl-p">
-      <div class="tl-n">Phase 3</div>
-      <div class="tl-date">Mar – Apr · Parallel with Phase 2</div>
-      <div class="tl-focus">Scale &amp; Polish</div>
-      <div class="tl-desc">DS extends to all 13 products · accessibility · mobile · governance</div>
+      <div class="tl-n">Phase 2 + 3</div>
+      <div class="tl-date">Parallel — by Apr 2026</div>
+      <div class="tl-focus">Redesigns + Scale</div>
+      <div class="tl-desc">Product redesigns run alongside accessibility and DS governance</div>
     </div>
     <div class="tl-p">
       <div class="tl-n">Phase 4</div>
-      <div class="tl-date">By Jun</div>
+      <div class="tl-date">By Jun 2026</div>
       <div class="tl-focus">AI-Native</div>
       <div class="tl-desc">Conversational AI admissions</div>
     </div>
@@ -312,7 +298,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <!-- Phase 0 -->
   <div style="display:flex;align-items:center;gap:10px;margin:20px 0 10px;">
-    <span class="ph-pill ph-pill-0">● Phase 0 — Shared Foundation · Feb</span> <span class="status status-completed">Completed</span>
+    <span class="ph-pill ph-pill-0">● Phase 0 — Shared Foundation · Mar–Apr</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
@@ -325,7 +311,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <!-- Phase 1 -->
   <div style="display:flex;align-items:center;gap:10px;margin:20px 0 10px;">
-    <span class="ph-pill ph-pill-1">● Phase 1 — Quick Wins · Mar</span> <span class="status status-in-progress">In Progress</span>
+    <span class="ph-pill ph-pill-1">● Phase 1 — Quick Wins · May–Jun</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
@@ -346,7 +332,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <!-- Phase 2 -->
   <div style="display:flex;align-items:center;gap:10px;margin:20px 0 10px;">
-    <span class="ph-pill ph-pill-2">● Phase 2 — Product Redesigns · Mar–Apr</span>
+    <span class="ph-pill ph-pill-2">● Phase 2 — Product Redesigns · Jul–Oct</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
@@ -366,7 +352,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <!-- Phase 3 -->
   <div style="display:flex;align-items:center;gap:10px;margin:20px 0 10px;">
-    <span class="ph-pill ph-pill-3">● Phase 3 — Scale &amp; Polish · Mar–Apr</span>
+    <span class="ph-pill ph-pill-3">● Phase 3 — Scale &amp; Polish · Nov</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
@@ -382,7 +368,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <!-- Phase 4 -->
   <div style="display:flex;align-items:center;gap:10px;margin:20px 0 10px;">
-    <span class="ph-pill ph-pill-4">● Phase 4 — AI-Native · By Jun</span>
+    <span class="ph-pill ph-pill-4">● Phase 4 — AI-Native · Dec+</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
@@ -403,7 +389,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="phase-hdr ph0">
     <div class="ph-num">0</div>
     <div class="ph-info">
-      <div class="ph-date">February 2026 · <span class="status status-completed">Completed</span></div>
+      <div class="ph-date">Completed — February 2026</div>
       <h2>Phase 0 — Shared Foundation</h2>
       <p>Establish the Admissions+ and MAT+ design foundation using the DS Lookbook — the single shared reference for how every component, pattern, colour, and interaction should look and behave. Every improvement in Phases 1 and 2 is built using this language.</p>
     </div>
@@ -453,7 +439,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="phase-hdr ph1">
     <div class="ph-num">1</div>
     <div class="ph-info">
-      <div class="ph-date">March 2026 · <span class="status status-in-progress">In Progress</span></div>
+      <div class="ph-date">In Progress — March 2026</div>
       <h2>Phase 1 — Quick Wins</h2>
       <p>Apply DS components to improve UI/UX across Settings, Processes, and Customised Areas — without redesigning screens yet. Each item is independently shippable and targets the highest-friction areas school staff encounter daily.</p>
     </div>
@@ -535,7 +521,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="phase-hdr ph2">
     <div class="ph-num">2</div>
     <div class="ph-info">
-      <div class="ph-date">March – April 2026 · Parallel with Phase 3</div>
+      <div class="ph-date">Parallel with Phase 3 — by April 2026</div>
       <h2>Phase 2 — Product Redesigns</h2>
       <p>Full screen and flow redesigns across two parallel tracks — Admissions+ and MAT+. Both use the DS Lookbook components established in Phase 0. Each track ships independently without waiting for the other.</p>
     </div>
@@ -570,7 +556,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="phase-hdr ph3">
     <div class="ph-num">3</div>
     <div class="ph-info">
-      <div class="ph-date">March – April 2026 · Parallel with Phase 2</div>
+      <div class="ph-date">Parallel with Phase 2 — by April 2026</div>
       <h2>Phase 3 — Scale and Polish</h2>
       <p>The DS foundation built in Phases 0–2 expands to the full Applicaa product ecosystem — 13 products across 6 school types, from Nursery &amp; Primary to Local Authorities. Every product gets shared identity, accessibility compliance, and mobile quality. Governance rules prevent the same inconsistencies from returning as the team grows.</p>
     </div>
@@ -785,42 +771,42 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <tbody>
     <tr>
       <td><strong>Phase 0</strong><br><span style="font-size:10px;color:var(--g400)">Shared Foundation</span></td>
-      <td>Feb <span class="status status-completed">Done</span></td>
+      <td>Feb 2026 ✓</td>
       <td>Establish the DS Lookbook for Admissions+ and MAT+ — component library, design tokens, shared patterns. Every Phase 1 and 2 improvement builds from this foundation.</td>
       <td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td>
       <td>DS Lookbook foundation in place. All Phase 1 improvements build from this shared language.</td>
     </tr>
     <tr>
       <td><strong>Phase 1</strong><br><span style="font-size:10px;color:var(--g400)">Quick Wins</span></td>
-      <td>Mar <span class="status status-in-progress">Now</span></td>
+      <td>Mar 2026 ◉</td>
       <td>Apply DS Lookbook components to fix settings navigation and core daily processes: data import/export, event management, enquiry record, offer and enrolment management.</td>
       <td><span class="pill pill-all">All</span></td>
       <td>Daily workflows faster and less error-prone. Staff experience visibly improved using Phase 0 components.</td>
     </tr>
     <tr>
       <td><strong>Phase 2</strong><br><span style="font-size:10px;color:var(--g400)">Product Redesigns</span></td>
-      <td>Mar–Apr</td>
+      <td>By Apr 2026</td>
       <td>Two parallel tracks: Admissions+ (application form, parent status, offer management) and MAT+ (trust dashboard, school comparison, subject data). Each ships independently.</td>
       <td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td>
       <td>Significantly improved experience on each product. Each track ships independently.</td>
     </tr>
     <tr>
       <td><strong>Phase 3</strong><br><span style="font-size:10px;color:var(--g400)">Scale &amp; Polish</span></td>
-      <td>Mar–Apr</td>
+      <td>Nov</td>
       <td>DS Lookbook extended to all 13 products. Ecosystem audit, accessibility, mobile, motion, governance. Every product in the Applicaa family on a shared foundation.</td>
       <td><span class="pill pill-ecosystem">All 13 products</span></td>
       <td>Both DS systems governed. Shared standards across the full product family. Legal compliance. Works on every device.</td>
     </tr>
     <tr>
       <td><strong>Phase 4</strong><br><span style="font-size:10px;color:var(--g400)">AI-Native</span></td>
-      <td>By Jun</td>
+      <td>By Jun 2026</td>
       <td>Conversational AI application flow. Staff trust dashboard. Mobile-first AI for parents. AI DS component set.</td>
       <td><span class="pill pill-all">All</span></td>
       <td>Applicaa becomes the first AI-native admissions platform in UK education.</td>
     </tr>
     <tr style="background:var(--navy-light);">
       <td><strong>Total</strong></td>
-      <td>Feb–Jun</td>
+      <td>Mar–Dec+</td>
       <td colspan="2">5 phases · 3 products · 40+ improvements · Foundation → Quick wins → Redesigns → Accessibility → AI-Native</td>
       <td><strong>200+ schools · 45,000+ courses · Millions of interactions</strong></td>
     </tr>
