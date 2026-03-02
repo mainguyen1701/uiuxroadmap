@@ -210,6 +210,12 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   .sum-table th:nth-child(4),.sum-table td:nth-child(4){display:none;}
   .card{padding:12px 13px;}
 }
+
+.skill-prep{background:linear-gradient(135deg,#fdf4ff,#f3e8ff);border:1px solid #e9d5ff;border-radius:10px;padding:14px 18px;margin:14px 0 20px;}
+.skill-prep-hdr{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#7c3aed;margin-bottom:10px;}
+.skill-prep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;}
+.skill-tag{background:white;border:1px solid #ddd6fe;border-radius:6px;padding:7px 10px;font-size:11px;color:#5b21b6;font-weight:600;display:flex;align-items:center;gap:6px;}
+.skill-tag::before{content:"↗";font-size:10px;color:#7c3aed;}
 </style>
 </head>
 <body>
@@ -403,6 +409,15 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
+  <div class="skill-prep">
+    <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 0</div>
+    <div class="skill-prep-grid">
+      <div class="skill-tag">DS documentation practice — writing component specs and usage rules</div>
+      <div class="skill-tag">Design token workflows — naming, publishing, and maintaining a token system</div>
+      <div class="skill-tag">Lookbook contribution — how to add, review, and update DS entries</div>
+    </div>
+  </div>
+
   <div class="slabel">What Phase 0 delivers</div>
   <div class="grid3">
     <div class="card">
@@ -442,6 +457,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="ph-date">In Progress — March 2026</div>
       <h2>Phase 1 — Quick Wins</h2>
       <p>Apply DS components to improve UI/UX across Settings, Processes, and Customised Areas — without redesigning screens yet. Each item is independently shippable and targets the highest-friction areas school staff encounter daily.</p>
+    </div>
+  </div>
+
+  <div class="skill-prep">
+    <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 1</div>
+    <div class="skill-prep-grid">
+      <div class="skill-tag">Component-first thinking — applying DS before writing bespoke styles</div>
+      <div class="skill-tag">Figma-to-DS mapping — identifying which DS component fits each screen element</div>
+      <div class="skill-tag">Accessibility basics — contrast, focus states, keyboard navigation in DS patterns</div>
+      <div class="skill-tag">Stakeholder communication — presenting DS changes to non-design colleagues</div>
     </div>
   </div>
 
@@ -527,6 +552,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
+  <div class="skill-prep">
+    <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 2</div>
+    <div class="skill-prep-grid">
+      <div class="skill-tag">End-to-end UX design — flow mapping, wireframing, and prototype testing</div>
+      <div class="skill-tag">User research — interview facilitation and synthesis for school admin workflows</div>
+      <div class="skill-tag">Data-informed design — using analytics and error logs to prioritise redesigns</div>
+      <div class="skill-tag">Cross-functional collaboration — working alongside engineering during build sprints</div>
+    </div>
+  </div>
+
   <div class="lanes">
     <div class="lane lane-admissions">
       <div class="lane-hdr"><span>🎓</span> Admissions+</div>
@@ -559,6 +594,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="ph-date">Parallel with Phase 2 — by April 2026</div>
       <h2>Phase 3 — Scale and Polish</h2>
       <p>The DS foundation built in Phases 0–2 expands to the full Applicaa product ecosystem — 13 products across 6 school types, from Nursery &amp; Primary to Local Authorities. Every product gets shared identity, accessibility compliance, and mobile quality. Governance rules prevent the same inconsistencies from returning as the team grows.</p>
+    </div>
+  </div>
+
+  <div class="skill-prep">
+    <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 3</div>
+    <div class="skill-prep-grid">
+      <div class="skill-tag">WCAG 2.1 AA auditing — tools, remediation, and publishing accessibility statements</div>
+      <div class="skill-tag">Multi-product governance — contributing to and enforcing shared DS standards</div>
+      <div class="skill-tag">Mobile and device testing — real-device QA on iOS, Android, and tablet viewports</div>
+      <div class="skill-tag">Design critique and review — evaluating other teams' work against DS standards</div>
     </div>
   </div>
 
@@ -731,7 +776,17 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="section-heading">Expected Outcomes</div>
   <div class="section-sub">How we measure whether the roadmap is working.</div>
 
-  <div class="grid3">
+    <div class="skill-prep">
+    <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 4</div>
+    <div class="skill-prep-grid">
+      <div class="skill-tag">AI UX design — conversational flows, trust arcs, and confidence signalling</div>
+      <div class="skill-tag">Prompt and interaction design — shaping AI responses for different user types</div>
+      <div class="skill-tag">Ethical AI design — bias awareness, transparency, and human override patterns</div>
+      <div class="skill-tag">AI evaluation — measuring trust, task success, and escalation rates</div>
+    </div>
+  </div>
+
+<div class="grid3">
     <div class="card">
       <div class="card-title" style="margin-bottom:12px;">📋 For school staff and parents</div>
       <div style="font-size:12px;">
