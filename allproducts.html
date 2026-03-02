@@ -267,6 +267,25 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .accountability-q{margin-top:14px;background:rgba(255,255,255,.05);border-left:3px solid #EC634B;border-radius:0 6px 6px 0;padding:10px 14px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.55;}
 .accountability-q strong{color:white;}
 @media(max-width:600px){.role-split{grid-template-columns:1fr;}}
+
+.conv-section{background:linear-gradient(135deg,#0f172a,#1e1b4b);border-radius:12px;padding:24px 26px;margin:20px 0 26px;}
+.conv-section-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:#818cf8;margin-bottom:6px;}
+.conv-section-headline{font-size:16px;font-weight:900;color:white;margin-bottom:6px;line-height:1.3;}
+.conv-section-sub{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:20px;line-height:1.6;max-width:780px;}
+.conv-paradigm{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+.conv-p{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:14px 15px;}
+.conv-p.active{background:rgba(99,102,241,.18);border-color:rgba(99,102,241,.5);}
+.conv-p-era{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.35);margin-bottom:5px;}
+.conv-p.active .conv-p-era{color:#a5b4fc;}
+.conv-p-title{font-size:12px;font-weight:800;color:white;margin-bottom:5px;}
+.conv-p-body{font-size:11px;color:rgba(255,255,255,.55);line-height:1.5;}
+.conv-p.active .conv-p-body{color:rgba(255,255,255,.8);}
+.conv-principles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px;}
+.conv-pr{background:rgba(255,255,255,.05);border-left:3px solid #6366f1;border-radius:0 7px 7px 0;padding:11px 13px;}
+.conv-pr-title{font-size:11px;font-weight:800;color:#a5b4fc;margin-bottom:5px;}
+.conv-pr-body{font-size:11px;color:rgba(255,255,255,.65);line-height:1.5;}
+.conv-source{font-size:10px;color:rgba(255,255,255,.3);margin-top:14px;font-style:italic;}
+@media(max-width:700px){.conv-paradigm{grid-template-columns:1fr;}.conv-principles{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -964,6 +983,59 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="skill-tag">Execution partnership — building alongside engineers, not ahead of them</div>
       <div class="skill-tag">Decision accountability — owning the product call when AI generates options</div>
     </div>
+  </div>
+
+  <div class="conv-section">
+    <div class="conv-section-label">Research foundation — Nielsen Norman Group, 2025</div>
+    <div class="conv-section-headline">AI is the third UI paradigm in 60 years. Conversational design is not a feature — it is a new interaction model.</div>
+    <div class="conv-section-sub">For 60 years, interfaces were command-based — users told the computer what to do, one step at a time. AI introduces intent-based outcome specification: users tell the system what they want, and the system works out how. This is not a chat window bolted onto existing UI. It requires a completely different design approach — designing outcomes and constraints, not screens and flows.</div>
+
+    <div class="conv-paradigm">
+      <div class="conv-p">
+        <div class="conv-p-era">1945 – 1964</div>
+        <div class="conv-p-title">Batch processing</div>
+        <div class="conv-p-body">Users submitted complete instructions and waited for output. No feedback. No adjustment. One shot.</div>
+      </div>
+      <div class="conv-p">
+        <div class="conv-p-era">1964 – 2022</div>
+        <div class="conv-p-title">Command-based GUI</div>
+        <div class="conv-p-body">Users issue commands, see results, adjust. This is the model all Admissions+ screens currently follow — including every screen in this roadmap.</div>
+      </div>
+      <div class="conv-p active">
+        <div class="conv-p-era">2022 onwards — Applicaa Phase 4</div>
+        <div class="conv-p-title">Intent-based outcome specification</div>
+        <div class="conv-p-body">Users state what they want. The system interprets intent, takes action, and surfaces a result. The designer's job shifts from designing steps to designing outcomes — and the guardrails the AI must operate within.</div>
+      </div>
+    </div>
+
+    <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);margin-bottom:10px;">Six conversational design principles guiding Phase 4</div>
+    <div class="conv-principles">
+      <div class="conv-pr">
+        <div class="conv-pr-title">Be transparent about being AI</div>
+        <div class="conv-pr-body">NN/G research shows users calibrate language and expectations when they know they are talking to AI. Hiding it destroys trust the moment they discover it. Every Applicaa AI interaction identifies itself and its confidence level upfront.</div>
+      </div>
+      <div class="conv-pr">
+        <div class="conv-pr-title">Offer structure, allow flexibility</div>
+        <div class="conv-pr-body">Prepopulated options for common inputs (buttons, chips, suggested answers) reduce typing effort. Free text input allows deviation. Both must coexist — forcing users to type everything or click everything both fail. Design for the middle.</div>
+      </div>
+      <div class="conv-pr">
+        <div class="conv-pr-title">Progressive disclosure of complexity</div>
+        <div class="conv-pr-body">Reveal complexity gradually. Start with what the user said they want. Show detail only when they need it. Do not present every option upfront — the AI should ask one question at a time and offer depth on demand.</div>
+      </div>
+      <div class="conv-pr">
+        <div class="conv-pr-title">Design for deviation</div>
+        <div class="conv-pr-body">Chatbots fail when users deviate from linear flows (NN/G). Every conversational flow must have a designed recovery path — what happens when the AI does not understand, when the user changes direction, or when the answer is not in the expected format.</div>
+      </div>
+      <div class="conv-pr">
+        <div class="conv-pr-title">Outcome-oriented constraints over screen design</div>
+        <div class="conv-pr-body">In generative UI, designers define what the AI must achieve and the guardrails it must operate within — not every screen element. The designer specifies the goal, the constraints, and the fallback. The AI generates the interface moment by moment.</div>
+      </div>
+      <div class="conv-pr">
+        <div class="conv-pr-title">Speed as the trust signal</div>
+        <div class="conv-pr-body">NN/G research: the primary advantage of AI over human agents is speed. Every interaction should be designed to reach resolution faster than the current screen-based equivalent. If it is not faster, the AI has not earned its place in the product.</div>
+      </div>
+    </div>
+    <div class="conv-source">Sources: Nielsen Norman Group — "AI: First New UI Paradigm in 60 Years" and "Generative UI and Outcome-Oriented Design" (2025)</div>
   </div>
 
   <div class="slabel">Shared AI design foundations — built before any stage ships</div>
