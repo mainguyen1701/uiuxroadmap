@@ -252,6 +252,21 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .now-item.good::before{content:"✓";color:#34d399;}
 @media(max-width:900px){.vision-principles{grid-template-columns:1fr 1fr;}.nowstate{grid-template-columns:1fr;}}
 @media(max-width:600px){.vision-headline{font-size:22px;}.vision-principles{grid-template-columns:1fr;}}
+
+.role-shift{background:linear-gradient(135deg,rgba(236,99,75,.08),rgba(236,99,75,.04));border:1px solid rgba(236,99,75,.25);border-radius:10px;padding:20px 22px;margin-top:28px;max-width:860px;}
+.role-shift-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:#EC634B;margin-bottom:10px;}
+.role-shift-headline{font-size:14px;font-weight:800;color:white;margin-bottom:8px;line-height:1.4;}
+.role-shift-body{font-size:12px;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:14px;}
+.role-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+.role-col{background:rgba(255,255,255,.06);border-radius:7px;padding:12px 14px;}
+.role-col-lbl{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:7px;}
+.role-col-lbl.old{color:rgba(255,255,255,.35);}
+.role-col-lbl.new{color:#EC634B;}
+.role-col-item{font-size:11px;color:rgba(255,255,255,.7);padding:3px 0;line-height:1.4;}
+.role-col-item.strike{text-decoration:line-through;color:rgba(255,255,255,.3);}
+.accountability-q{margin-top:14px;background:rgba(255,255,255,.05);border-left:3px solid #EC634B;border-radius:0 6px 6px 0;padding:10px 14px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.55;}
+.accountability-q strong{color:white;}
+@media(max-width:600px){.role-split{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -305,6 +320,34 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="now-item good">All 13 products on a shared identity and accessibility standard</div>
         <div class="now-item good">AI interactions with trust arc, confidence indicators, and human override</div>
         <div class="now-item good">A team with the skills, processes, and tools to sustain this quality</div>
+      </div>
+    </div>
+
+
+    <div class="role-shift">
+      <div class="role-shift-label">The shifting role of design — Jenny Wen, Future of Design in the AI Era</div>
+      <div class="role-shift-headline">The traditional design process is over. The execution partner era has begun.</div>
+      <div class="role-shift-body">
+        Engineering changed first. AI agents now ship code faster than any team can review it. The question engineers are asking is: "How do we keep up with ourselves?" Design cannot be the bottleneck in that world. The designers who thrive are the ones who move with engineering — not ahead of it, waiting to hand off.
+      </div>
+      <div class="role-split">
+        <div class="role-col">
+          <div class="role-col-lbl old">Old model</div>
+          <div class="role-col-item strike">60–70% mocking and prototyping</div>
+          <div class="role-col-item strike">Hand off designs, wait for build</div>
+          <div class="role-col-item strike">Designer as gatekeeper</div>
+          <div class="role-col-item strike">Weeks of perfect mocks before anything ships</div>
+        </div>
+        <div class="role-col">
+          <div class="role-col-lbl new">Now — at Applicaa</div>
+          <div class="role-col-item">30–40% prototyping — rest is execution partnership</div>
+          <div class="role-col-item">Build HTML and Tailwind directly alongside engineers</div>
+          <div class="role-col-item">Taste, judgment, and decision accountability</div>
+          <div class="role-col-item">Ship, learn, and iterate — not wait for perfection</div>
+        </div>
+      </div>
+      <div class="accountability-q">
+        <strong>Open question we are answering with this roadmap:</strong> In a world where AI can generate interfaces and engineers ship without waiting, who is accountable for product decisions? Answer: the designer. Judgment, taste, and the decision about what gets built — that is the irreplaceable role. This roadmap is that accountability made visible.
       </div>
     </div>
 
@@ -598,6 +641,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="ux-col-label">Validation</div>
         <div class="ux-col-body">Prototype walkthroughs with 2–3 school admins per area before shipping. Success metric: staff reach any settings page within 2 clicks. Import errors understood without contacting support.</div>
       </div>
+    </div>
+    <div style="margin-top:10px;background:rgba(15,118,110,.08);border-left:3px solid #0f766e;border-radius:0 6px 6px 0;padding:9px 13px;font-size:11px;color:#134e4a;line-height:1.55;">
+      <strong>How we work in Phase 1:</strong> Designers build HTML and Tailwind prototypes directly — no lengthy handoff. Engineers and designers work from the same codebase. Decisions are made and shipped in the same sprint.
     </div>
   </div>
 
@@ -977,7 +1023,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="skill-tag">AI UX design — conversational flows, trust arcs, and confidence signalling</div>
       <div class="skill-tag">Prompt and interaction design — shaping AI responses for different user types</div>
       <div class="skill-tag">Ethical AI design — bias awareness, transparency, and human override patterns</div>
-      <div class="skill-tag">AI evaluation — measuring trust, task success, and escalation rates</div>
+      <div class="skill-tag">AI-augmented design practice — using AI to surface patterns in user research, decision logs, and design critique</div>
+      <div class="skill-tag">Execution partnership — building alongside engineers, not ahead of them</div>
+      <div class="skill-tag">Decision accountability — owning the product call when AI generates options</div>
     </div>
   </div>
 
