@@ -874,90 +874,116 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="phase-num">0</div>
     <div class="phase-info">
       <div class="phase-date">March – April 2026 · 4 weeks</div>
-      <h2>Shared Foundation</h2>
-      <p>Before we can improve any individual product, we need to fix the inconsistencies that exist across all three today. Right now, common elements — buttons, forms, status labels, tables — look and behave differently depending on which screen you're on. This phase standardises those shared elements so that every improvement we make in Phases 1–5 feels consistent and professional.</p>
-      <div class="phase-why">Why first: Inconsistency makes products feel unpolished and untrustworthy. Every phase after this relies on a stable foundation.</div>
+      <h2>Shared Foundation — Admissions+ and Design System</h2>
+      <p>Admissions+ is the most-used product in the suite and the one with the most visible inconsistencies today. The design system that should hold it together — the shared library of colours, components, and patterns — is largely undocumented, partially broken, and not enforced. This phase fixes both: the specific problems visible in Admissions+ screens, and the design system gaps that caused them. Nothing built in Phases 1–5 will stay consistent without this work done first.</p>
+      <div class="phase-why">Why first: Every new screen built on a broken foundation inherits its problems. Fixing the foundation once is cheaper than fixing every screen individually later.</div>
     </div>
     <div class="phase-stats">
       <div class="phase-stat"><div class="n" style="color:var(--purple)">12</div><div class="l">fixes</div></div>
     </div>
   </div>
 
-  <div class="slabel">Fix — Things that are broken or inconsistent right now</div>
+  <div class="slabel">Design System — what the component library is missing</div>
   <div class="items-grid">
     <div class="item">
-      <div class="item-header"><div class="item-icon">🏷️</div><div class="item-title">Status labels use the wrong colours</div></div>
-      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
-      <div class="item-problem">An "Upcoming" event is shown with a green label — the same colour used for "Completed" or "Success." Staff are reading the text to understand status rather than trusting the colour, which slows them down and creates errors.</div>
-      <div class="divline"></div>
-      <div class="item-outcome">Every status label uses a consistent, predictable colour across all three products. Upcoming = blue, Completed = green, Cancelled = red, Full = amber, Draft = grey. Staff can scan a list and understand it instantly.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-icon">⚠️</div><div class="item-title">Legacy styling left behind in components</div></div>
-      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
-      <div class="item-problem">Parts of the interface still use an older styling library that we no longer maintain. These elements look visually inconsistent and could break without warning as we update the codebase. There are at least 20 instances identified across the three products.</div>
-      <div class="divline"></div>
-      <div class="item-outcome">All legacy styling is removed and replaced with current standards. The interface is consistent and maintainable. Future updates won't unexpectedly break screens that haven't been touched.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-icon">📋</div><div class="item-title">Four shared UI components have no reference documentation</div></div>
-      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
-      <div class="item-problem">Four reusable elements — the data table, tag input, information grid, and person card — exist in the codebase but have no published documentation for designers or developers. As a result, each new screen that needs these elements rebuilds them from scratch, creating subtle inconsistencies across the product.</div>
-      <div class="divline"></div>
-      <div class="item-outcome">All four components are documented with usage guidelines, examples, and variants. New screens are built from the same reference — no more ad-hoc rebuilds, no more drift.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-icon">🔁</div><div class="item-title">Task reminder logic is unreliable</div></div>
+      <div class="item-header"><div class="item-icon">📖</div><div class="item-title">Four components exist in code but have no documentation</div></div>
       <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
-      <div class="item-problem">In the enquiry record, adding a task reminder uses an older technical approach that isn't connected to our current interaction standards. This means reminders behave inconsistently, can't be easily tested, and can't be reused on other screens.</div>
+      <div class="item-problem">The data table, tag input, information grid, and person card are all live in Admissions+ — but they have no published reference page in the design system. This means every developer who needs one of these elements searches for an existing example, copies it imprecisely, and makes slightly different decisions. Over time, the same component has four different appearances across the product.</div>
       <div class="divline"></div>
-      <div class="item-outcome">Task reminders are rebuilt using the same standards as the rest of the application. They behave predictably, can be tested, and the same pattern can be reused wherever reminders are needed.</div>
+      <div class="item-outcome">All four components are published in the design system with real examples, usage guidelines, and documented variants. Any new screen using these elements starts from the same reference. The inconsistency stops accumulating.</div>
+      <div class="item-impact"><span class="impact-tag">Stops inconsistency at the source</span><span class="impact-tag">Faster development on new screens</span></div>
+    </div>
+    <div class="item">
+      <div class="item-header"><div class="item-icon">🗂️</div><div class="item-title">Three enquiry screens are blank in the design system</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">The All Enquiries list, the Enquiry Form list, and the New Enquiry Form screen all exist in the product — but their design system entries are completely empty. There is no documented pattern for how these screens should look, what components they use, or how filtering and empty states should behave on them. Each developer who touches these screens makes independent decisions.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">All three screens are fully documented in the design system with the correct components, filter patterns, empty states, and layout. Future changes to these screens are consistent from day one.</div>
+      <div class="item-impact"><span class="impact-tag">Single source of truth for the most-used Admissions+ screens</span></div>
+    </div>
+    <div class="item">
+      <div class="item-header"><div class="item-icon">🏷️</div><div class="item-title">Status colours are not defined or enforced</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">There is no defined mapping of status to colour in the design system. As a result, developers choose colours individually for each screen. In Admissions+, an "Upcoming" application event shows green — the same colour as "Completed." A "Confirmed" RSVP and a "Successful" import use the same badge style. Staff read the text label rather than trusting the colour, which slows down every list review.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A defined, documented status-to-colour map is published in the design system and enforced across Admissions+: Upcoming = blue, Active/Completed = green, Cancelled = red, Full/Warning = amber, Draft/Neutral = grey. Staff can scan status at a glance on any screen.</div>
+      <div class="item-impact"><span class="impact-tag">Faster list scanning</span><span class="impact-tag">Fewer misread statuses</span><span class="impact-tag">Consistent across all Admissions+ screens</span></div>
+    </div>
+    <div class="item">
+      <div class="item-header"><div class="item-icon">📇</div><div class="item-title">Person card footer slot — undocumented and unused</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">The person card component — used throughout Admissions+ to show a parent or student's contact summary — has a footer slot designed to hold action buttons (View record, Call, Email). This footer is never shown in the design system and is implemented inconsistently across the product. Some screens have action buttons, some don't. They appear in different positions with different styles.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">The footer slot is documented with a clear pattern: one primary action (View full record) and up to two secondary actions (Call, Email). Applied consistently wherever a person card appears. The enquiry record parent card is used as the reference implementation.</div>
+      <div class="item-impact"><span class="impact-tag">Consistent quick-action pattern across all person cards</span></div>
     </div>
   </div>
 
-  <div class="slabel">Build — New shared elements needed across all products</div>
+  <div class="slabel">Admissions+ — inconsistencies visible to staff every day</div>
   <div class="items-grid">
     <div class="item">
-      <div class="item-header"><div class="item-icon">📭</div><div class="item-title">Empty states — what to show when there's no data</div></div>
-      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
-      <div class="item-problem">When a list or table has no data — no applications received yet, no events created, search returned nothing — each screen handles it differently. Some show a blank space, some show an error-style message. Staff don't know whether the empty state means something is wrong or is expected.</div>
+      <div class="item-header"><div class="item-icon">⚠️</div><div class="item-title">Older styling left in 20+ places across Admissions+</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">Admissions+ was built partly before the current design system was established. In at least 20 identified locations — including the enquiry record, the SMS popup, and several form screens — text styling, spacing, and colour classes come from an older library that is no longer maintained. These elements look visually off compared to newer screens, and they could break silently the next time the codebase is updated.</div>
       <div class="divline"></div>
-      <div class="item-outcome">Every empty list or table shows a clear, consistent message explaining why it's empty and what to do next. First-time users are guided with an action. Zero-results from a filter explains the filter is too narrow.</div>
+      <div class="item-outcome">All 20+ instances replaced with current design system standards. The SMS popup, enquiry record stats, and form screens visually match the rest of the product. No hidden breakage risk.</div>
+      <div class="item-impact"><span class="impact-tag">Visual consistency across all Admissions+ screens</span><span class="impact-tag">No silent breakage risk</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-icon">⏳</div><div class="item-title">Loading states — what to show while data is fetching</div></div>
-      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
-      <div class="item-problem">When a page or list is loading, the interface currently shows nothing until the data arrives. This causes the page to jump visually (layout shift) and makes the product feel slow and unreliable — even when it's not.</div>
+      <div class="item-header"><div class="item-icon">🔁</div><div class="item-title">Task reminders don't behave consistently</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">When a staff member adds a reminder to a task in the enquiry record, the reminder logic uses a standalone function that isn't connected to Admissions+'s standard interaction model. In practice, this means reminders sometimes don't save correctly, the behaviour can't be tested automatically, and the pattern can't be safely reused anywhere else in the product.</div>
       <div class="divline"></div>
-      <div class="item-outcome">Every loading surface shows a smooth animated placeholder that matches the shape of the content about to appear. The page doesn't jump. The product feels fast and professional.</div>
+      <div class="item-outcome">Task reminders rebuilt using the same interaction standards as every other Admissions+ form element. They save reliably, can be tested, and the pattern is ready to reuse on any future screen that needs reminder functionality.</div>
+      <div class="item-impact"><span class="impact-tag">Reliable reminder saving</span><span class="impact-tag">Reusable pattern for future screens</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-icon">🔍</div><div class="item-title">Filter chips — a consistent way to filter any list</div></div>
-      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
-      <div class="item-problem">Filtering lists — by school type, application stage, event status, year group — is one of the most common things staff do. Currently, each screen implements filtering differently. Some use dropdown menus, some use custom buttons, some have no filtering at all. Staff constantly have to relearn how to filter on each screen.</div>
+      <div class="item-header"><div class="item-icon">🔍</div><div class="item-title">Filtering works differently on every Admissions+ screen</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">Filtering is one of the most common interactions in Admissions+. Staff filter applications by stage, enquiries by source, timeline entries by activity type, and events by status. Each of these screens implements filtering in a different way — dropdown menus on one screen, custom toggle buttons on another, plain text on a third. There is no shared pattern. Staff relearn filtering every time they navigate to a new screen.</div>
       <div class="divline"></div>
-      <div class="item-outcome">Every filterable list uses the same filter chip pattern. Staff learn it once and it works everywhere. Chips show how many results match each filter. "Clear all" resets to the full list instantly.</div>
+      <div class="item-outcome">One filter chip pattern used on every filterable screen in Admissions+. Staff learn it once. Each chip shows how many results it contains. A "Clear all" option always resets to the full list. Applied to: All Enquiries, timeline activity type filter, application stage filter, and event status filter.</div>
+      <div class="item-impact"><span class="impact-tag">Staff learn once, it works everywhere</span><span class="impact-tag">Faster navigation across all list screens</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-icon">📅</div><div class="item-title">Date and time picker — a consistent way to enter dates</div></div>
-      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
-      <div class="item-problem">Logging a call, adding a task, scheduling an event — all of these require entering a date and time. Currently these fields use a mix of plain text boxes, dropdowns for hours and minutes, and browser-native pickers that look different on every device. There is no validation, so staff often enter dates in the wrong format and only find out when they save.</div>
+      <div class="item-header"><div class="item-icon">📅</div><div class="item-title">Date and time entry is inconsistent and error-prone</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">Admissions+ has at least six screens that require date or time input — Log a Call, Add Task, Schedule Event, Set Reminder, Set Interview Cutoff, and Bromcom Import date range. Each uses a different approach: some use plain text boxes (where the format is not validated), some use pairs of dropdowns for hour and minute, and some use a browser-native date picker that looks completely different on iPhone vs Windows. Staff entering dates in the wrong format only find out when the record fails to save.</div>
       <div class="divline"></div>
-      <div class="item-outcome">One consistent date and time picker used everywhere across all three products. Works correctly on iPad, Android, and desktop. Validates the format before saving. DD/MM/YYYY — always.</div>
+      <div class="item-outcome">One consistent date and time picker applied to all six screens. Format is DD/MM/YYYY — always. Validated before the record is saved, not after. Works identically on iPad, iPhone, Android, and desktop. Errors caught before they happen.</div>
+      <div class="item-impact"><span class="impact-tag">Eliminates date format errors</span><span class="impact-tag">Consistent on all devices</span><span class="impact-tag">Six screens improved at once</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-icon">📢</div><div class="item-title">Platform-wide notifications banner</div></div>
-      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
-      <div class="item-problem">There is currently no way to show a platform-wide message to all users — for example, "your MIS sync is running," "your subscription renews in 3 days," or "maintenance tonight at 10pm." These messages either don't get communicated, or are buried in an email that staff miss.</div>
+      <div class="item-header"><div class="item-icon">📭</div><div class="item-title">Empty states — no consistent pattern when lists are empty</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">When an Admissions+ list or table has no data — no applications yet received, no events created, a filter that returned no results — each screen handles it differently. Some show a blank white space. Some show a generic error-style message. Some show nothing at all. Staff can't tell whether empty means the data hasn't arrived yet, nothing matches the filter, or something has gone wrong.</div>
       <div class="divline"></div>
-      <div class="item-outcome">A banner at the top of every screen can surface critical or informational messages to all users. Dismissable. Works across all three products. School administrators can also use it to notify their own staff.</div>
+      <div class="item-outcome">Every empty Admissions+ list shows a clear message with three possible states: no data yet (first-time use with a prompt to take action), no results from a filter (explain why and offer to clear the filter), and loading error (explain what happened and what to try). Consistent across all list screens.</div>
+      <div class="item-impact"><span class="impact-tag">Staff always know what an empty screen means</span><span class="impact-tag">Guides new users to take their first action</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-icon">📊</div><div class="item-title">Reduce table columns from 15 to 7</div></div>
-      <div class="item-products"><span class="pill pill-mat"><span class="pill-dot"></span>MAT+</span></div>
-      <div class="item-problem">The events table in MAT+ has 15 columns — it overflows on every laptop screen and is completely unusable on iPad. UK school staff predominantly use iPads and Android tablets (BYOD). The QR code appears in every row even when no one is looking at it.</div>
+      <div class="item-header"><div class="item-icon">⏳</div><div class="item-title">No loading state while data is fetching</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">When Admissions+ pages and lists load — particularly the All Applications view, the RSVP list, and the Bromcom import results — the screen shows nothing until the data arrives. The page then jumps as content appears. On slower school networks, this blank period can last several seconds. Staff repeatedly click or refresh, thinking something is broken.</div>
       <div class="divline"></div>
-      <div class="item-outcome">The table shows 7 columns by default: Actions, Date, Event, RSVPs, Status, Source, and Capacity. Staff can choose which additional columns to show. QR codes are accessible when needed, not cluttering every row.</div>
+      <div class="item-outcome">Every list and data-heavy page shows a pulsing placeholder matching the shape of the content that's loading. The layout doesn't jump when data arrives. The product feels responsive even on slower connections. Applied to All Applications, RSVP lists, import results, and the enquiry timeline.</div>
+      <div class="item-impact"><span class="impact-tag">Product feels faster and more reliable</span><span class="impact-tag">Fewer unnecessary page refreshes</span></div>
+    </div>
+    <div class="item">
+      <div class="item-header"><div class="item-icon">📢</div><div class="item-title">No way to communicate important messages to all staff</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">There is no mechanism in Admissions+ for communicating time-sensitive messages to all logged-in staff — for example, "the MIS sync is running and data may be incomplete," "your subscription renews in three days," or "a scheduled maintenance window starts tonight." These messages currently don't get communicated at all, or are sent by email and missed.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A dismissable banner at the top of every Admissions+ screen that Applicaa and school administrators can use to surface critical or informational messages. Three levels: informational (blue), important (amber), critical (red). Multiple banners stack if more than one is active.</div>
+      <div class="item-impact"><span class="impact-tag">Staff see critical information without checking email</span><span class="impact-tag">Reduces confusion during sync and maintenance windows</span></div>
+    </div>
+    <div class="item">
+      <div class="item-header"><div class="item-icon">💬</div><div class="item-title">SMS compose — three different visual styles in one popup</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">The Send SMS popup in Admissions+ contains three elements that each use a different visual style: the character counter (plain text, no colour change at the limit), the message stats panel (recipients, messages remaining, UK numbers — styled with old library classes), and the SMS bubble preview (raw styling with no design system connection). None of these match the rest of the product. The character counter gives no warning before the limit is reached, so staff only discover they've exceeded it after trying to send.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">All three elements redesigned using current design system patterns. Character counter updates in real time and changes to amber at 80% of the limit and red at 100%. Message stats displayed in a consistent information panel. SMS bubble preview looks like a real phone message. All three now match the visual language of the rest of Admissions+.</div>
+      <div class="item-impact"><span class="impact-tag">Prevents accidental over-limit sends</span><span class="impact-tag">Consistent visual language across the SMS flow</span></div>
     </div>
   </div>
 </div>
