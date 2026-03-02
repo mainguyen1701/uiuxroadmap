@@ -22,59 +22,54 @@
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--g50);color:var(--g900);font-size:14px;line-height:1.6;}
 
 /* NAV */
-.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-bottom:1px solid var(--g200);padding:0 24px;display:flex;gap:0;overflow-x:auto;}
-.sticky-nav a{padding:10px 16px;font-size:12px;font-weight:600;color:var(--g500);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;}
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-bottom:1px solid var(--g200);padding:0 32px;display:flex;gap:0;overflow-x:auto;}
+.sticky-nav a{padding:12px 16px;font-size:12px;font-weight:600;color:var(--g500);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;}
 .sticky-nav a:hover{color:var(--navy);border-color:var(--navy);}
 
 /* HEADER */
-.header{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 60%,#3a5abf 100%);color:white;padding:52px 40px 44px;}
+.header{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 60%,#3a5abf 100%);color:white;padding:56px 48px 48px;}
 .header-logo{display:flex;align-items:center;gap:10px;margin-bottom:28px;}
 .header-logo svg{width:36px;height:36px;}
 .header-logo span{font-size:15px;font-weight:600;opacity:.85;}
-.header h1{font-size:32px;font-weight:800;letter-spacing:-.6px;margin-bottom:8px;}
-.header p{font-size:15px;opacity:.75;max-width:640px;line-height:1.6;}
-.header-meta{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap;}
+.header h1{font-size:34px;font-weight:800;letter-spacing:-.6px;margin-bottom:10px;}
+.header p{font-size:16px;opacity:.8;max-width:660px;line-height:1.7;}
+.header-meta{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap;}
 .hm{display:flex;flex-direction:column;gap:2px;}
-.hm .lbl{font-size:10px;opacity:.55;text-transform:uppercase;letter-spacing:.8px;}
+.hm .lbl{font-size:10px;opacity:.5;text-transform:uppercase;letter-spacing:.8px;}
 .hm .val{font-size:13px;font-weight:600;}
-.header-callout{margin-top:28px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:14px 18px;max-width:680px;font-size:13px;opacity:.9;line-height:1.6;}
-.header-callout strong{opacity:1;}
+.header-callout{margin-top:28px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:16px 20px;max-width:700px;font-size:14px;opacity:.95;line-height:1.6;}
 
-/* LAYOUT */
-.container{max-width:1140px;margin:0 auto;padding:40px 24px 80px;}
-.section-heading{font-size:22px;font-weight:800;letter-spacing:-.3px;margin-bottom:6px;}
-.section-sub{font-size:14px;color:var(--g500);margin-bottom:28px;line-height:1.5;}
-.divider{border:none;border-top:1px solid var(--g200);margin:52px 0;}
+/* CONTAINER */
+.container{max-width:1100px;margin:0 auto;padding:44px 32px 80px;}
+.section-heading{font-size:24px;font-weight:800;letter-spacing:-.3px;margin-bottom:8px;}
+.section-sub{font-size:15px;color:var(--g500);margin-bottom:32px;line-height:1.6;max-width:700px;}
+.divider{border:none;border-top:1px solid var(--g200);margin:56px 0;}
 
-/* PILLS & BADGES */
-.pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;}
+/* PILLS */
+.pill{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;}
 .pill-admissions{background:#e0e7ff;color:#3730a3;}
 .pill-one{background:var(--navy-light);color:var(--navy);}
 .pill-mat{background:#f0fdf4;color:#15803d;}
 .pill-all{background:var(--g100);color:var(--g700);}
 .pill-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
-.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.3px;}
-.badge-p0{background:#fee2e2;color:#991b1b;}
-.badge-p1{background:#fef3c7;color:#92400e;}
-.badge-p2{background:var(--g100);color:var(--g700);}
-.badge-s{background:#dcfce7;color:#14532d;}
-.badge-m{background:#dbeafe;color:#1e3a8a;}
-.badge-l{background:#ede9fe;color:#4c1d95;}
-.badge-xl{background:#ffe4e6;color:#9f1239;}
+.badge{display:inline-block;padding:3px 9px;border-radius:5px;font-size:11px;font-weight:700;}
+.badge-impact-high{background:#fee2e2;color:#991b1b;}
+.badge-impact-med{background:#fef3c7;color:#92400e;}
+.badge-impact-low{background:var(--g100);color:var(--g700);}
 .badge-pos{background:var(--green-light);color:#14532d;}
-.badge-neg{background:#fee2e2;color:#991b1b;}
-.badge-gap{background:#fef3c7;color:#92400e;}
+.badge-gap{background:#fee2e2;color:#991b1b;}
+.badge-risk{background:#fef3c7;color:#92400e;}
 
-/* OVERVIEW GRID */
-.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px;}
-.ov-card{background:white;border:1px solid var(--g200);border-radius:12px;padding:20px;}
-.ov-card .num{font-size:30px;font-weight:800;color:var(--navy);}
-.ov-card .desc{font-size:12px;color:var(--g500);margin-top:2px;}
-.ov-card .sub{font-size:11px;color:var(--g400);margin-top:8px;line-height:1.5;}
+/* EXEC SUMMARY */
+.exec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;}
+.exec-card{background:white;border:1px solid var(--g200);border-radius:14px;padding:24px;}
+.exec-card .num{font-size:36px;font-weight:800;color:var(--navy);letter-spacing:-1px;}
+.exec-card .desc{font-size:13px;color:var(--g600);margin-top:4px;line-height:1.5;}
+.exec-card .context{font-size:12px;color:var(--g400);margin-top:10px;line-height:1.5;padding-top:10px;border-top:1px solid var(--g100);}
 
-/* TIMELINE STRIP */
-.tl-strip{display:grid;grid-template-columns:repeat(6,1fr);border-radius:12px;overflow:hidden;border:1px solid var(--g200);margin-bottom:44px;}
-.tl-p{padding:14px 14px;}
+/* TIMELINE */
+.tl-strip{display:grid;grid-template-columns:repeat(6,1fr);border-radius:14px;overflow:hidden;border:1px solid var(--g200);margin-bottom:48px;}
+.tl-p{padding:16px 14px;}
 .tl-p:nth-child(1){background:var(--purple-light);}
 .tl-p:nth-child(2){background:#eff6ff;}
 .tl-p:nth-child(3){background:#f0fdf4;}
@@ -83,8 +78,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .tl-p:nth-child(6){background:var(--rose-light);}
 .tl-p+.tl-p{border-left:1px solid var(--g200);}
 .tl-n{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;}
-.tl-date{font-size:10px;opacity:.6;margin-top:1px;}
-.tl-focus{font-size:11px;font-weight:600;margin-top:5px;line-height:1.3;}
+.tl-date{font-size:11px;opacity:.6;margin-top:2px;}
+.tl-focus{font-size:12px;font-weight:700;margin-top:6px;line-height:1.3;}
+.tl-desc{font-size:11px;opacity:.65;margin-top:4px;line-height:1.4;}
 .tl-p:nth-child(1) .tl-n{color:var(--purple);}
 .tl-p:nth-child(2) .tl-n{color:var(--navy);}
 .tl-p:nth-child(3) .tl-n{color:var(--green);}
@@ -92,16 +88,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .tl-p:nth-child(5) .tl-n{color:var(--sky);}
 .tl-p:nth-child(6) .tl-n{color:var(--rose);}
 
-/* PHASE BLOCKS */
-.phase{margin-bottom:56px;}
-.phase-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px;padding:22px 26px;border-radius:12px;}
+/* PHASE */
+.phase{margin-bottom:60px;}
+.phase-header{display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;padding:24px 28px;border-radius:14px;}
 .ph0{background:linear-gradient(135deg,var(--purple-light),#ede9fe);border:1px solid #e9d5ff;}
 .ph1{background:linear-gradient(135deg,#eff6ff,#e0e7ff);border:1px solid #bfdbfe;}
 .ph2{background:linear-gradient(135deg,#f0fdf4,var(--green-light));border:1px solid #bbf7d0;}
 .ph3{background:linear-gradient(135deg,#fff7ed,var(--amber-light));border:1px solid #fed7aa;}
 .ph4{background:linear-gradient(135deg,var(--sky-light),#bae6fd);border:1px solid #7dd3fc;}
 .ph5{background:linear-gradient(135deg,var(--rose-light),#fbcfe8);border:1px solid #f9a8d4;}
-.phase-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;color:white;}
+.phase-num{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0;color:white;}
 .ph0 .phase-num{background:var(--purple);}
 .ph1 .phase-num{background:var(--navy);}
 .ph2 .phase-num{background:var(--green);}
@@ -109,172 +105,168 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .ph4 .phase-num{background:var(--sky);}
 .ph5 .phase-num{background:var(--rose);}
 .phase-info{flex:1;}
-.phase-info h2{font-size:18px;font-weight:700;margin-bottom:3px;}
-.phase-date{font-size:12px;font-weight:600;opacity:.6;margin-bottom:5px;}
-.phase-info p{font-size:13px;opacity:.75;line-height:1.6;max-width:680px;}
-.phase-stats{display:flex;gap:20px;flex-shrink:0;}
-.phase-stat{text-align:center;}
-.phase-stat .n{font-size:22px;font-weight:700;}
-.phase-stat .l{font-size:10px;opacity:.6;}
+.phase-info h2{font-size:20px;font-weight:800;margin-bottom:4px;}
+.phase-date{font-size:12px;font-weight:600;opacity:.6;margin-bottom:6px;}
+.phase-info p{font-size:14px;opacity:.8;line-height:1.6;max-width:680px;}
+.phase-why{margin-top:10px;font-size:13px;font-weight:600;opacity:.75;font-style:italic;}
+.phase-stats{display:flex;gap:24px;flex-shrink:0;align-items:flex-start;}
+.phase-stat{text-align:center;background:rgba(255,255,255,.6);border-radius:8px;padding:10px 14px;min-width:60px;}
+.phase-stat .n{font-size:22px;font-weight:800;}
+.phase-stat .l{font-size:10px;opacity:.6;margin-top:1px;}
 
 /* SECTION LABEL */
-.slabel{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--g500);padding:10px 0 8px 12px;border-left:3px solid var(--g300);margin:26px 0 12px;}
+.slabel{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--g500);padding:10px 0 10px 14px;border-left:3px solid var(--g300);margin:28px 0 14px;}
 
-/* ITEM GRIDS */
-.items-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.items-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
-.item{background:white;border:1px solid var(--g200);border-radius:10px;padding:18px;}
-.item-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
-.item-title{font-size:13px;font-weight:700;color:var(--g900);flex:1;line-height:1.4;}
-.item-badges{display:flex;gap:5px;flex-wrap:wrap;align-items:center;}
-.item-problem{font-size:12px;color:var(--g500);margin-bottom:6px;line-height:1.5;}
-.item-problem strong{color:var(--g700);}
-.item-solution{font-size:12px;color:var(--g700);background:var(--g50);border-radius:6px;padding:9px 11px;line-height:1.5;}
-.item-solution::before{content:'→ ';color:var(--navy);font-weight:700;}
+/* ITEM CARDS */
+.items-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.items-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.item{background:white;border:1px solid var(--g200);border-radius:12px;padding:20px;}
+.item-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+.item-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.item-title{font-size:14px;font-weight:700;color:var(--g900);flex:1;line-height:1.4;}
+.item-products{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;}
+.item-problem{font-size:13px;color:var(--g600);margin-bottom:10px;line-height:1.6;}
+.item-problem strong{color:var(--g800,#1f2937);}
+.divline{border:none;border-top:1px solid var(--g100);margin:10px 0;}
+.item-outcome{font-size:13px;color:var(--g700);background:var(--green-light);border-radius:8px;padding:10px 12px;line-height:1.6;}
+.item-outcome::before{content:'✓ ';color:var(--green);font-weight:700;}
+.item-impact{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.impact-tag{font-size:11px;padding:3px 8px;border-radius:20px;font-weight:600;background:var(--navy-light);color:var(--navy);}
 
 /* PARALLEL LANES */
-.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;}
-.lane{background:white;border:1px solid var(--g200);border-radius:10px;overflow:hidden;}
-.lane-header{padding:11px 14px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px;}
+.lane{background:white;border:1px solid var(--g200);border-radius:12px;overflow:hidden;}
+.lane-header{padding:14px 16px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;}
 .lane-admissions .lane-header{background:#e0e7ff;color:#3730a3;}
 .lane-mat .lane-header{background:#f0fdf4;color:#15803d;}
 .lane-one .lane-header{background:var(--navy-light);color:var(--navy);}
-.lane-items{padding:12px;}
-.lane-item{padding:10px 0;border-bottom:1px solid var(--g100);font-size:12px;}
+.lane-items{padding:14px;}
+.lane-item{padding:12px 0;border-bottom:1px solid var(--g100);font-size:13px;}
 .lane-item:last-child{border-bottom:none;padding-bottom:0;}
-.lane-item-title{font-weight:600;color:var(--g900);margin-bottom:3px;}
-.lane-item-desc{color:var(--g500);line-height:1.4;}
-.lane-item-badges{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;}
+.lane-item-title{font-weight:700;color:var(--g900);margin-bottom:4px;}
+.lane-item-desc{color:var(--g500);line-height:1.5;}
+.lane-item-impact{font-size:11px;color:var(--green);font-weight:600;margin-top:5px;}
 
-/* STRATEGY ANALYSIS */
+/* STRATEGY CARDS */
 .strategy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.strategy-card{background:white;border:1px solid var(--g200);border-radius:10px;padding:20px;}
-.strategy-card.strength{border-left:3px solid var(--green);}
-.strategy-card.gap{border-left:3px solid var(--coral);}
-.strategy-card.risk{border-left:3px solid var(--amber);}
-.strategy-card h3{font-size:13px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.strategy-card ul{font-size:12px;color:var(--g600);padding-left:16px;line-height:1.8;}
-.strategy-card ul li{margin-bottom:2px;}
-
-/* GROWTH TRACKS */
-.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
-.track-card{background:white;border:1px solid var(--g200);border-radius:12px;overflow:hidden;}
-.track-header{padding:14px 16px;}
-.track-t1{background:linear-gradient(135deg,var(--navy-light),#c7d2fe);}
-.track-t2{background:linear-gradient(135deg,var(--teal-light),#a7f3d0);}
-.track-t3{background:linear-gradient(135deg,var(--orange-light),#fed7aa);}
-.track-header .track-num{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;opacity:.6;margin-bottom:3px;}
-.track-header h3{font-size:14px;font-weight:700;}
-.track-header p{font-size:12px;opacity:.7;margin-top:3px;}
-.track-body{padding:14px 16px;}
-.track-body ul{font-size:12px;color:var(--g600);padding-left:16px;line-height:1.8;}
-.track-timeline{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:white;margin-top:10px;}
-.track-t1 .track-timeline{color:var(--navy);}
-.track-t2 .track-timeline{color:var(--teal);}
-.track-t3 .track-timeline{color:var(--orange);}
-
-/* AI PATTERNS */
-.ai-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 24px;}
-.ai-card{background:white;border:1px solid #f9a8d4;border-radius:10px;padding:18px;}
-.ai-card-icon{font-size:22px;margin-bottom:8px;}
-.ai-card-title{font-size:13px;font-weight:700;color:var(--rose);margin-bottom:6px;}
-.ai-card-desc{font-size:12px;color:var(--g600);line-height:1.5;}
-.ai-card ul{margin:8px 0 0 14px;font-size:12px;color:var(--g500);line-height:1.7;}
+.strategy-card{background:white;border:1px solid var(--g200);border-radius:12px;padding:22px;}
+.strategy-card.strength{border-left:4px solid var(--green);}
+.strategy-card.gap{border-left:4px solid var(--coral);}
+.strategy-card.risk{border-left:4px solid var(--amber);}
+.strategy-card h3{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.strategy-card ul{font-size:13px;color:var(--g600);padding-left:18px;line-height:1.8;}
 
 /* TRUST ARC */
-.trust-arc{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:14px 0 24px;border-radius:10px;overflow:hidden;border:1px solid var(--g200);}
-.arc-step{padding:16px 14px;background:white;text-align:center;}
+.trust-arc{display:grid;grid-template-columns:repeat(5,1fr);border-radius:12px;overflow:hidden;border:1px solid var(--g200);margin:16px 0 28px;}
+.arc-step{padding:18px 14px;background:white;text-align:center;}
 .arc-step+.arc-step{border-left:1px solid var(--g200);}
-.arc-step .arc-icon{font-size:20px;margin-bottom:6px;}
-.arc-step .arc-label{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:4px;}
-.arc-step .arc-quote{font-size:11px;color:var(--g500);font-style:italic;line-height:1.4;}
-
-/* CONFIDENCE */
-.confidence-row{display:flex;flex-direction:column;gap:8px;margin:10px 0;}
-.ci{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:12px;}
-.ci-high{background:#f0fdf4;border:1px solid #bbf7d0;}
-.ci-mid{background:#fefce8;border:1px solid #fde68a;}
-.ci-low{background:#fff7ed;border:1px solid #fed7aa;}
-.ci-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.ci-high .ci-dot{background:#16a34a;}
-.ci-mid .ci-dot{background:#ca8a04;}
-.ci-low .ci-dot{background:#ea580c;}
-.ci-text{flex:1;}
-
-/* ESCALATION */
-.escalation{display:flex;align-items:center;gap:0;margin:14px 0;flex-wrap:wrap;}
-.esc-step{background:white;border:1px solid var(--g200);border-radius:8px;padding:10px 14px;text-align:center;flex:1;min-width:120px;}
-.esc-arrow{font-size:14px;color:var(--g300);padding:0 6px;flex-shrink:0;}
-.esc-step .esc-state{font-size:10px;font-weight:700;color:var(--rose);text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px;}
-.esc-step .esc-action{font-size:11px;color:var(--g600);font-style:italic;}
-
-/* ERROR TABLE */
-.error-table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;border:1px solid var(--g200);margin:14px 0 24px;}
-.error-table th{background:var(--g50);padding:10px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:1px solid var(--g200);}
-.error-table td{padding:11px 14px;border-bottom:1px solid var(--g100);font-size:12px;vertical-align:middle;}
-.error-table tr:last-child td{border-bottom:none;}
+.arc-icon{font-size:22px;margin-bottom:7px;}
+.arc-label{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.arc-quote{font-size:11px;color:var(--g500);font-style:italic;line-height:1.4;}
 
 /* EMOTIONAL JOURNEY */
-.journey-arc{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:14px 0 24px;border-radius:10px;overflow:hidden;border:1px solid var(--g200);}
-.ja-step{padding:16px 12px;text-align:center;}
+.journey-arc{display:grid;grid-template-columns:repeat(5,1fr);border-radius:12px;overflow:hidden;border:1px solid var(--g200);margin:16px 0 28px;}
+.ja-step{padding:18px 12px;text-align:center;}
 .ja-step:nth-child(1){background:#fef2f2;}
 .ja-step:nth-child(2){background:#fff7ed;}
 .ja-step:nth-child(3){background:#fefce8;}
 .ja-step:nth-child(4){background:#f0fdf4;}
 .ja-step:nth-child(5){background:#eff6ff;}
 .ja-step+.ja-step{border-left:1px solid var(--g200);}
-.ja-state{font-size:13px;font-weight:700;margin-bottom:4px;}
-.ja-feeling{font-size:10px;font-style:italic;color:var(--g500);margin-bottom:6px;}
-.ja-response{font-size:11px;color:var(--g600);line-height:1.4;}
+.ja-state{font-size:14px;font-weight:700;margin-bottom:4px;}
+.ja-feeling{font-size:11px;font-style:italic;color:var(--g500);margin-bottom:6px;}
+.ja-response{font-size:12px;color:var(--g600);line-height:1.4;}
 
-/* RESEARCH TIMELINE */
-.research-phases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
-.rp-card{background:white;border:1px solid var(--g200);border-radius:10px;overflow:hidden;}
-.rp-header{padding:12px 14px;font-size:12px;font-weight:700;}
+/* CONFIDENCE */
+.ci-row{display:flex;flex-direction:column;gap:8px;margin:10px 0;}
+.ci{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:13px;}
+.ci-high{background:#f0fdf4;border:1px solid #bbf7d0;}
+.ci-mid{background:#fefce8;border:1px solid #fde68a;}
+.ci-low{background:#fff7ed;border:1px solid #fed7aa;}
+.ci-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.ci-high .ci-dot{background:#16a34a;}
+.ci-mid .ci-dot{background:#ca8a04;}
+.ci-low .ci-dot{background:#ea580c;}
+
+/* ESCALATION */
+.escalation{display:flex;align-items:stretch;gap:0;margin:16px 0;border-radius:10px;overflow:hidden;border:1px solid var(--g200);}
+.esc-step{background:white;padding:16px 14px;text-align:center;flex:1;}
+.esc-step+.esc-step{border-left:1px solid var(--g200);}
+.esc-state{font-size:11px;font-weight:700;color:var(--rose);text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px;}
+.esc-action{font-size:12px;color:var(--g600);}
+
+/* ERROR TABLE */
+.etable{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--g200);margin:14px 0 28px;font-size:13px;}
+.etable th{background:var(--g50);padding:11px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:1px solid var(--g200);}
+.etable td{padding:12px 16px;border-bottom:1px solid var(--g100);vertical-align:middle;line-height:1.5;}
+.etable tr:last-child td{border-bottom:none;}
+
+/* GROWTH TRACKS */
+.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:32px;}
+.track-card{background:white;border:1px solid var(--g200);border-radius:12px;overflow:hidden;}
+.track-header{padding:16px 18px;}
+.track-t1{background:linear-gradient(135deg,var(--navy-light),#c7d2fe);}
+.track-t2{background:linear-gradient(135deg,var(--teal-light),#a7f3d0);}
+.track-t3{background:linear-gradient(135deg,var(--orange-light),#fed7aa);}
+.track-header .track-num{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;opacity:.6;margin-bottom:3px;}
+.track-header h3{font-size:15px;font-weight:700;}
+.track-header p{font-size:12px;opacity:.7;margin-top:3px;}
+.track-body{padding:16px 18px;}
+.track-body ul{font-size:13px;color:var(--g600);padding-left:18px;line-height:1.8;}
+.track-timeline{display:inline-block;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;background:white;margin-top:10px;}
+.track-t1 .track-timeline{color:var(--navy);}
+.track-t2 .track-timeline{color:var(--teal);}
+.track-t3 .track-timeline{color:var(--orange);}
+
+/* RESEARCH */
+.research-phases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:16px 0;}
+.rp-card{background:white;border:1px solid var(--g200);border-radius:12px;overflow:hidden;}
+.rp-header{padding:13px 16px;font-size:13px;font-weight:700;}
 .rp-h1{background:var(--navy-light);color:var(--navy);}
 .rp-h2{background:var(--teal-light);color:var(--teal);}
 .rp-h3{background:var(--orange-light);color:var(--orange);}
-.rp-body{padding:12px 14px;font-size:12px;color:var(--g600);line-height:1.6;}
-.rp-body ul{padding-left:14px;line-height:1.7;}
+.rp-body{padding:14px 16px;font-size:13px;color:var(--g600);line-height:1.6;}
+.rp-body ul{padding-left:16px;line-height:1.8;}
 .rp-body li{margin-bottom:3px;}
 
 /* METRICS */
-.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
-.metric-card{background:white;border:1px solid var(--g200);border-radius:10px;padding:18px;}
-.metric-card h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;}
-.metric-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--g100);font-size:12px;}
+.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.metric-card{background:white;border:1px solid var(--g200);border-radius:12px;padding:20px;}
+.metric-card h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:14px;}
+.metric-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--g100);font-size:13px;}
 .metric-row:last-child{border-bottom:none;padding-bottom:0;}
 .metric-label{color:var(--g600);}
 .metric-value{font-weight:700;color:var(--navy);}
 
 /* DEVPLAN */
-.devplan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0;}
-.dp-card{background:white;border:1px solid var(--g200);border-radius:10px;padding:16px;}
+.devplan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:16px 0;}
+.dp-card{background:white;border:1px solid var(--g200);border-radius:12px;padding:18px;}
 .dp-month{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--g400);margin-bottom:6px;}
-.dp-title{font-size:13px;font-weight:700;margin-bottom:8px;}
-.dp-card ul{font-size:12px;color:var(--g500);padding-left:14px;line-height:1.7;}
+.dp-title{font-size:14px;font-weight:700;margin-bottom:10px;}
+.dp-card ul{font-size:13px;color:var(--g500);padding-left:16px;line-height:1.7;}
 
 /* SUMMARY TABLE */
-.summary-table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;border:1px solid var(--g200);}
-.summary-table th{background:var(--g50);padding:10px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:1px solid var(--g200);}
-.summary-table td{padding:11px 14px;border-bottom:1px solid var(--g100);font-size:12px;vertical-align:middle;}
+.summary-table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--g200);}
+.summary-table th{background:var(--g50);padding:12px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:1px solid var(--g200);}
+.summary-table td{padding:13px 16px;border-bottom:1px solid var(--g100);font-size:13px;vertical-align:middle;line-height:1.5;}
 .summary-table tr:last-child td{border-bottom:none;}
 .summary-table tr:hover td{background:var(--g50);}
 
 /* FOOTER */
-.footer{text-align:center;padding:32px;color:var(--g400);font-size:12px;border-top:1px solid var(--g200);margin-top:40px;}
+.footer{text-align:center;padding:36px;color:var(--g400);font-size:12px;border-top:1px solid var(--g200);margin-top:48px;}
 
 @media(max-width:960px){
-  .overview-grid,.items-grid,.items-grid-3,.lanes,.ai-grid-3,.tracks-grid,.research-phases,.metrics-grid,.devplan-grid,.strategy-grid{grid-template-columns:1fr;}
+  .exec-grid,.items-grid,.items-grid-3,.lanes,.tracks-grid,.research-phases,.metrics-grid,.devplan-grid,.strategy-grid{grid-template-columns:1fr;}
   .tl-strip{grid-template-columns:1fr 1fr 1fr;}
   .tl-p+.tl-p{border-left:none;border-top:1px solid var(--g200);}
   .trust-arc,.journey-arc{grid-template-columns:1fr;}
   .arc-step+.arc-step,.ja-step+.ja-step{border-left:none;border-top:1px solid var(--g200);}
   .phase-stats{display:none;}
-  .header{padding:32px 20px 28px;}
-  .header h1{font-size:24px;}
-  .escalation{flex-direction:column;align-items:stretch;}
-  .esc-arrow{transform:rotate(90deg);text-align:center;}
+  .escalation{flex-direction:column;}
+  .esc-step+.esc-step{border-left:none;border-top:1px solid var(--g200);}
+  .header{padding:36px 24px 32px;}
+  .header h1{font-size:26px;}
+  .container{padding:32px 20px 60px;}
 }
 </style>
 </head>
@@ -282,16 +274,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <nav class="sticky-nav">
   <a href="#overview">Overview</a>
-  <a href="#strategy">AI Strategy Analysis</a>
-  <a href="#phase0">Phase 0 — DS Foundation</a>
-  <a href="#phase1">Phase 1 — Quick Wins</a>
-  <a href="#phase2">Phase 2 — Core Components</a>
-  <a href="#phase3">Phase 3 — Product Revamp</a>
-  <a href="#phase4">Phase 4 — Scale & Polish</a>
-  <a href="#phase5">Phase 5 — AI-Native</a>
-  <a href="#growth">Designer Growth</a>
-  <a href="#research">AI Research Strategy</a>
-  <a href="#metrics">Success Metrics</a>
+  <a href="#strategy">AI Strategy</a>
+  <a href="#phase0">Foundation</a>
+  <a href="#phase1">Quick Wins</a>
+  <a href="#phase2">Components</a>
+  <a href="#phase3">Product Revamp</a>
+  <a href="#phase4">Scale & Polish</a>
+  <a href="#phase5">AI-Native</a>
+  <a href="#growth">Growth Plan</a>
+  <a href="#research">Research</a>
+  <a href="#metrics">Outcomes</a>
 </nav>
 
 <div class="header">
@@ -300,19 +292,19 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <path d="M37.47 38L29.43 17.99H26.34L18.27 38H21.12L22.89 33.53H32.85L34.62 38H37.47ZM32.13 31.34H23.64L27.87 20.54L32.13 31.34Z" fill="white"/>
       <path d="M39 18V14H37V18H33V20H37V24H39V20H43V18H39Z" fill="#EC634B"/>
     </svg>
-    <span>Applicaa Design</span>
+    <span>Applicaa</span>
   </div>
   <h1>UI/UX Revamp Roadmap — 2026</h1>
-  <p>Six-phase plan covering Admissions+, ApplicaaOne, and MAT+ — from design system foundation to AI-native product evolution. Includes strategy analysis, designer growth tracks, AI research strategy, and success metrics.</p>
+  <p>A six-phase plan to improve the experience for school staff, parents, and students across Admissions+, ApplicaaOne, and MAT+. From fixing today's usability issues to building AI-powered admissions for the future.</p>
   <div class="header-meta">
     <div class="hm"><span class="lbl">Products</span><span class="val">Admissions+ · ApplicaaOne · MAT+</span></div>
-    <div class="hm"><span class="lbl">Phases</span><span class="val">6 (Foundation → AI-Native)</span></div>
-    <div class="hm"><span class="lbl">Horizon</span><span class="val">March – December 2026+</span></div>
-    <div class="hm"><span class="lbl">Author</span><span class="val">Emma Nguyen</span></div>
+    <div class="hm"><span class="lbl">Timeline</span><span class="val">March – December 2026</span></div>
+    <div class="hm"><span class="lbl">Phases</span><span class="val">6</span></div>
+    <div class="hm"><span class="lbl">Prepared by</span><span class="val">Emma Nguyen</span></div>
     <div class="hm"><span class="lbl">Updated</span><span class="val">March 2026</span></div>
   </div>
   <div class="header-callout">
-    <strong>Strategic framing:</strong> The DS Lookbook is the delivery tool, not a product. Phases 0–4 fix and build the shared foundation. Phase 5 redesigns interactions for AI-assisted workflows — the biggest long-term opportunity for Applicaa.
+    <strong>What this roadmap covers:</strong> Immediate usability fixes that reduce staff workload → building a consistent shared design foundation → redesigning each product from the ground up → a long-term plan to make Applicaa the first AI-native admissions platform in UK education.
   </div>
 </div>
 
@@ -320,87 +312,115 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- ══ OVERVIEW ══ -->
 <div id="overview">
-  <div class="legend" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center;">
-    <span style="font-size:12px;color:var(--g500);font-weight:500;">Products:</span>
-    <span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span>
-    <span class="pill pill-one"><span class="pill-dot"></span>ApplicaaOne</span>
-    <span class="pill pill-mat"><span class="pill-dot"></span>MAT+</span>
-    <span class="pill pill-all"><span class="pill-dot"></span>All products</span>
-    &nbsp;
-    <span style="font-size:12px;color:var(--g500);font-weight:500;">Priority:</span>
-    <span class="badge badge-p0">P0</span><span class="badge badge-p1">P1</span><span class="badge badge-p2">P2</span>
-    &nbsp;
-    <span style="font-size:12px;color:var(--g500);font-weight:500;">Effort:</span>
-    <span class="badge badge-s">S</span><span class="badge badge-m">M</span><span class="badge badge-l">L</span><span class="badge badge-xl">XL</span>
-  </div>
-
-  <div class="overview-grid">
-    <div class="ov-card"><div class="num">3</div><div class="desc">Products in scope</div><div class="sub">Admissions+, ApplicaaOne, MAT+. DS Lookbook is the delivery tool — not a product on the roadmap.</div></div>
-    <div class="ov-card"><div class="num">6</div><div class="desc">Delivery phases</div><div class="sub">DS Foundation → Quick Wins → Core Build → Product Revamp → Scale & Polish → AI-Native</div></div>
-    <div class="ov-card"><div class="num">15+</div><div class="desc">Missing DS components</div><div class="sub">4 P0 blocking · 6 P1 high · 5 P2 medium — built in Phases 0 & 2 before any product redesigns</div></div>
-    <div class="ov-card"><div class="num">50+</div><div class="desc">Total initiatives</div><div class="sub">Across 6 phases, 3 products — prioritised by daily school staff impact and implementation risk</div></div>
+  <div class="exec-grid">
+    <div class="exec-card">
+      <div class="num">3</div>
+      <div class="desc">Products being improved</div>
+      <div class="context">Admissions+, ApplicaaOne, and MAT+. All three products follow the same six-phase plan.</div>
+    </div>
+    <div class="exec-card">
+      <div class="num">6</div>
+      <div class="desc">Delivery phases</div>
+      <div class="context">From fixing today's broken patterns all the way through to launching AI-assisted admissions in Phase 5.</div>
+    </div>
+    <div class="exec-card">
+      <div class="num">50+</div>
+      <div class="desc">Improvements planned</div>
+      <div class="context">Across all phases and products — prioritised by how much time they save school staff and how often they're used.</div>
+    </div>
+    <div class="exec-card">
+      <div class="num">200+</div>
+      <div class="desc">Schools impacted</div>
+      <div class="context">Every improvement benefits the full customer base. Phase 1 quick wins ship to all schools simultaneously.</div>
+    </div>
   </div>
 
   <div class="tl-strip">
-    <div class="tl-p"><div class="tl-n">Phase 0</div><div class="tl-date">Mar–Apr · 4 wks</div><div class="tl-focus">DS Foundation</div></div>
-    <div class="tl-p"><div class="tl-n">Phase 1</div><div class="tl-date">May · 4 wks</div><div class="tl-focus">Quick Wins</div></div>
-    <div class="tl-p"><div class="tl-n">Phase 2</div><div class="tl-date">Jun–Jul · 8 wks</div><div class="tl-focus">Core Components</div></div>
-    <div class="tl-p"><div class="tl-n">Phase 3</div><div class="tl-date">Aug–Oct · 12 wks</div><div class="tl-focus">Product Revamp</div></div>
-    <div class="tl-p"><div class="tl-n">Phase 4</div><div class="tl-date">Nov · 4 wks</div><div class="tl-focus">Scale & Polish</div></div>
-    <div class="tl-p"><div class="tl-n">Phase 5</div><div class="tl-date">Dec+ · Ongoing</div><div class="tl-focus">AI-Native Evolution</div></div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 0</div>
+      <div class="tl-date">March – April</div>
+      <div class="tl-focus">Shared Foundation</div>
+      <div class="tl-desc">Fix the inconsistencies that exist across all three products today</div>
+    </div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 1</div>
+      <div class="tl-date">May</div>
+      <div class="tl-focus">Quick Wins</div>
+      <div class="tl-desc">High-impact improvements to daily staff workflows — settings, processes, filters</div>
+    </div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 2</div>
+      <div class="tl-date">June – July</div>
+      <div class="tl-focus">Building Blocks</div>
+      <div class="tl-desc">Build the reusable UI components needed before we can redesign each product</div>
+    </div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 3</div>
+      <div class="tl-date">August – October</div>
+      <div class="tl-focus">Product Redesigns</div>
+      <div class="tl-desc">Full screen and flow redesigns for each product running in parallel</div>
+    </div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 4</div>
+      <div class="tl-date">November</div>
+      <div class="tl-focus">Scale & Polish</div>
+      <div class="tl-desc">Accessibility, mobile, and quality pass across all three products</div>
+    </div>
+    <div class="tl-p">
+      <div class="tl-n">Phase 5</div>
+      <div class="tl-date">December +</div>
+      <div class="tl-focus">AI-Native</div>
+      <div class="tl-desc">Conversational AI admissions — the next generation of how schools and parents interact</div>
+    </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- ══ AI STRATEGY ANALYSIS ══ -->
+<!-- ══ AI STRATEGY ══ -->
 <div id="strategy">
-  <div class="section-heading">AI Strategy Analysis</div>
-  <div class="section-sub">Critical review of the ApplicaaOne AI strategy — strategic strengths, UX concerns, missing elements, and what to execute first.</div>
+  <div class="section-heading">AI Strategy — Critical Review</div>
+  <div class="section-sub">An honest assessment of the ApplicaaOne AI strategy: where it is strong, what is missing, and what the greatest risks are before we invest further.</div>
 
   <div class="strategy-grid" style="margin-bottom:16px;">
     <div class="strategy-card strength">
-      <h3><span class="badge badge-pos">Strengths</span> What the strategy gets right</h3>
+      <h3><span class="badge badge-pos">✓ Strengths</span></h3>
       <ul>
-        <li><strong>Clear vision and urgency</strong> — "survival imperative" framing is compelling. $285B SaaS sell-off shows real market pressure.</li>
-        <li><strong>Internal-first approach</strong> — Testing AI internally before customer-facing creates a real learning loop and competitive advantage.</li>
-        <li><strong>Phased transition model</strong> — AI assists → AI operates → AI IS the product reduces risk and builds trust gradually.</li>
-        <li><strong>Strong design opportunity</strong> — Positioned to define how AI agents should interact with families and school staff in EdTech.</li>
+        <li><strong>Clear vision and urgency</strong> — The "survival imperative" framing is compelling. The SaaS disruption threat is real and well-evidenced.</li>
+        <li><strong>Testing internally first</strong> — Smart to prove AI works inside Applicaa before offering it to schools. Reduces risk and builds team confidence.</li>
+        <li><strong>Phased transition model</strong> — Moving from AI assists → AI operates → AI is the product reduces risk and lets schools adapt gradually.</li>
+        <li><strong>Major design opportunity</strong> — We are positioned to define how AI should interact with families and school staff in UK education before anyone else does.</li>
       </ul>
     </div>
     <div class="strategy-card gap">
-      <h3><span class="badge badge-neg">Critical gaps</span> What's missing from the strategy</h3>
+      <h3><span class="badge badge-gap">✗ Critical gaps</span></h3>
       <ul>
-        <li><strong>No UX research plan</strong> — No detail on how school staff actually work today. Strategy risks being elegant on paper but failing in practice.</li>
-        <li><strong>No change management plan</strong> — 200+ schools need transition support. Who trains them? Who handles resistance?</li>
-        <li><strong>Data quality underestimated</strong> — School data is messy, inconsistent, incomplete. AI trained on poor data = poor outcomes.</li>
-        <li><strong>Regulatory gaps</strong> — No deep dive on DfE requirements, GDPR Article 22, or children's data protection rules. One violation ends the strategy.</li>
-        <li><strong>No error recovery design</strong> — What happens when the agent gets it wrong? Trust collapse after a single AI error can be permanent with parents.</li>
-        <li><strong>No multi-modal plan</strong> — Many parents will use mobile and prefer voice over typing. Desktop-first AI UX will fail this group.</li>
+        <li><strong>No user research plan</strong> — The strategy assumes what school staff and parents need. We have not yet observed how they actually work. This is a significant risk.</li>
+        <li><strong>No change management plan</strong> — 200+ schools need to transition to AI-assisted processes. Who trains them? Who handles resistance?</li>
+        <li><strong>Data quality underestimated</strong> — School data is often inconsistent and incomplete. AI trained on poor data produces poor outcomes and erodes trust quickly.</li>
+        <li><strong>Regulatory gaps</strong> — No detailed plan for DfE requirements, GDPR rules around automated decision-making, or children's data protection. One violation could stop everything.</li>
+        <li><strong>No plan for AI getting it wrong</strong> — What happens when the AI makes an error? A single bad recommendation on a student's application could permanently damage a parent's trust.</li>
       </ul>
     </div>
   </div>
 
   <div class="strategy-grid">
     <div class="strategy-card risk">
-      <h3><span class="badge badge-gap">Business risk</span> Market and operational gaps</h3>
+      <h3><span class="badge badge-risk">⚠ Business risks</span></h3>
       <ul>
-        <li><strong>Competitive response underestimated</strong> — No IP/patent strategy. Technical moat is smaller than assumed.</li>
-        <li><strong>Pricing transition cliff</strong> — No financial model for the per-seat to per-outcome migration period.</li>
-        <li><strong>Customer concentration risk</strong> — What if top 10 schools don't adopt? No mitigation plan.</li>
-        <li><strong>AI reliability testing missing</strong> — No QA process for conversational AI, hallucination detection, or edge case discovery.</li>
-        <li><strong>Integration underestimated</strong> — 200+ different school systems, different data formats, legacy infrastructure.</li>
-        <li><strong>24/7 monitoring not planned</strong> — No agent health dashboards, SLA definitions, or escalation protocols.</li>
+        <li><strong>Competitors will copy quickly</strong> — There is no patent protection planned. The window of advantage is shorter than the strategy assumes.</li>
+        <li><strong>Revenue gap during transition</strong> — Moving from per-seat to outcome-based pricing creates a revenue dip. No financial model exists for this period yet.</li>
+        <li><strong>Integration complexity</strong> — 200+ schools each have different data systems, formats, and legacy infrastructure. This is far harder than it appears on paper.</li>
+        <li><strong>No monitoring plan</strong> — Running AI agents across 200+ schools requires real-time oversight, performance monitoring, and escalation protocols. None are defined.</li>
       </ul>
     </div>
     <div class="strategy-card strength">
-      <h3><span class="badge badge-pos">Recommendation</span> How to start</h3>
+      <h3><span class="badge badge-pos">→ Our recommendation</span></h3>
       <ul>
-        <li><strong>Start smaller</strong> — Pick 5 pilot schools, build full agent experience end-to-end, prove ROI, then scale. Don't try to do everything at once.</li>
-        <li><strong>User research sprint first</strong> — Interview 20+ school staff and parents about current pain points before designing agent conversations.</li>
-        <li><strong>Regulatory legal review</strong> — Engage an education law firm for a compliance roadmap before shipping any agent to parents.</li>
-        <li><strong>Proof of concept</strong> — Build one complete end-to-end agent for ONE school, measure outcomes, then expand.</li>
-        <li><strong>UX and change management</strong> — Invest as heavily here as in the technical architecture. Success depends on user adoption.</li>
+        <li><strong>Start with 5 pilot schools</strong> — Build the complete AI experience end-to-end for five schools, measure real outcomes, then expand. Don't try to do everything at once.</li>
+        <li><strong>Run user research first</strong> — Interview 20+ school staff and parents about their real pain points before designing any AI conversations.</li>
+        <li><strong>Get legal advice now</strong> — Engage an education law firm to map the regulatory requirements before any AI agent goes live with parents or students.</li>
+        <li><strong>Invest as much in adoption as in technology</strong> — The biggest risk is not the AI itself, it is whether school staff and parents will trust and use it.</li>
       </ul>
     </div>
   </div>
@@ -414,80 +434,90 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="phase-num">0</div>
     <div class="phase-info">
       <div class="phase-date">March – April 2026 · 4 weeks</div>
-      <h2>Design System Foundation</h2>
-      <p>Fix the shared foundation and build domain-specific custom components for all three products. Nothing in Phases 1–5 can be consistent without this. The DS Lookbook is the delivery mechanism — each component ships into product code, not just the preview page.</p>
+      <h2>Shared Foundation</h2>
+      <p>Before we can improve any individual product, we need to fix the inconsistencies that exist across all three today. Right now, common elements — buttons, forms, status labels, tables — look and behave differently depending on which screen you're on. This phase standardises those shared elements so that every improvement we make in Phases 1–5 feels consistent and professional.</p>
+      <div class="phase-why">Why first: Inconsistency makes products feel unpolished and untrustworthy. Every phase after this relies on a stable foundation.</div>
     </div>
     <div class="phase-stats">
-      <div class="phase-stat"><div class="n" style="color:var(--purple)">12</div><div class="l">items</div></div>
-      <div class="phase-stat"><div class="n" style="color:var(--purple)">5</div><div class="l">P0</div></div>
+      <div class="phase-stat"><div class="n" style="color:var(--purple)">12</div><div class="l">fixes</div></div>
     </div>
   </div>
 
-  <div class="slabel">Fix — Repair before building</div>
+  <div class="slabel">Fix — Things that are broken or inconsistent right now</div>
   <div class="items-grid">
     <div class="item">
-      <div class="item-header"><div class="item-title">Publish 4 broken Lookbook previews</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> DataTable, TagInput, InfoGrid, PersonCard exist in code but return 404 in Lookbook. Teams rebuild these ad-hoc on every new screen.</div>
-      <div class="item-solution">Write Lookbook previews for all 4 with props, variants, real data examples, and usage notes. Block any new ad-hoc usage until documented.</div>
+      <div class="item-header"><div class="item-icon">🏷️</div><div class="item-title">Status labels use the wrong colours</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">An "Upcoming" event is shown with a green label — the same colour used for "Completed" or "Success." Staff are reading the text to understand status rather than trusting the colour, which slows them down and creates errors.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Every status label uses a consistent, predictable colour across all three products. Upcoming = blue, Completed = green, Cancelled = red, Full = amber, Draft = grey. Staff can scan a list and understand it instantly.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Remove Bootstrap class leakage</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> <code>fw-bold</code>, <code>text-muted</code>, <code>text-danger</code> scattered across 20+ component templates. Break silently when Bootstrap is removed.</div>
-      <div class="item-solution">Find-replace all templates: <code>text-muted → tw:text-neutral-400</code>, <code>fw-bold → tw:font-bold</code>, <code>text-danger → tw:text-red-600</code>. Add linter rule to catch reintroduction.</div>
+      <div class="item-header"><div class="item-icon">⚠️</div><div class="item-title">Legacy styling left behind in components</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Parts of the interface still use an older styling library that we no longer maintain. These elements look visually inconsistent and could break without warning as we update the codebase. There are at least 20 instances identified across the three products.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">All legacy styling is removed and replaced with current standards. The interface is consistent and maintainable. Future updates won't unexpectedly break screens that haven't been touched.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Fix semantic badge colours</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> "Upcoming" events use <code>badge-success-subtle</code> (green). <code>badge-info-subtle</code> already exists — just applied incorrectly across MAT+ and Admissions+.</div>
-      <div class="item-solution">Audit all 3 products. Enforce: Upcoming → info, Completed → success, Cancelled → danger, Full → warning, Draft → neutral. Document semantic map in DS.</div>
+      <div class="item-header"><div class="item-icon">📋</div><div class="item-title">Four shared UI components have no reference documentation</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Four reusable elements — the data table, tag input, information grid, and person card — exist in the codebase but have no published documentation for designers or developers. As a result, each new screen that needs these elements rebuilds them from scratch, creating subtle inconsistencies across the product.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">All four components are documented with usage guidelines, examples, and variants. New screens are built from the same reference — no more ad-hoc rebuilds, no more drift.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Vanilla JS → Stimulus (Task reminders)</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Enquiry record Add Task uses <code>onclick="addDateReminder()"</code> — raw JS bypassing Stimulus architecture. Untestable, inconsistent, can't be reused.</div>
-      <div class="item-solution">Replace with <code>reminders_controller</code> using Stimulus targets and actions. Reminder rows become a documented, reusable Lookbook component.</div>
+      <div class="item-header"><div class="item-icon">🔁</div><div class="item-title">Task reminder logic is unreliable</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">In the enquiry record, adding a task reminder uses an older technical approach that isn't connected to our current interaction standards. This means reminders behave inconsistently, can't be easily tested, and can't be reused on other screens.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Task reminders are rebuilt using the same standards as the rest of the application. They behave predictably, can be tested, and the same pattern can be reused wherever reminders are needed.</div>
     </div>
   </div>
 
-  <div class="slabel">Build — Custom domain-specific components</div>
+  <div class="slabel">Build — New shared elements needed across all products</div>
   <div class="items-grid">
     <div class="item">
-      <div class="item-header"><div class="item-title">Empty State component</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Every table and panel handles zero-data inline — three different ad-hoc styles across 3 products. No consistency.</div>
-      <div class="item-solution">Build <code>tw-empty-state</code>: icon/illustration slot, heading, body, optional CTA. Variants: no-data, no-results (after filtering), first-use (onboarding prompt).</div>
+      <div class="item-header"><div class="item-icon">📭</div><div class="item-title">Empty states — what to show when there's no data</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">When a list or table has no data — no applications received yet, no events created, search returned nothing — each screen handles it differently. Some show a blank space, some show an error-style message. Staff don't know whether the empty state means something is wrong or is expected.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Every empty list or table shows a clear, consistent message explaining why it's empty and what to do next. First-time users are guided with an action. Zero-results from a filter explains the filter is too narrow.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Skeleton Loader</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Every async fetch (events, RSVP, Bromcom import, KPI dashboard) shows nothing while loading. Layout shift. Looks broken.</div>
-      <div class="item-solution">Build <code>tw-skeleton</code> with CSS shimmer animation. Variants: text line, avatar, card, table row, stat block. Zero JS — pure CSS keyframe.</div>
+      <div class="item-header"><div class="item-icon">⏳</div><div class="item-title">Loading states — what to show while data is fetching</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">When a page or list is loading, the interface currently shows nothing until the data arrives. This causes the page to jump visually (layout shift) and makes the product feel slow and unreliable — even when it's not.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Every loading surface shows a smooth animated placeholder that matches the shape of the content about to appear. The page doesn't jump. The product feels fast and professional.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Filter Chips component</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Push to Schools, enquiry list, timeline filters, year group filters — same interaction built 6+ times as bespoke Alpine.js. No shared component.</div>
-      <div class="item-solution">Build <code>tw-filter-chip</code> + <code>tw-filter-chip-group</code>. States: default, active, disabled. Optional count badge. "All" chip + clear-all. Stimulus-powered.</div>
+      <div class="item-header"><div class="item-icon">🔍</div><div class="item-title">Filter chips — a consistent way to filter any list</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Filtering lists — by school type, application stage, event status, year group — is one of the most common things staff do. Currently, each screen implements filtering differently. Some use dropdown menus, some use custom buttons, some have no filtering at all. Staff constantly have to relearn how to filter on each screen.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Every filterable list uses the same filter chip pattern. Staff learn it once and it works everywhere. Chips show how many results match each filter. "Clear all" resets to the full list instantly.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Date &amp; Time Picker</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Log Call, Add Task, event scheduling — all use plain <code>&lt;input type="text"&gt;</code> or double <code>&lt;select&gt;</code> for time. Inconsistent format, no validation.</div>
-      <div class="item-solution">Build <code>tw-date-picker</code> (single + range) and <code>tw-time-picker</code>. Keyboard accessible, DD/MM/YYYY locale. Replaces all date/time inputs across all 3 products.</div>
+      <div class="item-header"><div class="item-icon">📅</div><div class="item-title">Date and time picker — a consistent way to enter dates</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Logging a call, adding a task, scheduling an event — all of these require entering a date and time. Currently these fields use a mix of plain text boxes, dropdowns for hours and minutes, and browser-native pickers that look different on every device. There is no validation, so staff often enter dates in the wrong format and only find out when they save.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">One consistent date and time picker used everywhere across all three products. Works correctly on iPad, Android, and desktop. Validates the format before saving. DD/MM/YYYY — always.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">System Banner</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> No component for platform-wide alerts: Bromcom import running, subscription expiring, MIS sync failure. Currently unhandled across all 3 products.</div>
-      <div class="item-solution">Build <code>tw-banner</code> above topbar. Variants: info, warning, critical. Dismissable, server-managed. Stacks if multiple active.</div>
+      <div class="item-header"><div class="item-icon">📢</div><div class="item-title">Platform-wide notifications banner</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">There is currently no way to show a platform-wide message to all users — for example, "your MIS sync is running," "your subscription renews in 3 days," or "maintenance tonight at 10pm." These messages either don't get communicated, or are buried in an email that staff miss.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A banner at the top of every screen can surface critical or informational messages to all users. Dismissable. Works across all three products. School administrators can also use it to notify their own staff.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Column density — reduce to 7 default</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Events table has 15 columns — overflows on laptops, unusable on iPads. Primary device for UK school staff is iPad/Android (BYOD).</div>
-      <div class="item-solution">Default 7 columns. Add column chooser. Move QR to action dropdown. Use <code>view_toggle_controller</code>.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-title">tw-person-card footer slot</div><div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-s">S</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> <code>tw-person-card-footer</code> class exists but is never shown in Lookbook. No documented pattern for action buttons on a person card.</div>
-      <div class="item-solution">Add footer slot to preview: primary action (View record), secondary actions (Call, Email). Document usage with enquiry record parent card as the reference case.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-title">SMS stats + character counter</div><div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> SMS popup shows "Messages remaining / Recipients / UK phone" as bare <code>&lt;p&gt;</code> tags with Bootstrap classes. No DS component.</div>
-      <div class="item-solution">Build <code>tw-character-counter</code> (attaches to textarea, warning at 80%) and <code>tw-sms-stat-row</code> for the send stats block.</div>
+      <div class="item-header"><div class="item-icon">📊</div><div class="item-title">Reduce table columns from 15 to 7</div></div>
+      <div class="item-products"><span class="pill pill-mat"><span class="pill-dot"></span>MAT+</span></div>
+      <div class="item-problem">The events table in MAT+ has 15 columns — it overflows on every laptop screen and is completely unusable on iPad. UK school staff predominantly use iPads and Android tablets (BYOD). The QR code appears in every row even when no one is looking at it.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">The table shows 7 columns by default: Actions, Date, Event, RSVPs, Status, Source, and Capacity. Staff can choose which additional columns to show. QR codes are accessible when needed, not cluttering every row.</div>
     </div>
   </div>
 </div>
@@ -501,137 +531,155 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="phase-info">
       <div class="phase-date">May 2026 · 4 weeks</div>
       <h2>Quick Wins — All Products</h2>
-      <p>High-impact, low-effort fixes for daily school staff experience. Every item ships independently — no cross-dependency, no waiting. Focus: settings pages, recurring processes, filters, and navigation. Each is a standalone PR.</p>
+      <p>High-impact improvements to the daily workflows school staff rely on most. Every item in this phase ships independently — no item depends on another, so any of them can go live as soon as it's ready. Focus areas: settings navigation, the four core processes staff repeat every day, and the filtering and navigation pain points they hit on every screen.</p>
+      <div class="phase-why">Why now: These are the things that slow staff down most today. They don't require a full product redesign — they need focused, targeted fixes that deliver visible improvement immediately.</div>
     </div>
     <div class="phase-stats">
-      <div class="phase-stat"><div class="n" style="color:var(--navy)">12</div><div class="l">items</div></div>
-      <div class="phase-stat"><div class="n" style="color:var(--navy)">8</div><div class="l">independently<br>shippable</div></div>
+      <div class="phase-stat"><div class="n" style="color:var(--navy)">10</div><div class="l">improvements</div></div>
     </div>
   </div>
 
-  <div class="slabel">Settings pages — the most-neglected daily surface</div>
+  <div class="slabel">Settings navigation — restructured and easier to find your way around</div>
   <div class="items-grid">
     <div class="item" style="grid-column:1/-1;">
-      <div class="item-header"><div class="item-title">Settings navigation audit — Admissions+</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Current structure (from audit):</strong> 8 top-level sections, 20+ sub-pages across: Application Form · Subject Options (Subjects, Specific Requirements, Pathways) · Form Settings (Dashboard Settings, Student Homepage, Parent Homepage, Landing Page, Application Groups, Form Groups, Student Profile, Feeder Schools) · School Settings (General Settings, Users, Permissions, Integration, Payment &amp; Fees, Unsubscriptions, FAQs, Address Mapping) · Enrolment Settings · Enrolment Navigator · Properties (Properties, Calculated Properties, Property Groups, Field Format Configuration) · Security (Login Settings, Failed Login Attempts).
-        <br><br><strong>Issues identified:</strong>
-        <br>1. <strong>Ungrouped orphans</strong> — "Enrolment Settings" and "Enrolment Navigator" sit as lone items between grouped sections. They belong together under an "Enrolment" group.
-        <br>2. <strong>School Settings overloaded</strong> — 8 sub-items of very different types (admin Users, config Integration, financial Payment &amp; Fees, content FAQs). Too broad a group — staff can't predict where to find things.
-        <br>3. <strong>Active state too subtle</strong> — Active section uses coral text only, no background highlight. Hard to track location in a 20+ item nav.
-        <br>4. <strong>No section descriptions</strong> — Clicking a top-level section shows no summary of what it controls. Staff must explore to learn.
-        <br>5. <strong>Mixed audiences</strong> — IT admin items (Security, Integration, Address Mapping) sit alongside daily-use items (Student Homepage, FAQs). No separation by role.
+      <div class="item-header"><div class="item-icon">⚙️</div><div class="item-title">Settings navigation — Admissions+</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">
+        <strong>Current state (from audit):</strong> The settings area has 8 top-level sections and over 20 sub-pages. The structure has three problems:
+        <br><br>
+        <strong>1. Ungrouped items:</strong> "Enrolment Settings" and "Enrolment Navigator" sit as isolated items between grouped sections. They belong together and feel orphaned where they are.
+        <br><br>
+        <strong>2. Overloaded groups:</strong> "School Settings" contains 8 very different sub-pages — from managing staff accounts to setting up payment fees to writing FAQs. These have nothing in common but share a group. Staff can't predict where anything lives.
+        <br><br>
+        <strong>3. Hard to know where you are:</strong> The active page is only shown by changing the text colour. In a 20+ item list, this is easy to miss. There's no description of what each section controls, so staff have to click around to find what they need.
+        <br><br>
+        <strong>4. Mixed audiences in the same menu:</strong> IT administration items (security, integrations, address mapping) sit next to items school admin staff use daily (student homepage, FAQs). A school receptionist has to scroll past technical settings they can't access to reach the settings they need.
       </div>
-      <div class="item-solution">Restructure into 4 audience-grouped categories: <strong>Form &amp; Application</strong> (Application Form, Subject Options, Form Settings), <strong>School Admin</strong> (General Settings, Users, Permissions, Security, Integration), <strong>Enrolment</strong> (Enrolment Settings, Enrolment Navigator, Payment &amp; Fees), <strong>Advanced</strong> (Properties, Address Mapping, Field Format). Add active state background highlight. Add section description line under each group header. Standardise all sub-pages: <code>tw-form-section</code> layout, sticky Save/Cancel footer, inline success toast on save. Document as the "Settings Page" pattern in DS — applicable across all 3 products.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-title">Permissions &amp; access — clarity</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Staff permissions in MAT+ live inside a modal — cramped, no legend for what each level can do, hard to manage cross-school access.</div>
-      <div class="item-solution">Move to dedicated Permissions settings screen. School-grouped staff table, access level legend, searchable add-staff combobox, bulk-save changes.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Settings are reorganised into four clear groups based on who uses them and how often: <strong>Form & Application</strong> (everything related to how applications look and work), <strong>School Administration</strong> (staff accounts, permissions, communications), <strong>Enrolment</strong> (post-offer process, payments, progression), and <strong>Advanced</strong> (integrations, address mapping, technical configuration). Each group has a short description. The active page is clearly highlighted. The same structure is applied to MAT+ and ApplicaaOne settings.</div>
+      <div class="item-impact">
+        <span class="impact-tag">Reduces support tickets about "where do I find X"</span>
+        <span class="impact-tag">Faster onboarding for new staff</span>
+        <span class="impact-tag">Applies to all 3 products</span>
+      </div>
     </div>
   </div>
 
-  <div class="slabel">Processes — recurring workflows staff do every day</div>
+  <div class="slabel">Processes — the four core workflows staff repeat every day</div>
   <div class="items-grid">
-
-    <!-- 1. DATA IMPORT & EXPORT -->
     <div class="item">
-      <div class="item-header"><div class="item-title">1. Data import &amp; export process</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px;margin-left:4px">MAT+</span></div></div>
+      <div class="item-header"><div class="item-icon">📤</div><div class="item-title">1. Data import and export</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span><span class="pill pill-mat" style="margin-left:6px"><span class="pill-dot"></span>MAT+</span></div>
       <div class="item-problem">
-        <strong>Import problems:</strong> Bromcom, CSV, and MIS imports run silently — no progress, no success confirmation, no actionable error detail. Staff navigate away and back just to check if it worked. Errors surface as raw stack text with no remediation guidance.
+        <strong>Imports run silently.</strong> When staff import student data from Bromcom, a CSV file, or an MIS system, the process starts — and then nothing happens on screen. Staff don't know if the import is still running, has completed successfully, or has failed. They navigate away and come back hoping to see a result. When imports do fail, the error message is technical and gives no guidance on how to fix it.
         <br><br>
-        <strong>Export problems:</strong> Exports trigger a download with no status, no format choice at point of export, and no way to re-download a recent export without rerunning the whole process.
+        <strong>Exports have no history.</strong> Once an export is triggered, it downloads immediately. There is no record of what was exported, when, or in what format. If a file is lost or needs to be re-shared, the entire export has to be run again.
       </div>
-      <div class="item-solution">
-        <strong>Import:</strong> Add <code>tw-progress</code> bar (indeterminate while running), real-time row counts via Turbo Streams ("287 of 340 students processed"), success summary card, and error rows in diff-style table with specific fix guidance per error type. Show last-import timestamp on the trigger screen.
+      <div class="divline"></div>
+      <div class="item-outcome">
+        <strong>Imports:</strong> A progress bar shows the import is running, with a live count of how many records have been processed. A clear success or failure message appears when it's done. Any errors explain what went wrong and how to fix it — in plain language, not technical text. The date and time of the last successful import is always visible.
         <br><br>
-        <strong>Export:</strong> Add format selector (CSV, XLSX, PDF) before triggering. Show export history (last 5 exports with download link). Email notification with download link for large exports that take &gt;30 seconds.
+        <strong>Exports:</strong> Staff choose their format before exporting (spreadsheet, PDF, or CSV). The last five exports are listed with a re-download link. Large exports that take more than 30 seconds send a download link by email so staff don't have to wait on the screen.
+      </div>
+      <div class="item-impact">
+        <span class="impact-tag">Eliminates "did my import work?" support tickets</span>
+        <span class="impact-tag">Reduces data re-work from failed silent imports</span>
       </div>
     </div>
 
-    <!-- 2. OFFER & ENROLMENT -->
     <div class="item">
-      <div class="item-header"><div class="item-title">2. Offer &amp; enrolment management process</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
+      <div class="item-header"><div class="item-icon">🎓</div><div class="item-title">2. Offer and enrolment management</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
       <div class="item-problem">
-        <strong>Offer problems:</strong> Conditional, unconditional, waitlisted, and declined offers all look identical in the list — same row, no colour, no icon. Staff must open each record to check status. Bulk offer actions require selecting rows one by one. No top-level overview of pipeline state.
+        <strong>All offers look identical.</strong> Conditional offers, unconditional offers, waitlisted applicants, and declined applications all appear as identical rows in the same list. There is no visual difference between a student who has been offered a place and one who has been declined. Staff must open each record individually to check what stage they are at.
         <br><br>
-        <strong>Enrolment problems:</strong> Offer accepted → enrolled transition is manual and untriggered. No checklist for what enrolment requires (forms signed, fees paid, timetable assigned). Status falls off a cliff after offer — nothing signals enrolment progress.
+        <strong>The enrolment process falls off a cliff.</strong> Once a student accepts an offer, the system has no way to track what happens next. There is no checklist, no visibility of who has completed their enrolment steps, and no way to see at a glance how many students are fully enrolled versus still outstanding.
       </div>
-      <div class="item-solution">
-        <strong>Offers:</strong> Status-coloured badge per row (Conditional → amber, Unconditional → green, Waitlisted → blue, Declined → red). KPI stat row at top: made / accepted / declined / pending response using <code>tw-stat-card</code>. Bulk offer action via <code>tw-bulk-bar</code> (make offer, withdraw, move to waitlist). Offer state change auto-adds a timeline entry.
+      <div class="divline"></div>
+      <div class="item-outcome">
+        <strong>Offers:</strong> Each offer status has its own colour and label — Conditional (amber), Unconditional (green), Waitlisted (blue), Declined (red). A summary row at the top of the page shows the total number in each category. Staff can select multiple applicants and take an action on all of them at once.
         <br><br>
-        <strong>Enrolment:</strong> Post-offer enrolment checklist with per-student progress (Forms signed, Fees, Timetable, ID verified). Enrolment completion % visible on the list. Trigger automated email nudges for incomplete items.
+        <strong>Enrolment:</strong> After an offer is accepted, an enrolment checklist tracks each student's progress (forms signed, fees paid, timetable assigned, ID verified). The enrolment screen shows a completion percentage per student and highlights who is overdue. Automated email reminders nudge students with incomplete steps.
+      </div>
+      <div class="item-impact">
+        <span class="impact-tag">Faster daily offer reviews</span>
+        <span class="impact-tag">Fewer missed enrolment steps</span>
+        <span class="impact-tag">Reduces manual chasing by admin staff</span>
       </div>
     </div>
 
-    <!-- 3. EVENT MANAGEMENT -->
     <div class="item">
-      <div class="item-header"><div class="item-title">3. Event management process</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px;margin-left:4px">Admissions+</span></div></div>
+      <div class="item-header"><div class="item-icon">📅</div><div class="item-title">3. Event management — full lifecycle</div></div>
+      <div class="item-products"><span class="pill pill-mat"><span class="pill-dot"></span>MAT+</span><span class="pill pill-admissions" style="margin-left:6px"><span class="pill-dot"></span>Admissions+</span></div>
       <div class="item-problem">
-        <strong>Create &amp; push:</strong> Push to Schools modal shows a flat list of all schools — no phase filter chips, no "select all visible" for a filtered subset, per-school date configuration buried two steps deep. Staff managing 10+ schools must scroll and click individually.
+        <strong>Pushing events to schools is slow.</strong> When a MAT coordinator pushes an open day or admissions event to multiple schools, they face a flat alphabetical list with no way to filter by school phase (primary, secondary, sixth form). They must scroll through all schools and select each one individually. Setting different dates per school requires going through a separate dialog for each school.
         <br><br>
-        <strong>Manage RSVPs:</strong> RSVP list is a 15-column table — overflows on every laptop and all iPads. QR code column takes space in every row even when not needed. No bulk RSVP confirmation or cancellation.
+        <strong>The RSVP list is unusable on tablets.</strong> The attendee list has 15 columns and overflows horizontally on every laptop and iPad. QR codes appear in every row even when only one or two events need them.
         <br><br>
-        <strong>Event status:</strong> No visual distinction between Upcoming, Live, Full, Cancelled, and Completed events in the calendar or list view. Staff must read text to distinguish status.
+        <strong>No visual difference between event statuses.</strong> Upcoming, live, full, cancelled, and completed events look identical in the calendar and list views. Staff read the text — they can't scan visually.
         <br><br>
-        <strong>Post-event:</strong> No attendance confirmation step, no follow-up action trigger (send thank-you, send application link), no event report.
+        <strong>Nothing happens after an event ends.</strong> There is no attendance confirmation step, no follow-up email to attendees, and no event summary.
       </div>
-      <div class="item-solution">
-        <strong>Push:</strong> Apply <code>tw-filter-chip</code> for phase filtering. "Select All Visible" respects active filter. Per-school date toggle inline — no separate modal.
+      <div class="divline"></div>
+      <div class="item-outcome">
+        <strong>Pushing to schools:</strong> Schools can be filtered by phase before selecting. "Select all schools in this phase" is one click. Dates for each school are set in the same step — no extra dialogs.
         <br><br>
-        <strong>RSVPs:</strong> Reduce to 7 default columns. Move QR code to action dropdown. Add bulk confirm/cancel via <code>tw-bulk-bar</code>. RSVP detail in <code>tw-panel</code> slide-out.
+        <strong>RSVP list:</strong> Reduced to 7 columns by default. QR codes are accessible when needed. Staff can confirm or cancel multiple attendees in one action.
         <br><br>
-        <strong>Status:</strong> Colour-coded badges (Upcoming → blue, Live → green, Full → amber, Cancelled → red, Completed → grey) on calendar pills and list rows. Legend in page header.
+        <strong>Event status:</strong> Each status has a distinct colour — upcoming (blue), live (green), full (amber), cancelled (red), completed (grey) — visible in both calendar and list views.
         <br><br>
-        <strong>Post-event:</strong> "Close event" action triggers attendance step (mark attended/no-show from RSVP list), then offers follow-up email send to attendees and/or no-shows.
+        <strong>Post-event:</strong> When an event ends, staff are prompted to confirm attendance (mark who showed up). They can then send a follow-up email to attendees and/or those who didn't come — with one click.
+      </div>
+      <div class="item-impact">
+        <span class="impact-tag">Faster event setup across multi-school MATs</span>
+        <span class="impact-tag">Works on iPad</span>
+        <span class="impact-tag">Closes the post-event follow-up gap</span>
       </div>
     </div>
 
-    <!-- 4. ENQUIRY RECORD -->
     <div class="item">
-      <div class="item-header"><div class="item-title">4. Enquiry record</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
+      <div class="item-header"><div class="item-icon">🗂️</div><div class="item-title">4. Enquiry record</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
       <div class="item-problem">
-        <strong>Log Call / Add Task:</strong> Date and time fields use plain <code>&lt;input type="text"&gt;</code> and double <code>&lt;select&gt;</code> — no picker, no format validation, no timezone safety. Task reminders use raw <code>onclick="addDateReminder()"</code> bypassing Stimulus — untestable, unreusable.
+        <strong>Logging calls and tasks is error-prone.</strong> Date and time fields use plain text boxes — staff type dates in whatever format comes naturally, and the system often accepts incorrect entries without warning. Adding a task reminder uses a brittle mechanism that sometimes doesn't save correctly.
         <br><br>
-        <strong>Timeline:</strong> Activity type filter buttons (All, Emails, SMS, Calls, Notes, Tasks, Events) are bespoke inline buttons — not <code>tw-filter-chip</code>. No count badge per type. No date range filter.
+        <strong>The activity timeline is hard to navigate.</strong> Filtering the timeline by activity type (calls, emails, SMS, tasks, events) uses a row of custom buttons that look and behave differently to every other filter in the product. There are no counts showing how many of each type exist.
         <br><br>
-        <strong>SMS:</strong> "Messages remaining / Recipients / UK phone numbers" shown as bare <code>&lt;p&gt;</code> tags with Bootstrap classes. Character counter is raw text. Both have zero DS coverage.
-        <br><br>
-        <strong>SMS bubble preview:</strong> Raw Tailwind with no component. Not documented or reusable.
+        <strong>SMS compose screen uses mismatched styling.</strong> The character counter, message stats (recipients, messages remaining, UK numbers), and the SMS bubble preview all use different visual styles — none of which match the rest of the product. The character counter doesn't warn staff when they're approaching the limit.
       </div>
-      <div class="item-solution">
-        <strong>Log Call / Add Task:</strong> Replace all date/time fields with <code>tw-date-picker</code> and <code>tw-time-picker</code> (built Phase 0). Wire task reminders to <code>reminders_controller</code> via Stimulus.
+      <div class="divline"></div>
+      <div class="item-outcome">
+        <strong>Logging calls and tasks:</strong> Date and time fields use the standard picker built in Phase 0 — consistent format, validated before saving, works on every device. Task reminders save reliably every time.
         <br><br>
-        <strong>Timeline:</strong> Replace type buttons with <code>tw-filter-chip-group</code>. Add count badge per type. Add date range picker for timeline scoping.
+        <strong>Timeline:</strong> Activity type filters use the same chip pattern as every other filter in the product. Each type shows a count. Staff can also filter by date range.
         <br><br>
-        <strong>SMS stats:</strong> Build <code>tw-sms-stat-row</code> component and <code>tw-character-counter</code> (attaches to textarea, warning at 80%, danger at 100%). Remove all Bootstrap class remnants (<code>fw-bold</code>, <code>text-danger</code>).
-        <br><br>
-        <strong>SMS preview:</strong> Wrap in <code>tw-sms-bubble</code> component — reusable across enquiry record and any future SMS preview surface.
+        <strong>SMS:</strong> The character counter updates in real time and changes colour at 80% and 100% of the limit. Message stats (recipients, cost, UK numbers) are displayed clearly in a consistent panel. The SMS preview looks like a real phone message bubble.
+      </div>
+      <div class="item-impact">
+        <span class="impact-tag">Fewer data entry errors</span>
+        <span class="impact-tag">Faster timeline navigation</span>
+        <span class="impact-tag">Consistent SMS experience</span>
       </div>
     </div>
-
   </div>
 
-  <div class="slabel">Filters &amp; navigation — the most-used interaction in every list view</div>
+  <div class="slabel">Navigation and consistency — fixes that apply to every screen</div>
   <div class="items-grid">
     <div class="item">
-      <div class="item-header"><div class="item-title">All Enquiries list — filter chips</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> The <code>allenquiries</code> Lookbook scenario is blank — no DS reference for the main enquiry list (filter chips, bulk bar, empty state).</div>
-      <div class="item-solution">Build using <code>tw-filter-chip</code> (stage, source, date range). Add <code>tw-data-table</code> with <code>tw-empty-state</code> for zero results. Publish and ship.</div>
+      <div class="item-header"><div class="item-icon">🧭</div><div class="item-title">Split student and school navigation — ApplicaaOne</div></div>
+      <div class="item-products"><span class="pill pill-one"><span class="pill-dot"></span>ApplicaaOne</span></div>
+      <div class="item-problem">A Year 10 student exploring courses and an admissions manager reviewing applications land on the same navigation. The menu tries to serve two very different audiences at once and does neither well. Students can't find courses easily; school staff can't find their tools.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Two clearly separated navigation paths: one for students (course search, saved courses, open events, my applications) and one for schools (manage listings, view enquiries, download reports). Each audience sees only what is relevant to them.</div>
+      <div class="item-impact"><span class="impact-tag">Reduces drop-off from confused students</span><span class="impact-tag">Faster access for school staff</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Timeline activity type filters</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Timeline type buttons (All, Emails, SMS, Calls, Notes, Tasks, Events) are bespoke inline buttons — not <code>tw-filter-chip</code>.</div>
-      <div class="item-solution">Replace with <code>tw-filter-chip-group</code>. One-line change once component exists from Phase 0. Active state, count badge per type.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-title">Navigation — dual audience split</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> ApplicaaOne nav doesn't separate student-facing from school-facing journeys. A Year 10 student and an admissions officer hit the same nav.</div>
-      <div class="item-solution">Split nav: "For Students" and "For Schools" as distinct paths. Persistent course search for students. Mobile-first hamburger with clear back-navigation.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-title">Colour token consolidation</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> 7 blue variants: <code>text-primary-5</code>, <code>text-brand-blue</code>, <code>text-blue-600</code>, <code>bg-[#2D8FC5]</code>, <code>bg-blue-500</code>. Impossible to maintain.</div>
-      <div class="item-solution">Consolidate to 3 semantic tokens: <code>brand-primary</code> (#263C91), <code>brand-secondary</code> (#2D8FC5), <code>brand-dark</code> (#1E2F72). Alias all existing classes.</div>
+      <div class="item-header"><div class="item-icon">🎨</div><div class="item-title">Consolidate brand colours — ApplicaaOne</div></div>
+      <div class="item-products"><span class="pill pill-one"><span class="pill-dot"></span>ApplicaaOne</span></div>
+      <div class="item-problem">Seven different shades of blue are used across the ApplicaaOne website — some set as direct hex codes, others as named colours, with no single source of truth. This makes the brand feel inconsistent and makes any future colour update extremely difficult. The same problem exists with button styles and link colours.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Three defined brand colours replace all seven variants: Primary Navy (#263C91) for main actions and brand identity, Secondary Blue (#2D8FC5) for highlights and links, Dark Navy (#1E2F72) for headers and text. Every element in the product references one of these three — no exceptions.</div>
+      <div class="item-impact"><span class="impact-tag">Stronger brand consistency</span><span class="impact-tag">Future rebrands take hours, not weeks</span></div>
     </div>
   </div>
 </div>
@@ -644,50 +692,64 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="phase-num">2</div>
     <div class="phase-info">
       <div class="phase-date">June – July 2026 · 8 weeks</div>
-      <h2>Core Component Build</h2>
-      <p>Build the missing components that gate Phase 3 product redesigns. Without these, every new screen falls back to bespoke implementations that diverge from the system and create future maintenance debt.</p>
+      <h2>Building Blocks</h2>
+      <p>Before we can redesign each product's major screens in Phase 3, we need to build a set of reusable interface elements that every product will share. Without these, every new screen gets built from scratch — creating inconsistency, wasting developer time, and making future changes much harder.</p>
+      <div class="phase-why">Why before Phase 3: These elements are the raw materials for the product redesigns. Building them once, correctly, means we use them across all three products rather than rebuilding the same thing three times.</div>
     </div>
     <div class="phase-stats">
-      <div class="phase-stat"><div class="n" style="color:var(--green)">7</div><div class="l">components</div></div>
-      <div class="phase-stat"><div class="n" style="color:var(--green)">5</div><div class="l">P1</div></div>
+      <div class="phase-stat"><div class="n" style="color:var(--green)">7</div><div class="l">elements</div></div>
     </div>
   </div>
 
   <div class="items-grid">
     <div class="item">
-      <div class="item-header"><div class="item-title">Detail Slide-out Panel</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> RSVP panel, school detail, student record — all slide in from the right, all built custom with no shared component.</div>
-      <div class="item-solution"><code>tw-panel</code>: right-side slide-in, sticky header, scrollable body, sticky footer. Sizes: sm (480px), md (600px), lg (800px). Backdrop lock, focus trap, close on Esc.</div>
+      <div class="item-header"><div class="item-icon">📋</div><div class="item-title">Record detail panel</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">When staff click on an RSVP, a school record, or a student record, a detail view slides in from the right side. Currently, each of these sliding panels is built independently — they look slightly different, behave differently, and can't be reused. Changing one doesn't change the others.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">One standard record detail panel used everywhere. Slides in from the right, has a sticky header, scrollable detail area, and sticky action buttons at the bottom. Works at three sizes depending on how much content is being shown. Used across all three products.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Bulk Action Bar</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Every multi-select table re-implements "X items selected | Publish | Cancel | Delete". No shared component — inconsistent placement and behaviour.</div>
-      <div class="item-solution"><code>tw-bulk-bar</code>: contextual bar on row selection. Slots: count, primary action, secondary actions, deselect-all. Connects to <code>filter_controller</code>.</div>
+      <div class="item-header"><div class="item-icon">☑️</div><div class="item-title">Bulk action bar</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">In any list where staff can select multiple rows — applicants, events, students — a bar appears showing what actions are available. This bar is rebuilt differently on every screen. In some places it appears above the table, in others below. The wording and button placement varies.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">One consistent bulk action bar appears in the same place, with the same layout, any time rows are selected across any list in any product. Shows a count of selected items. Primary action on the left, destructive action on the right, deselect in between.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Stat / KPI Card</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> No metric card component for KPI dashboards (MAT+ overview, Admissions+ reports, Insights). <code>tw-info-grid</code> is for key/value pairs, not metrics.</div>
-      <div class="item-solution"><code>tw-stat-card</code>: primary metric, label, delta indicator (▲▼ + colour), comparison text, sparkline slot. Standalone and grid-responsive.</div>
+      <div class="item-header"><div class="item-icon">📈</div><div class="item-title">KPI and metric cards</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Dashboard summary cards — total applications, RSVPs booked, offers made, active schools — are built differently on every dashboard. Some show trend arrows, some don't. Some have comparison text ("vs last month"), some don't. There's no shared visual language for key metrics.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">One standard metric card used on every dashboard across all three products. Shows the key number, a label, a trend indicator (up or down vs the previous period), and optional comparison text. Works standalone or in a grid row.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Combobox / Multi-select</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> School selection, year group, staff assignment, subject filter — all need searchable multi-select. Existing Dropdown doesn't support search + multi.</div>
-      <div class="item-solution"><code>tw-combobox</code>: keyboard-navigable, single + multi mode, option groups, "select all", chip removal. Stimulus-powered, no external library.</div>
+      <div class="item-header"><div class="item-icon">🔎</div><div class="item-title">Searchable multi-select</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Many screens need staff to select from a long list — schools, subjects, year groups, staff members — and optionally select more than one. The current dropdown doesn't support searching or multi-selection. Staff scroll through long lists to find what they need.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A searchable, multi-selectable dropdown. Staff type to filter the list immediately. Selections appear as removable tags. "Select all" is available. Works for any list across all three products — schools, subjects, staff, year groups.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Calendar View</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-xl">XL</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px;margin-left:4px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Events calendar in MAT+ is entirely custom Alpine.js — can't be reused for Admissions+ event bookings without full re-implementation.</div>
-      <div class="item-solution"><code>tw-calendar</code>: month + week toggle, event pill per cell, colour by type, today highlight, click-to-open popup hook. Data via JSON attribute. Stimulus controller.</div>
+      <div class="item-header"><div class="item-icon">🗓️</div><div class="item-title">Calendar view</div></div>
+      <div class="item-products"><span class="pill pill-mat"><span class="pill-dot"></span>MAT+</span><span class="pill pill-admissions" style="margin-left:6px"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">MAT+ has an events calendar built entirely for that product alone. Admissions+ also needs a calendar view for event bookings — but building it from scratch would mean maintaining two separate calendars indefinitely, each inevitably drifting from the other.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">One shared calendar component used in both MAT+ and Admissions+. Supports month and week views. Events are colour-coded by type. Clicking an event opens the detail in a record panel. Works on iPad and mobile.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Avatar Group</div><div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-s">S</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Event attendees, staff lists — all show count text with no visual identity. Max-3 overlapping avatars is standard and missing from the DS.</div>
-      <div class="item-solution"><code>tw-avatar-group</code> extending <code>tw-avatar</code>. Max visible configurable (default 3). Overflow "+N more" with tooltip listing full set.</div>
+      <div class="item-header"><div class="item-icon">👥</div><div class="item-title">Attendee group display</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Event attendees, staff lists, and team displays currently show only a number ("12 attendees"). There's no visual representation of who the people are. This is a standard pattern on every modern web application that Applicaa doesn't yet use.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Overlapping avatar display showing up to three profile pictures, then "+N more" for additional people. Hovering shows the full list. Works wherever a group of people needs to be represented visually.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Split Button</div><div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Publish, Push to Schools, Make Offer — all have a primary action + secondary options shown as separate Button + Dropdown pairs with no shared housing.</div>
-      <div class="item-solution"><code>tw-split-btn</code>: primary area + chevron dropdown as distinct click targets, same height. Variants: primary, success. Inherits <code>dropdown_controller</code>.</div>
+      <div class="item-header"><div class="item-icon">🔀</div><div class="item-title">Primary action with options</div></div>
+      <div class="item-products"><span class="pill pill-mat"><span class="pill-dot"></span>MAT+</span></div>
+      <div class="item-problem">Actions like "Publish", "Make Offer", and "Push to Schools" all have a primary action and secondary options. Currently these appear as a separate button and a separate dropdown sitting next to each other — visually disconnected and confusing about which is the main action.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A single split button: the left side triggers the main action, the right side opens the options dropdown. Clearly communicates which action is primary. Used consistently wherever an action has variants.</div>
     </div>
   </div>
 </div>
@@ -699,12 +761,13 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="phase-header ph3">
     <div class="phase-num">3</div>
     <div class="phase-info">
-      <div class="phase-date">August – October 2026 · 12 weeks · 3 parallel sprint lanes</div>
-      <h2>Product-Specific Revamp</h2>
-      <p>Major screen and flow redesigns using DS components from Phases 0–2. Each product runs its own sprint lane independently — Admissions+, MAT+, and ApplicaaOne can ship without waiting for each other.</p>
+      <div class="phase-date">August – October 2026 · 12 weeks</div>
+      <h2>Product Redesigns — Three Parallel Tracks</h2>
+      <p>With the shared foundation in place, each product runs its own redesign in parallel. Admissions+, MAT+, and ApplicaaOne can all ship improvements independently — progress on one product doesn't block another. Each track focuses on the highest-impact screens and flows for that product's primary users.</p>
+      <div class="phase-why">Why parallel: School staff use one or two products. Changes to MAT+ don't need to wait for Admissions+ to be ready. Parallel tracks get improvements to users faster.</div>
     </div>
     <div class="phase-stats">
-      <div class="phase-stat"><div class="n" style="color:var(--amber)">3</div><div class="l">lanes</div></div>
+      <div class="phase-stat"><div class="n" style="color:var(--amber)">3</div><div class="l">tracks</div></div>
       <div class="phase-stat"><div class="n" style="color:var(--amber)">14</div><div class="l">redesigns</div></div>
     </div>
   </div>
@@ -714,29 +777,29 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="lane-header"><span>🎓</span> Admissions+</div>
       <div class="lane-items">
         <div class="lane-item">
-          <div class="lane-item-title">Application form — multi-step</div>
-          <div class="lane-item-desc">Replace long single-page scroll with <code>tw-steps</code> guided flow. One section per step. Auto-save. Progress bar in header. Save-and-return support.</div>
-          <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span></div>
+          <div class="lane-item-title">Application form — step-by-step</div>
+          <div class="lane-item-desc">Replace the long single-page application form with a guided step-by-step flow. One section per screen. Progress shown at the top. Auto-saves between steps. Parents can save and return to finish later.</div>
+          <div class="lane-item-impact">↑ Application completion rate · ↓ Abandonment</div>
         </div>
         <div class="lane-item">
-          <div class="lane-item-title">Parent status tracking</div>
-          <div class="lane-item-desc">Application status dashboard: <code>tw-steps</code> showing Submitted → Under Review → Offer → Accepted. Status badge, last updated, next action CTA. Kills "has my application arrived?" support calls.</div>
-          <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-l">L</span></div>
+          <div class="lane-item-title">Parent application status page</div>
+          <div class="lane-item-desc">A clear status page parents can check at any time: where their application is, what happens next, and when to expect a decision. Eliminates "has my application been received?" phone calls to school.</div>
+          <div class="lane-item-impact">↓ Inbound support calls · ↑ Parent confidence</div>
         </div>
         <div class="lane-item">
           <div class="lane-item-title">Offer management redesign</div>
-          <div class="lane-item-desc">KPI cards at top. Status-coloured rows. Bulk offer actions via <code>tw-bulk-bar</code>. Detail in <code>tw-panel</code> slide-out.</div>
-          <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          <div class="lane-item-desc">Summary stats at the top (offers made, accepted, declined, pending). Colour-coded rows. Bulk actions for making and withdrawing offers. Student detail accessible without leaving the page.</div>
+          <div class="lane-item-impact">↑ Speed of offer round processing</div>
         </div>
         <div class="lane-item">
           <div class="lane-item-title">Enquiry form builder</div>
-          <div class="lane-item-desc">Build <code>enquiryforms</code> and <code>newform</code> Lookbook scenarios (currently blank). Field config, section ordering, preview mode, publish to schools flow.</div>
-          <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          <div class="lane-item-desc">A proper interface for building and editing enquiry forms — field configuration, section ordering, a live preview, and the ability to push to specific schools. Currently these screens are blank in our design reference.</div>
+          <div class="lane-item-impact">↓ Form setup support tickets</div>
         </div>
         <div class="lane-item">
-          <div class="lane-item-title">Mobile-first responsive pass</div>
-          <div class="lane-item-desc">Audit top 5 flows on 375px and 768px. Stack tables to card layout. Test on real iOS Safari and Android Chrome.</div>
-          <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span></div>
+          <div class="lane-item-title">Mobile and tablet optimisation</div>
+          <div class="lane-item-desc">Audit and fix the five most-used screens on iPhone and iPad. Tables stack to card layout on small screens. Tested on real devices — not just developer simulators.</div>
+          <div class="lane-item-impact">Works on BYOD devices · ↑ Usability for field staff</div>
         </div>
       </div>
     </div>
@@ -745,24 +808,24 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="lane-header"><span>🏫</span> MAT+</div>
       <div class="lane-items">
         <div class="lane-item">
-          <div class="lane-item-title">MAT dashboard — KPI overview</div>
-          <div class="lane-item-desc"><code>tw-stat-card</code> network-wide KPIs. School comparison table sorted by metric. Inline trend indicators. Drill-down to school via <code>tw-panel</code>.</div>
-          <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span></div>
+          <div class="lane-item-title">MAT dashboard — network overview</div>
+          <div class="lane-item-desc">A proper executive dashboard showing key metrics across the whole trust: applications by school, RSVP rates, offer conversion, year-on-year trends. Drill into any school for detail. Built for MAT directors and central team.</div>
+          <div class="lane-item-impact">Replaces manual spreadsheet reporting</div>
         </div>
         <div class="lane-item">
-          <div class="lane-item-title">Multi-school events</div>
-          <div class="lane-item-desc">Adopt <code>tw-calendar</code> from Phase 2. Consistent action model: Add → Push → Manage RSVPs → Close. Same DS, different context — works in both MAT+ and Admissions+.</div>
-          <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          <div class="lane-item-title">Multi-school events — consistent with Admissions+</div>
+          <div class="lane-item-desc">Use the shared calendar built in Phase 2. Same action model across both products: Create → Push to schools → Manage RSVPs → Close. Staff who use both products don't have to relearn the process.</div>
+          <div class="lane-item-impact">Consistent UX across MAT+ and Admissions+</div>
         </div>
         <div class="lane-item">
-          <div class="lane-item-title">School edits diff view</div>
-          <div class="lane-item-desc">MAT original vs school version — changed rows highlighted, unchanged dimmed. <code>tw-diff-table</code> from JSON diff payload. Reusable for Forms, Policies, Offers.</div>
-          <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span></div>
+          <div class="lane-item-title">School customisation diff view</div>
+          <div class="lane-item-desc">When a school modifies a MAT-level template (form, policy, event), show a clear comparison: what the MAT set, what the school changed, and what's still aligned. Changed sections highlighted, unchanged sections dimmed.</div>
+          <div class="lane-item-impact">MAT oversight without micromanagement</div>
         </div>
         <div class="lane-item">
-          <div class="lane-item-title">Subject-level dashboard</div>
-          <div class="lane-item-desc">Application pipeline per subject across schools. Filter by subject, year group, intake. Compare school vs MAT baseline with trend indicators.</div>
-          <div class="lane-item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-l">L</span></div>
+          <div class="lane-item-title">Subject-level application dashboard</div>
+          <div class="lane-item-desc">Application pipeline broken down by subject (A-level, BTEC, T-Level) across all schools in the trust. Filter by subject, year group, or intake period. Compare school performance against the MAT average.</div>
+          <div class="lane-item-impact">Curriculum planning data at trust level</div>
         </div>
       </div>
     </div>
@@ -771,29 +834,29 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="lane-header"><span>🔵</span> ApplicaaOne</div>
       <div class="lane-items">
         <div class="lane-item">
-          <div class="lane-item-title">Value proposition above fold</div>
-          <div class="lane-item-desc">Unique H1 per page. Value prop at 300px viewport. Primary CTA above fold. School type selector. Kills same-H1-on-every-page SEO issue.</div>
-          <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span></div>
+          <div class="lane-item-title">Clear value proposition above the fold</div>
+          <div class="lane-item-desc">Every page on the website currently uses the same headline. A student searching for a specific course, a parent comparing sixth forms, and a school setting up their profile all see the same words. Each page needs a unique, relevant opening that speaks to why that visitor is there.</div>
+          <div class="lane-item-impact">↑ SEO · ↑ Visitor engagement · ↓ Bounce rate</div>
         </div>
         <div class="lane-item">
           <div class="lane-item-title">Course discovery redesign</div>
-          <div class="lane-item-desc">Subject taxonomy filter (A-level, BTEC, T-Level), proximity radius, school comparison shortlist (max 3), saved courses. 45,000+ courses need real discoverability.</div>
-          <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span></div>
+          <div class="lane-item-desc">45,000+ courses are currently presented in a list that's hard to filter meaningfully. Introduce subject-type filtering (A-level, BTEC, T-Level), location radius, a comparison shortlist of up to three schools, and the ability to save courses to come back to.</div>
+          <div class="lane-item-impact">↑ Course application conversion · ↓ Abandonment</div>
         </div>
         <div class="lane-item">
-          <div class="lane-item-title">School profile page</div>
-          <div class="lane-item-desc">Photo hero, stats row (Ofsted, results, distance), course list, open events, verified reviews, sticky "Apply / Book Visit" CTA. Currently generic — no personality.</div>
-          <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          <div class="lane-item-title">School profile pages</div>
+          <div class="lane-item-desc">Every school profile looks identical today. Add a photo hero, key stats (Ofsted, results, distance from student), a course list with subject filter, upcoming open events, and verified reviews. A persistent "Apply" and "Book a Visit" button that stays visible as you scroll.</div>
+          <div class="lane-item-impact">↑ Visit and application bookings per school</div>
         </div>
         <div class="lane-item">
-          <div class="lane-item-title">Trust layer — verified reviews</div>
-          <div class="lane-item-desc">Gate reviews with post-event email confirmation. Remove reviews under 20 words. Surface "4,200 verified reviews" as stat. Kills trust collapse caused by 105 low-quality entries.</div>
-          <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span></div>
+          <div class="lane-item-title">Verified review system</div>
+          <div class="lane-item-desc">Currently 105 reviews for 45,000+ courses — most are very short. Reviews are only requested after an event is attended, and short or low-quality reviews are accepted. This undermines trust for parents doing serious research on behalf of their child.</div>
+          <div class="lane-item-impact">↑ Parent trust · ↑ Review volume and quality</div>
         </div>
         <div class="lane-item">
-          <div class="lane-item-title">Student registration — 3-field flow</div>
-          <div class="lane-item-desc">Reduce to name + email + school year. Defer all other fields to application. Add Google/Microsoft SSO. Kills drop-off at account creation.</div>
-          <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          <div class="lane-item-title">Student registration — reduced to 3 fields</div>
+          <div class="lane-item-desc">The current registration form asks for too much information upfront. Students drop off before completing it. Reduce registration to name, email, and school year. All other information is collected at the point of application, when the student is already committed.</div>
+          <div class="lane-item-impact">↑ Registration completion · ↓ Account abandonment</div>
         </div>
       </div>
     </div>
@@ -808,8 +871,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="phase-num">4</div>
     <div class="phase-info">
       <div class="phase-date">November 2026 · 4 weeks</div>
-      <h2>Scale &amp; Polish</h2>
-      <p>Platform-wide quality pass: accessibility, mobile, animation, and documentation. Ensures the revamp holds long-term and the DS is maintainable without supervision.</p>
+      <h2>Scale and Polish</h2>
+      <p>A platform-wide quality pass covering accessibility standards, mobile usability, visual consistency, and long-term maintainability. This phase ensures that the work done in Phases 0–3 holds up under scrutiny, meets legal requirements, and doesn't create technical debt that makes future updates harder.</p>
+      <div class="phase-why">Why it matters: UK schools are public sector. Accessibility compliance is a legal requirement, not a nice-to-have. Failing an accessibility audit risks losing procurement contracts.</div>
     </div>
     <div class="phase-stats">
       <div class="phase-stat"><div class="n" style="color:var(--sky)">5</div><div class="l">items</div></div>
@@ -818,29 +882,39 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <div class="items-grid">
     <div class="item">
-      <div class="item-header"><div class="item-title">WCAG 2.1 AA accessibility audit</div><div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> UK public sector procurement requires WCAG 2.1 AA. MATs are public sector — Applicaa handling student data must meet accessibility standards or risk losing contracts.</div>
-      <div class="item-solution">Audit all 3 products: contrast (4.5:1 text, 3:1 UI), keyboard nav, focus management, screen reader labels, skip links, form error announcements. Fix criticals. Publish accessibility statement.</div>
+      <div class="item-header"><div class="item-icon">♿</div><div class="item-title">Accessibility audit — WCAG 2.1 AA</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">UK public sector procurement increasingly requires suppliers to meet WCAG 2.1 AA accessibility standards. MATs are public sector organisations — Applicaa products handling student and parent data must meet these standards or risk being excluded from procurement processes.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A full accessibility audit across all three products covering: text contrast ratios, keyboard navigation, screen reader compatibility, form error announcements, focus management, and skip navigation links. All critical findings fixed. An accessibility statement published for each product.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Mobile-first responsive pass</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> UK schools use iPads and Android tablets (BYOD). Core screens designed desktop-first. Phase 1 covered Admissions+ flows — this pass covers MAT+ and ApplicaaOne.</div>
-      <div class="item-solution">Top 10 views per product on 375px and 768px. Convert remaining desktop-only tables to card layout on mobile. Real device testing on iOS Safari + Android Chrome.</div>
+      <div class="item-header"><div class="item-icon">📱</div><div class="item-title">Mobile and tablet — full pass</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Phase 1 covered the most critical screens in Admissions+. MAT+ and ApplicaaOne haven't had a mobile review yet. UK schools are primarily BYOD — staff and students use iPads, Android tablets, and phones as their main devices.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">The ten most-used screens per product tested on iPhone, iPad, and Android. Tables that don't fit small screens stack to card layout. Text is readable without zooming. Buttons are large enough to tap accurately. Tested on real devices.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Animation &amp; motion tokens</div><div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Transitions between states (modal open, panel slide, skeleton-to-content, toast) are inconsistent — some Tailwind, some Stimulus, some CSS keyframes. No shared motion language.</div>
-      <div class="item-solution">Define 4 tokens: <code>duration-fast</code> (100ms), <code>duration-base</code> (200ms), <code>duration-slow</code> (350ms), <code>easing-standard</code> (ease-in-out). Respect <code>prefers-reduced-motion</code>.</div>
+      <div class="item-header"><div class="item-icon">✨</div><div class="item-title">Motion and animation standards</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">When panels slide in, dialogs open, and notifications appear, the speed and style of the animation varies across the product. Some transitions are instant, some are slow. This makes the interface feel unpolished and inconsistent — especially noticeable when moving between different screens.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Four standard animation speeds defined and used consistently across all transitions. Respects the operating system setting for users who prefer reduced motion (important for users with vestibular conditions).</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">DS contribution guide &amp; governance</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> No documented contribution process. Any developer can add a component in any style — how Bootstrap leakage and semantic colour misuse happened.</div>
-      <div class="item-solution">Publish in Lookbook: component API contract, naming conventions, required scenarios, accessibility checklist, PR criteria. Automated linter for Bootstrap remnants.</div>
+      <div class="item-header"><div class="item-icon">📖</div><div class="item-title">Design standards and contribution guide</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">There is no documented process for how new interface elements are designed, reviewed, and added. This is how inconsistencies accumulated in the first place — every developer had a slightly different approach. Without a published standard, the problems fixed in Phases 0–3 will reappear.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A published guide covering: how to propose a new component, the naming conventions, what documentation is required before something ships, the accessibility checklist, and how pull requests are reviewed. An automated check flags any use of old legacy styles before they can be merged.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Dark mode token preparation</div><div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> No dark mode. Admissions staff work evenings. Parents register late at night. School events happen at 7pm. Expectation growing on all personal devices.</div>
-      <div class="item-solution">Define semantic tokens: <code>surface-primary</code>, <code>text-primary</code>, <code>border-default</code>. Map to light values now. Dark values prepared but not shipped. No UI toggle this phase.</div>
+      <div class="item-header"><div class="item-icon">🌙</div><div class="item-title">Dark mode — groundwork</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">Admissions staff work evenings. Parents register late at night. School events happen at 7pm. The expectation of a dark mode option is growing across all professional software — and all three Applicaa products currently have white backgrounds only.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">All colour values in the design system are converted to semantic names (e.g. "background primary" instead of a specific hex code). The light values are assigned now. Dark values are defined and ready to activate — but not shipped yet. When dark mode launches, it requires changing one configuration, not rebuilding the product.</div>
     </div>
   </div>
 </div>
@@ -852,446 +926,420 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="phase-header ph5">
     <div class="phase-num">5</div>
     <div class="phase-info">
-      <div class="phase-date">December 2026+ · Ongoing</div>
+      <div class="phase-date">December 2026 and beyond · Ongoing</div>
       <h2>AI-Native Product Evolution</h2>
-      <p>Redesign interactions for AI-assisted workflows across all three products. Conversation design, trust-building patterns, confidence indicators, graceful error recovery, and agent-to-human handoffs. This is the biggest long-term design opportunity in Applicaa's history.</p>
+      <p>The biggest long-term opportunity in Applicaa's history. Phase 5 redesigns how parents, students, and school staff interact with the products — moving from filling in forms to having guided conversations with an AI assistant. This is not a feature addition. It is a fundamental shift in how Applicaa delivers value.</p>
+      <div class="phase-why">The big picture: Schools currently pay for software that makes admissions digital. The opportunity is to become an AI-powered admissions service — one that actively helps schools recruit the right students and helps families find the right schools.</div>
     </div>
     <div class="phase-stats">
-      <div class="phase-stat"><div class="n" style="color:var(--rose)">5</div><div class="l">tracks</div></div>
+      <div class="phase-stat"><div class="n" style="color:var(--rose)">5</div><div class="l">patterns</div></div>
       <div class="phase-stat"><div class="n" style="color:var(--rose)">4</div><div class="l">projects</div></div>
     </div>
   </div>
 
-  <div class="slabel">The trust arc — designing AI conversations that build confidence</div>
+  <div class="slabel">How AI builds trust — the conversation arc</div>
   <div class="trust-arc">
     <div class="arc-step"><div class="arc-icon">👋</div><div class="arc-label">Introduction</div><div class="arc-quote">"I'm here to help with John's application"</div></div>
-    <div class="arc-step"><div class="arc-icon">🔍</div><div class="arc-label">Capability demo</div><div class="arc-quote">"Try uploading his transcript — I'll read it instantly"</div></div>
-    <div class="arc-step"><div class="arc-icon">🤝</div><div class="arc-label">Collaborative</div><div class="arc-quote">"His maths grade meets the requirement because..."</div></div>
-    <div class="arc-step"><div class="arc-icon">✅</div><div class="arc-label">Confidence</div><div class="arc-quote">"I've processed 500+ applications this year with 99% accuracy"</div></div>
-    <div class="arc-step"><div class="arc-icon">🏁</div><div class="arc-label">Handoff</div><div class="arc-quote">"Application ready for Ms. Smith to review"</div></div>
+    <div class="arc-step"><div class="arc-icon">🔍</div><div class="arc-label">Show capability</div><div class="arc-quote">"Try uploading his transcript — I'll read it instantly"</div></div>
+    <div class="arc-step"><div class="arc-icon">🤝</div><div class="arc-label">Work together</div><div class="arc-quote">"His maths grade meets the requirement because..."</div></div>
+    <div class="arc-step"><div class="arc-icon">✅</div><div class="arc-label">Build confidence</div><div class="arc-quote">"I've helped with 500+ applications this year"</div></div>
+    <div class="arc-step"><div class="arc-icon">🏁</div><div class="arc-label">Hand off</div><div class="arc-quote">"Application ready for Ms. Smith to review"</div></div>
   </div>
 
-  <div class="slabel">AI UX patterns — the design language of uncertainty</div>
-  <div class="ai-grid-3">
-    <div class="ai-card">
-      <div class="ai-card-icon">💬</div>
-      <div class="ai-card-title">Conversational UX</div>
-      <div class="ai-card-desc">Replace form-heavy enquiry flows with natural conversation for parents. Design principles:
-        <ul>
-          <li>Personality consistency — warm, professional, encouraging</li>
-          <li>Context awareness — remember previous interactions, family situation</li>
-          <li>Cultural sensitivity — adapt to different backgrounds and languages</li>
-          <li>Emotional intelligence — recognise stress, frustration, excitement</li>
-        </ul>
+  <div class="slabel">Designing for AI uncertainty — how the AI communicates what it knows</div>
+  <div class="items-grid">
+    <div class="item">
+      <div class="item-header"><div class="item-icon">📊</div><div class="item-title">Confidence indicators</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">When AI makes a recommendation — "accept this application," "this document is a transcript," "this grade meets the requirement" — staff and parents need to know how confident the AI is. Without this, AI recommendations feel like black boxes and are either blindly trusted or completely ignored.</div>
+      <div class="divline"></div>
+      <div class="ci-row">
+        <div class="ci ci-high"><div class="ci-dot"></div><div><strong>High confidence (90%+)</strong> — "I'm confident this is correct"</div></div>
+        <div class="ci ci-mid"><div class="ci-dot"></div><div><strong>Medium confidence (60–89%)</strong> — "Let me double-check this with you"</div></div>
+        <div class="ci ci-low"><div class="ci-dot"></div><div><strong>Low confidence (&lt;60%)</strong> — "I need your help with this — can you clarify?"</div></div>
       </div>
     </div>
-    <div class="ai-card">
-      <div class="ai-card-icon">📊</div>
-      <div class="ai-card-title">Progressive Trust Design</div>
-      <div class="ai-card-desc">Confidence indicators for AI recommendations across admissions decisions:
-        <div class="confidence-row">
-          <div class="ci ci-high"><div class="ci-dot"></div><div class="ci-text"><strong>90%+</strong> — "I'm confident this is correct"</div></div>
-          <div class="ci ci-mid"><div class="ci-dot"></div><div class="ci-text"><strong>60–89%</strong> — "Let me double-check with you"</div></div>
-          <div class="ci ci-low"><div class="ci-dot"></div><div class="ci-text"><strong>&lt;60%</strong> — "I need help — can you clarify?"</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="ai-card">
-      <div class="ai-card-icon">🔍</div>
-      <div class="ai-card-title">Transparency Layers</div>
-      <div class="ai-card-desc">Design for three levels of AI reasoning disclosure:
-        <ul>
-          <li><strong>Level 1:</strong> Simple status ("Processing your documents...")</li>
-          <li><strong>Level 2:</strong> Progress detail ("Found transcript, checking grades...")</li>
-          <li><strong>Level 3:</strong> Full reasoning ("John's GPA is 3.5. Minimum is 3.0, so this meets requirements because...")</li>
-        </ul>
-        Show level appropriate to context — don't overwhelm, but never hide.
+    <div class="item">
+      <div class="item-header"><div class="item-icon">🔍</div><div class="item-title">Transparency in reasoning</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">If AI recommends an offer decision or identifies an issue with an application, staff need to understand why — not just see the outcome. A recommendation with no reasoning will not be trusted. This is especially critical in education, where decisions affect young people's futures.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">Three levels of reasoning transparency, shown depending on how much detail the user needs:
+        <br>• Simple: "Processing your documents..."
+        <br>• Detail: "Found transcript, checking grades against requirements..."
+        <br>• Full reasoning: "John's GPA is 3.5. The minimum requirement is 3.0, so this meets the criteria because..."
+        <br><br>Staff can always expand to see the full reasoning behind any AI decision.
       </div>
     </div>
   </div>
 
-  <div class="slabel">Error recovery and escalation — graceful AI failures</div>
-  <table class="error-table">
-    <thead><tr><th>Error type</th><th>User impact</th><th>Response design</th></tr></thead>
+  <div class="slabel">When AI gets it wrong — graceful error recovery</div>
+  <table class="etable">
+    <thead><tr><th>What goes wrong</th><th>Effect on the user</th><th>How we design the response</th></tr></thead>
     <tbody>
-      <tr><td><strong>Misunderstood input</strong></td><td>Frustration</td><td>"Sorry, can you rephrase that?" + suggested formats</td></tr>
-      <tr><td><strong>Missing information</strong></td><td>Confusion</td><td>"I need X to continue" + explain why it's needed</td></tr>
-      <tr><td><strong>System limitation</strong></td><td>Blocked progress</td><td>"This needs human attention" + clear next steps</td></tr>
-      <tr><td><strong>Data inconsistency</strong></td><td>Anxiety</td><td>"I found a mismatch" + show exactly what's wrong</td></tr>
-      <tr><td><strong>Document upload failure</strong></td><td>Frustration + data loss fear</td><td>Retry with progress + confirm what was saved</td></tr>
-      <tr><td><strong>Language barrier</strong></td><td>Exclusion</td><td>Real-time translation offer, simplified plain language mode</td></tr>
+      <tr><td><strong>AI misunderstands the input</strong></td><td>Frustration</td><td>Offer a rephrased suggestion and show an example of what to say</td></tr>
+      <tr><td><strong>Information is missing</strong></td><td>Confusion</td><td>Explain clearly what's needed and why it's needed before asking for it</td></tr>
+      <tr><td><strong>AI can't handle the request</strong></td><td>Progress blocked</td><td>"This needs a human to look at" — clear escalation with a named next step</td></tr>
+      <tr><td><strong>Data doesn't match</strong></td><td>Anxiety</td><td>Show exactly what's different and offer the choice of which to trust</td></tr>
+      <tr><td><strong>Document fails to upload</strong></td><td>Fear of lost work</td><td>Confirm what was saved before the error, offer a simple retry</td></tr>
+      <tr><td><strong>Language barrier</strong></td><td>Exclusion</td><td>Offer translation and a simplified plain-language mode immediately</td></tr>
     </tbody>
   </table>
 
-  <div class="slabel">Escalation pathway</div>
+  <div class="slabel">Escalation pathway — from AI to human, seamlessly</div>
   <div class="escalation">
-    <div class="esc-step"><div class="esc-state">Agent struggle</div><div class="esc-action">"I'm confused"</div></div>
-    <div class="esc-arrow">→</div>
-    <div class="esc-step"><div class="esc-state">Suggest clarification</div><div class="esc-action">"Try rephrasing"</div></div>
-    <div class="esc-arrow">→</div>
-    <div class="esc-step"><div class="esc-state">Human assistance</div><div class="esc-action">"Let me get help"</div></div>
-    <div class="esc-arrow">→</div>
-    <div class="esc-step"><div class="esc-state">Direct contact</div><div class="esc-action">"Call the school"</div></div>
+    <div class="esc-step"><div class="esc-state">AI is unsure</div><div class="esc-action">"I'm not sure about this one"</div></div>
+    <div class="esc-step"><div class="esc-state">AI asks for help</div><div class="esc-action">"Can you rephrase that?"</div></div>
+    <div class="esc-step"><div class="esc-state">Hand off to staff</div><div class="esc-action">"Let me get a person to help"</div></div>
+    <div class="esc-step"><div class="esc-state">Direct contact</div><div class="esc-action">"Please call the school on..."</div></div>
   </div>
 
-  <div class="slabel">Emotional journey design — the parent experience</div>
+  <div class="slabel">The parent journey — designing for emotion, not just information</div>
   <div class="journey-arc">
-    <div class="ja-step"><div class="ja-state">😰 Overwhelmed</div><div class="ja-feeling">"This is too complex"</div><div class="ja-response">Simple first steps, reassuring tone, one question at a time</div></div>
-    <div class="ja-step"><div class="ja-state">🤔 Curious</div><div class="ja-feeling">"How does this work?"</div><div class="ja-response">Show capabilities without overwhelming — progressive disclosure</div></div>
-    <div class="ja-step"><div class="ja-state">😊 Engaged</div><div class="ja-feeling">"This actually works"</div><div class="ja-response">Collaborative language, visible progress, celebrate small wins</div></div>
-    <div class="ja-step"><div class="ja-state">😌 Confident</div><div class="ja-feeling">"I trust it"</div><div class="ja-response">Validation, next steps preview, accuracy indicators</div></div>
-    <div class="ja-step"><div class="ja-state">🎉 Relieved</div><div class="ja-feeling">"We're done"</div><div class="ja-response">Celebration moment, clear confirmation, what happens next</div></div>
+    <div class="ja-step"><div class="ja-state">😰 Overwhelmed</div><div class="ja-feeling">"This is too complicated"</div><div class="ja-response">One simple question at a time. Reassuring tone. No walls of text.</div></div>
+    <div class="ja-step"><div class="ja-state">🤔 Curious</div><div class="ja-feeling">"How does this work?"</div><div class="ja-response">Show capability without overwhelming. Let them try before explaining.</div></div>
+    <div class="ja-step"><div class="ja-state">😊 Engaged</div><div class="ja-feeling">"This is actually working"</div><div class="ja-response">Collaborative language. Visible progress. Celebrate small wins.</div></div>
+    <div class="ja-step"><div class="ja-state">😌 Confident</div><div class="ja-feeling">"I trust this"</div><div class="ja-response">Validation and confirmation. Clear preview of what happens next.</div></div>
+    <div class="ja-step"><div class="ja-state">🎉 Relieved</div><div class="ja-feeling">"We're done"</div><div class="ja-response">A moment of celebration. Clear confirmation. What happens next and when.</div></div>
   </div>
 
-  <div class="slabel">Accessibility-first AI design</div>
+  <div class="slabel">Phase 5 delivery projects</div>
   <div class="items-grid">
     <div class="item">
-      <div class="item-header"><div class="item-title">Multi-modal interactions</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Many parents interact via mobile and prefer voice over typing. Non-English speakers and users with disabilities need alternative interaction modes.</div>
-      <div class="item-solution">Design for 4 modes: Visual (chat with rich media), Audio (voice input/output for literacy barriers), Simplified (plain language for cognitive accessibility), Translated (real-time for 20+ languages). Never assume text-first.</div>
+      <div class="item-header"><div class="item-icon">💬</div><div class="item-title">Conversational enquiry and application flow</div></div>
+      <div class="item-products"><span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">The current application process is a form. Parents fill in fields, attach documents, and submit. There's no guidance, no feedback, no sense of a relationship being built. For families who are anxious about their child's future — which is most of them — this is a cold and stressful experience.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A guided conversation replaces the form. The AI asks one question at a time, reads uploaded documents automatically, checks requirements in real time, and explains each step. Target: 90% completion rate, under 15 minutes per application. Works by voice on mobile for parents who prefer not to type.</div>
+      <div class="item-impact"><span class="impact-tag">↑ Application completion rate</span><span class="impact-tag">↑ Parent satisfaction</span><span class="impact-tag">↓ Support calls to schools</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Inclusive design patterns</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> AI conversations can be inaccessible to users with cognitive load challenges, motor impairments, or vision impairments if not designed with them.</div>
-      <div class="item-solution">Cognitive load: break complex tasks into simple steps. Motor: voice control + switch navigation. Vision: screen reader optimisation, high contrast. Cultural: localised examples and culturally appropriate examples per region.</div>
-    </div>
-  </div>
-
-  <div class="slabel">Phase 5 implementation projects</div>
-  <div class="items-grid">
-    <div class="item">
-      <div class="item-header"><div class="item-title">Conversation Flow Redesign</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Goal:</strong> Replace enquiry and application forms with guided conversation. Target: 90%+ completion rate, &lt;5 clarification requests per application.</div>
-      <div class="item-solution">Script 5 common scenarios. Design branching trees. Build Figma prototypes. Test with real parents including voice interface. Build error state library. Measure: completion rate, time, error rate, satisfaction, trust score.</div>
+      <div class="item-header"><div class="item-icon">🏫</div><div class="item-title">AI recommendation trust dashboard for school staff</div></div>
+      <div class="item-products"><span class="pill pill-mat"><span class="pill-dot"></span>MAT+</span><span class="pill pill-admissions" style="margin-left:6px"><span class="pill-dot"></span>Admissions+</span></div>
+      <div class="item-problem">When AI makes recommendations — which applications to shortlist, which students to offer places to — admissions staff need to be able to review, question, and override those recommendations confidently. Without a clear interface for this, staff will either rubber-stamp AI decisions (a governance risk) or ignore the AI entirely (wasting the investment).</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A dashboard showing all AI recommendations with confidence levels and reasoning. Staff can agree, disagree, or request more information. Every override teaches the AI to make better recommendations in the future. A full audit trail of every AI decision is maintained for compliance and governance.</div>
+      <div class="item-impact"><span class="impact-tag">Human oversight of AI decisions</span><span class="impact-tag">Audit-ready compliance</span><span class="impact-tag">AI improves over time</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Trust Dashboard for School Staff</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px;margin-left:4px">Admissions+</span></div></div>
-      <div class="item-problem"><strong>Goal:</strong> Help school staff understand, trust, and override AI recommendations on applications, shortlisting, and offer decisions.</div>
-      <div class="item-solution">Confidence visualisation per recommendation. Reasoning display ("Why I suggested accept"). Override interface — easy disagree + teach-AI loop. Full audit trail of all AI decisions. <code>tw-stat-card</code> for AI accuracy metrics.</div>
+      <div class="item-header"><div class="item-icon">📱</div><div class="item-title">Mobile-first AI experience for parents</div></div>
+      <div class="item-products"><span class="pill pill-one"><span class="pill-dot"></span>ApplicaaOne</span></div>
+      <div class="item-problem">Most parents will interact with the AI on their phone, not a laptop. They may be on a bus, waiting at school pickup, or filling in the application at 10pm. The AI conversation must work on a small screen, support voice input, save progress if connectivity drops, and be available in the languages spoken in the communities our schools serve.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">The AI conversation is designed mobile-first. Voice input is available throughout. Documents can be photographed directly in the app. Progress is saved automatically. Real-time translation available for 20+ languages. Push notifications remind parents of outstanding steps.</div>
+      <div class="item-impact"><span class="impact-tag">Accessible to all families</span><span class="impact-tag">Works on any device</span><span class="impact-tag">↑ Completion from non-English speaking families</span></div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Mobile-First Parent AI Experience</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div></div>
-      <div class="item-problem"><strong>Goal:</strong> 80%+ of parents apply via mobile. AI conversation must work on small screens, with voice, and with intermittent connectivity.</div>
-      <div class="item-solution">Small-screen chat bubbles and input optimisation. Camera integration for document capture. Push notifications for status updates. Voice input mode. Offline-capable save state. Real-time translation for 20+ languages.</div>
-    </div>
-    <div class="item">
-      <div class="item-header"><div class="item-title">AI Design System Patterns</div><div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Goal:</strong> Reusable AI-specific DS components so every team building AI features uses consistent, tested patterns.</div>
-      <div class="item-solution"><code>tw-chat-bubble</code> (inbound/outbound, read receipt), <code>tw-confidence-indicator</code> (high/mid/low), <code>tw-ai-thinking</code> (loading state for AI responses), <code>tw-escalation-card</code> (human handoff prompt). All published in Lookbook with AI-specific usage guidelines.</div>
+      <div class="item-header"><div class="item-icon">🧩</div><div class="item-title">AI interface components for the design system</div></div>
+      <div class="item-products"><span class="pill pill-all"><span class="pill-dot"></span>All products</span></div>
+      <div class="item-problem">As AI features are built by different teams for different products, without a shared set of interface patterns, each team will design AI interactions differently. Parents and staff will encounter inconsistent AI personalities, different error messages, and different ways of escalating to a human — undermining trust in the AI across the whole platform.</div>
+      <div class="divline"></div>
+      <div class="item-outcome">A set of reusable AI interface elements shared across all three products: chat bubbles (incoming and outgoing), confidence level indicators, AI thinking state (what to show while the AI is processing), and the human handoff card (what to show when escalating to a person). All documented with guidelines for when and how to use each one.</div>
+      <div class="item-impact"><span class="impact-tag">Consistent AI experience across all products</span><span class="impact-tag">↑ Staff and parent trust in AI</span></div>
     </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- ══ DESIGNER GROWTH ══ -->
+<!-- ══ GROWTH PLAN ══ -->
 <div id="growth">
-  <div class="section-heading">Designer Growth — Mastering AI UX</div>
-  <div class="section-sub">Three growth tracks to build the skills needed to lead AI-native product design at Applicaa.</div>
+  <div class="section-heading">Designer Growth — Leading AI-Native UX</div>
+  <div class="section-sub">Three skill tracks to build the expertise needed to lead product design at Applicaa as the platform evolves toward AI. This is a rare opportunity to become one of the first AI-native product designers in UK EdTech.</div>
 
   <div class="tracks-grid">
     <div class="track-card">
       <div class="track-header track-t1">
-        <div class="track-num">Track 1 · Months 0–6</div>
-        <h3>AI-Native Design Skills</h3>
-        <p>Design for uncertainty, conversation, and AI limitations</p>
-        <div class="track-timeline">0–6 months</div>
+        <div class="track-num">Track 1</div>
+        <h3>AI Design Skills</h3>
+        <p>Designing for conversations, uncertainty, and trust</p>
+        <div class="track-timeline">Months 0 – 6</div>
       </div>
       <div class="track-body">
-        <strong style="font-size:12px;color:var(--g700);">Skills to build:</strong>
-        <ul style="margin-top:6px;">
-          <li>Conversation design — structure dialogues, handle context switching</li>
-          <li>Progressive disclosure — show confidence levels, manage complexity</li>
-          <li>Error state design — graceful AI failures, escalation paths, trust recovery</li>
-          <li>Prompt engineering — how design decisions affect AI behaviour</li>
+        <strong style="font-size:13px;color:var(--g700);">Skills to build:</strong>
+        <ul style="margin-top:8px;">
+          <li>Conversation design — how to structure a dialogue that feels natural</li>
+          <li>Progressive disclosure — showing the right amount of information at the right moment</li>
+          <li>Designing for failure — how AI recovers gracefully when it gets things wrong</li>
+          <li>Prompt design — understanding how interface decisions affect AI behaviour</li>
         </ul>
-        <strong style="font-size:12px;color:var(--g700);display:block;margin-top:10px;">Learning plan:</strong>
-        <ul style="margin-top:6px;">
+        <strong style="font-size:13px;color:var(--g700);display:block;margin-top:12px;">How to learn it:</strong>
+        <ul style="margin-top:8px;">
           <li>Google Conversation Design course</li>
-          <li>Study ChatGPT, Claude, Perplexity UX patterns</li>
-          <li>Practice conversational flows in Figma</li>
-          <li>Build personal AI prototypes with Voiceflow</li>
+          <li>Study how ChatGPT, Claude, and Perplexity approach UX</li>
+          <li>Redesign three existing Admissions+ form flows as conversations</li>
+          <li>Build a simple AI prototype to understand technical constraints firsthand</li>
         </ul>
       </div>
     </div>
 
     <div class="track-card">
       <div class="track-header track-t2">
-        <div class="track-num">Track 2 · Months 2–8</div>
+        <div class="track-num">Track 2</div>
         <h3>Research-Driven Design</h3>
-        <p>Understanding real user needs beyond assumptions</p>
-        <div class="track-timeline">2–8 months</div>
+        <p>Understanding what school staff and parents actually need</p>
+        <div class="track-timeline">Months 2 – 8</div>
       </div>
       <div class="track-body">
-        <strong style="font-size:12px;color:var(--g700);">Research priorities:</strong>
-        <ul style="margin-top:6px;">
-          <li>Shadow admissions officers for a full application cycle</li>
-          <li>Interview 30+ parents about application anxiety and language barriers</li>
-          <li>Edge case discovery — what breaks? When do people give up?</li>
-          <li>Trust factors — what makes parents comfortable with AI handling their child's future?</li>
+        <strong style="font-size:13px;color:var(--g700);">Research priorities:</strong>
+        <ul style="margin-top:8px;">
+          <li>Spend a full day shadowing an admissions officer during application season</li>
+          <li>Interview 30+ parents about application anxiety, language barriers, and trust</li>
+          <li>Find the edge cases — where do current systems break? When do people give up?</li>
+          <li>Understand what would make parents comfortable trusting an AI with their child's future</li>
         </ul>
-        <strong style="font-size:12px;color:var(--g700);display:block;margin-top:10px;">Methods to master:</strong>
-        <ul style="margin-top:6px;">
-          <li>Contextual inquiry — observe real work environments</li>
-          <li>Service design blueprinting — map behind-the-scenes processes</li>
-          <li>Jobs-to-be-done — emotional and functional needs</li>
-          <li>Accessibility research — include users with disabilities, non-native speakers</li>
+        <strong style="font-size:13px;color:var(--g700);display:block;margin-top:12px;">Methods to master:</strong>
+        <ul style="margin-top:8px;">
+          <li>Contextual inquiry — observing real work, not just asking about it</li>
+          <li>Service blueprinting — mapping what happens behind the scenes as well as on screen</li>
+          <li>Jobs-to-be-done — understanding the emotional as well as the functional need</li>
+          <li>Inclusive research — participants who have disabilities, aren't native English speakers</li>
         </ul>
       </div>
     </div>
 
     <div class="track-card">
       <div class="track-header track-t3">
-        <div class="track-num">Track 3 · Months 3–12</div>
+        <div class="track-num">Track 3</div>
         <h3>Technical Design Skills</h3>
-        <p>Bridge design and AI implementation</p>
-        <div class="track-timeline">3–12 months</div>
+        <p>Bridging design and implementation</p>
+        <div class="track-timeline">Months 3 – 12</div>
       </div>
       <div class="track-body">
-        <strong style="font-size:12px;color:var(--g700);">Core competencies:</strong>
-        <ul style="margin-top:6px;">
-          <li>Front-end implementation — HTML, Tailwind CSS, ViewComponents</li>
-          <li>API design — structure data flows for AI agents</li>
-          <li>Component systems — design for dynamic, AI-generated content</li>
-          <li>Prototyping — Wizard of Oz testing for AI interactions</li>
+        <strong style="font-size:13px;color:var(--g700);">Skills to build:</strong>
+        <ul style="margin-top:8px;">
+          <li>Front-end implementation — HTML and CSS fluency for rapid prototyping</li>
+          <li>Designing for AI-generated content — layouts that work when content length is unpredictable</li>
+          <li>Component system thinking — how to design elements that are reusable, not one-off</li>
+          <li>Wizard of Oz prototyping — testing AI conversations before the AI exists</li>
         </ul>
-        <strong style="font-size:12px;color:var(--g700);display:block;margin-top:10px;">Professional development:</strong>
-        <ul style="margin-top:6px;">
-          <li>Build personal AI chatbot using Claude API</li>
-          <li>Experiment with voice interface prototypes</li>
-          <li>Pair with developers on AI feature implementation</li>
-          <li>Present findings at design conferences / team demos</li>
+        <strong style="font-size:13px;color:var(--g700);display:block;margin-top:12px;">Practical steps:</strong>
+        <ul style="margin-top:8px;">
+          <li>Build a personal AI chatbot to understand what's easy and what's hard</li>
+          <li>Prototype a voice interface and test it with a real user</li>
+          <li>Pair with a developer for at least one sprint per quarter</li>
+          <li>Present prototype findings at a team demo or external talk</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="section-sub" style="margin-top:28px;margin-bottom:14px;font-size:15px;font-weight:600;color:var(--g700);">Month-by-month development plan</div>
+  <div style="margin-top:32px;margin-bottom:16px;font-size:16px;font-weight:700;color:var(--g700);">Month-by-month plan</div>
   <div class="devplan-grid">
     <div class="dp-card">
-      <div class="dp-month">Months 1–2</div>
-      <div class="dp-title">Foundation building</div>
+      <div class="dp-month">Months 1 – 2</div>
+      <div class="dp-title">Build the foundation</div>
       <ul>
-        <li>Read: "Conversational Design" by Erika Hall</li>
-        <li>Course: Google AI Design course</li>
-        <li>Redesign 3 existing form flows as conversations</li>
-        <li>Join AI design communities (Conversation Design Institute)</li>
+        <li>Read "Conversational Design" by Erika Hall</li>
+        <li>Complete the Google AI Design course</li>
+        <li>Redesign three Admissions+ forms as conversations in Figma</li>
+        <li>Join the Conversation Design Institute community</li>
       </ul>
     </div>
     <div class="dp-card">
-      <div class="dp-month">Months 3–4</div>
-      <div class="dp-title">User research deep dive</div>
+      <div class="dp-month">Months 3 – 4</div>
+      <div class="dp-title">Go deep on user research</div>
       <ul>
-        <li>Shadow study with school admissions staff</li>
-        <li>20+ parent interviews with diverse families</li>
-        <li>Competitive analysis of AI assistants in other industries</li>
-        <li>Accessibility audit of current Applicaa products</li>
+        <li>Shadow admissions staff for a full day during application season</li>
+        <li>Conduct 20+ parent interviews covering anxiety, language, and trust</li>
+        <li>Audit current Admissions+ accessibility against WCAG standards</li>
+        <li>Competitive review of AI assistants in education and adjacent sectors</li>
       </ul>
     </div>
     <div class="dp-card">
-      <div class="dp-month">Months 5–6</div>
-      <div class="dp-title">Technical skills sprint</div>
+      <div class="dp-month">Months 5 – 6</div>
+      <div class="dp-title">Build technical fluency</div>
       <ul>
-        <li>Learn HTML/CSS/Tailwind for rapid prototyping</li>
-        <li>Build personal AI chatbot using Claude API</li>
-        <li>Experiment with voice interface prototypes</li>
-        <li>Pair with developers on AI feature implementation</li>
+        <li>Build a personal AI chatbot using a public API</li>
+        <li>Prototype a voice-first enquiry flow and test it with a parent</li>
+        <li>Pair with a developer during the Phase 2 component build</li>
+        <li>Deliver findings from parent research at a team demo</li>
       </ul>
     </div>
     <div class="dp-card">
-      <div class="dp-month">Months 7–12</div>
-      <div class="dp-title">Leadership & strategy</div>
+      <div class="dp-month">Months 7 – 12</div>
+      <div class="dp-title">Lead and share</div>
       <ul>
-        <li>Prompt engineering — design better AI prompts</li>
-        <li>A/B test different conversation approaches</li>
-        <li>Train broader team on AI design principles</li>
-        <li>Define 2–3 year UX roadmap for Applicaa AI</li>
+        <li>Train the broader design and product team on AI UX principles</li>
+        <li>Define the 2–3 year AI UX vision for Applicaa</li>
+        <li>Speak at an EdTech or design event about AI conversation design</li>
+        <li>Build the AI component library for the design system</li>
       </ul>
     </div>
   </div>
 
-  <div class="slabel" style="margin-top:28px;">Career trajectory</div>
+  <div class="slabel" style="margin-top:32px;">Career milestones</div>
   <div class="items-grid-3">
     <div class="item">
-      <div class="item-header"><div class="item-title">6 months — AI UX Specialist</div></div>
-      <div class="item-solution" style="font-size:12px;">Master conversation design principles. Lead user research for AI features. Build technical prototyping skills. Own the Applicaa AI UX pattern library.</div>
+      <div class="item-header"><div class="item-icon">🎯</div><div class="item-title">6 months — AI UX Specialist</div></div>
+      <div class="item-outcome" style="font-size:13px;">Leading user research for AI features. Building and testing AI conversation prototypes. Owning the AI pattern library for the design system.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">12 months — Senior AI Product Designer</div></div>
-      <div class="item-solution" style="font-size:12px;">Own the entire AI user experience across all 3 products. Influence AI product strategy. Mentor other designers on AI UX. Define the DS AI component set.</div>
+      <div class="item-header"><div class="item-icon">🚀</div><div class="item-title">12 months — Senior AI Product Designer</div></div>
+      <div class="item-outcome" style="font-size:13px;">Owning the AI user experience across all three products. Influencing AI product strategy. Mentoring junior designers on AI UX and conversation design.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">18+ months — Head of AI Experience</div></div>
-      <div class="item-solution" style="font-size:12px;">Define AI design standards for UK EdTech. Build an AI-native design team. Speak at conferences on AI UX. Become a rare designer who understands both human psychology of trust and technical constraints of AI.</div>
+      <div class="item-header"><div class="item-icon">🌟</div><div class="item-title">18+ months — Head of AI Experience</div></div>
+      <div class="item-outcome" style="font-size:13px;">Setting AI design standards for UK EdTech. Building an AI-native design team. Speaking at conferences. One of very few designers who understands both the human psychology of trust and the technical constraints of AI systems.</div>
     </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- ══ AI RESEARCH STRATEGY ══ -->
+<!-- ══ RESEARCH ══ -->
 <div id="research">
-  <div class="section-heading">AI-Powered Remote Research Strategy</div>
-  <div class="section-sub">Use AI to scale research reach, speed up synthesis, and discover patterns — without replacing human insight. Multiply, don't replace.</div>
+  <div class="section-heading">AI-Powered Research Strategy</div>
+  <div class="section-sub">How we use AI tools to run faster, deeper user research without replacing the human insight at the centre of it. AI multiplies what's possible — it doesn't replace the need to talk to real people.</div>
 
-  <div class="slabel">Three research phases for Phase 5</div>
   <div class="research-phases">
     <div class="rp-card">
-      <div class="rp-header rp-h1">Phase R1 — Weeks 1–4: Understanding current pain points</div>
+      <div class="rp-header rp-h1">Weeks 1–4 — Understanding current pain points</div>
       <div class="rp-body">
         <ul>
-          <li><strong>Week 1:</strong> AI background research — scrape 50+ UK school websites, analyse application requirements, generate pain point hypotheses</li>
-          <li><strong>Week 2:</strong> AI-enhanced survey (n=500) — dynamic questions, real-time translation, automated sentiment analysis on open responses</li>
-          <li><strong>Week 3:</strong> AI-moderated interviews (n=20) — personalised guides per participant, real-time follow-up suggestions, automated transcription</li>
-          <li><strong>Week 4:</strong> AI synthesis — theme identification, journey map generation, prioritised pain point list with supporting evidence</li>
-        </ul>
-        <br><strong>Expected outputs:</strong> Parent journey map with 15+ pain points, emotional stress map, technology comfort assessment, language/accessibility barriers documented
-      </div>
-    </div>
-    <div class="rp-card">
-      <div class="rp-header rp-h2">Phase R2 — Weeks 5–8: Testing AI agent concepts</div>
-      <div class="rp-body">
-        <ul>
-          <li><strong>Week 5:</strong> Conversation flow design — AI generates 10 conversation styles, creates branching trees, tests with synthetic personas first</li>
-          <li><strong>Week 6:</strong> AI persona testing — 20 AI personas test conversation prototypes, identify confusion points, suggest improvements</li>
-          <li><strong>Week 7:</strong> Human validation (n=30) — test refined flows with real parents, AI provides real-time analysis, compare against synthetic predictions</li>
-          <li><strong>Week 8:</strong> Iteration — AI synthesises all feedback, generates final conversation design recommendations, creates ongoing test framework</li>
+          <li><strong>Week 1:</strong> AI-assisted background research — review UK school admissions policies, application requirements, and common complaints to generate informed hypotheses before talking to anyone</li>
+          <li><strong>Week 2:</strong> A survey sent to 500 parents — with questions that adapt based on each respondent's answers. AI analyses open-text responses as they come in.</li>
+          <li><strong>Week 3:</strong> In-depth interviews with 20 parents — AI generates personalised interview guides for each participant, transcribes sessions, and flags emotional moments and key quotes in real time</li>
+          <li><strong>Week 4:</strong> AI-assisted synthesis — themes identified across all responses, a parent journey map generated, a prioritised pain point list ready for design</li>
         </ul>
       </div>
     </div>
     <div class="rp-card">
-      <div class="rp-header rp-h3">Phase R3 — Weeks 9–12: Trust & adoption factors</div>
+      <div class="rp-header rp-h2">Weeks 5–8 — Testing AI interaction concepts</div>
       <div class="rp-body">
         <ul>
-          <li><strong>Week 9:</strong> Trust factor discovery — AI analyses trust research across industries, generates hypotheses for education context</li>
-          <li><strong>Week 10:</strong> Trust experiment design — test different trust-building approaches, A/B test trust messaging, measure micro-expressions + vocal stress</li>
-          <li><strong>Week 11:</strong> Multi-modal trust testing — test across chat, voice, email; correlate stated vs revealed trust preferences</li>
-          <li><strong>Week 12:</strong> Trust framework — actionable patterns, trust measurement dashboard, recommendations for trust-based product features</li>
+          <li><strong>Week 5:</strong> Design 10 different conversation styles for the AI assistant — formal, friendly, brief, detailed. Use AI personas to test them before involving real users.</li>
+          <li><strong>Week 6:</strong> AI personas test conversation prototypes — identifying confusion points, cultural insensitivities, and places where the conversation breaks down</li>
+          <li><strong>Week 7:</strong> Real parent testing with 30 participants — compare how real parents respond against what the AI personas predicted. Refine based on differences.</li>
+          <li><strong>Week 8:</strong> Final recommendations — which conversation approach works best for which type of parent. A testing framework for ongoing optimisation.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rp-card">
+      <div class="rp-header rp-h3">Weeks 9–12 — Trust and adoption</div>
+      <div class="rp-body">
+        <ul>
+          <li><strong>Week 9:</strong> Research how trust works in AI contexts across healthcare, finance, and education — apply the most relevant findings to our specific context</li>
+          <li><strong>Week 10:</strong> Design and run trust experiments — A/B test different ways of explaining AI decisions and measuring which approaches build the most confidence</li>
+          <li><strong>Week 11:</strong> Test across different interaction modes — chat, voice, and email. Find out whether parents trust AI differently depending on how they interact with it.</li>
+          <li><strong>Week 12:</strong> Trust framework — a practical guide for designing AI interactions that build rather than erode confidence. A dashboard for monitoring trust metrics over time.</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="slabel" style="margin-top:28px;">Recommended AI research toolkit</div>
+  <div class="slabel" style="margin-top:28px;">Recommended tools</div>
   <div class="items-grid-3">
     <div class="item">
-      <div class="item-header"><div class="item-title">Research planning</div></div>
-      <div class="item-solution" style="font-size:12px;">Claude/ChatGPT (question generation, protocol creation) · Perplexity (background research) · Notion AI (participant tracking, research project management) · Airtable (participant database with AI segmentation)</div>
+      <div class="item-header"><div class="item-icon">📋</div><div class="item-title">Planning and collection</div></div>
+      <div class="item-outcome" style="font-size:13px;">Claude / ChatGPT for question generation and protocol creation. Typeform for adaptive surveys. Zoom with AI transcription for interviews. Calendly for automated participant scheduling.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Data collection</div></div>
-      <div class="item-solution" style="font-size:12px;">Typeform + AI (smart surveys, branching logic) · Zoom + Fireflies (video calls with AI transcription) · Otter.ai (live transcription) · Calendly + AI (automated participant scheduling) · WhatsApp Business API (reach parents on preferred platform)</div>
+      <div class="item-header"><div class="item-icon">🔬</div><div class="item-title">Analysis and synthesis</div></div>
+      <div class="item-outcome" style="font-size:13px;">Dovetail for a searchable research repository. AI-powered theme clustering on open-text responses. Automated sentiment analysis to identify emotional peaks in interview transcripts.</div>
     </div>
     <div class="item">
-      <div class="item-header"><div class="item-title">Synthesis & reporting</div></div>
-      <div class="item-solution" style="font-size:12px;">MonkeyLearn (sentiment analysis, text classification) · Dovetail (research repo with AI tagging) · Miro + AI (synthesis boards with pattern recognition) · Gamma (AI-powered presentation creation for stakeholders)</div>
+      <div class="item-header"><div class="item-icon">📊</div><div class="item-title">Reporting and sharing</div></div>
+      <div class="item-outcome" style="font-size:13px;">Miro for collaborative synthesis sessions with the product team. Gamma for AI-generated presentation drafts. Journey maps and personas generated automatically from synthesised research data.</div>
     </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- ══ SUCCESS METRICS ══ -->
+<!-- ══ METRICS ══ -->
 <div id="metrics">
-  <div class="section-heading">Success Metrics</div>
-  <div class="section-sub">Targets across user experience, research quality, business impact, and designer growth — to measure whether the roadmap is actually working.</div>
+  <div class="section-heading">Expected Outcomes</div>
+  <div class="section-sub">How we will measure whether the roadmap is working — across user experience, business impact, and designer development.</div>
 
   <div class="metrics-grid">
     <div class="metric-card">
-      <h3 style="color:var(--navy);">User experience metrics</h3>
+      <h3 style="color:var(--navy);">📋 For school staff and parents</h3>
       <div class="metric-row"><span class="metric-label">Application completion rate</span><span class="metric-value">90%+</span></div>
-      <div class="metric-row"><span class="metric-label">Time to complete (vs 45 min now)</span><span class="metric-value">&lt;15 min</span></div>
-      <div class="metric-row"><span class="metric-label">AI clarification requests per app</span><span class="metric-value">&lt;5</span></div>
-      <div class="metric-row"><span class="metric-label">Parent satisfaction rating</span><span class="metric-value">4.5/5</span></div>
-      <div class="metric-row"><span class="metric-label">Parents comfortable with AI handling</span><span class="metric-value">80%+</span></div>
+      <div class="metric-row"><span class="metric-label">Time to complete an application (currently ~45 min)</span><span class="metric-value">Under 15 min</span></div>
+      <div class="metric-row"><span class="metric-label">AI clarification requests per application</span><span class="metric-value">Fewer than 5</span></div>
+      <div class="metric-row"><span class="metric-label">Parent satisfaction rating</span><span class="metric-value">4.5 / 5</span></div>
+      <div class="metric-row"><span class="metric-label">Parents comfortable with AI handling their application</span><span class="metric-value">80%+</span></div>
     </div>
     <div class="metric-card">
-      <h3 style="color:var(--green);">Business impact metrics</h3>
-      <div class="metric-row"><span class="metric-label">Support ticket reduction</span><span class="metric-value">70%</span></div>
-      <div class="metric-row"><span class="metric-label">Staff time saved per school/week</span><span class="metric-value">30+ hrs</span></div>
-      <div class="metric-row"><span class="metric-label">Application volume increase</span><span class="metric-value">25%</span></div>
-      <div class="metric-row"><span class="metric-label">Started-to-submitted conversion</span><span class="metric-value">+60%</span></div>
-      <div class="metric-row"><span class="metric-label">Feature dev time reduction (AI research)</span><span class="metric-value">40%</span></div>
+      <h3 style="color:var(--green);">📈 For the business</h3>
+      <div class="metric-row"><span class="metric-label">Reduction in support tickets</span><span class="metric-value">70%</span></div>
+      <div class="metric-row"><span class="metric-label">Staff time saved per school, per week</span><span class="metric-value">30+ hours</span></div>
+      <div class="metric-row"><span class="metric-label">Increase in application volume</span><span class="metric-value">25%</span></div>
+      <div class="metric-row"><span class="metric-label">Started-to-submitted conversion rate increase</span><span class="metric-value">+60%</span></div>
+      <div class="metric-row"><span class="metric-label">Feature development time reduction (AI-assisted research)</span><span class="metric-value">40%</span></div>
     </div>
     <div class="metric-card">
-      <h3 style="color:var(--rose);">Designer growth metrics</h3>
-      <div class="metric-row"><span class="metric-label">Technical: build functional AI prototypes</span><span class="metric-value">Month 6</span></div>
-      <div class="metric-row"><span class="metric-label">Research: insights driving product decisions</span><span class="metric-value">Month 4</span></div>
-      <div class="metric-row"><span class="metric-label">AI UX pattern library published</span><span class="metric-value">Month 8</span></div>
-      <div class="metric-row"><span class="metric-label">Thought leadership: speaking / publishing</span><span class="metric-value">Month 12</span></div>
-      <div class="metric-row"><span class="metric-label">AI-native design team built</span><span class="metric-value">Month 18</span></div>
+      <h3 style="color:var(--rose);">🎯 For the design team</h3>
+      <div class="metric-row"><span class="metric-label">Able to build and test AI prototypes independently</span><span class="metric-value">Month 6</span></div>
+      <div class="metric-row"><span class="metric-label">User research directly influencing product decisions</span><span class="metric-value">Month 4</span></div>
+      <div class="metric-row"><span class="metric-label">AI interface pattern library published</span><span class="metric-value">Month 8</span></div>
+      <div class="metric-row"><span class="metric-label">External talk or publication on AI UX</span><span class="metric-value">Month 12</span></div>
+      <div class="metric-row"><span class="metric-label">AI-native design team in place</span><span class="metric-value">Month 18</span></div>
     </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- SUMMARY TABLE -->
-<h2 class="section-heading" style="margin-bottom:14px;">Roadmap Summary</h2>
+<!-- SUMMARY -->
+<div class="section-heading" style="margin-bottom:16px;">Roadmap at a Glance</div>
 <table class="summary-table">
   <thead>
-    <tr><th>Phase</th><th>When</th><th>Focus</th><th>Products</th><th>Items</th><th>Key outputs</th></tr>
+    <tr><th>Phase</th><th>When</th><th>What we're doing</th><th>Who benefits</th><th>Key result</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Phase 0</strong></td>
-      <td>Mar–Apr</td>
-      <td>DS Foundation</td>
-      <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
-      <td>12</td>
-      <td>Fix broken previews · Bootstrap cleanup · Empty State · Date Picker · Filter Chips · Skeleton · Banner</td>
+      <td><strong>Phase 0</strong><br><span style="font-size:11px;color:var(--g400);">Shared Foundation</span></td>
+      <td>Mar – Apr</td>
+      <td>Fix status labels, remove legacy styling, document missing components, build shared elements (empty states, loading states, filters, date pickers)</td>
+      <td><span class="pill pill-all" style="font-size:11px;">All products</span></td>
+      <td>Consistent, reliable interface across all three products</td>
     </tr>
     <tr>
-      <td><strong>Phase 1</strong></td>
+      <td><strong>Phase 1</strong><br><span style="font-size:11px;color:var(--g400);">Quick Wins</span></td>
       <td>May</td>
-      <td>Quick Wins</td>
-      <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
-      <td>12</td>
-      <td>Settings consistency · Import feedback · Filter chips in lists · Nav split · Colour tokens</td>
+      <td>Restructure settings navigation, fix 4 daily workflows (import/export, offers, events, enquiry record), split student and school navigation</td>
+      <td><span class="pill pill-all" style="font-size:11px;">All products</span></td>
+      <td>Faster daily workflows, fewer errors, less time finding things</td>
     </tr>
     <tr>
-      <td><strong>Phase 2</strong></td>
-      <td>Jun–Jul</td>
-      <td>Core Components</td>
-      <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
-      <td>7</td>
-      <td>Detail Panel · Bulk Bar · KPI Card · Combobox · Calendar View · Avatar Group · Split Button</td>
+      <td><strong>Phase 2</strong><br><span style="font-size:11px;color:var(--g400);">Building Blocks</span></td>
+      <td>Jun – Jul</td>
+      <td>Build 7 shared interface elements: record panel, bulk action bar, metric cards, searchable select, calendar, attendee display, split button</td>
+      <td><span class="pill pill-all" style="font-size:11px;">All products</span></td>
+      <td>Reusable elements that power Phase 3 redesigns without starting from scratch</td>
     </tr>
     <tr>
-      <td><strong>Phase 3</strong></td>
-      <td>Aug–Oct</td>
-      <td>Product Revamp</td>
+      <td><strong>Phase 3</strong><br><span style="font-size:11px;color:var(--g400);">Product Redesigns</span></td>
+      <td>Aug – Oct</td>
+      <td>Three parallel redesign tracks: Admissions+ (application form, parent status, offer management), MAT+ (trust dashboard, events, diff view), ApplicaaOne (course discovery, school profiles, registration)</td>
       <td>
-        <span class="pill pill-admissions" style="font-size:11px;padding:2px 8px">Admissions+</span>
-        <span class="pill pill-mat" style="font-size:11px;padding:2px 8px;margin-left:4px">MAT+</span>
-        <span class="pill pill-one" style="font-size:11px;padding:2px 8px;margin-left:4px">ApplicaaOne</span>
+        <span class="pill pill-admissions" style="font-size:11px;">Admissions+</span><br>
+        <span class="pill pill-mat" style="font-size:11px;margin-top:4px;display:inline-flex;">MAT+</span><br>
+        <span class="pill pill-one" style="font-size:11px;margin-top:4px;display:inline-flex;">ApplicaaOne</span>
       </td>
-      <td>14</td>
-      <td>3 parallel sprint lanes · Multi-step app form · Parent status · MAT KPI dashboard · Course discovery · Trust layer</td>
+      <td>Significantly improved experience for parents, students, and school staff using each product</td>
     </tr>
     <tr>
-      <td><strong>Phase 4</strong></td>
+      <td><strong>Phase 4</strong><br><span style="font-size:11px;color:var(--g400);">Scale & Polish</span></td>
       <td>Nov</td>
-      <td>Scale & Polish</td>
-      <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
-      <td>5</td>
-      <td>WCAG 2.1 AA · Mobile-first pass · Motion tokens · DS governance · Dark mode prep</td>
+      <td>Accessibility audit (WCAG 2.1 AA), mobile and tablet pass, animation standards, design contribution guide, dark mode preparation</td>
+      <td><span class="pill pill-all" style="font-size:11px;">All products</span></td>
+      <td>Legal compliance, mobile usability, maintainability for the long term</td>
     </tr>
     <tr>
-      <td><strong>Phase 5</strong></td>
-      <td>Dec+</td>
-      <td>AI-Native Evolution</td>
-      <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
-      <td>4+</td>
-      <td>Trust arc · Confidence indicators · Error recovery · Trust dashboard · Mobile AI · AI DS components</td>
+      <td><strong>Phase 5</strong><br><span style="font-size:11px;color:var(--g400);">AI-Native</span></td>
+      <td>Dec +</td>
+      <td>Conversational AI application flow, staff trust dashboard, mobile-first AI for parents, AI interface component library</td>
+      <td><span class="pill pill-all" style="font-size:11px;">All products</span></td>
+      <td>Applicaa becomes the first AI-native admissions platform in UK education</td>
     </tr>
     <tr style="background:var(--navy-light);">
       <td><strong>Total</strong></td>
-      <td>Mar–Dec+</td>
-      <td>Full revamp</td>
-      <td>3 products</td>
-      <td><strong>50+</strong></td>
-      <td>DS foundation → quick wins → core build → product redesigns → accessibility → AI-native evolution</td>
+      <td>Mar – Dec+</td>
+      <td colspan="2">Full UI/UX revamp across three products · 50+ improvements · From foundation fixes to AI-powered admissions</td>
+      <td><strong>200+ schools · 45,000+ course listings · Millions of parent and student interactions</strong></td>
     </tr>
   </tbody>
 </table>
@@ -1299,7 +1347,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 </div>
 
 <div class="footer">
-  Applicaa UI/UX Revamp Roadmap 2026 · Prepared by Emma Nguyen · Updated March 2026 · All timelines indicative
+  Applicaa UI/UX Revamp Roadmap 2026 &nbsp;·&nbsp; Prepared by Emma Nguyen &nbsp;·&nbsp; Updated March 2026 &nbsp;·&nbsp; Confidential — prepared for board review
 </div>
 
 </body>
