@@ -324,17 +324,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
     <tbody>
       <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Settings</td></tr>
-      <tr><td class="cl-num">1.1</td><td class="cl-what">Restructure settings navigation</td><td class="cl-why">Admissions+ has 8 top-level sections with poor grouping — "Enrolment Settings" orphaned, "School Settings" mixes IT admin with daily-use items. No section descriptions. Active page barely visible.</td><td class="cl-out">Four audience-based groups: Form & Application, School Admin, Enrolment, Advanced. Each group has a description. Active page clearly highlighted.</td><td><span class="pill pill-all">All</span></td></tr>
+      <tr><td class="cl-num">1.1</td><td class="cl-what">Restructure settings navigation</td><td class="cl-why">8 top-level sections with no logical grouping. "School Settings" mixes IT admin, finance, and daily-use items. Active page barely distinguishable.</td><td class="cl-out">Four audience-based groups. Short descriptions per group. Active state clear at a glance.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.2</td><td class="cl-what">Active state and settings search</td><td class="cl-why">No visual indicator for the current settings page. With 20+ pages, staff who know what they want still have to browse the full tree.</td><td class="cl-out">DS active state applied consistently. Search input returns matching settings pages instantly.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
       <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Processes</td></tr>
-      <tr><td class="cl-num">1.2</td><td class="cl-what">Data import — progress and error feedback</td><td class="cl-why">Imports run silently. Staff navigate away and come back hoping something happened. Failure messages are technical with no fix guidance.</td><td class="cl-out">Progress bar with live record count. Plain-language error explanations. Last successful import timestamp always visible.</td><td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td></tr>
-      <tr><td class="cl-num">1.3</td><td class="cl-what">Data export — format choice and history</td><td class="cl-why">Exports trigger a download with no format choice and no history. A lost file means rerunning the entire export.</td><td class="cl-out">Format selector before export. Last 5 exports listed with re-download links. Email link for large exports.</td><td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td></tr>
-      <tr><td class="cl-num">1.4</td><td class="cl-what">Offer management — visual status and bulk actions</td><td class="cl-why">All offer states look identical. Staff open each record individually to check status. No pipeline overview.</td><td class="cl-out">Colour-coded status per offer. Summary row showing pipeline totals. Bulk actions in one operation.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">1.5</td><td class="cl-what">Enrolment checklist and progress tracking</td><td class="cl-why">After a student accepts, the system has no way to track enrolment progress. No checklist, no visibility, no automated follow-up.</td><td class="cl-out">Per-student enrolment checklist. Completion percentage on list view. Automated reminders for outstanding steps.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">1.6</td><td class="cl-what">Event management — full lifecycle improvements</td><td class="cl-why">Push to schools is slow (no phase filter), RSVP list has 15 columns (unusable on iPad), no visual status distinction, nothing happens after an event ends.</td><td class="cl-out">Phase filter on push modal. 7 default RSVP columns. Colour-coded event status. Post-event attendance confirmation and follow-up emails.</td><td><span class="pill pill-mat">MAT+</span> <span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">1.7</td><td class="cl-what">Enquiry record — date fields, timeline, SMS</td><td class="cl-why">Date fields use plain text boxes with no validation. Timeline filters are bespoke. SMS popup has three different visual styles in one screen.</td><td class="cl-out">Consistent date/time picker across all 6 enquiry screens. Standardised filter chips on timeline. Unified SMS panel with real-time character counter.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Navigation &amp; consistency</td></tr>
-      <tr><td class="cl-num">1.17</td><td class="cl-what">Split student and school navigation — ApplicaaOne</td><td class="cl-why">A Year 10 student and an admissions manager share the same nav. Neither audience can find what they need.</td><td class="cl-out">Two clear navigation paths — students and schools. Each sees only what's relevant.</td><td><span class="pill pill-one">ApplicaaOne</span></td></tr>
-      <tr><td class="cl-num">1.18</td><td class="cl-what">Consolidate brand colours — ApplicaaOne</td><td class="cl-why">Seven different shades of blue used across the site. Any colour update requires changing hundreds of values.</td><td class="cl-out">Three semantic tokens replace all seven variants. Future updates take hours, not weeks.</td><td><span class="pill pill-one">ApplicaaOne</span></td></tr>
+      <tr><td class="cl-num">1.3</td><td class="cl-what">Data import and export</td><td class="cl-why">Imports run silently with no feedback. Failed imports return technical errors. Exports have no history — a lost file means starting over.</td><td class="cl-out">Progress feedback and plain-language errors on import. Format selector and last 5 downloads on export.</td><td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td></tr>
+      <tr><td class="cl-num">1.4</td><td class="cl-what">Event management</td><td class="cl-why">No visual status distinction on events. RSVP list overflows on iPad with 15 columns. Nothing happens after an event ends.</td><td class="cl-out">DS status badges on events. 7 default RSVP columns. Post-event attendance confirmation and follow-up flow.</td><td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td></tr>
+      <tr><td class="cl-num">1.5</td><td class="cl-what">Enquiry record</td><td class="cl-why">Date fields use plain text inputs with no validation. Timeline filters are bespoke. SMS panel uses three different visual styles in one screen.</td><td class="cl-out">DS date picker across all 6 date fields. DS filter chips on timeline. Unified SMS panel with character counter.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Customised Area</td></tr>
+      <tr><td class="cl-num">1.6</td><td class="cl-what">Timetable</td><td class="cl-why">Timetable builder uses bespoke patterns not reflected in DS. High-traffic area during school setup but visually inconsistent with the rest of the product.</td><td class="cl-out">DS layout, form group, and data table components applied. Timetable builder consistent with every other settings screen.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.7</td><td class="cl-what">Offer management</td><td class="cl-why">All offer states look identical. No pipeline summary. Bulk offer actions require opening each record individually.</td><td class="cl-out">DS status badges on offer rows. Pipeline summary at top. Bulk action bar for offers in one operation.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">1.8</td><td class="cl-what">Enrolment checklist</td><td class="cl-why">After a student accepts, there is no way to track enrolment progress. No checklist, no visibility, no automated follow-up.</td><td class="cl-out">Per-student enrolment checklist using DS card and progress components. Completion % on list view. Automated reminders for outstanding steps.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
     </tbody>
   </table></div>
 
@@ -454,65 +453,93 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ph-info">
       <div class="ph-date">May – June 2026 · 8 weeks</div>
       <h2>Phase 1 — Quick Wins</h2>
-      <p>Apply the DS components from Phase 0 to deliver high-impact improvements across the daily workflows school staff rely on most — settings, processes, and enquiry management. Every item ships independently using the shared component foundation.</p>
+      <p>Apply the DS foundation from Phase 0 to three high-impact areas of Admissions+: Settings, daily Processes, and Customised Areas. Each improvement is independently shippable and delivers immediate, visible value to school staff without requiring a full screen redesign.</p>
     </div>
   </div>
 
   <div class="slabel">Settings</div>
-  <div class="grid2">
-    <div class="card" style="grid-column:1/-1;">
+  <div class="grid3">
+    <div class="card">
       <div class="card-icon">⚙️</div>
-      <div class="card-title">Restructure settings navigation — all products</div>
-      <div class="card-products"><span class="pill pill-all">All products</span></div>
-      <div class="card-body">
-        <strong>Current Admissions+ audit findings:</strong> 8 top-level sections, 20+ sub-pages. "Enrolment Settings" and "Enrolment Navigator" sit as orphaned items between grouped sections. "School Settings" groups IT admin, finance, and daily-use items together — staff can't predict where anything lives. Active page shown only by colour change, no descriptions.
-      </div>
+      <div class="card-title">Restructure navigation</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Group settings by audience rather than by system function. Four sections: Form &amp; Application, School Admin, Enrolment, Advanced. Add short descriptions to each group so staff can predict where things live without opening every section.</div>
       <div class="divline"></div>
-      <div class="outcome">Four audience-based groups: Form & Application, School Admin, Enrolment, Advanced. Active page highlighted clearly. Short description under each group header. Applied consistently across all three products.</div>
-      <div class="impact-row"><span class="tag">Fewer "where do I find X" support tickets</span><span class="tag">Faster onboarding for new staff</span></div>
+      <div class="outcome">Staff find settings faster. Fewer support requests asking where a setting is. New staff onboard in less time.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <div class="card-title">Active state clarity</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">The current active page is shown only by a colour change in text — no background, no indicator. On a dense settings list, it is easy to lose your position. Apply the DS active state pattern consistently across all settings pages.</div>
+      <div class="divline"></div>
+      <div class="outcome">Staff always know which settings page they are on at a glance.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <div class="card-title">Settings search</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">With 20+ settings pages across 8 sections, staff who know what they want should not have to browse the whole tree. A search input at the top of the settings nav returns matching pages instantly.</div>
+      <div class="divline"></div>
+      <div class="outcome">Staff reach any setting in under 5 seconds by name. Navigation browsing becomes optional, not required.</div>
     </div>
   </div>
 
   <div class="slabel">Processes</div>
-  <div class="grid2">
+  <div class="grid3">
     <div class="card">
       <div class="card-icon">📤</div>
-      <div class="card-title">1. Data import and export</div>
+      <div class="card-title">Data import and export</div>
       <div class="card-products"><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></div>
-      <div class="card-body"><strong>Import:</strong> Runs silently. Staff navigate away and return hoping it worked. Failures give technical error text with no fix guidance.<br><br><strong>Export:</strong> Immediate download, no format choice, no history. A lost file means rerunning the full export.</div>
+      <div class="card-body">Imports run silently with no progress feedback. Failures return technical error messages. Exports trigger an immediate download with no format choice and no history — a lost file means starting over. Apply progress indicators, plain-language errors, and export history using DS components.</div>
       <div class="divline"></div>
-      <div class="outcome">Import shows live progress and plain-language errors. Export offers format selection, keeps last 5 downloads with re-download links.</div>
-      <div class="impact-row"><span class="tag">Eliminates import anxiety</span><span class="tag">Reduces support volume</span></div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🎓</div>
-      <div class="card-title">2. Offer and enrolment management</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body"><strong>Offers:</strong> All states — conditional, unconditional, waitlisted, declined — look identical. No pipeline overview. No bulk actions.<br><br><strong>Enrolment:</strong> After acceptance, no tracking of enrolment steps, no completion visibility, no automated reminders.</div>
-      <div class="divline"></div>
-      <div class="outcome">Colour-coded offer statuses, pipeline summary row, bulk actions. Post-acceptance checklist with completion % and automated nudges.</div>
-      <div class="impact-row"><span class="tag">Faster offer round processing</span><span class="tag">Fewer missed enrolment steps</span></div>
+      <div class="outcome">Staff know when an import is running, when it succeeds, and exactly what to fix if it fails. Exports are repeatable without contacting support.</div>
     </div>
     <div class="card">
       <div class="card-icon">📅</div>
-      <div class="card-title">3. Event management — full lifecycle</div>
-      <div class="card-products"><span class="pill pill-mat">MAT+</span> <span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body"><strong>Push:</strong> Flat list, no phase filter, per-school dates in a separate dialog per school.<br><strong>RSVP:</strong> 15 columns, overflows on iPad, no bulk confirm/cancel.<br><strong>Status:</strong> No visual distinction between Upcoming, Live, Full, Cancelled, Completed.<br><strong>Post-event:</strong> Nothing happens after it ends.</div>
+      <div class="card-title">Event management</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></div>
+      <div class="card-body">Events have no visual status distinction, RSVP lists overflow on iPad, and nothing happens after an event ends. Apply DS status badges, reduce RSVP columns to a usable default set, and introduce a post-event confirmation and follow-up flow.</div>
       <div class="divline"></div>
-      <div class="outcome">Phase filter on push, 7 default RSVP columns, colour-coded event status, post-event attendance confirmation and follow-up emails in one flow.</div>
-      <div class="impact-row"><span class="tag">Works on iPad</span><span class="tag">Closes post-event gap</span></div>
+      <div class="outcome">Event status scannable at a glance. RSVP list works on iPad. Attendance captured and follow-up sent without leaving the product.</div>
     </div>
     <div class="card">
       <div class="card-icon">🗂️</div>
-      <div class="card-title">4. Enquiry record</div>
+      <div class="card-title">Enquiry record</div>
       <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body"><strong>Date fields:</strong> Plain text boxes across 6 screens, no format validation, errors only on save.<br><strong>Timeline:</strong> Activity type filters bespoke, no counts, no date range.<br><strong>SMS:</strong> Character counter, stats panel, and bubble preview each use a different visual style.</div>
+      <div class="card-body">Date fields use plain text inputs across 6 screens with no format validation. Timeline filters are bespoke. The SMS panel uses three different visual styles in one screen. Apply DS date picker, filter chips, and a unified SMS panel component.</div>
       <div class="divline"></div>
-      <div class="outcome">Consistent date picker across all 6 screens. Filter chips on timeline with counts and date range. Unified SMS panel with real-time character counter warning at 80%.</div>
-      <div class="impact-row"><span class="tag">Fewer date format errors</span><span class="tag">Faster timeline navigation</span></div>
+      <div class="outcome">Date errors caught before save. Timeline filtering consistent with every other list. SMS panel coherent and predictable.</div>
     </div>
   </div>
 
+  <div class="slabel">Customised Area</div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <div class="card-title">Timetable</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Timetable configuration is one of the most-visited areas in school setup but uses bespoke patterns not reflected in DS. Apply shared layout, form group, and data table components to make the timetable builder consistent with the rest of the product.</div>
+      <div class="divline"></div>
+      <div class="outcome">Timetable setup uses familiar DS patterns. Fewer errors during initial school configuration.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎫</div>
+      <div class="card-title">Offer management</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">All offer states — conditional, unconditional, waitlisted, declined — look identical. No pipeline summary. Bulk offer actions require opening each record. Apply DS status badges, a pipeline summary row, and the bulk action bar component.</div>
+      <div class="divline"></div>
+      <div class="outcome">Offer pipeline visible at a glance. Bulk offers sent in one action. Offer round processing significantly faster during peak admissions.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📝</div>
+      <div class="card-title">Enrolment checklist</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">After a student accepts an offer, the system has no way to track enrolment progress. No checklist, no completion visibility, no automated follow-up. Apply DS card, progress, and notification components to create a lightweight per-student enrolment tracker.</div>
+      <div class="divline"></div>
+      <div class="outcome">Every accepted student has a visible enrolment checklist. Completion percentage on the list view. Automated reminders for outstanding steps.</div>
+    </div>
+  </div>
 </div>
 
 <hr class="divider">
