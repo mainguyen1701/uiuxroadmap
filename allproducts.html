@@ -304,6 +304,27 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .ai-insight{margin-top:14px;background:rgba(255,255,255,.05);border-left:3px solid #60a5fa;border-radius:0 7px 7px 0;padding:10px 14px;font-size:11px;color:rgba(255,255,255,.7);line-height:1.6;}
 .ai-insight strong{color:white;}
 @media(max-width:700px){.ai-methods{grid-template-columns:1fr;}.ai-stat-row{grid-template-columns:1fr 1fr;}}
+
+.gantt-section{margin:28px 0;}
+.gantt-row{display:grid;grid-template-columns:160px 1fr;gap:0;margin-bottom:6px;align-items:center;}
+.gantt-label{font-size:11px;font-weight:700;color:var(--g700);padding-right:14px;text-align:right;line-height:1.3;}
+.gantt-label small{display:block;font-size:10px;font-weight:500;color:var(--g400);}
+.gantt-track{position:relative;height:28px;background:var(--g100);border-radius:4px;overflow:visible;}
+.gantt-bar{position:absolute;height:100%;border-radius:4px;display:flex;align-items:center;padding:0 10px;font-size:10px;font-weight:700;color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.gantt-bar.done{background:var(--g400);}
+.gantt-bar.active{background:var(--navy);box-shadow:0 0 0 2px var(--coral);}
+.gantt-bar.planned{background:#94a3b8;}
+.gantt-bar.ai1{background:#6366f1;}
+.gantt-bar.ai2{background:#7c3aed;}
+.gantt-bar.ai3{background:#9333ea;}
+.gantt-months{display:grid;grid-template-columns:160px 1fr;gap:0;margin-bottom:8px;}
+.gantt-months-inner{display:grid;grid-template-columns:repeat(18,1fr);font-size:9px;color:var(--g400);font-weight:700;text-transform:uppercase;letter-spacing:.4px;}
+.gantt-month{padding:2px 0;}
+.gantt-month.now{color:var(--coral);font-weight:900;}
+.gantt-row.divider-row{margin:10px 0 6px;}
+.gantt-row.divider-row .gantt-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--g400);}
+.gantt-today{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--coral);border-radius:1px;z-index:10;}
+.gantt-today::before{content:"Now";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:8px;font-weight:800;color:var(--coral);white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -311,6 +332,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <nav class="sticky-nav">
   <a href="#vision">Vision</a>
   <a href="#overview">Overview</a>
+  <a href="#timeline">Timeline</a>
   <a href="#checklist">Checklist</a>
   <a href="#phase0">Phase 0</a>
   <a href="#phase1">Phase 1</a>
@@ -477,6 +499,104 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="tl-focus">AI-Native UX</div>
       <div class="tl-desc">3 stages: Copilot · Application Reviewer · Enrolment Engine</div>
     </div>
+  </div>
+</div>
+
+<div class="section-heading" id="timeline">Timeline Breakdown</div>
+<div class="section-sub">Month-by-month view of all phases. Now marker = March 2026.</div>
+
+<div class="gantt-section">
+  <div class="gantt-months">
+    <div></div>
+    <div class="gantt-months-inner">
+      <div class="gantt-month">Feb</div>
+      <div class="gantt-month now">Mar</div>
+      <div class="gantt-month">Apr</div>
+      <div class="gantt-month">May</div>
+      <div class="gantt-month">Jun</div>
+      <div class="gantt-month">Jul</div>
+      <div class="gantt-month">Aug</div>
+      <div class="gantt-month">Sep</div>
+      <div class="gantt-month">Oct</div>
+      <div class="gantt-month">Nov</div>
+      <div class="gantt-month">Dec</div>
+      <div class="gantt-month">Jan 27</div>
+      <div class="gantt-month">Feb 27</div>
+      <div class="gantt-month">Mar 27</div>
+      <div class="gantt-month">Apr 27</div>
+      <div class="gantt-month">May 27</div>
+      <div class="gantt-month">Jun 27</div>
+      <div class="gantt-month">Jul 27</div>
+    </div>
+  </div>
+
+  <!-- Phase 0 -->
+  <div class="gantt-row">
+    <div class="gantt-label">Phase 0<small>Shared Foundation</small></div>
+    <div class="gantt-track">
+      <div class="gantt-bar done" style="left:0.0%;width:5.6%">✓ DS Lookbook</div>
+      <div class="gantt-today" style="left:5.6%"></div>
+    </div>
+  </div>
+
+  <!-- Phase 1 -->
+  <div class="gantt-row">
+    <div class="gantt-label">Phase 1<small>Quick Wins</small></div>
+    <div class="gantt-track">
+      <div class="gantt-bar active" style="left:5.6%;width:5.6%">◉ Settings · Processes · Customised Areas</div>
+    </div>
+  </div>
+
+  <!-- Phase 2 — two tracks -->
+  <div class="gantt-row divider-row"><div class="gantt-label" style="text-align:right;">Phase 2</div><div></div></div>
+  <div class="gantt-row">
+    <div class="gantt-label" style="font-weight:500;font-size:10px;">Admissions+<small>Prototypes</small></div>
+    <div class="gantt-track">
+      <div class="gantt-bar planned" style="left:5.6%;width:11.1%;background:#3b82f6;">Application form · Parent status · Offer management · Enquiry form builder</div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="gantt-label" style="font-weight:500;font-size:10px;">MAT+<small>Prototypes</small></div>
+    <div class="gantt-track">
+      <div class="gantt-bar planned" style="left:5.6%;width:11.1%;background:#059669;">Trust dashboard · School comparison · Subject dashboard</div>
+    </div>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="gantt-row">
+    <div class="gantt-label">Phase 3<small>Scale &amp; Polish</small></div>
+    <div class="gantt-track">
+      <div class="gantt-bar planned" style="left:5.6%;width:11.1%;background:#7c3aed;">Ecosystem DS audit · WCAG 2.1 AA · Mobile pass · Governance</div>
+    </div>
+  </div>
+
+  <!-- Phase 4 — three stages -->
+  <div class="gantt-row divider-row"><div class="gantt-label" style="text-align:right;">Phase 4 — AI</div><div></div></div>
+  <div class="gantt-row">
+    <div class="gantt-label" style="font-weight:500;font-size:10px;">Stage 1<small>Admissions Copilot</small></div>
+    <div class="gantt-track">
+      <div class="gantt-bar ai1" style="left:22.2%;width:33.3%">AI assistant panel · Anomaly flags · Natural language query</div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="gantt-label" style="font-weight:500;font-size:10px;">Stage 2<small>App Reviewer</small></div>
+    <div class="gantt-track">
+      <div class="gantt-bar ai2" style="left:38.9%;width:33.3%">Review summary · Missing info · Human approval interface</div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="gantt-label" style="font-weight:500;font-size:10px;">Stage 3<small>Enrolment Engine</small></div>
+    <div class="gantt-track">
+      <div class="gantt-bar ai3" style="left:55.6%;width:38.9%">Forecast dashboard · At-risk signals · AI-timed comms</div>
+    </div>
+  </div>
+
+  <div style="margin-top:12px;font-size:10px;color:var(--g400);display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <span style="display:flex;align-items:center;gap:5px;"><span style="width:12px;height:12px;border-radius:2px;background:var(--g400);display:inline-block;"></span>Completed</span>
+    <span style="display:flex;align-items:center;gap:5px;"><span style="width:12px;height:12px;border-radius:2px;background:var(--navy);box-shadow:0 0 0 2px var(--coral);display:inline-block;"></span>In progress</span>
+    <span style="display:flex;align-items:center;gap:5px;"><span style="width:12px;height:12px;border-radius:2px;background:#94a3b8;display:inline-block;"></span>Planned</span>
+    <span style="display:flex;align-items:center;gap:5px;"><span style="width:12px;height:12px;border-radius:2px;background:#6366f1;display:inline-block;"></span>AI Stage 1–3</span>
+    <span style="display:flex;align-items:center;gap:5px;"><span style="width:2px;height:12px;border-radius:1px;background:var(--coral);display:inline-block;"></span>Now (Mar 2026)</span>
   </div>
 </div>
 
