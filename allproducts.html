@@ -286,6 +286,24 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .conv-pr-body{font-size:11px;color:rgba(255,255,255,.65);line-height:1.5;}
 .conv-source{font-size:10px;color:rgba(255,255,255,.3);margin-top:14px;font-style:italic;}
 @media(max-width:700px){.conv-paradigm{grid-template-columns:1fr;}.conv-principles{grid-template-columns:1fr;}}
+
+.ai-design{background:linear-gradient(135deg,#0c1a2e,#1e3a5f);border-radius:12px;padding:22px 24px;margin:18px 0 22px;}
+.ai-design-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:#60a5fa;margin-bottom:6px;}
+.ai-design-headline{font-size:15px;font-weight:900;color:white;margin-bottom:8px;line-height:1.3;}
+.ai-design-sub{font-size:12px;color:rgba(255,255,255,.65);margin-bottom:18px;line-height:1.65;max-width:800px;}
+.ai-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}
+.ai-method{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:13px 14px;}
+.ai-method-icon{font-size:18px;margin-bottom:7px;}
+.ai-method-title{font-size:11px;font-weight:800;color:white;margin-bottom:5px;line-height:1.3;}
+.ai-method-tool{font-size:10px;font-weight:700;color:#60a5fa;margin-bottom:5px;}
+.ai-method-body{font-size:11px;color:rgba(255,255,255,.6);line-height:1.5;}
+.ai-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;}
+.ai-stat{background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.25);border-radius:8px;padding:12px 14px;text-align:center;}
+.ai-stat-num{font-size:22px;font-weight:900;color:#60a5fa;letter-spacing:-1px;}
+.ai-stat-label{font-size:10px;color:rgba(255,255,255,.55);margin-top:3px;line-height:1.4;}
+.ai-insight{margin-top:14px;background:rgba(255,255,255,.05);border-left:3px solid #60a5fa;border-radius:0 7px 7px 0;padding:10px 14px;font-size:11px;color:rgba(255,255,255,.7);line-height:1.6;}
+.ai-insight strong{color:white;}
+@media(max-width:700px){.ai-methods{grid-template-columns:1fr;}.ai-stat-row{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
@@ -773,6 +791,70 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="ux-col-label">Validation</div>
         <div class="ux-col-body">Usability testing with 5 school staff per feature (Admissions+ track) and 3 MAT coordinators (MAT+ track). Target: 90% application completion rate, measurable reduction in offer round processing time.</div>
       </div>
+    </div>
+  </div>
+
+  <div class="ai-design">
+    <div class="ai-design-label">Research synthesis — NN/G 2025 · MIT study · Vercel AI SDK</div>
+    <div class="ai-design-headline">AI compresses Phase 2 from months to weeks — if the DS foundation is solid.</div>
+    <div class="ai-design-sub">Phase 0 built the DS Lookbook: documented components, tokens, patterns, and design language. That documentation is now the design spec — the context AI needs to generate high-quality outputs. MIT research shows professionals using AI for design work are <strong style="color:white;">59% more productive</strong> and produce <strong style="color:white;">higher-quality outputs</strong> than those who do not. Phase 2 is where that advantage compounds.</div>
+
+    <div class="ai-methods">
+      <div class="ai-method">
+        <div class="ai-method-icon">🔬</div>
+        <div class="ai-method-title">AI-assisted research synthesis</div>
+        <div class="ai-method-tool">Claude Projects · Dovetail</div>
+        <div class="ai-method-body">Upload support ticket transcripts, usability test notes, and school staff interview recordings. Ask: "What are the top 5 navigation failures across these sessions?" AI surfaces patterns in hours, not days. NN/G: AI lifts quality of analysis even for first-time users.</div>
+      </div>
+      <div class="ai-method">
+        <div class="ai-method-icon">⚡</div>
+        <div class="ai-method-title">Rapid coded prototyping</div>
+        <div class="ai-method-tool">v0.dev · Cursor · Claude</div>
+        <div class="ai-method-body">Prompt v0 or Cursor with DS Lookbook component names and screen goals. Get a working HTML/Tailwind prototype in minutes, not days. NN/G: detailed prompts with design artifacts produce outputs that rival human-designed screens. The DS Lookbook is that artifact.</div>
+      </div>
+      <div class="ai-method">
+        <div class="ai-method-icon">🔀</div>
+        <div class="ai-method-title">Multi-variant exploration</div>
+        <div class="ai-method-tool">Figma AI · v0.dev</div>
+        <div class="ai-method-body">Generate 4–6 layout variations for the same screen in the time it used to take to design one. Designer curates and applies judgment. NN/G: vague prompts surface unexpected directions; specific prompts produce production-quality output. Use both at different stages.</div>
+      </div>
+      <div class="ai-method">
+        <div class="ai-method-icon">📝</div>
+        <div class="ai-method-title">AI spec writing</div>
+        <div class="ai-method-tool">Claude · Notion AI</div>
+        <div class="ai-method-body">Generate component specifications and design rationale from Figma designs or screen descriptions. Upload to DS Lookbook directly. MIT study: 59% faster output at higher quality. The designer reviews, edits, and approves — not writes from scratch.</div>
+      </div>
+      <div class="ai-method">
+        <div class="ai-method-icon">♿</div>
+        <div class="ai-method-title">Accessibility checking in prototype</div>
+        <div class="ai-method-tool">Figma Able · axe DevTools</div>
+        <div class="ai-method-body">Run AI-powered accessibility audits on every prototype before it goes to engineering. Colour contrast, focus order, ARIA labels, tap target size — flagged in the design phase, not after build. Fixes in prototype cost a fraction of fixes in production.</div>
+      </div>
+      <div class="ai-method">
+        <div class="ai-method-icon">🧪</div>
+        <div class="ai-method-title">Generative UI for edge cases</div>
+        <div class="ai-method-tool">Vercel AI SDK · v0.dev</div>
+        <div class="ai-method-body">Use streaming React components to prototype AI-responsive UI patterns early — even in Phase 2. Vercel AI SDK 3.0 allows React components to stream directly from LLMs. Phase 2 prototypes can explore generative UI patterns before Phase 4 requires them at scale.</div>
+      </div>
+    </div>
+
+    <div class="ai-stat-row">
+      <div class="ai-stat">
+        <div class="ai-stat-num">59%</div>
+        <div class="ai-stat-label">Productivity increase for professionals using AI in design work (MIT study, NN/G)</div>
+      </div>
+      <div class="ai-stat">
+        <div class="ai-stat-num">4.5<span style="font-size:14px;"> / 7</span></div>
+        <div class="ai-stat-label">Average output quality with AI vs 3.8 without — across independent reviewers</div>
+      </div>
+      <div class="ai-stat">
+        <div class="ai-stat-num">10×</div>
+        <div class="ai-stat-label">Faster prototyping with detailed DS context prompts vs blank-slate prompts (NN/G prototyping study)</div>
+      </div>
+    </div>
+
+    <div class="ai-insight">
+      <strong>The key insight for Phase 2:</strong> The DS Lookbook built in Phase 0 is not just a reference document — it is the design spec that AI needs to generate high-quality, on-brand prototypes. Schools that invest in Phase 0 documentation are investing in Phase 2 speed. The two phases are directly connected.
     </div>
   </div>
 
