@@ -6,150 +6,174 @@
 <title>Applicaa UI/UX Revamp Roadmap 2026</title>
 <style>
   :root {
-    --navy: #263C91;
-    --navy-dark: #1a2d6e;
-    --navy-light: #e8ecf8;
-    --coral: #EC634B;
-    --coral-light: #fdf0ed;
-    --green: #16a34a;
-    --green-light: #dcfce7;
-    --amber: #d97706;
-    --amber-light: #fef3c7;
-    --red: #dc2626;
-    --red-light: #fee2e2;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-500: #6b7280;
-    --gray-700: #374151;
-    --gray-900: #111827;
+    --navy: #263C91; --navy-dark: #1a2d6e; --navy-light: #e8ecf8;
+    --coral: #EC634B; --coral-light: #fdf0ed;
+    --green: #16a34a; --green-light: #dcfce7;
+    --amber: #d97706; --amber-light: #fef3c7;
+    --purple: #7e22ce; --purple-light: #f5f3ff;
+    --sky: #0284c7; --sky-light: #e0f2fe;
+    --rose: #be185d; --rose-light: #fce7f3;
+    --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;
+    --gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;
+    --gray-700:#374151;--gray-900:#111827;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--gray-50); color: var(--gray-900); font-size: 14px; line-height: 1.5; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--gray-50);color:var(--gray-900);font-size:14px;line-height:1.5;}
 
-  /* ── HEADER ── */
-  .header { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #3a5abf 100%); color: white; padding: 48px 40px 40px; }
-  .header-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
-  .header-logo svg { width: 36px; height: 36px; }
-  .header-logo span { font-size: 15px; font-weight: 600; opacity: 0.85; letter-spacing: 0.3px; }
-  .header h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
-  .header p { font-size: 15px; opacity: 0.75; max-width: 560px; }
-  .header-meta { display: flex; gap: 24px; margin-top: 24px; flex-wrap: wrap; }
-  .header-meta-item { display: flex; flex-direction: column; gap: 2px; }
-  .header-meta-item .label { font-size: 11px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.8px; }
-  .header-meta-item .value { font-size: 13px; font-weight: 600; }
+  /* HEADER */
+  .header{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 60%,#3a5abf 100%);color:white;padding:48px 40px 40px;}
+  .header-logo{display:flex;align-items:center;gap:10px;margin-bottom:28px;}
+  .header-logo svg{width:36px;height:36px;}
+  .header-logo span{font-size:15px;font-weight:600;opacity:.85;letter-spacing:.3px;}
+  .header h1{font-size:30px;font-weight:700;letter-spacing:-.5px;margin-bottom:8px;}
+  .header p{font-size:15px;opacity:.75;max-width:600px;}
+  .header-meta{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap;}
+  .header-meta-item{display:flex;flex-direction:column;gap:2px;}
+  .header-meta-item .label{font-size:11px;opacity:.6;text-transform:uppercase;letter-spacing:.8px;}
+  .header-meta-item .value{font-size:13px;font-weight:600;}
 
-  /* ── CONTAINER ── */
-  .container { max-width: 1100px; margin: 0 auto; padding: 36px 24px 64px; }
+  /* CONTAINER */
+  .container{max-width:1120px;margin:0 auto;padding:36px 24px 64px;}
 
-  /* ── PRODUCT LEGEND ── */
-  .legend { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; align-items: center; }
-  .legend-label { font-size: 12px; color: var(--gray-500); font-weight: 500; margin-right: 4px; }
-  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
-  .pill-admissions { background: #e0e7ff; color: #3730a3; }
-  .pill-one { background: var(--navy-light); color: var(--navy); }
-  .pill-mat { background: #f0fdf4; color: #15803d; }
-  .pill-ds { background: #fdf4ff; color: #7e22ce; }
-  .pill-all { background: var(--gray-100); color: var(--gray-700); }
-  .pill-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  /* LEGEND */
+  .legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;align-items:center;}
+  .legend-label{font-size:12px;color:var(--gray-500);font-weight:500;margin-right:2px;}
+  .pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;}
+  .pill-admissions{background:#e0e7ff;color:#3730a3;}
+  .pill-one{background:var(--navy-light);color:var(--navy);}
+  .pill-mat{background:#f0fdf4;color:#15803d;}
+  .pill-all{background:var(--gray-100);color:var(--gray-700);}
+  .pill-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+  .badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.3px;}
+  .badge-p0{background:#fee2e2;color:#991b1b;}
+  .badge-p1{background:#fef3c7;color:#92400e;}
+  .badge-p2{background:var(--gray-100);color:var(--gray-700);}
+  .badge-s{background:#dcfce7;color:#14532d;}
+  .badge-m{background:#dbeafe;color:#1e3a8a;}
+  .badge-l{background:#ede9fe;color:#4c1d95;}
+  .badge-xl{background:#ffe4e6;color:#9f1239;}
 
-  /* ── OVERVIEW CARDS ── */
-  .overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
-  .overview-card { background: white; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; }
-  .overview-card .num { font-size: 28px; font-weight: 700; color: var(--navy); }
-  .overview-card .desc { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
-  .overview-card .sub { font-size: 11px; color: var(--gray-500); margin-top: 8px; line-height: 1.4; }
+  /* OVERVIEW */
+  .overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px;}
+  .overview-card{background:white;border:1px solid var(--gray-200);border-radius:12px;padding:20px;}
+  .overview-card .num{font-size:28px;font-weight:700;color:var(--navy);}
+  .overview-card .desc{font-size:12px;color:var(--gray-500);margin-top:2px;}
+  .overview-card .sub{font-size:11px;color:var(--gray-400);margin-top:8px;line-height:1.5;}
 
-  /* ── PHASE BLOCK ── */
-  .phase { margin-bottom: 48px; }
-  .phase-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; padding: 20px 24px; border-radius: 12px; }
-  .phase-header.phase-0 { background: linear-gradient(135deg, #fdf4ff 0%, #f5f3ff 100%); border: 1px solid #e9d5ff; }
-  .phase-header.phase-1 { background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%); border: 1px solid #bfdbfe; }
-  .phase-header.phase-2 { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1px solid #bbf7d0; }
-  .phase-header.phase-3 { background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); border: 1px solid #fed7aa; }
-  .phase-header.phase-4 { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; }
-  .phase-number { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; }
-  .phase-0 .phase-number { background: #7e22ce; color: white; }
-  .phase-1 .phase-number { background: var(--navy); color: white; }
-  .phase-2 .phase-number { background: var(--green); color: white; }
-  .phase-3 .phase-number { background: var(--amber); color: white; }
-  .phase-4 .phase-number { background: #0284c7; color: white; }
-  .phase-info { flex: 1; }
-  .phase-info h2 { font-size: 17px; font-weight: 700; margin-bottom: 3px; }
-  .phase-info .phase-date { font-size: 12px; font-weight: 600; opacity: 0.7; margin-bottom: 6px; }
-  .phase-info p { font-size: 13px; opacity: 0.75; }
-  .phase-stats { display: flex; gap: 16px; flex-shrink: 0; }
-  .phase-stat { text-align: center; }
-  .phase-stat .n { font-size: 20px; font-weight: 700; }
-  .phase-stat .l { font-size: 11px; opacity: 0.6; }
+  /* TIMELINE STRIP */
+  .timeline-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-bottom:40px;border-radius:12px;overflow:hidden;border:1px solid var(--gray-200);}
+  .tl-phase{padding:13px 14px;}
+  .tl-phase:nth-child(1){background:var(--purple-light);}
+  .tl-phase:nth-child(2){background:#eff6ff;}
+  .tl-phase:nth-child(3){background:#f0fdf4;}
+  .tl-phase:nth-child(4){background:var(--amber-light);}
+  .tl-phase:nth-child(5){background:var(--sky-light);}
+  .tl-phase:nth-child(6){background:var(--rose-light);}
+  .tl-phase+.tl-phase{border-left:1px solid var(--gray-200);}
+  .tl-phase .tl-n{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;}
+  .tl-phase .tl-date{font-size:10px;opacity:.65;margin-top:1px;}
+  .tl-phase .tl-focus{font-size:11px;font-weight:600;margin-top:5px;line-height:1.3;}
+  .tl-phase:nth-child(1) .tl-n{color:var(--purple);}
+  .tl-phase:nth-child(2) .tl-n{color:var(--navy);}
+  .tl-phase:nth-child(3) .tl-n{color:var(--green);}
+  .tl-phase:nth-child(4) .tl-n{color:var(--amber);}
+  .tl-phase:nth-child(5) .tl-n{color:var(--sky);}
+  .tl-phase:nth-child(6) .tl-n{color:var(--rose);}
 
-  /* ── SECTION TITLE (within phase) ── */
-  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-500); margin: 24px 0 10px; padding-left: 4px; border-left: 3px solid var(--gray-300); padding-left: 10px; }
+  /* PHASE BLOCK */
+  .phase{margin-bottom:52px;}
+  .phase-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;padding:20px 24px;border-radius:12px;}
+  .ph0{background:linear-gradient(135deg,var(--purple-light),#ede9fe);border:1px solid #e9d5ff;}
+  .ph1{background:linear-gradient(135deg,#eff6ff,#e0e7ff);border:1px solid #bfdbfe;}
+  .ph2{background:linear-gradient(135deg,#f0fdf4,var(--green-light));border:1px solid #bbf7d0;}
+  .ph3{background:linear-gradient(135deg,#fff7ed,var(--amber-light));border:1px solid #fed7aa;}
+  .ph4{background:linear-gradient(135deg,var(--sky-light),#bae6fd);border:1px solid #7dd3fc;}
+  .ph5{background:linear-gradient(135deg,var(--rose-light),#fbcfe8);border:1px solid #f9a8d4;}
+  .phase-num{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;flex-shrink:0;color:white;}
+  .ph0 .phase-num{background:var(--purple);}
+  .ph1 .phase-num{background:var(--navy);}
+  .ph2 .phase-num{background:var(--green);}
+  .ph3 .phase-num{background:var(--amber);}
+  .ph4 .phase-num{background:var(--sky);}
+  .ph5 .phase-num{background:var(--rose);}
+  .phase-info{flex:1;}
+  .phase-info h2{font-size:17px;font-weight:700;margin-bottom:3px;}
+  .phase-date{font-size:12px;font-weight:600;opacity:.65;margin-bottom:5px;}
+  .phase-info p{font-size:13px;opacity:.75;line-height:1.5;}
+  .phase-stat-row{display:flex;gap:20px;flex-shrink:0;}
+  .phase-stat{text-align:center;}
+  .phase-stat .n{font-size:20px;font-weight:700;}
+  .phase-stat .l{font-size:10px;opacity:.6;}
 
-  /* ── ITEM CARDS ── */
-  .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .items-grid.single { grid-template-columns: 1fr; }
-  .item { background: white; border: 1px solid var(--gray-200); border-radius: 10px; padding: 16px 18px; position: relative; }
-  .item-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
-  .item-title { font-size: 13px; font-weight: 600; color: var(--gray-900); flex: 1; }
-  .item-badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-  .badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.3px; }
-  .badge-p0 { background: #fee2e2; color: #991b1b; }
-  .badge-p1 { background: #fef3c7; color: #92400e; }
-  .badge-p2 { background: var(--gray-100); color: var(--gray-700); }
-  .badge-s { background: #dcfce7; color: #14532d; }
-  .badge-m { background: #dbeafe; color: #1e3a8a; }
-  .badge-l { background: #ede9fe; color: #4c1d95; }
-  .badge-xl { background: #ffe4e6; color: #9f1239; }
-  .item-problem { font-size: 12px; color: var(--gray-500); margin-bottom: 6px; }
-  .item-problem strong { color: var(--gray-700); }
-  .item-solution { font-size: 12px; color: var(--gray-700); background: var(--gray-50); border-radius: 6px; padding: 8px 10px; line-height: 1.5; }
-  .item-solution::before { content: '→ '; color: var(--navy); font-weight: 700; }
-  .item-tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+  /* SECTION LABEL */
+  .section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-500);padding:10px 0 8px 10px;border-left:3px solid var(--gray-300);margin:22px 0 10px;}
 
-  /* ── TIMELINE STRIP ── */
-  .timeline-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-bottom: 40px; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
-  .tl-phase { padding: 14px 16px; }
-  .tl-phase:nth-child(1) { background: #f5f3ff; }
-  .tl-phase:nth-child(2) { background: var(--navy-light); }
-  .tl-phase:nth-child(3) { background: var(--green-light); }
-  .tl-phase:nth-child(4) { background: var(--amber-light); }
-  .tl-phase:nth-child(5) { background: #e0f2fe; }
-  .tl-phase + .tl-phase { border-left: 1px solid var(--gray-200); }
-  .tl-phase .tl-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 2px; }
-  .tl-phase .tl-date { font-size: 11px; opacity: 0.7; }
-  .tl-phase .tl-focus { font-size: 12px; margin-top: 6px; font-weight: 500; }
-  .tl-phase:nth-child(1) .tl-name { color: #7e22ce; }
-  .tl-phase:nth-child(2) .tl-name { color: var(--navy); }
-  .tl-phase:nth-child(3) .tl-name { color: var(--green); }
-  .tl-phase:nth-child(4) .tl-name { color: var(--amber); }
-  .tl-phase:nth-child(5) .tl-name { color: #0284c7; }
+  /* PARALLEL LANES */
+  .lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;}
+  .lane{background:white;border:1px solid var(--gray-200);border-radius:10px;overflow:hidden;}
+  .lane-header{padding:10px 14px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .lane-admissions .lane-header{background:#e0e7ff;color:#3730a3;}
+  .lane-mat .lane-header{background:#f0fdf4;color:#15803d;}
+  .lane-one .lane-header{background:var(--navy-light);color:var(--navy);}
+  .lane-items{padding:12px;}
+  .lane-item{padding:10px 0;border-bottom:1px solid var(--gray-100);font-size:12px;}
+  .lane-item:last-child{border-bottom:none;padding-bottom:0;}
+  .lane-item-title{font-weight:600;color:var(--gray-900);margin-bottom:3px;}
+  .lane-item-desc{color:var(--gray-500);line-height:1.4;}
+  .lane-item-badges{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;}
 
-  /* ── IMPACT TABLE ── */
-  .impact-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-200); margin-top: 40px; }
-  .impact-table th { background: var(--gray-50); padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--gray-500); border-bottom: 1px solid var(--gray-200); }
-  .impact-table td { padding: 11px 14px; border-bottom: 1px solid var(--gray-100); font-size: 13px; vertical-align: middle; }
-  .impact-table tr:last-child td { border-bottom: none; }
-  .impact-table tr:hover td { background: var(--gray-50); }
+  /* ITEM GRID */
+  .items-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .item{background:white;border:1px solid var(--gray-200);border-radius:10px;padding:16px 18px;}
+  .item-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
+  .item-title{font-size:13px;font-weight:600;color:var(--gray-900);flex:1;}
+  .item-badges{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+  .item-problem{font-size:12px;color:var(--gray-500);margin-bottom:6px;}
+  .item-problem strong{color:var(--gray-700);}
+  .item-solution{font-size:12px;color:var(--gray-700);background:var(--gray-50);border-radius:6px;padding:8px 10px;line-height:1.5;}
+  .item-solution::before{content:'→ ';color:var(--navy);font-weight:700;}
 
-  /* ── FOOTER ── */
-  .footer { text-align: center; padding: 32px; color: var(--gray-500); font-size: 12px; border-top: 1px solid var(--gray-200); margin-top: 40px; }
+  /* AI PATTERNS (Phase 5) */
+  .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+  .ai-card{background:white;border:1px solid #f9a8d4;border-radius:10px;padding:16px;}
+  .ai-card-icon{font-size:20px;margin-bottom:8px;}
+  .ai-card-title{font-size:13px;font-weight:700;color:var(--rose);margin-bottom:6px;}
+  .ai-card-desc{font-size:12px;color:var(--gray-600,#4b5563);line-height:1.5;}
+  .ai-card ul{margin:6px 0 0 14px;font-size:12px;color:var(--gray-500);}
+  .ai-card ul li{margin-bottom:3px;}
 
-  @media (max-width: 768px) {
-    .overview-grid { grid-template-columns: 1fr 1fr; }
-    .items-grid { grid-template-columns: 1fr; }
-    .timeline-strip { grid-template-columns: 1fr; }
-    .tl-phase + .tl-phase { border-left: none; border-top: 1px solid var(--gray-200); }
-    .phase-stats { display: none; }
-    .header { padding: 32px 20px 28px; }
-    .header h1 { font-size: 22px; }
+  .confidence-row{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
+  .confidence-item{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;font-size:12px;}
+  .confidence-high{background:#f0fdf4;border:1px solid #bbf7d0;}
+  .confidence-mid{background:#fefce8;border:1px solid #fde68a;}
+  .confidence-low{background:#fff7ed;border:1px solid #fed7aa;}
+  .confidence-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+  .confidence-high .confidence-dot{background:#16a34a;}
+  .confidence-mid .confidence-dot{background:#ca8a04;}
+  .confidence-low .confidence-dot{background:#ea580c;}
+
+  /* SUMMARY TABLE */
+  .summary-table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;border:1px solid var(--gray-200);margin-top:40px;}
+  .summary-table th{background:var(--gray-50);padding:10px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray-500);border-bottom:1px solid var(--gray-200);}
+  .summary-table td{padding:11px 14px;border-bottom:1px solid var(--gray-100);font-size:13px;vertical-align:middle;}
+  .summary-table tr:last-child td{border-bottom:none;}
+  .summary-table tr:hover td{background:var(--gray-50);}
+
+  .footer{text-align:center;padding:32px;color:var(--gray-400);font-size:12px;border-top:1px solid var(--gray-200);margin-top:40px;}
+
+  @media(max-width:900px){
+    .overview-grid{grid-template-columns:1fr 1fr;}
+    .timeline-strip{grid-template-columns:1fr 1fr 1fr;}
+    .items-grid,.lanes,.ai-grid{grid-template-columns:1fr;}
+    .tl-phase+.tl-phase{border-left:none;border-top:1px solid var(--gray-200);}
+    .phase-stat-row{display:none;}
+    .header{padding:32px 20px 28px;}
+    .header h1{font-size:22px;}
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="header-logo">
     <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -159,12 +183,13 @@
     <span>Applicaa Design</span>
   </div>
   <h1>UI/UX Revamp Roadmap — 2026</h1>
-  <p>Phased plan covering Admissions+, ApplicaaOne, and MAT+ — from design system foundation to full product revamp.</p>
+  <p>Six-phase plan covering Admissions+, ApplicaaOne, and MAT+ — from design system foundation to AI-native product evolution. The DS Lookbook is the delivery tool, not the goal.</p>
   <div class="header-meta">
     <div class="header-meta-item"><span class="label">Products</span><span class="value">Admissions+ · ApplicaaOne · MAT+</span></div>
-    <div class="header-meta-item"><span class="label">Phases</span><span class="value">5 (Foundation → Scale)</span></div>
+    <div class="header-meta-item"><span class="label">Phases</span><span class="value">6 (Foundation → AI-Native)</span></div>
     <div class="header-meta-item"><span class="label">Horizon</span><span class="value">March → December 2026</span></div>
     <div class="header-meta-item"><span class="label">Author</span><span class="value">Emma Nguyen</span></div>
+    <div class="header-meta-item"><span class="label">Updated</span><span class="value">March 2026</span></div>
   </div>
 </div>
 
@@ -176,272 +201,275 @@
     <span class="pill pill-admissions"><span class="pill-dot"></span>Admissions+</span>
     <span class="pill pill-one"><span class="pill-dot"></span>ApplicaaOne</span>
     <span class="pill pill-mat"><span class="pill-dot"></span>MAT+</span>
-    <span class="pill pill-ds"><span class="pill-dot"></span>Design System</span>
     <span class="pill pill-all"><span class="pill-dot"></span>All products</span>
-    &nbsp;&nbsp;
+    &nbsp;
     <span class="legend-label">Priority:</span>
-    <span class="badge badge-p0">P0 Critical</span>
-    <span class="badge badge-p1">P1 High</span>
-    <span class="badge badge-p2">P2 Medium</span>
-    &nbsp;&nbsp;
+    <span class="badge badge-p0">P0</span>
+    <span class="badge badge-p1">P1</span>
+    <span class="badge badge-p2">P2</span>
+    &nbsp;
     <span class="legend-label">Effort:</span>
-    <span class="badge badge-s">S</span>
-    <span class="badge badge-m">M</span>
-    <span class="badge badge-l">L</span>
-    <span class="badge badge-xl">XL</span>
+    <span class="badge badge-s">S</span><span class="badge badge-m">M</span><span class="badge badge-l">L</span><span class="badge badge-xl">XL</span>
   </div>
 
-  <!-- OVERVIEW STATS -->
+  <!-- OVERVIEW -->
   <div class="overview-grid">
-    <div class="overview-card">
-      <div class="num">3</div>
-      <div class="desc">Products in scope</div>
-      <div class="sub">Admissions+, ApplicaaOne, MAT+ — shared design system across all</div>
-    </div>
-    <div class="overview-card">
-      <div class="num">5</div>
-      <div class="desc">Delivery phases</div>
-      <div class="sub">DS Foundation → Quick Wins → Core Build → Product Revamp → Scale</div>
-    </div>
-    <div class="overview-card">
-      <div class="num">15</div>
-      <div class="desc">DS components missing</div>
-      <div class="sub">4 P0 blocking · 6 P1 high · 5 P2 medium — all new builds</div>
-    </div>
-    <div class="overview-card">
-      <div class="num">35+</div>
-      <div class="desc">Revamp initiatives</div>
-      <div class="sub">Across 5 phases, 3 products — prioritised by user impact</div>
-    </div>
+    <div class="overview-card"><div class="num">3</div><div class="desc">Products in scope</div><div class="sub">Admissions+, ApplicaaOne, MAT+. DS Lookbook is the delivery tool — not a product.</div></div>
+    <div class="overview-card"><div class="num">6</div><div class="desc">Delivery phases</div><div class="sub">DS Foundation → Quick Wins → Core Build → Product Revamp → Scale → AI-Native</div></div>
+    <div class="overview-card"><div class="num">15+</div><div class="desc">DS components missing</div><div class="sub">4 P0 blocking · 6 P1 high · 5 P2 medium — built in Phases 0 &amp; 2</div></div>
+    <div class="overview-card"><div class="num">45+</div><div class="desc">Revamp initiatives</div><div class="sub">Across 6 phases, 3 products — prioritised by school staff daily impact</div></div>
   </div>
 
-  <!-- TIMELINE STRIP -->
+  <!-- TIMELINE -->
   <div class="timeline-strip">
-    <div class="tl-phase">
-      <div class="tl-name">Phase 0</div>
-      <div class="tl-date">Mar – Apr 2026 · 4 weeks</div>
-      <div class="tl-focus">Design System Foundation</div>
-    </div>
-    <div class="tl-phase">
-      <div class="tl-name">Phase 1</div>
-      <div class="tl-date">May 2026 · 4 weeks</div>
-      <div class="tl-focus">Quick Wins — All Products</div>
-    </div>
-    <div class="tl-phase">
-      <div class="tl-name">Phase 2</div>
-      <div class="tl-date">Jun – Jul 2026 · 8 weeks</div>
-      <div class="tl-focus">Core Component Build</div>
-    </div>
-    <div class="tl-phase">
-      <div class="tl-name">Phase 3</div>
-      <div class="tl-date">Aug – Oct 2026 · 12 weeks</div>
-      <div class="tl-focus">Product-Specific Revamp</div>
-    </div>
-    <div class="tl-phase">
-      <div class="tl-name">Phase 4</div>
-      <div class="tl-date">Nov – Dec 2026 · 8 weeks</div>
-      <div class="tl-focus">Scale &amp; Polish</div>
-    </div>
+    <div class="tl-phase"><div class="tl-n">Phase 0</div><div class="tl-date">Mar–Apr · 4 wks</div><div class="tl-focus">DS Foundation</div></div>
+    <div class="tl-phase"><div class="tl-n">Phase 1</div><div class="tl-date">May · 4 wks</div><div class="tl-focus">Quick Wins</div></div>
+    <div class="tl-phase"><div class="tl-n">Phase 2</div><div class="tl-date">Jun–Jul · 8 wks</div><div class="tl-focus">Core Components</div></div>
+    <div class="tl-phase"><div class="tl-n">Phase 3</div><div class="tl-date">Aug–Oct · 12 wks</div><div class="tl-focus">Product Revamp</div></div>
+    <div class="tl-phase"><div class="tl-n">Phase 4</div><div class="tl-date">Nov · 4 wks</div><div class="tl-focus">Scale &amp; Polish</div></div>
+    <div class="tl-phase"><div class="tl-n">Phase 5</div><div class="tl-date">Dec+ · Ongoing</div><div class="tl-focus">AI-Native Evolution</div></div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       PHASE 0 — DESIGN SYSTEM FOUNDATION
-       ══════════════════════════════════════ -->
+  <!-- ══ PHASE 0 ══ -->
   <div class="phase">
-    <div class="phase-header phase-0">
-      <div class="phase-number">0</div>
+    <div class="phase-header ph0">
+      <div class="phase-num">0</div>
       <div class="phase-info">
         <div class="phase-date">March – April 2026 · 4 weeks</div>
         <h2>Design System Foundation</h2>
-        <p>Fix the shared foundation before building on it. Broken previews, token leakage, and semantic errors compound across every screen they touch. These must be resolved first.</p>
+        <p>Fix the shared foundation and build domain-specific custom components. Nothing in Phases 1–5 can be consistent without this. The DS Lookbook is the delivery tool — each component ships into the product, not just the preview.</p>
       </div>
-      <div class="phase-stats">
-        <div class="phase-stat"><div class="n" style="color:#7e22ce">8</div><div class="l">initiatives</div></div>
-        <div class="phase-stat"><div class="n" style="color:#7e22ce">4</div><div class="l">P0 items</div></div>
+      <div class="phase-stat-row">
+        <div class="phase-stat"><div class="n" style="color:var(--purple)">12</div><div class="l">items</div></div>
+        <div class="phase-stat"><div class="n" style="color:var(--purple)">4</div><div class="l">P0</div></div>
       </div>
     </div>
 
-    <div class="section-title">Repair — Fix what's broken before building</div>
+    <div class="section-label">Fix — Repair before building</div>
     <div class="items-grid">
       <div class="item">
         <div class="item-header">
           <div class="item-title">Publish 4 broken Lookbook previews</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-ds" style="font-size:10px;padding:2px 7px">DS</span></div>
+          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> DataTable, TagInput, InfoGrid, PersonCard are in the nav but return 404. They exist in code but are invisible to the team — so everyone rebuilds them ad-hoc.</div>
-        <div class="item-solution">Write Lookbook previews for all 4. Add usage notes, prop docs, and at least one real ApplicaaOne data example per component.</div>
+        <div class="item-problem"><strong>Problem:</strong> DataTable, TagInput, InfoGrid, PersonCard exist in code but Lookbook returns 404. Teams rebuild these ad-hoc on every screen.</div>
+        <div class="item-solution">Write Lookbook previews for all 4 with props, variants, real ApplicaaOne data examples, and usage notes. Block any new usage until documented.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Remove Bootstrap class leakage</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-ds" style="font-size:10px;padding:2px 7px">DS</span></div>
+          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> 14+ instances of <code>fw-medium</code>, <code>text-muted</code>, <code>fw-semibold</code> mixed into <code>tw-</code> component templates. If Bootstrap is removed, these silently break.</div>
-        <div class="item-solution">Find-replace in ViewComponent templates: <code>text-muted → tw:text-neutral-400</code>, <code>fw-medium → tw:font-medium</code>, <code>fw-semibold → tw:font-semibold</code>.</div>
+        <div class="item-problem"><strong>Problem:</strong> <code>fw-medium</code>, <code>fw-bold</code>, <code>text-muted</code>, <code>text-danger</code> scattered across 20+ component templates. Break silently if Bootstrap is removed.</div>
+        <div class="item-solution">Find-replace across all ViewComponent templates: <code>text-muted → tw:text-neutral-400</code>, <code>fw-bold → tw:font-bold</code>, <code>text-danger → tw:text-red-600</code>. Add linter rule to prevent reintroduction.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Fix semantic badge colours</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-ds" style="font-size:10px;padding:2px 7px">DS</span></div>
+          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> "Upcoming" events use <code>tw-badge-success-subtle</code> (green). Green = completed/good. An upcoming event is a neutral future state — it reads as if the event already succeeded.</div>
-        <div class="item-solution">Add <code>tw-badge-info-subtle</code> (blue). Map: Upcoming → info, Completed → success, Cancelled → danger, Full → warning, Draft → neutral.</div>
+        <div class="item-problem"><strong>Problem:</strong> "Upcoming" events use <code>badge-success-subtle</code> (green). <code>badge-info-subtle</code> already exists in the Enquiries DS — just not applied consistently in MAT+.</div>
+        <div class="item-solution">Audit badge usage across all 3 products. Enforce: Upcoming → info, Completed → success, Cancelled → danger, Full → warning, Draft → neutral. Document the map in the DS.</div>
       </div>
       <div class="item">
         <div class="item-header">
-          <div class="item-title">Reduce table column density</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
+          <div class="item-title">Vanilla JS → Stimulus (Task reminders)</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Events table has 15 columns. Overflows on laptops, unusable on iPads (the primary BYOD device in UK schools).</div>
-        <div class="item-solution">Default to 7 columns (Actions, Date, Event, RSVPs/Cap, Status, Source, Tickets Remaining). Add column chooser toggle using existing <code>view_toggle_controller</code>.</div>
+        <div class="item-problem"><strong>Problem:</strong> Enquiry record Add Task popup uses <code>onclick="addDateReminder()"</code> — raw JS bypassing the Stimulus architecture. Untestable, inconsistent, can't be reused.</div>
+        <div class="item-solution">Replace with <code>reminders_controller</code> using Stimulus targets and actions. Reminder rows become a Lookbook-documented component with add/remove lifecycle.</div>
       </div>
     </div>
 
-    <div class="section-title">Build — New P0 components</div>
+    <div class="section-label">Build — Custom domain-specific components</div>
     <div class="items-grid">
       <div class="item">
         <div class="item-header">
           <div class="item-title">Empty State component</div>
           <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Every table, list, and panel handles zero-data ad-hoc with inline <code>text-muted</code> + icon. No consistent empty pattern exists across the 3 products.</div>
-        <div class="item-solution">Build <code>tw-empty-state</code> with slots: illustration/icon, heading, body, CTA button. Variants: no-data, no-results (after filter), first-use (onboarding prompt).</div>
+        <div class="item-problem"><strong>Problem:</strong> Every table and panel handles zero-data inline. No consistent pattern — three different ad-hoc styles across 3 products.</div>
+        <div class="item-solution">Build <code>tw-empty-state</code>: icon/illustration slot, heading, body, optional CTA. Variants: no-data, no-results (after filtering), first-use (onboarding prompt with action).</div>
       </div>
       <div class="item">
         <div class="item-header">
-          <div class="item-title">Skeleton Loader component</div>
+          <div class="item-title">Skeleton Loader</div>
           <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Async data fetches (events table, RSVP list, dashboard KPIs, Bromcom import results) show nothing while loading. Causes layout shift and feels broken.</div>
-        <div class="item-solution">Build <code>tw-skeleton</code> with shimmer animation. Variants: text line, avatar, card, table row, stat block. Uses CSS animation — no JS dependency.</div>
+        <div class="item-problem"><strong>Problem:</strong> Every async fetch (events table, RSVP list, Bromcom import, KPI dashboard) shows nothing while loading. Layout shift, feels broken.</div>
+        <div class="item-solution">Build <code>tw-skeleton</code> with CSS shimmer animation. Variants: text line, avatar, card, table row, stat block. Zero JS dependency — pure CSS keyframe.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Filter Chips component</div>
           <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Filter chips are used in Push to Schools, events list, school phase filters, and year group filters — but built as bespoke Alpine.js each time with no shared component.</div>
-        <div class="item-solution">Build <code>tw-filter-chip</code> and <code>tw-filter-chip-group</code>. States: default, active, disabled. Optional count badge, clear-all shortcut, "All" default chip.</div>
+        <div class="item-problem"><strong>Problem:</strong> Push to Schools, enquiry list, timeline filters, year group filters — all bespoke Alpine.js. Same interaction built 6+ times with no shared component.</div>
+        <div class="item-solution">Build <code>tw-filter-chip</code> + <code>tw-filter-chip-group</code>. States: default, active, disabled. Optional count badge, "All" default chip, clear-all shortcut. Stimulus-powered.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Date &amp; Time Picker</div>
           <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> An events platform without a designed date picker falls back to native <code>&lt;input type="date"&gt;</code> — which renders differently on every browser and doesn't match the design language.</div>
-        <div class="item-solution">Build <code>tw-date-picker</code> and <code>tw-time-picker</code>. Modes: single date, date range, time-only. Integrates with Stimulus and form validation. Keyboard accessible.</div>
+        <div class="item-problem"><strong>Problem:</strong> Log Call, Add Task, event scheduling — all use <code>&lt;input type="text"&gt;</code> or double <code>&lt;select&gt;</code> for time. Inconsistent format, no validation, browser-dependent behaviour.</div>
+        <div class="item-solution">Build <code>tw-date-picker</code> (single, range) and <code>tw-time-picker</code>. Keyboard accessible, form-integrated, DD/MM/YYYY locale. Replaces all date/time inputs across all 3 products.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Page-level System Banner</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> No component for platform-wide persistent alerts: Bromcom import running, subscription expiring, MIS sync failure, maintenance window. Currently unhandled across all 3 products.</div>
+        <div class="item-solution">Build <code>tw-banner</code> above topbar. Variants: info, warning, critical. Dismissable, server-managed via Rails flash or a Banner model. Stacks if multiple active.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Column table density — reduce to 7 default</div>
+          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> Events table has 15 columns — overflows on laptops, unusable on iPads. Primary device for UK school staff is iPad/Android (BYOD).</div>
+        <div class="item-solution">Default: 7 columns (Actions, Date, Event, RSVPs/Cap, Status, Source, Tickets Remaining). Add column chooser using existing <code>view_toggle_controller</code>. Move QR to action dropdown.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">tw-person-card footer slot</div>
+          <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-s">S</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> <code>tw-person-card-footer</code> class exists in the DS but is never shown in the Lookbook. No documented pattern for action buttons (Call, Email, View profile) on a person card.</div>
+        <div class="item-solution">Add footer slot to Lookbook preview with real actions. Document: primary action (View record), secondary actions (Call, Email). Align with enquiry record parent card usage.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">SMS stats + character counter</div>
+          <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> SMS popup shows "Messages remaining / Recipients / UK phone" as bare <code>&lt;p&gt;</code> tags. Character counter is raw text. Both patterns repeat — no DS component.</div>
+        <div class="item-solution">Build <code>tw-character-counter</code> (attaches to textarea, shows N/max, warning colour at 80%). Build <code>tw-sms-stat-row</code> for the send stats block.</div>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       PHASE 1 — QUICK WINS
-       ══════════════════════════════════════ -->
+  <!-- ══ PHASE 1 ══ -->
   <div class="phase">
-    <div class="phase-header phase-1">
-      <div class="phase-number">1</div>
+    <div class="phase-header ph1">
+      <div class="phase-num">1</div>
       <div class="phase-info">
         <div class="phase-date">May 2026 · 4 weeks</div>
         <h2>Quick Wins — All Products</h2>
-        <p>High-impact, low-effort fixes that improve the daily experience for school staff users and shift the platform perception. Each item can be shipped independently.</p>
+        <p>High-impact, low-effort fixes that improve the daily experience for school staff users and shift platform perception. Every item ships independently — no cross-dependency. Focus: settings pages, recurring processes, filters, and navigation.</p>
       </div>
-      <div class="phase-stats">
-        <div class="phase-stat"><div class="n" style="color:var(--navy)">10</div><div class="l">initiatives</div></div>
-        <div class="phase-stat"><div class="n" style="color:var(--navy)">5</div><div class="l">P0/P1 items</div></div>
+      <div class="phase-stat-row">
+        <div class="phase-stat"><div class="n" style="color:var(--navy)">12</div><div class="l">items</div></div>
+        <div class="phase-stat"><div class="n" style="color:var(--navy)">7</div><div class="l">P1</div></div>
       </div>
     </div>
 
-    <div class="section-title">ApplicaaOne — Marketing site (scored 4.4/10 vs 8.4 benchmark)</div>
+    <div class="section-label">Settings pages — the most-neglected daily surface</div>
     <div class="items-grid">
       <div class="item">
         <div class="item-header">
-          <div class="item-title">Value proposition above the fold</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
+          <div class="item-title">Settings page consistency audit</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Homepage hero shows no clear statement of what ApplicaaOne does or who it's for before the scroll. Same H1 tag used on every page — zero SEO differentiation.</div>
-        <div class="item-solution">Rewrite hero: unique H1 per page, one-sentence value prop visible within 300px viewport height, primary CTA above fold. Add school type selector (secondary / post-16 / primary).</div>
+        <div class="item-problem"><strong>Problem:</strong> Settings pages across all 3 products use different layouts, form patterns, and save behaviour. Staff who use all three products hit a different experience for the same task.</div>
+        <div class="item-solution">Standardise: left nav for categories, <code>tw-form-section</code> + <code>tw-form-group</code> layout, sticky footer with Save/Cancel, inline success toast on save. Document as "Settings Page" pattern in DS.</div>
       </div>
       <div class="item">
         <div class="item-header">
-          <div class="item-title">Trust layer — reviews &amp; social proof</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
+          <div class="item-title">Permissions &amp; access settings — clarity</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> 105 reviews listed for 45,000+ courses. 2 homepage reviews read as auto-generated ("BEST SCHOOL", "Is good"). Destroys trust at the point of decision.</div>
-        <div class="item-solution">Gate reviews with verified post-event confirmation email. Remove reviews below 20 words. Surface verified count ("4,200 verified reviews") as a stat, not individual low-quality text.</div>
+        <div class="item-problem"><strong>Problem:</strong> Staff permissions in MAT+ live inside a modal — cramped, hard to read cross-school access, no legend for what each level can do.</div>
+        <div class="item-solution">Move to a dedicated Permissions settings screen. School-grouped staff table, access level legend, add staff via searchable combobox, bulk-save changes. Use <code>tw-info-grid</code> for the legend.</div>
+      </div>
+    </div>
+
+    <div class="section-label">Processes — recurring workflows staff do every day</div>
+    <div class="items-grid">
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Bromcom import — progress &amp; error feedback</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px;margin-left:4px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> Data imports run silently. Staff don't know if it succeeded, is running, or failed until they navigate away and back. High anxiety action with no feedback loop.</div>
+        <div class="item-solution">Add <code>tw-progress</code> (indeterminate while running), success/fail <code>tw-inline-notification</code>, error rows in a diff-style table. Use Turbo Streams for real-time updates — no page reload.</div>
       </div>
       <div class="item">
         <div class="item-header">
-          <div class="item-title">Navigation overhaul</div>
+          <div class="item-title">Offer management — status clarity</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> Making and managing offers — conditional, unconditional, waitlisted, declined — involves dense rows with no visual differentiation between offer states. Everything looks the same.</div>
+        <div class="item-solution">Status-coloured badge per row. Top KPI row (offers made/accepted/declined) using <code>tw-info-grid-inline</code>. Bulk offer actions. Offer state change triggers timeline entry automatically.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Event booking — push workflow</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> Push to Schools modal has 15 schools in a flat list with no phase filter chips, no "select all visible" for a filtered subset, and no per-school date configuration surfaced clearly.</div>
+        <div class="item-solution">Apply <code>tw-filter-chip</code> (built in Phase 0) for phase filtering. "Select All Visible" respects active filter. Per-school date toggle in the same step — no separate modal needed.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Enquiry record — log call &amp; task UX</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> Log Call and Add Task use plain text inputs for dates and double-selects for time. After Phase 0 builds the date/time picker, these need to be wired up.</div>
+        <div class="item-solution">Replace all date/time fields in Log Call, Add Task, and Send SMS with <code>tw-date-picker</code> and <code>tw-time-picker</code>. Wire task reminders to <code>reminders_controller</code> (built in Phase 0).</div>
+      </div>
+    </div>
+
+    <div class="section-label">Filters — the most-used interaction in every list view</div>
+    <div class="items-grid">
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">All Enquiries list — filter chips</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> The <code>allenquiries</code> Lookbook scenario is blank — no DS reference exists for the main enquiry list view (filter chips, bulk bar, empty state).</div>
+        <div class="item-solution">Build the All Enquiries Lookbook scenario using <code>tw-filter-chip</code> (stage, source, date range). Add <code>tw-data-table</code> with <code>tw-empty-state</code> for zero results. Publish and ship.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Timeline activity type filters</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Problem:</strong> Enquiry record timeline has type filter buttons (All, Emails, SMS, Calls, Notes, Tasks, Events) as bespoke inline buttons — not using <code>tw-filter-chip</code>.</div>
+        <div class="item-solution">Replace with <code>tw-filter-chip-group</code>. One-line change once the component exists from Phase 0. Active state, count badges per type.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Navigation — dual audience split</div>
           <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Navigation doesn't separate student-facing from school-facing journeys. A school staff member and a Year 10 student hit the same nav — different needs, one confusing structure.</div>
-        <div class="item-solution">Split nav into two clear paths: "For Students" and "For Schools". Persistent search bar for course discovery. Mobile-first hamburger menu with clear back-navigation.</div>
+        <div class="item-problem"><strong>Problem:</strong> ApplicaaOne nav doesn't separate student-facing from school-facing journeys. A Year 10 student and an admissions officer hit the same nav — different needs, one confusing structure.</div>
+        <div class="item-solution">Split nav: "For Students" and "For Schools" as distinct paths. Persistent course search for students. Mobile-first hamburger with clear back-navigation.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Colour token consolidation</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
+          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> 7 different blue class variants in use: <code>text-primary-5</code>, <code>text-brand-blue</code>, <code>text-blue-5</code>, <code>text-blue-600</code>, <code>bg-[#2D8FC5]</code>, <code>bg-[#1E2F72]</code>, <code>bg-blue-500</code>. Impossible to maintain.</div>
-        <div class="item-solution">Consolidate to 3 semantic tokens: <code>brand-primary</code> (#263C91), <code>brand-secondary</code> (#2D8FC5), <code>brand-dark</code> (#1E2F72). Alias all existing classes to these three.</div>
-      </div>
-    </div>
-
-    <div class="section-title">Admissions+ — Core platform</div>
-    <div class="items-grid">
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Typography consistency — Inter rollout</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> Admissions+ currently uses Proxima Nova + Arial — $199/yr licensing cost, 150–200KB payload. No variable font support. Not aligned with MAT+ design system which recommends Inter.</div>
-        <div class="item-solution">Replace with Inter (open-source, UI-optimised, ~50–80KB). Update CSS variable: <code>--font-body: 'Inter', system-ui</code>. Test with school admin screens — dense data tables benefit from Inter's narrow numerals.</div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Mobile responsiveness audit — core flows</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> UK schools use iPads and Android tablets (BYOD) as primary devices. Admissions+ was designed desktop-first — table-heavy layouts break below 768px.</div>
-        <div class="item-solution">Audit 5 highest-traffic flows (application form, offer management, enquiry list, event bookings, student dashboard) on 768px and 375px viewports. Stack tables to card layout on mobile.</div>
-      </div>
-    </div>
-
-    <div class="section-title">MAT+ — Platform improvements</div>
-    <div class="items-grid">
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Move QR codes out of table rows</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-s">S</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> Each events table row renders a 64×64px QR code + Download button inline in the Event cell, forcing 100px+ row height. Scanning a list of 20+ events is painful.</div>
-        <div class="item-solution">Move QR access to the row action dropdown menu as "Download QR Code". Table rows return to single-line height (~40px). QR shown in a popup/modal on click.</div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Page-level system banner</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> No component exists for platform-wide persistent alerts (Bromcom import in progress, subscription expiring, maintenance window, MIS sync delay). These are currently unhandled.</div>
-        <div class="item-solution">Build <code>tw-banner</code> — sits above the topbar, full-width, dismissable. Variants: info, warning, critical. Managed server-side via Rails flash or a dedicated Banner model.</div>
+        <div class="item-problem"><strong>Problem:</strong> 7 blue variants in use: <code>text-primary-5</code>, <code>text-brand-blue</code>, <code>text-blue-600</code>, <code>bg-[#2D8FC5]</code>, <code>bg-blue-500</code> and more. Impossible to maintain.</div>
+        <div class="item-solution">Consolidate to 3 semantic tokens: <code>brand-primary</code> (#263C91), <code>brand-secondary</code> (#2D8FC5), <code>brand-dark</code> (#1E2F72). Alias all existing classes. Document as colour reference in DS.</div>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       PHASE 2 — CORE COMPONENT BUILD
-       ══════════════════════════════════════ -->
+  <!-- ══ PHASE 2 ══ -->
   <div class="phase">
-    <div class="phase-header phase-2">
-      <div class="phase-number">2</div>
+    <div class="phase-header ph2">
+      <div class="phase-num">2</div>
       <div class="phase-info">
         <div class="phase-date">June – July 2026 · 8 weeks</div>
         <h2>Core Component Build</h2>
-        <p>Build the missing P1 components that gate major product features. These unblock the Phase 3 product revamp — without them, teams build custom one-offs in every screen.</p>
+        <p>Build the missing components that gate Phase 3 product redesigns. Without these, every new screen falls back to bespoke implementations that diverge from the system.</p>
       </div>
-      <div class="phase-stats">
+      <div class="phase-stat-row">
         <div class="phase-stat"><div class="n" style="color:var(--green)">7</div><div class="l">components</div></div>
-        <div class="phase-stat"><div class="n" style="color:var(--green)">6</div><div class="l">P1 items</div></div>
+        <div class="phase-stat"><div class="n" style="color:var(--green)">5</div><div class="l">P1</div></div>
       </div>
     </div>
 
@@ -451,183 +479,186 @@
           <div class="item-title">Detail Slide-out Panel</div>
           <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> The RSVP panel, school detail view, and student record all slide in from the right — built custom each time. The nav <code>Drawer</code> is a navigation component, not a detail panel.</div>
-        <div class="item-solution">Build <code>tw-panel</code>: right-side slide-in with sticky header, scrollable body, sticky footer (actions). Sizes: sm (480px), md (600px), lg (800px). Backscroll lock, close-on-backdrop, focus trap.</div>
+        <div class="item-problem"><strong>Problem:</strong> RSVP panel, school detail, student record — all slide in from the right, all built custom. The nav <code>Drawer</code> is a navigation component, not a record detail panel.</div>
+        <div class="item-solution"><code>tw-panel</code>: right-side slide-in, sticky header, scrollable body, sticky footer. Sizes: sm (480px), md (600px), lg (800px). Backdrop lock, focus trap, close on Esc.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Bulk Action Bar</div>
           <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Every table with bulk-select re-implements the selection state toolbar (X items selected | Publish | Cancel | Delete). No shared component — inconsistent placement and behaviour.</div>
-        <div class="item-solution">Build <code>tw-bulk-bar</code>: contextual bar that appears above/within the table on checkbox selection. Slots for count, primary action, secondary actions, deselect-all. Connects to <code>filter_controller</code>.</div>
+        <div class="item-problem"><strong>Problem:</strong> Every table with multi-select re-implements the selection toolbar (X items selected | Publish | Cancel | Delete). No shared component — inconsistent placement and behaviour.</div>
+        <div class="item-solution"><code>tw-bulk-bar</code>: contextual bar above the table on row selection. Slots: count, primary action, secondary actions, deselect-all. Connects to <code>filter_controller</code>.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Stat / KPI Card</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-ds" style="font-size:10px;padding:2px 7px">DS</span></div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> <code>infogrid</code> is in the Lookbook nav but returns 404. The Insights dashboard, MAT+ overview, and Admissions+ reports all need metric cards with trend indicators — currently all custom.</div>
-        <div class="item-solution">Build and publish <code>tw-stat-card</code>: primary metric (large), label, delta indicator (▲▼ with colour), comparison text ("vs last month"), optional sparkline slot. Works standalone and in grid.</div>
+        <div class="item-problem"><strong>Problem:</strong> <code>tw-info-grid</code> exists in Enquiries for key/value pairs but no metric card component exists for KPI dashboards (MAT+ overview, Admissions+ reports, Insights tab).</div>
+        <div class="item-solution"><code>tw-stat-card</code>: primary metric, label, delta indicator (▲▼ + colour), comparison text ("vs last month"), sparkline slot. Works standalone and in a responsive grid.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Combobox / Multi-select</div>
           <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> School selection, year group selection, staff assignment, and subject-level filtering all need searchable multi-select. The existing <code>Dropdown</code> and <code>FormSelect</code> don't support search + constrained multi-select.</div>
-        <div class="item-solution">Build <code>tw-combobox</code>: keyboard-navigable searchable select. Supports single + multi-select mode, option groups, "select all", remove chips on selection. Stimulus-powered, no external dependency.</div>
+        <div class="item-problem"><strong>Problem:</strong> School selection, year group, staff assignment, subject filter — all need searchable multi-select. Existing <code>Dropdown</code> and <code>FormSelect</code> don't support search + constrained multi.</div>
+        <div class="item-solution"><code>tw-combobox</code>: keyboard-navigable, single + multi mode, option groups, "select all", chip removal. Stimulus-powered, no external library dependency.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Calendar View</div>
           <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-xl">XL</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px;margin-left:4px">Admissions+</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> The events calendar in MAT+ is entirely custom Alpine.js — not a DS component. Can't be reused for Admissions+ event bookings or the school calendar without full re-implementation.</div>
-        <div class="item-solution">Build <code>tw-calendar</code>: month + week view toggle, event pill in cell (colour by type), today highlight, click-to-open popup hook. Renders from a data attribute — server renders events as JSON. Stimulus controller.</div>
+        <div class="item-problem"><strong>Problem:</strong> Events calendar in MAT+ is entirely custom Alpine.js — can't be reused for Admissions+ event bookings without full re-implementation.</div>
+        <div class="item-solution"><code>tw-calendar</code>: month + week toggle, event pill per cell, colour by type, today highlight, click-to-open popup hook. Data via JSON attribute. Stimulus controller.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Avatar Group</div>
           <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-s">S</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Event attendees, school staff lists, and team member displays all need overlapping avatar stacks. Currently shown as count text with no visual identity.</div>
-        <div class="item-solution">Build <code>tw-avatar-group</code> extending existing <code>tw-avatar</code>. Max visible: 3 (configurable). Overflow: "+N more" tooltip showing full list. Variants: sm/default/lg.</div>
+        <div class="item-problem"><strong>Problem:</strong> Event attendees, staff lists, team displays all show count text with no visual identity. Max-3 overlapping avatars is a standard pattern the DS doesn't have.</div>
+        <div class="item-solution"><code>tw-avatar-group</code> extending <code>tw-avatar</code>. Max visible configurable (default 3). Overflow: "+N more" with tooltip listing full set.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Split Button</div>
           <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Publish, Push to Schools, and Make Offer actions all have a primary action + secondary options — currently shown as separate Button + Dropdown pairs with no shared housing or consistent placement.</div>
-        <div class="item-solution">Build <code>tw-split-btn</code>: primary action area + chevron dropdown trigger as distinct click targets, sharing the same button height and border radius. Variants: primary, success. Dropdown inherits <code>dropdown_controller</code>.</div>
+        <div class="item-problem"><strong>Problem:</strong> Publish, Push to Schools, Make Offer — all have a primary action + secondary options currently shown as separate Button + Dropdown pairs with no shared housing.</div>
+        <div class="item-solution"><code>tw-split-btn</code>: primary area + chevron dropdown as distinct click targets, same height and border. Variants: primary, success. Inherits <code>dropdown_controller</code>.</div>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       PHASE 3 — PRODUCT REVAMP
-       ══════════════════════════════════════ -->
+  <!-- ══ PHASE 3 ══ -->
   <div class="phase">
-    <div class="phase-header phase-3">
-      <div class="phase-number">3</div>
+    <div class="phase-header ph3">
+      <div class="phase-num">3</div>
       <div class="phase-info">
-        <div class="phase-date">August – October 2026 · 12 weeks</div>
+        <div class="phase-date">August – October 2026 · 12 weeks · 3 parallel sprint lanes</div>
         <h2>Product-Specific Revamp</h2>
-        <p>Major screen and flow redesigns for each product, using the DS components built in Phases 0–2. Each product has its own sprint lane — they can run in parallel.</p>
+        <p>Major screen and flow redesigns for each product using the DS components built in Phases 0–2. Each product runs its own sprint lane in parallel — Admissions+, MAT+, and ApplicaaOne can ship independently without waiting for each other.</p>
       </div>
-      <div class="phase-stats">
-        <div class="phase-stat"><div class="n" style="color:var(--amber)">12</div><div class="l">initiatives</div></div>
-        <div class="phase-stat"><div class="n" style="color:var(--amber)">3</div><div class="l">products</div></div>
-      </div>
-    </div>
-
-    <div class="section-title">Admissions+ — Core flow redesign</div>
-    <div class="items-grid">
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Application form — multi-step redesign</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> Application forms are long, single-page scrolls. Parents on mobile abandon multi-section forms with no sense of progress. No save-and-return pattern.</div>
-        <div class="item-solution">Redesign as guided multi-step flow using <code>tw-steps</code>. Each section = one step (Personal details, Parent details, Additional info, Review &amp; submit). Auto-save on step transition. Progress bar persistent in header.</div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Parent-facing status tracking</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-l">L</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> Parents have no clear view of where their application is in the process. Results in high support volume ("Has my application been received?") and poor NPS scores.</div>
-        <div class="item-solution">Build application status dashboard: <code>tw-steps</code> showing current stage (Submitted → Under Review → Offer Made → Accepted/Declined). Status badge, last-updated timestamp, next action CTA.</div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Offer management UI</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> Making and managing offers — conditional, unconditional, waitlisted, declined — involves dense admin tables with no visual differentiation between offer states.</div>
-        <div class="item-solution">Redesign offer management screen: KPI cards at top (offers made/accepted/declined), status-coloured table rows, bulk offer actions using <code>tw-bulk-bar</code>, offer detail in <code>tw-panel</code> slide-out.</div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Event booking — redesign for schools</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> Event booking in Admissions+ is separate from MAT+ Events. The two surfaces are visually inconsistent — school staff manage events differently depending on which product they're in.</div>
-        <div class="item-solution">Unify event booking UI using the <code>tw-calendar</code> and Events DataTable built in Phase 2. Consistent action model: Add → Push → Manage RSVPs → Close. Use shared DS components across both products.</div>
+      <div class="phase-stat-row">
+        <div class="phase-stat"><div class="n" style="color:var(--amber)">3</div><div class="l">lanes</div></div>
+        <div class="phase-stat"><div class="n" style="color:var(--amber)">12</div><div class="l">redesigns</div></div>
       </div>
     </div>
 
-    <div class="section-title">MAT+ — Dashboard &amp; oversight</div>
-    <div class="items-grid">
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">MAT dashboard — KPI overview</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
+    <div class="lanes">
+      <!-- ADMISSIONS+ LANE -->
+      <div class="lane lane-admissions">
+        <div class="lane-header">
+          <span>🎓</span> Admissions+
         </div>
-        <div class="item-problem"><strong>Problem:</strong> MAT leaders need a single-pane view of all schools — total applications, offers made, acceptance rate, event attendance — but the current overview is list-based with no metrics.</div>
-        <div class="item-solution">Redesign MAT dashboard: top row of <code>tw-stat-card</code> KPIs (network-wide metrics), school comparison table sorted by key metric, inline trend indicators, drill-down to school via <code>tw-panel</code>.</div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Multi-school permissions model — clarity</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
+        <div class="lane-items">
+          <div class="lane-item">
+            <div class="lane-item-title">Application form — multi-step</div>
+            <div class="lane-item-desc">Replace long single-page scroll with <code>tw-steps</code> guided flow. One section per step. Auto-save on transition. Progress bar in header. Save-and-return support.</div>
+            <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Parent status tracking</div>
+            <div class="lane-item-desc">Application status dashboard for parents: <code>tw-steps</code> showing current stage (Submitted → Under Review → Offer → Accepted). Status badge, last updated, next action CTA. Kills "has my application been received?" support tickets.</div>
+            <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-l">L</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Offer management redesign</div>
+            <div class="lane-item-desc">KPI cards at top (made/accepted/declined). Status-coloured rows. Bulk offer actions using <code>tw-bulk-bar</code>. Detail in <code>tw-panel</code> slide-out.</div>
+            <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Enquiry form builder</div>
+            <div class="lane-item-desc">Build <code>enquiryforms</code> and <code>newform</code> Lookbook scenarios (currently blank). Field configuration, section ordering, preview mode, publish to schools flow.</div>
+            <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Mobile-first responsive pass</div>
+            <div class="lane-item-desc">Audit 5 highest-traffic flows on 375px and 768px. Stack tables to card layout. Test on real iOS Safari and Android Chrome — not DevTools.</div>
+            <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span></div>
+          </div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> The current permissions UI (staff members panel) is a modal with inline access-level dropdowns. Adding/removing staff, understanding what each level can do, and seeing cross-school access is difficult.</div>
-        <div class="item-solution">Redesign as a dedicated Permissions screen (not modal). School-grouped staff list, access level legend table, add staff flow using <code>tw-combobox</code>, changes staged and saved in bulk.</div>
       </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Bromcom import validation — progress UI</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> Bromcom data imports run silently with no visible progress. Staff don't know if the import succeeded, is still running, or failed until they navigate away and back.</div>
-        <div class="item-solution">Add import progress using <code>tw-progress</code> (indeterminate while running, determinate on validation pass). Success/error state using <code>tw-inline-notification</code>. Error rows surfaced in a diff-style table.</div>
-      </div>
-    </div>
 
-    <div class="section-title">ApplicaaOne — Student &amp; school journey</div>
-    <div class="items-grid">
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Course discovery redesign</div>
-          <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
+      <!-- MAT+ LANE -->
+      <div class="lane lane-mat">
+        <div class="lane-header">
+          <span>🏫</span> MAT+
         </div>
-        <div class="item-problem"><strong>Problem:</strong> 45,000+ courses with poor discoverability. No subject grouping, no school comparison, no "courses near me" proximity filter. Students land on a flat list and abandon.</div>
-        <div class="item-solution">Redesign course search: subject taxonomy filter (A-level, BTEC, T-Level, IB), proximity radius slider, school comparison shortlist (max 3), saved courses. Filter state persists on back-navigation.</div>
+        <div class="lane-items">
+          <div class="lane-item">
+            <div class="lane-item-title">MAT dashboard — KPI overview</div>
+            <div class="lane-item-desc">Top row of <code>tw-stat-card</code> network-wide KPIs. School comparison table sorted by metric. Inline trend indicators. Drill-down to school via <code>tw-panel</code>.</div>
+            <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Multi-school events — unify with Admissions+</div>
+            <div class="lane-item-desc">Use <code>tw-calendar</code> built in Phase 2. Consistent action model: Add → Push → Manage RSVPs → Close. Shared DS components across both products — same screen, different context.</div>
+            <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">School edits diff view</div>
+            <div class="lane-item-desc">MAT original vs school version — changed rows highlighted, unchanged rows dimmed. <code>tw-diff-table</code> built from JSON diff payload. Reusable for Forms, Policies, Offers.</div>
+            <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Subject-level dashboard</div>
+            <div class="lane-item-desc">Application pipeline per subject across schools. Filter by subject, year group, intake. Compare school vs MAT baseline. Inline trend indicators.</div>
+            <div class="lane-item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-l">L</span></div>
+          </div>
+        </div>
       </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">School profile page</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
+
+      <!-- APPLICAAONE LANE -->
+      <div class="lane lane-one">
+        <div class="lane-header">
+          <span>🔵</span> ApplicaaOne
         </div>
-        <div class="item-problem"><strong>Problem:</strong> School pages are generic listing pages with no personality or trust signals. A student choosing between two sixth forms needs to understand culture, results, transport, and open days — none of which is surfaced.</div>
-        <div class="item-solution">Redesign school profile: photo hero, key stats row (Ofsted rating, results, distance), course list with subject filter, upcoming open events, verified reviews section, sticky "Apply / Book a Visit" CTA.</div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Student registration flow</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
+        <div class="lane-items">
+          <div class="lane-item">
+            <div class="lane-item-title">Value proposition above fold</div>
+            <div class="lane-item-desc">Unique H1 per page. One-sentence value prop visible at 300px viewport. Primary CTA above fold. School type selector (secondary / post-16 / primary). Kills same-H1-on-every-page SEO issue.</div>
+            <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-s">S</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Course discovery redesign</div>
+            <div class="lane-item-desc">Subject taxonomy filter (A-level, BTEC, T-Level), proximity radius, school comparison shortlist (max 3), saved courses. 45,000+ courses need discoverability — currently a flat abandonment-driving list.</div>
+            <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-xl">XL</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">School profile page</div>
+            <div class="lane-item-desc">Photo hero, stats row (Ofsted, results, distance), course list with subject filter, open events, verified reviews, sticky "Apply / Book Visit" CTA. Currently generic — no personality.</div>
+            <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Trust layer — verified reviews</div>
+            <div class="lane-item-desc">Gate reviews with post-event email confirmation. Remove reviews under 20 words. Surface "4,200 verified reviews" as a stat, not 105 low-quality text entries. Kills trust collapse on homepage.</div>
+            <div class="lane-item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-m">M</span></div>
+          </div>
+          <div class="lane-item">
+            <div class="lane-item-title">Student registration — 3-field flow</div>
+            <div class="lane-item-desc">Reduce registration to name + email + school year. Defer all other fields to application. Add Google/Microsoft SSO (both used by schools). Kills drop-off at account creation.</div>
+            <div class="lane-item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span></div>
+          </div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Registration is a blocker before applying or booking events. High drop-off at account creation. Form is not mobile-optimised and collects more fields than needed at this stage.</div>
-        <div class="item-solution">Streamline to 3 fields at registration (name, email, school year). Defer additional details to the application form. Add social/SSO login (Google, Microsoft — used by most schools). Progress saved immediately.</div>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       PHASE 4 — SCALE & POLISH
-       ══════════════════════════════════════ -->
+  <!-- ══ PHASE 4 ══ -->
   <div class="phase">
-    <div class="phase-header phase-4">
-      <div class="phase-number">4</div>
+    <div class="phase-header ph4">
+      <div class="phase-num">4</div>
       <div class="phase-info">
-        <div class="phase-date">November – December 2026 · 8 weeks</div>
+        <div class="phase-date">November 2026 · 4 weeks</div>
         <h2>Scale &amp; Polish</h2>
-        <p>Platform-wide quality pass: accessibility, mobile, animation, and documentation. These ensure the revamp holds long-term and the DS is maintainable by the full team.</p>
+        <p>Platform-wide quality pass: accessibility, mobile, animation, and documentation. These ensure the revamp holds long-term and the DS is maintainable by the full team without supervision.</p>
       </div>
-      <div class="phase-stats">
-        <div class="phase-stat"><div class="n" style="color:#0284c7">6</div><div class="l">initiatives</div></div>
+      <div class="phase-stat-row">
+        <div class="phase-stat"><div class="n" style="color:var(--sky)">5</div><div class="l">items</div></div>
       </div>
     </div>
 
@@ -637,119 +668,204 @@
           <div class="item-title">WCAG 2.1 AA accessibility audit</div>
           <div class="item-badges"><span class="badge badge-p0">P0</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> UK public sector procurement increasingly requires WCAG 2.1 AA compliance. Schools and MATs are public-sector bodies — Applicaa touching student data must meet accessibility standards.</div>
-        <div class="item-solution">Audit all 3 products against WCAG 2.1 AA: colour contrast (4.5:1 text, 3:1 UI), keyboard nav, focus management, screen reader labels, skip links, form error announcements. Fix critical findings. Publish accessibility statement.</div>
+        <div class="item-problem"><strong>Problem:</strong> UK public sector procurement requires WCAG 2.1 AA. Schools and MATs are public-sector — Applicaa handling student data must meet accessibility standards or risk losing contracts.</div>
+        <div class="item-solution">Audit all 3 products: colour contrast (4.5:1 text, 3:1 UI), keyboard nav, focus management, screen reader labels, skip links, form error announcements. Fix critical findings. Publish accessibility statement.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Mobile-first responsive pass — product</div>
           <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Phase 1 audited Admissions+ on mobile. This pass covers MAT+ and ApplicaaOne product screens — the 10 highest-traffic views per product on 375px and 768px.</div>
-        <div class="item-solution">Responsive audit + fixes for all three products. Convert remaining desktop-only tables to card layout on mobile. Test on real iOS Safari and Android Chrome — not just Chrome DevTools.</div>
+        <div class="item-problem"><strong>Problem:</strong> UK schools use iPads and Android tablets (BYOD). Core screens were designed desktop-first. Phase 1 covered Admissions+ flows — this pass covers MAT+ and ApplicaaOne.</div>
+        <div class="item-solution">Top 10 views per product on 375px and 768px. Convert remaining desktop-only tables to card layout on mobile. Real device testing on iOS Safari + Android Chrome.</div>
       </div>
       <div class="item">
         <div class="item-header">
-          <div class="item-title">Micro-interactions &amp; animation tokens</div>
-          <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-ds" style="font-size:10px;padding:2px 7px">DS</span></div>
+          <div class="item-title">Animation &amp; motion tokens</div>
+          <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> Transitions between states (modal open, panel slide, skeleton → content, toast appear) are inconsistent. Some use Tailwind transitions, some Stimulus, some CSS keyframes — no shared motion language.</div>
-        <div class="item-solution">Define 4 motion tokens: <code>duration-fast</code> (100ms), <code>duration-base</code> (200ms), <code>duration-slow</code> (350ms), <code>easing-standard</code> (ease-in-out). Document per-component. Respect <code>prefers-reduced-motion</code>.</div>
+        <div class="item-problem"><strong>Problem:</strong> Transitions between states (modal open, panel slide, skeleton-to-content, toast) are inconsistent — some Tailwind, some Stimulus, some CSS keyframes. No shared motion language.</div>
+        <div class="item-solution">Define 4 motion tokens: <code>duration-fast</code> (100ms), <code>duration-base</code> (200ms), <code>duration-slow</code> (350ms), <code>easing-standard</code> (ease-in-out). Respect <code>prefers-reduced-motion</code>.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">DS contribution guide &amp; governance</div>
-          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-ds" style="font-size:10px;padding:2px 7px">DS</span></div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> No documented contribution process for the design system. Any developer can add a component in any style — which is how Bootstrap leakage and semantic colour misuse happened in the first place.</div>
-        <div class="item-solution">Publish contribution guide in Lookbook: component API contract, naming conventions, required Lookbook scenarios, accessibility checklist, PR review criteria. Add automated linting for Bootstrap remnant classes.</div>
+        <div class="item-problem"><strong>Problem:</strong> No documented contribution process. Any developer can add a component in any style — which is how Bootstrap leakage and semantic colour misuse happened in the first place.</div>
+        <div class="item-solution">Publish in Lookbook: component API contract, naming conventions, required scenarios, accessibility checklist, PR review criteria. Add automated linter for Bootstrap remnant classes.</div>
       </div>
       <div class="item">
         <div class="item-header">
           <div class="item-title">Dark mode token preparation</div>
-          <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-ds" style="font-size:10px;padding:2px 7px">DS</span></div>
+          <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
         </div>
-        <div class="item-problem"><strong>Problem:</strong> No dark mode exists. As school admin tools increasingly run on personal devices, dark mode is a growing expectation — especially for evening school events and late-night parent registrations.</div>
-        <div class="item-solution">Define semantic colour tokens (not raw hex): <code>surface-primary</code>, <code>surface-secondary</code>, <code>text-primary</code>, <code>text-secondary</code>, <code>border-default</code>. Map to light values now; dark values later. No UI switching in this phase.</div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Diff view component</div>
-          <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div>
-        </div>
-        <div class="item-problem"><strong>Problem:</strong> The school edits comparison (MAT original vs school version, changed rows highlighted amber) is fully custom in the Events prototype. The same pattern is needed for Forms, Policies, and Offers.</div>
-        <div class="item-solution">Extract into <code>tw-diff-table</code>: three-column layout (field, original value, changed value), changed rows highlighted, unchanged rows dimmed. Data-driven from a JSON diff payload. Reusable across all modules.</div>
+        <div class="item-problem"><strong>Problem:</strong> No dark mode. Admissions staff work evenings. Parents register late at night. School events happen at 7pm. Dark mode expectation is growing on all personal devices.</div>
+        <div class="item-solution">Define semantic colour tokens: <code>surface-primary</code>, <code>text-primary</code>, <code>border-default</code>. Map to light values now. Dark values prepared but not shipped. No UI toggle in this phase.</div>
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       IMPACT SUMMARY TABLE
-       ══════════════════════════════════════ -->
-  <h2 style="font-size:16px;font-weight:700;margin-bottom:16px;margin-top:8px;">Roadmap Summary</h2>
-  <table class="impact-table">
+  <!-- ══ PHASE 5 ══ -->
+  <div class="phase">
+    <div class="phase-header ph5">
+      <div class="phase-num">5</div>
+      <div class="phase-info">
+        <div class="phase-date">December 2026+ · Ongoing</div>
+        <h2>AI-Native Product Evolution</h2>
+        <p>Redesign interactions for AI-assisted workflows — conversational UX, trust-building patterns, confidence indicators, graceful error recovery, and agent-to-human handoffs. Applies across Admissions+, ApplicaaOne, and MAT+ as AI features ship.</p>
+      </div>
+      <div class="phase-stat-row">
+        <div class="phase-stat"><div class="n" style="color:var(--rose)">5</div><div class="l">tracks</div></div>
+        <div class="phase-stat"><div class="n" style="color:var(--rose)">4</div><div class="l">projects</div></div>
+      </div>
+    </div>
+
+    <div class="section-label">Trust-building patterns — designing for AI uncertainty</div>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <div class="ai-card-icon">💬</div>
+        <div class="ai-card-title">Conversational UX Framework</div>
+        <div class="ai-card-desc">Replace form-heavy flows with natural conversation for parents. Design the trust arc:
+          <ul>
+            <li>Introduction — "I'm here to help with John's application"</li>
+            <li>Capability demo — "Try uploading his transcript"</li>
+            <li>Collaborative — "I notice his math grades meet requirements"</li>
+            <li>Handoff — "Ready for Ms. Smith to review"</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon">📊</div>
+        <div class="ai-card-title">Progressive Trust Design</div>
+        <div class="ai-card-desc">Design confidence indicators for AI recommendations across admissions decisions:
+          <div class="confidence-row">
+            <div class="confidence-item confidence-high"><div class="confidence-dot"></div><div>90%+ · "I'm confident this is correct"</div></div>
+            <div class="confidence-item confidence-mid"><div class="confidence-dot"></div><div>60–89% · "Let me double-check with you"</div></div>
+            <div class="confidence-item confidence-low"><div class="confidence-dot"></div><div>&lt;60% · "I need help — can you clarify?"</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon">🔄</div>
+        <div class="ai-card-title">Error Recovery &amp; Escalation</div>
+        <div class="ai-card-desc">Design graceful failure modes for every AI error type:
+          <ul>
+            <li>Misunderstood input → suggested rephrase</li>
+            <li>Missing information → explain what's needed and why</li>
+            <li>System limitation → clear escalation to human</li>
+            <li>Data mismatch → show exactly what's wrong</li>
+          </ul>
+          Escalation path: Agent struggle → Suggest clarification → Human assistance → Direct contact
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Implementation projects</div>
+    <div class="items-grid">
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Conversation Flow Redesign</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Goal:</strong> Replace enquiry and application forms with guided conversation — 90%+ completion rate, &lt;5 clarification requests per application.</div>
+        <div class="item-solution">Script 5 common scenarios. Design branching conversation trees. Build Figma prototypes with realistic content. Test with real parents including voice interface. Build error state library for all AI failure modes.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Trust Dashboard for School Staff</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px;margin-left:4px">Admissions+</span></div>
+        </div>
+        <div class="item-problem"><strong>Goal:</strong> Help staff understand and trust AI recommendations on applications, shortlisting, and offer decisions.</div>
+        <div class="item-solution">Confidence visualisation per recommendation. Reasoning display ("Why I suggested accept"). Override interface — easy disagree + teach-AI loop. Full audit trail of all AI decisions. <code>tw-stat-card</code> for AI accuracy metrics.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Mobile-First Parent AI Experience</div>
+          <div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-l">L</span><span class="pill pill-one" style="font-size:10px;padding:2px 7px">ApplicaaOne</span></div>
+        </div>
+        <div class="item-problem"><strong>Goal:</strong> 80%+ of parents apply via mobile. AI conversation must work on small screens with voice input and intermittent connectivity.</div>
+        <div class="item-solution">Optimise chat bubbles and input for small screens. Camera integration for document upload. Push notifications for status updates. Voice input mode. Offline-capable save state. Real-time translation for 20+ languages.</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">AI Design System Patterns</div>
+          <div class="item-badges"><span class="badge badge-p2">P2</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div>
+        </div>
+        <div class="item-problem"><strong>Goal:</strong> Create reusable AI-specific DS components so every team building AI features uses consistent patterns.</div>
+        <div class="item-solution"><code>tw-chat-bubble</code> (inbound/outbound, read receipt), <code>tw-confidence-indicator</code> (high/mid/low), <code>tw-ai-thinking</code> (loading state for AI responses), <code>tw-escalation-card</code> (human handoff). Publish all to Lookbook with AI-specific usage guidelines.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY TABLE -->
+  <h2 style="font-size:16px;font-weight:700;margin-bottom:14px;margin-top:8px;">Roadmap Summary</h2>
+  <table class="summary-table">
     <thead>
       <tr>
-        <th>Phase</th>
-        <th>Timeline</th>
-        <th>Focus</th>
-        <th>Products</th>
-        <th>Items</th>
-        <th>Key output</th>
+        <th>Phase</th><th>When</th><th>Focus</th><th>Products</th><th>Items</th><th>Key output</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><strong>Phase 0</strong></td>
-        <td>Mar – Apr 2026</td>
+        <td>Mar–Apr</td>
         <td>DS Foundation</td>
-        <td><span class="pill pill-ds" style="font-size:11px;padding:2px 8px">Design System</span></td>
-        <td>8</td>
-        <td>Empty State · Date Picker · Filter Chips · Skeleton · Fix 4 broken previews · Bootstrap cleanup</td>
+        <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
+        <td>12</td>
+        <td>Fix broken previews · Bootstrap cleanup · Empty State · Date Picker · Filter Chips · Skeleton · Banner · Column density</td>
       </tr>
       <tr>
         <td><strong>Phase 1</strong></td>
-        <td>May 2026</td>
+        <td>May</td>
         <td>Quick Wins</td>
-        <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All products</span></td>
-        <td>10</td>
-        <td>Value prop · Trust layer · Nav · Colour tokens · Inter font · Mobile audit · QR fix · Banner</td>
+        <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
+        <td>12</td>
+        <td>Settings consistency · Permissions clarity · Import feedback · Filter chips in lists · Nav split · Colour tokens</td>
       </tr>
       <tr>
         <td><strong>Phase 2</strong></td>
-        <td>Jun – Jul 2026</td>
+        <td>Jun–Jul</td>
         <td>Core Components</td>
-        <td><span class="pill pill-ds" style="font-size:11px;padding:2px 8px">Design System</span></td>
+        <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
         <td>7</td>
-        <td>Detail Panel · Bulk Bar · KPI Card · Combobox · Calendar · Avatar Group · Split Button</td>
+        <td>Detail Panel · Bulk Bar · KPI Card · Combobox · Calendar View · Avatar Group · Split Button</td>
       </tr>
       <tr>
         <td><strong>Phase 3</strong></td>
-        <td>Aug – Oct 2026</td>
+        <td>Aug–Oct</td>
         <td>Product Revamp</td>
         <td>
           <span class="pill pill-admissions" style="font-size:11px;padding:2px 8px">Admissions+</span>
           <span class="pill pill-mat" style="font-size:11px;padding:2px 8px;margin-left:4px">MAT+</span>
           <span class="pill pill-one" style="font-size:11px;padding:2px 8px;margin-left:4px">ApplicaaOne</span>
         </td>
-        <td>12</td>
-        <td>App form steps · Status tracking · MAT KPI dashboard · Course discovery · School profiles</td>
+        <td>14</td>
+        <td>3 parallel lanes · App form steps · Parent status · MAT KPI dashboard · Course discovery · Trust layer</td>
       </tr>
       <tr>
         <td><strong>Phase 4</strong></td>
-        <td>Nov – Dec 2026</td>
+        <td>Nov</td>
         <td>Scale &amp; Polish</td>
-        <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All products</span></td>
-        <td>6</td>
-        <td>WCAG 2.1 AA audit · Mobile-first pass · Motion tokens · DS contribution guide · Dark mode prep</td>
+        <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
+        <td>5</td>
+        <td>WCAG 2.1 AA · Mobile-first pass · Motion tokens · DS governance · Dark mode prep</td>
       </tr>
-      <tr style="background:var(--navy-light)">
+      <tr>
+        <td><strong>Phase 5</strong></td>
+        <td>Dec+</td>
+        <td>AI-Native Evolution</td>
+        <td><span class="pill pill-all" style="font-size:11px;padding:2px 8px">All</span></td>
+        <td>4+</td>
+        <td>Conversational UX · Trust dashboard · Confidence indicators · Error recovery · Mobile AI · AI DS patterns</td>
+      </tr>
+      <tr style="background:var(--navy-light);">
         <td><strong>Total</strong></td>
-        <td>Mar – Dec 2026</td>
+        <td>Mar–Dec+</td>
         <td>—</td>
-        <td>3 products + DS</td>
-        <td><strong>43</strong></td>
-        <td>Full UI/UX revamp across Applicaa product suite</td>
+        <td>3 products</td>
+        <td><strong>50+</strong></td>
+        <td>Full UI/UX revamp + AI-native evolution across entire Applicaa product suite</td>
       </tr>
     </tbody>
   </table>
@@ -757,8 +873,7 @@
 </div>
 
 <div class="footer">
-  Applicaa UI/UX Revamp Roadmap 2026 · Prepared by Emma Nguyen · designsaplus.com · All timelines indicative
+  Applicaa UI/UX Revamp Roadmap 2026 · Prepared by Emma Nguyen · Updated March 2026 · All timelines indicative
 </div>
-
 </body>
 </html>
