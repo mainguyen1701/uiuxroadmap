@@ -436,9 +436,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
     <div class="tl-p">
       <div class="tl-n">Phase 4</div>
-      <div class="tl-date">By Jun 2026</div>
-      <div class="tl-focus">AI-Native</div>
-      <div class="tl-desc">Conversational AI admissions</div>
+      <div class="tl-date">Jun 2026 – mid-2027</div>
+      <div class="tl-focus">AI-Native UX</div>
+      <div class="tl-desc">3 stages: Copilot · Application Reviewer · Enrolment Engine</div>
     </div>
   </div>
 </div>
@@ -522,7 +522,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <!-- Phase 4 -->
   <div style="display:flex;align-items:center;gap:10px;margin:20px 0 10px;">
-    <span class="ph-pill ph-pill-4">● Phase 4 — AI-Native · by Jun 2026</span>
+    <span class="ph-pill ph-pill-4">● Phase 4 — AI-Native UX · Stage 1 from Jun 2026 · 3 stages</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
@@ -930,66 +930,163 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="phase-hdr ph4">
     <div class="ph-num">4</div>
     <div class="ph-info">
-      <div class="ph-date">By June 2026</div>
-      <h2>Phase 4 — AI-Native</h2>
-      <p>Redesign how parents, students, and school staff interact with Applicaa — moving from forms to guided AI conversations. The biggest long-term opportunity for the platform: from software that makes admissions digital, to a service that actively guides families through it.</p>
+      <div class="ph-date">By June 2026 — three staged UX design releases aligned to engineering delivery</div>
+      <h2>Phase 4 — AI-Native UX</h2>
+      <p>Engineering is building three AI capabilities in 2026. This phase is the UX design work that makes each one usable — the interfaces, patterns, and interaction models that allow school staff and families to work with AI confidently, override it when needed, and trust what it shows them. Design leads each stage before engineering ships.</p>
     </div>
   </div>
 
-  <div class="slabel">The conversation arc — how AI builds trust</div>
-  <div class="arc">
-    <div class="arc-step"><div class="arc-icon">👋</div><div class="arc-label">Introduction</div><div class="arc-quote">"I'm here to help with John's application"</div></div>
-    <div class="arc-step"><div class="arc-icon">🔍</div><div class="arc-label">Show capability</div><div class="arc-quote">"Try uploading his transcript — I'll read it instantly"</div></div>
-    <div class="arc-step"><div class="arc-icon">🤝</div><div class="arc-label">Work together</div><div class="arc-quote">"His grade meets the requirement because..."</div></div>
-    <div class="arc-step"><div class="arc-icon">✅</div><div class="arc-label">Build confidence</div><div class="arc-quote">"I've helped 500+ applications this year"</div></div>
-    <div class="arc-step"><div class="arc-icon">🏁</div><div class="arc-label">Hand off</div><div class="arc-quote">"Ready for Ms. Smith to review"</div></div>
-  </div>
-
-  <div class="slabel">Confidence indicators — designing for AI uncertainty</div>
-  <div class="ci-row">
-    <div class="ci ci-high"><div class="ci-dot"></div><strong>High confidence (90%+)</strong> — "I'm confident this is correct"</div>
-    <div class="ci ci-mid"><div class="ci-dot"></div><strong>Medium (60–89%)</strong> — "Let me double-check this with you"</div>
-    <div class="ci ci-low"><div class="ci-dot"></div><strong>Low (&lt;60%)</strong> — "I need your help here — can you clarify?"</div>
-  </div>
-
-  <div class="slabel">Escalation pathway — from AI to human, seamlessly</div>
-  <div class="escalation">
-    <div class="esc-step"><div class="esc-state">AI is unsure</div><div class="esc-action">"I'm not sure about this"</div></div>
-    <div class="esc-step"><div class="esc-state">Asks for help</div><div class="esc-action">"Can you rephrase that?"</div></div>
-    <div class="esc-step"><div class="esc-state">Hands off</div><div class="esc-action">"Let me get a person to help"</div></div>
-    <div class="esc-step"><div class="esc-state">Direct contact</div><div class="esc-action">"Please call the school on..."</div></div>
-  </div>
-
-  <div class="slabel">Phase 4 delivery projects</div>
-  <div class="grid2">
-    <div class="card">
-      <div class="card-icon">💬</div>
-      <div class="card-title">Conversational AI application flow</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">Replaces the application form with a guided AI conversation. One question at a time, automatic document reading, real-time requirements checking, voice input on mobile. Designed so families who are anxious about their child's future feel supported, not processed.</div>
-      <div class="divline"></div>
-      <div class="outcome">Target: 90% completion, under 15 minutes per application. Works by voice. Available in 20+ languages.</div>
-      <div class="impact-row"><span class="tag">↑ Application completion</span><span class="tag">↓ Support calls</span><span class="tag">↑ Parent satisfaction</span></div>
+  <div class="ux-thinking">
+    <div class="ux-thinking-hdr">🔍 UX thinking — how we approach Phase 4</div>
+    <div class="ux-cols">
+      <div class="ux-col">
+        <div class="ux-col-label">Research</div>
+        <div class="ux-col-body">Contextual research with families completing applications — where anxiety is highest, where trust breaks, where the process stalls. Staff interviews on AI comfort levels and override confidence. Benchmark review of AI-native products in adjacent sectors.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Design</div>
+        <div class="ux-col-body">Conversational flow design, trust arc, escalation paths, and confidence indicator patterns — all designed and prototype-tested before engineering builds. AI DS components documented in Lookbook before any product implements them.</div>
+      </div>
+      <div class="ux-col">
+        <div class="ux-col-label">Validation</div>
+        <div class="ux-col-body">Prototype testing with school staff and families at each stage. Success metrics: task completion rate, override confidence score, time to first AI action. Every AI pattern validated before it goes live.</div>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-icon">🏫</div>
-      <div class="card-title">Staff trust dashboard for AI recommendations</div>
-      <div class="card-products"><span class="pill pill-mat">MAT+</span> <span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">When AI recommends shortlisting or offer decisions, staff need to review and override with confidence. Without this, they'll blindly trust AI (governance risk) or ignore it entirely (wasted investment).</div>
-      <div class="divline"></div>
-      <div class="outcome">AI recommendations shown with confidence levels and reasoning. Override interface where every disagreement improves the AI. Full audit trail for compliance.</div>
-      <div class="impact-row"><span class="tag">Human oversight maintained</span><span class="tag">Audit-ready</span></div>
+  </div>
+
+  <div class="skill-prep">
+    <div class="skill-prep-hdr">🎯 Skill prep — what the team needs for Phase 4</div>
+    <div class="skill-prep-grid">
+      <div class="skill-tag">AI UX design — conversational flows, trust arcs, and confidence signalling</div>
+      <div class="skill-tag">Prompt and interaction design — shaping AI responses for different user types</div>
+      <div class="skill-tag">Ethical AI design — bias awareness, transparency, and human override patterns</div>
+      <div class="skill-tag">AI-augmented design practice — using AI to surface patterns in user research and decision logs</div>
+      <div class="skill-tag">Execution partnership — building alongside engineers, not ahead of them</div>
+      <div class="skill-tag">Decision accountability — owning the product call when AI generates options</div>
     </div>
+  </div>
+
+  <div class="slabel">Shared AI design foundations — built before any stage ships</div>
+  <div class="grid3" style="margin-bottom:28px;">
     <div class="card">
-      <div class="card-icon">🧩</div>
+      <div class="card-icon">🎨</div>
       <div class="card-title">AI DS component set</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">Without shared AI interface patterns, each team builds AI interactions differently. Inconsistent AI personalities and escalation paths undermine trust across the platform.</div>
+      <div class="card-products"><span class="pill pill-all">All products</span></div>
+      <div class="card-body">Before any AI feature ships, the shared interaction patterns are defined and documented in the DS Lookbook: AI assistant panel, confidence indicator (three levels), thinking state, human handoff card, and override interface. Every product team uses the same components.</div>
       <div class="divline"></div>
-      <div class="outcome">Chat bubbles, confidence indicators, AI thinking state, human handoff card — documented in DS Lookbook and used consistently across all products.</div>
-      <div class="impact-row"><span class="tag">Consistent AI experience</span><span class="tag">Trust at scale</span></div>
+      <div class="outcome">Consistent AI personality and trust signals across Admissions+, MAT+, and the wider family. No team builds AI UI from scratch.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔁</div>
+      <div class="card-title">Confidence + override pattern</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></div>
+      <div class="card-body">The single most important AI UX design decision: how does the system show confidence, and how does a human override it? Three confidence levels (high 90%+, medium 60–89%, low below 60%) with a consistent visual language and a one-action override that feeds back into the AI.</div>
+      <div class="divline"></div>
+      <div class="outcome">Staff trust AI recommendations because they can see why and disagree when they want to. Every override improves the model.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">↗️</div>
+      <div class="card-title">Escalation pathway</div>
+      <div class="card-products"><span class="pill pill-all">All products</span></div>
+      <div class="card-body">Every AI interaction has a designed escalation path: AI unsure — asks for clarification — hands to human — provides direct contact. The path from AI to person is never ambiguous. Designed before any AI feature ships.</div>
+      <div class="divline"></div>
+      <div class="outcome">No dead ends. Families and staff always know how to get a human. AI failure modes are designed, not discovered in production.</div>
     </div>
   </div>
+
+  <div class="slabel">Stage 1 — Admissions Copilot UX &nbsp;<span style="font-size:11px;font-weight:600;color:var(--g500);text-transform:none;letter-spacing:0;">Month 3–9 · aligned to engineering delivery</span></div>
+  <div style="background:var(--sky-light);border:1px solid #bae6fd;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:#075985;line-height:1.55;">
+    Engineering is building an AI assistant that helps admissions officers — auto-summarising applications, flagging anomalies, suggesting actions, and answering natural language queries on admissions data. <strong>Our job: design the interfaces that make those capabilities usable and trustworthy for school staff.</strong>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon">🪟</div>
+      <div class="card-title">AI assistant panel — in-product design</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Design how the AI Copilot sits within the existing Admissions+ UI — as a side panel or inline assistant, not a separate tool. Placement, trigger, dismiss, expand. Works alongside the staff workflow without replacing it.</div>
+      <div class="divline"></div>
+      <div class="outcome">Admissions officers access AI help without leaving the screen they are working on. No context switch.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚩</div>
+      <div class="card-title">Anomaly flag UI</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Design how anomalies are surfaced in the application list and record view — what a flag looks like, what information it shows, how staff dismiss or act on it. Must not create alert fatigue or be ignorable.</div>
+      <div class="divline"></div>
+      <div class="outcome">Staff spot unusual applications immediately. Flags are specific enough to act on without opening the full record.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔎</div>
+      <div class="card-title">Natural language query interface</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Design the UX for asking the system questions in plain English — "How many applications are waiting for references?" The input, the response format, the follow-up, and the fallback when the query is unclear.</div>
+      <div class="divline"></div>
+      <div class="outcome">Admissions data is queryable by any staff member without needing to know which report to run. Reduces dependency on support and reporting tools.</div>
+    </div>
+  </div>
+
+  <div class="slabel">Stage 2 — Application Reviewer UX &nbsp;<span style="font-size:11px;font-weight:600;color:var(--g500);text-transform:none;letter-spacing:0;">Month 6–15 · aligned to engineering delivery</span></div>
+  <div style="background:var(--sky-light);border:1px solid #bae6fd;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:#075985;line-height:1.55;">
+    Engineering is building an AI that reviews applications against school criteria, highlights missing information, and recommends decisions with confidence scores. Human approves or overrides. <strong>Our job: design the review interface so staff can approve, override, and audit AI decisions with confidence.</strong>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <div class="card-title">AI review summary panel</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Design how the AI's assessment of an application is presented to staff — what it checked, what it found, what it is recommending, and how confident it is. Must be scannable in under 30 seconds.</div>
+      <div class="divline"></div>
+      <div class="outcome">Staff understand the AI's reasoning at a glance. Review time per application reduced. No black-box decisions.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚠️</div>
+      <div class="card-title">Missing information highlights</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Design how gaps in an application are surfaced — inline within the record, in a summary list, with severity indicated. Must distinguish between "missing but optional" and "missing and blocking." Staff can request the missing item in one action.</div>
+      <div class="divline"></div>
+      <div class="outcome">Incomplete applications are resolved faster. Schools chase fewer applicants for information they actually already have.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">✅</div>
+      <div class="card-title">Human approval and override interface</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Design the approve/override flow — how staff confirm an AI recommendation or disagree with it, what reason they give, how that feeds back. Full audit trail visible from the application record. Governance-ready by design.</div>
+      <div class="divline"></div>
+      <div class="outcome">Every AI decision has a human sign-off. Overrides are recorded and improve the model. Audit trail satisfies compliance requirements.</div>
+    </div>
+  </div>
+
+  <div class="slabel">Stage 3 — Predictive Enrolment Engine UX &nbsp;<span style="font-size:11px;font-weight:600;color:var(--g500);text-transform:none;letter-spacing:0;">Month 12–18 · aligned to engineering delivery</span></div>
+  <div style="background:var(--sky-light);border:1px solid #bae6fd;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:#075985;line-height:1.55;">
+    Engineering is building a system to forecast enrolment from pipeline data, identify at-risk applicants likely to withdraw, and optimise communication timing. <strong>Our job: design the dashboards, risk signals, and communication interfaces that turn predictions into action.</strong>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Enrolment forecast dashboard</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></div>
+      <div class="card-body">Design the data visualisation surface for predicted enrolment numbers — by subject, year group, and intake cohort. Confidence ranges shown alongside predictions. Drill-down from trust-wide (MAT+) to individual school.</div>
+      <div class="divline"></div>
+      <div class="outcome">Curriculum and staffing decisions are made with data, not gut feel. Trust-wide view available to MAT coordinators without manual collation.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔴</div>
+      <div class="card-title">At-risk applicant signals</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Design how the system surfaces applicants who are predicted to withdraw — what signals are shown, how urgency is indicated, and what action staff can take directly from the alert. Design must prevent both over-intervention and under-intervention.</div>
+      <div class="divline"></div>
+      <div class="outcome">Schools intervene earlier with at-risk applicants. Withdrawal rate reduced. Intake targets met with fewer last-minute offers.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📨</div>
+      <div class="card-title">AI-timed communication interface</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Design how staff review and approve AI-recommended communication timing — "Send a reminder to these 12 applicants on Tuesday at 10am." Must show the reasoning, allow edits, and confirm before sending. Human approves every batch.</div>
+      <div class="divline"></div>
+      <div class="outcome">Communication reaches applicants at the right moment without manual scheduling. Staff remain in control of every send.</div>
+    </div>
+  </div>
+
 </div>
 
 <hr class="divider">
