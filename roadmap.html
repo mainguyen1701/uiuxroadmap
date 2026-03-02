@@ -272,8 +272,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="tl-p">
       <div class="tl-n">Phase 1</div>
       <div class="tl-date">May – Jun</div>
-      <div class="tl-focus">Building Blocks + Quick Wins</div>
-      <div class="tl-desc">High-impact daily improvements, new reusable components</div>
+      <div class="tl-focus">Quick Wins</div>
+      <div class="tl-desc">High-impact daily improvements using Phase 0 components</div>
     </div>
     <div class="tl-p">
       <div class="tl-n">Phase 2</div>
@@ -310,17 +310,21 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
     <tbody>
-      <tr><td class="cl-num">0.1</td><td class="cl-what">Publish 4 undocumented components to DS</td><td class="cl-why">Data table, tag input, info grid, and person card are used everywhere but have no DS reference. Each developer rebuilds them slightly differently.</td><td class="cl-out">Components documented with examples and variants. Teams build from the reference — no more ad-hoc rebuilds.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">0.2</td><td class="cl-what">Publish 3 blank enquiry screen patterns</td><td class="cl-why">All Enquiries, Enquiry Forms, and New Enquiry Form have empty DS entries. No reference exists for how these screens should look or behave.</td><td class="cl-out">All three screens documented in DS. Future changes start from a consistent baseline.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">0.3</td><td class="cl-what">Define and enforce status colour map</td><td class="cl-why">"Upcoming" shows green (same as Completed). No status-to-colour map exists in DS. Developers choose colours independently on each screen.</td><td class="cl-out">Published colour map in DS: Upcoming = blue, Completed = green, Cancelled = red, Full = amber, Draft = grey. Enforced across Admissions+.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">0.4</td><td class="cl-what">Remove 20+ legacy styling instances</td><td class="cl-why">Older library classes still active in the enquiry record, SMS popup, and form screens. Look visually inconsistent and could break silently on future updates.</td><td class="cl-out">All replaced with current DS standards. No hidden breakage risk.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td class="cl-num">0.5</td><td class="cl-what">Document person card footer slot</td><td class="cl-why">The footer slot (View, Call, Email actions) exists in code but is never shown in DS. Action buttons appear in different positions with different styles across screens.</td><td class="cl-out">Footer slot documented with a clear pattern. Consistent action placement on all person cards.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.1</td><td class="cl-what">Filter chips</td><td class="cl-why">Six screens implement filtering differently. Staff relearn the pattern on every screen. No consistent result count or clear-all behaviour.</td><td class="cl-out">One filter chip in DS Lookbook. Applied to enquiry, event, application, and RSVP list screens.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.2</td><td class="cl-what">Date and time picker</td><td class="cl-why">Six enquiry screens use plain text boxes for dates. No format enforcement, no validation before save. Errors surface only after submission.</td><td class="cl-out">One picker in DS. DD/MM/YYYY, validates on entry. Applied to all 6 enquiry record date fields, event creation, and interview scheduling.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.3</td><td class="cl-what">Empty state</td><td class="cl-why">Empty lists show blank space, raw error text, or nothing. No consistent guidance for what to do next — staff assume something is broken.</td><td class="cl-out">Three variants in DS: first-use prompt, no-results (with clear filter option), load-error (with next step). Applied to all list and detail screens.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.4</td><td class="cl-what">Loading state</td><td class="cl-why">Pages jump when data loads. On slow school networks, blank or partially loaded screens look like errors — not loading.</td><td class="cl-out">Skeleton placeholder in DS matching the shape of incoming content. No layout shift. Applied to all list views, panels, and dashboard cards.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.5</td><td class="cl-what">Record detail panel</td><td class="cl-why">RSVP, student, and school detail panels are each custom-built. Inconsistent behaviour: different positions, different close patterns, different action placement.</td><td class="cl-out">One slide-in panel in DS: sm/md/lg sizes, sticky header, scrollable body, sticky action footer. Applied to RSVP detail, student preview, school detail, enquiry quick-view.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.6</td><td class="cl-what">Bulk action bar</td><td class="cl-why">Every list with multi-row selection re-implements the action bar differently. Position, wording, and layout all vary — staff can't predict where actions will appear.</td><td class="cl-out">One bulk action bar in DS. Fixed to bottom of viewport. Applied to application, offer, RSVP, and enquiry lists.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.7</td><td class="cl-what">KPI / metric card</td><td class="cl-why">Dashboard summary cards are built differently on every screen. No shared layout for metric value, label, trend, or comparison — all diverge independently.</td><td class="cl-out">One metric card in DS: value, label, trend indicator, comparison text. Standard and compact sizes. Applied to admissions dashboard, event dashboard, offer pipeline.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.8</td><td class="cl-what">Searchable multi-select</td><td class="cl-why">Selecting schools, subjects, or staff requires scrolling a flat list with no search. For trusts with 20+ schools or 60+ subjects, this is unusable.</td><td class="cl-out">One searchable multi-select in DS: type to filter, tag display, select all. Applied to school selector, subject selector, staff assignment, year group filter.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
+      <tr><td class="cl-num">0.9</td><td class="cl-what">Shared calendar</td><td class="cl-why">MAT+ and Admissions+ each need a calendar view. Building separately creates two diverging codebases — double the maintenance, inconsistent behaviour.</td><td class="cl-out">One calendar in DS: month and week views, colour-coded events, click to open record panel. Shared by Admissions+ and MAT+ from the start.</td><td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td></tr>
     </tbody>
   </table></div>
 
   <!-- Phase 1 -->
   <div style="display:flex;align-items:center;gap:10px;margin:20px 0 10px;">
-    <span class="ph-pill ph-pill-1">● Phase 1 — Building Blocks + Quick Wins · May–Jun</span>
+    <span class="ph-pill ph-pill-1">● Phase 1 — Quick Wins · May–Jun</span>
   </div>
   <div class="cl-wrap"><table class="cl-table">
     <thead><tr><th>#</th><th style="width:210px">What</th><th>Why it matters</th><th>Outcome</th><th>Products</th></tr></thead>
@@ -334,16 +338,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <tr><td class="cl-num">1.5</td><td class="cl-what">Enrolment checklist and progress tracking</td><td class="cl-why">After a student accepts, the system has no way to track enrolment progress. No checklist, no visibility, no automated follow-up.</td><td class="cl-out">Per-student enrolment checklist. Completion percentage on list view. Automated reminders for outstanding steps.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
       <tr><td class="cl-num">1.6</td><td class="cl-what">Event management — full lifecycle improvements</td><td class="cl-why">Push to schools is slow (no phase filter), RSVP list has 15 columns (unusable on iPad), no visual status distinction, nothing happens after an event ends.</td><td class="cl-out">Phase filter on push modal. 7 default RSVP columns. Colour-coded event status. Post-event attendance confirmation and follow-up emails.</td><td><span class="pill pill-mat">MAT+</span> <span class="pill pill-admissions">Admissions+</span></td></tr>
       <tr><td class="cl-num">1.7</td><td class="cl-what">Enquiry record — date fields, timeline, SMS</td><td class="cl-why">Date fields use plain text boxes with no validation. Timeline filters are bespoke. SMS popup has three different visual styles in one screen.</td><td class="cl-out">Consistent date/time picker across all 6 enquiry screens. Standardised filter chips on timeline. Unified SMS panel with real-time character counter.</td><td><span class="pill pill-admissions">Admissions+</span></td></tr>
-      <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Reusable components</td></tr>
-      <tr><td class="cl-num">1.8</td><td class="cl-what">Filter chips — consistent list filtering</td><td class="cl-why">Each screen implements filtering differently. Staff relearn it on every screen.</td><td class="cl-out">One filter chip pattern used everywhere. Staff learn it once. Chips show result counts.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">1.9</td><td class="cl-what">Date and time picker</td><td class="cl-why">Six screens use different date/time entry methods. No format validation before save.</td><td class="cl-out">One picker across all six screens. DD/MM/YYYY, validated on every device.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">1.10</td><td class="cl-what">Empty state pattern</td><td class="cl-why">Empty lists show blank space, error messages, or nothing — no consistent handling.</td><td class="cl-out">Three states: no data yet, no results from filter, loading error. Each guides the user to a next step.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">1.11</td><td class="cl-what">Loading state pattern</td><td class="cl-why">Pages show nothing while loading, then jump when data arrives. Feels broken on slow school networks.</td><td class="cl-out">Pulsing placeholder matches the shape of incoming content. No layout shift.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">1.12</td><td class="cl-what">Record detail panel</td><td class="cl-why">RSVP, school, and student detail panels are each custom-built. Inconsistent behaviour and appearance.</td><td class="cl-out">One standard panel (right-side slide-in) used everywhere. Three sizes. Works across all products.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">1.13</td><td class="cl-what">Bulk action bar</td><td class="cl-why">Every list with multi-row selection re-implements the action bar differently — position, wording, layout all vary.</td><td class="cl-out">One consistent bulk action bar on every list across all products.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">1.14</td><td class="cl-what">KPI / metric cards</td><td class="cl-why">Dashboard summary cards are built differently on every screen. No shared visual language for metrics.</td><td class="cl-out">One metric card: number, label, trend indicator, comparison text. Consistent across all dashboards.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">1.15</td><td class="cl-what">Searchable multi-select</td><td class="cl-why">School, subject, and staff selection requires scrolling long lists. No search, no multi-select.</td><td class="cl-out">Type to filter, multi-select with removable tags, "select all". Used across all products.</td><td><span class="pill pill-all">All</span></td></tr>
-      <tr><td class="cl-num">1.16</td><td class="cl-what">Shared calendar</td><td class="cl-why">MAT+ and Admissions+ each need a calendar — building them separately creates two codebases that will diverge.</td><td class="cl-out">One shared calendar (month + week), colour-coded events, detail on click. Used in both products.</td><td><span class="pill pill-mat">MAT+</span> <span class="pill pill-admissions">Admissions+</span></td></tr>
       <tr><td colspan="5" style="background:var(--g50);font-weight:700;font-size:11px;color:var(--g500);padding:8px 13px;">Navigation &amp; consistency</td></tr>
       <tr><td class="cl-num">1.17</td><td class="cl-what">Split student and school navigation — ApplicaaOne</td><td class="cl-why">A Year 10 student and an admissions manager share the same nav. Neither audience can find what they need.</td><td class="cl-out">Two clear navigation paths — students and schools. Each sees only what's relevant.</td><td><span class="pill pill-one">ApplicaaOne</span></td></tr>
       <tr><td class="cl-num">1.18</td><td class="cl-what">Consolidate brand colours — ApplicaaOne</td><td class="cl-why">Seven different shades of blue used across the site. Any colour update requires changing hundreds of values.</td><td class="cl-out">Three semantic tokens replace all seven variants. Future updates take hours, not weeks.</td><td><span class="pill pill-one">ApplicaaOne</span></td></tr>
@@ -416,64 +410,83 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ph-info">
       <div class="ph-date">March – April 2026 · 4 weeks</div>
       <h2>Phase 0 — Shared Foundation</h2>
-      <p>Convert production code to the DS Lookbook language and fix the inconsistencies that exist in Admissions+ today. Everything in Phases 1–4 is built on top of this. Without a consistent shared language, every new screen inherits the same problems.</p>
+      <p>Establish the core reusable component set for Admissions+ — documented and published in the DS Lookbook. These components are the building blocks for every screen improvement in Phases 1–4. Each one replaces a pattern that currently exists in at least three different forms across the product.</p>
     </div>
   </div>
 
-  <div class="slabel">Design System — establish the language</div>
-  <div class="grid2">
+  <div class="slabel">Reusable components — Admissions+ DS Lookbook</div>
+  <div class="grid3">
     <div class="card">
-      <div class="card-icon">📖</div>
-      <div class="card-title">Publish 4 undocumented components</div>
+      <div class="card-icon">🔍</div>
+      <div class="card-title">Filter chips</div>
       <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">Data table, tag input, info grid, and person card are live in production but have no DS reference page. Every developer who needs one searches for an example, copies it imprecisely, and drifts slightly from the last version.</div>
+      <div class="card-body">Used to filter list views. Renders as a horizontal row of toggleable chips. Each chip displays the filter label and an optional result count badge. Supports single and multi-select modes. "Clear all" always available when any filter is active.</div>
       <div class="divline"></div>
-      <div class="outcome">All four published in DS Lookbook with real examples, props, variants, and usage guidelines. No more ad-hoc rebuilds.</div>
+      <div class="outcome">Applied to: enquiry timeline, event list, application list, RSVP table.</div>
     </div>
     <div class="card">
-      <div class="card-icon">🗂️</div>
-      <div class="card-title">Publish 3 blank enquiry screen patterns</div>
+      <div class="card-icon">📅</div>
+      <div class="card-title">Date and time picker</div>
       <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">All Enquiries, Enquiry Forms, and New Enquiry Form exist in production with no DS entries. No reference for how filtering, empty states, or layouts should behave on these screens.</div>
+      <div class="card-body">Standard input for date and time fields. Outputs DD/MM/YYYY. Validates format and range before submit. Calendar overlay with keyboard navigation. Time selector in 15-minute increments. Works consistently on iPad, Android, and desktop.</div>
       <div class="divline"></div>
-      <div class="outcome">All three screens documented in DS. Future changes start from a consistent, shared baseline.</div>
+      <div class="outcome">Applied to: all 6 enquiry record date fields, event creation, interview scheduling.</div>
     </div>
     <div class="card">
-      <div class="card-icon">🏷️</div>
-      <div class="card-title">Define and enforce status colour map</div>
+      <div class="card-icon">📭</div>
+      <div class="card-title">Empty state</div>
       <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">"Upcoming" shows green — the same as Completed. No status colour map exists in DS. Each developer picks colours independently, creating a product where staff read text instead of scanning colour.</div>
+      <div class="card-body">Displayed when a list or page has no content. Three variants: first-use (prompt to add first item), no-results (explain active filters, offer "clear all"), load-error (describe what failed and what to try next).</div>
       <div class="divline"></div>
-      <div class="outcome">Upcoming = blue, Completed = green, Cancelled = red, Full = amber, Draft = grey. Published in DS and enforced.</div>
-      <div class="impact-row"><span class="tag">Faster list scanning</span><span class="tag">Fewer misread statuses</span></div>
+      <div class="outcome">Applied to: all enquiry, event, application, and offer list screens.</div>
     </div>
     <div class="card">
-      <div class="card-icon">📇</div>
-      <div class="card-title">Document person card footer slot</div>
+      <div class="card-icon">⏳</div>
+      <div class="card-title">Loading state</div>
       <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">The footer slot (View record, Call, Email) exists in code but is never shown in DS. Action buttons appear in different positions with different styles across screens.</div>
+      <div class="card-body">Skeleton placeholder shown while data is fetching. Placeholder shape matches the incoming content (rows, cards, panels) to prevent layout shift. Animated pulse. Dismissed automatically when data arrives.</div>
       <div class="divline"></div>
-      <div class="outcome">Footer documented with a clear pattern. Consistent action placement on every person card in the product.</div>
-    </div>
-  </div>
-
-  <div class="slabel">Admissions+ — fix existing inconsistencies</div>
-  <div class="grid2">
-    <div class="card">
-      <div class="card-icon">⚠️</div>
-      <div class="card-title">Remove 20+ legacy styling instances</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">Older library classes still active in the enquiry record, SMS popup, and form screens. Look visually inconsistent and could break silently on the next codebase update.</div>
-      <div class="divline"></div>
-      <div class="outcome">All 20+ replaced with current DS standards. No hidden breakage risk. SMS popup, enquiry record stats, and form screens visually match the rest of the product.</div>
+      <div class="outcome">Applied to: all list views, record panels, dashboard metric cards.</div>
     </div>
     <div class="card">
-      <div class="card-icon">📢</div>
-      <div class="card-title">Platform notification banner</div>
+      <div class="card-icon">📋</div>
+      <div class="card-title">Record detail panel</div>
       <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">No mechanism to communicate time-sensitive messages — MIS sync running, subscription renewal, maintenance window. These messages either go unannounced or are missed in email.</div>
+      <div class="card-body">Slide-in panel for displaying record detail without navigating away from the current list. Three sizes: sm (360px), md (480px), lg (640px). Sticky header with title and close. Scrollable body. Sticky footer for primary and secondary actions.</div>
       <div class="divline"></div>
-      <div class="outcome">Dismissable banner above every screen. Three levels: info, important, critical. Stacks if multiple active.</div>
+      <div class="outcome">Applied to: RSVP detail, student record preview, school detail, enquiry quick-view.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">☑️</div>
+      <div class="card-title">Bulk action bar</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Fixed bar shown when one or more list rows are selected. Displays selection count, primary action button, and overflow menu for secondary actions. Dismisses on deselect-all or action completion. Consistent position (bottom of viewport) on every list.</div>
+      <div class="divline"></div>
+      <div class="outcome">Applied to: application list, offer list, RSVP list, enquiry list.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <div class="card-title">KPI / metric card</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Summary card for a single metric. Displays: large numeric value, descriptive label, trend indicator (▲▼ with percentage), and comparison context (e.g. "vs last year"). Supports click-to-drill-down. Available in standard and compact sizes.</div>
+      <div class="divline"></div>
+      <div class="outcome">Applied to: admissions overview dashboard, event dashboard, offer pipeline summary.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔎</div>
+      <div class="card-title">Searchable multi-select</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
+      <div class="card-body">Input component for selecting multiple items from a large dataset. Type to filter the list in real time. Selected items render as removable tags above the input. "Select all visible" available. Keyboard-navigable. Used wherever a dropdown is too limited.</div>
+      <div class="divline"></div>
+      <div class="outcome">Applied to: school selector, subject selector, staff assignment, year group filter.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗓️</div>
+      <div class="card-title">Shared calendar</div>
+      <div class="card-products"><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></div>
+      <div class="card-body">Calendar view for scheduling and browsing events. Month and week views. Events colour-coded by type (open day, interview, enrolment). Click an event to open record detail panel. One shared component — built once, used by both Admissions+ and MAT+ without diverging codebases.</div>
+      <div class="divline"></div>
+      <div class="outcome">Applied to: Admissions+ event calendar, MAT+ trust-wide event planning.</div>
     </div>
   </div>
 </div>
@@ -486,8 +499,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ph-num">1</div>
     <div class="ph-info">
       <div class="ph-date">May – June 2026 · 8 weeks</div>
-      <h2>Phase 1 — Building Blocks + Quick Wins</h2>
-      <p>Define and deliver high-impact improvements to the daily workflows school staff rely on most — settings, processes, and filters. Alongside each improvement, build the reusable DS components needed to deliver it consistently. Every item in this phase ships independently.</p>
+      <h2>Phase 1 — Quick Wins</h2>
+      <p>Apply the DS components from Phase 0 to deliver high-impact improvements across the daily workflows school staff rely on most — settings, processes, and enquiry management. Every item ships independently using the shared component foundation.</p>
     </div>
   </div>
 
@@ -546,63 +559,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
-  <div class="slabel">Reusable components built alongside quick wins</div>
-  <div class="grid3">
-    <div class="card">
-      <div class="card-icon">🔍</div>
-      <div class="card-title">Filter chips</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">One filter chip pattern for every list screen. Staff learn it once — works everywhere. Chips show result counts. "Clear all" always available.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">📅</div>
-      <div class="card-title">Date and time picker</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">One picker across all date/time fields. DD/MM/YYYY, validated before save, works identically on iPad, Android, and desktop.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">📭</div>
-      <div class="card-title">Empty state</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">Three states: no data yet (first-use prompt), no filter results (explain why, offer clear filter), loading error (what happened and what to try).</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">⏳</div>
-      <div class="card-title">Loading state</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">Pulsing placeholder matching the shape of incoming content. No layout jump. Product feels responsive even on slow school networks.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">📋</div>
-      <div class="card-title">Record detail panel</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">Right-side slide-in panel. Sticky header, scrollable body, sticky action footer. Three sizes. Replaces all custom-built slide-ins.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">☑️</div>
-      <div class="card-title">Bulk action bar</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">One consistent bar whenever rows are selected across any list in any product. Same position, same layout, every time.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">📈</div>
-      <div class="card-title">KPI / metric card</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">Number, label, trend indicator (▲▼), comparison text. One card used on every dashboard across all products.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🔎</div>
-      <div class="card-title">Searchable multi-select</div>
-      <div class="card-products"><span class="pill pill-all">All</span></div>
-      <div class="card-body">Type to filter, multi-select with removable tags, "select all" available. Used for schools, subjects, staff, year groups across all products.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🗓️</div>
-      <div class="card-title">Shared calendar</div>
-      <div class="card-products"><span class="pill pill-mat">MAT+</span> <span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">Month and week views, colour-coded events, detail on click. One calendar shared between MAT+ and Admissions+ — not maintained separately.</div>
-    </div>
-  </div>
 </div>
 
 <hr class="divider">
@@ -941,16 +897,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <tr>
       <td><strong>Phase 0</strong><br><span style="font-size:10px;color:var(--g400)">Shared Foundation</span></td>
       <td>Mar–Apr</td>
-      <td>Convert production to DS language. Publish 4 missing components, 3 blank screens, status colour map. Remove legacy styling. Document person card footer.</td>
+      <td>Build and publish 9 core DS Lookbook components for Admissions+: filter chips, date/time picker, empty state, loading state, record detail panel, bulk action bar, KPI card, searchable multi-select, shared calendar.</td>
       <td><span class="pill pill-admissions">Admissions+</span></td>
-      <td>Consistent shared language. Every Phase 1–4 improvement builds on this.</td>
+      <td>9 reusable components in DS Lookbook. The building blocks every Phase 1–4 improvement depends on.</td>
     </tr>
     <tr>
-      <td><strong>Phase 1</strong><br><span style="font-size:10px;color:var(--g400)">Building Blocks + Quick Wins</span></td>
+      <td><strong>Phase 1</strong><br><span style="font-size:10px;color:var(--g400)">Quick Wins</span></td>
       <td>May–Jun</td>
-      <td>Fix settings navigation, 4 core daily processes (import, offers, events, enquiry record), ApplicaaOne nav and colour. Build 9 reusable components alongside each fix.</td>
+      <td>Apply Phase 0 components to fix settings navigation, 4 core daily processes (import, offers, events, enquiry record), and ApplicaaOne navigation and colour consistency.</td>
       <td><span class="pill pill-all">All</span></td>
-      <td>Daily workflows faster and less error-prone. 9 reusable components in DS.</td>
+      <td>Daily workflows faster and less error-prone. Staff experience visibly improved using Phase 0 components.</td>
     </tr>
     <tr>
       <td><strong>Phase 2</strong><br><span style="font-size:10px;color:var(--g400)">Product Redesigns</span></td>
