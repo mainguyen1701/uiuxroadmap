@@ -511,10 +511,17 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <div class="slabel">Settings pages — the most-neglected daily surface</div>
   <div class="items-grid">
-    <div class="item">
-      <div class="item-header"><div class="item-title">Settings page consistency audit</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-all" style="font-size:10px;padding:2px 7px">All</span></div></div>
-      <div class="item-problem"><strong>Problem:</strong> Settings pages across all 3 products use different layouts, form patterns, and save behaviour. Staff using multiple products hit a different experience for the same task.</div>
-      <div class="item-solution">Standardise: left nav, <code>tw-form-section</code> layout, sticky footer with Save/Cancel, inline success toast. Document as "Settings Page" pattern in DS.</div>
+    <div class="item" style="grid-column:1/-1;">
+      <div class="item-header"><div class="item-title">Settings navigation audit — Admissions+</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-admissions" style="font-size:10px;padding:2px 7px">Admissions+</span></div></div>
+      <div class="item-problem"><strong>Current structure (from audit):</strong> 8 top-level sections, 20+ sub-pages across: Application Form · Subject Options (Subjects, Specific Requirements, Pathways) · Form Settings (Dashboard Settings, Student Homepage, Parent Homepage, Landing Page, Application Groups, Form Groups, Student Profile, Feeder Schools) · School Settings (General Settings, Users, Permissions, Integration, Payment &amp; Fees, Unsubscriptions, FAQs, Address Mapping) · Enrolment Settings · Enrolment Navigator · Properties (Properties, Calculated Properties, Property Groups, Field Format Configuration) · Security (Login Settings, Failed Login Attempts).
+        <br><br><strong>Issues identified:</strong>
+        <br>1. <strong>Ungrouped orphans</strong> — "Enrolment Settings" and "Enrolment Navigator" sit as lone items between grouped sections. They belong together under an "Enrolment" group.
+        <br>2. <strong>School Settings overloaded</strong> — 8 sub-items of very different types (admin Users, config Integration, financial Payment &amp; Fees, content FAQs). Too broad a group — staff can't predict where to find things.
+        <br>3. <strong>Active state too subtle</strong> — Active section uses coral text only, no background highlight. Hard to track location in a 20+ item nav.
+        <br>4. <strong>No section descriptions</strong> — Clicking a top-level section shows no summary of what it controls. Staff must explore to learn.
+        <br>5. <strong>Mixed audiences</strong> — IT admin items (Security, Integration, Address Mapping) sit alongside daily-use items (Student Homepage, FAQs). No separation by role.
+      </div>
+      <div class="item-solution">Restructure into 4 audience-grouped categories: <strong>Form &amp; Application</strong> (Application Form, Subject Options, Form Settings), <strong>School Admin</strong> (General Settings, Users, Permissions, Security, Integration), <strong>Enrolment</strong> (Enrolment Settings, Enrolment Navigator, Payment &amp; Fees), <strong>Advanced</strong> (Properties, Address Mapping, Field Format). Add active state background highlight. Add section description line under each group header. Standardise all sub-pages: <code>tw-form-section</code> layout, sticky Save/Cancel footer, inline success toast on save. Document as the "Settings Page" pattern in DS — applicable across all 3 products.</div>
     </div>
     <div class="item">
       <div class="item-header"><div class="item-title">Permissions &amp; access — clarity</div><div class="item-badges"><span class="badge badge-p1">P1</span><span class="badge badge-m">M</span><span class="pill pill-mat" style="font-size:10px;padding:2px 7px">MAT+</span></div></div>
