@@ -236,7 +236,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <span>Applicaa</span>
     </div>
     <h1>UI/UX Revamp Roadmap — 2026</h1>
-    <p>Five phases covering the full Applicaa product family — from fixing today's inconsistencies and building a shared design language, through product redesigns, ecosystem-wide polish, and AI-native admissions. Phases 0–2 focus on Post-16: Admissions+, MAT+, and ApplicaaOne. Phase 3 scales the foundation to all 13 products across 6 school types.</p>
+    <p>Five phases covering the full Applicaa product family. Admissions+ and MAT+ share the DS Lookbook design system. ApplicaaOne runs on a separate design system and is redesigned in its own track in Phase 2. Phase 3 scales shared standards across all 13 products in the ecosystem.</p>
     <div class="header-meta">
       <div class="hm"><span class="lbl">Products</span><span class="val">13 products · 6 school types</span></div>
       <div class="hm"><span class="lbl">Horizon</span><span class="val">March – December 2026+</span></div>
@@ -245,7 +245,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="hm"><span class="lbl">Updated</span><span class="val">March 2026</span></div>
     </div>
     <div class="header-callout">
-      <strong>The approach:</strong> Phase 0 converts production code to a shared design language and clears today's inconsistencies. Phase 1 combines quick wins with the components needed to deliver them. Phases 2–4 rebuild each product, then scale and AI-enable the platform.
+      <strong>Two design systems:</strong> Admissions+ and MAT+ use the <strong>DS Lookbook</strong> (designsaplus.com/lookbook). ApplicaaOne uses its own separate design system. Phase 0 establishes the DS Lookbook foundation. Phase 2 redesigns all three products on their respective systems. Phase 3 aligns shared standards across all 13 products in the ecosystem.
     </div>
   </div>
 </div>
@@ -353,7 +353,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <tr><td class="cl-num">2.5</td><td class="cl-what">MAT dashboard — trust-wide overview</td><td class="cl-why">No executive view of admissions performance across the trust. Data requires manual spreadsheet collation.</td><td class="cl-out">Key metrics across the whole trust with drill-down to any school. Replaces spreadsheet reporting.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
       <tr><td class="cl-num">2.6</td><td class="cl-what">School customisation comparison view</td><td class="cl-why">MAT coordinators can't easily see what a school changed in a template without opening records side-by-side manually.</td><td class="cl-out">Changed sections highlighted, unchanged dimmed. Reusable for forms, policies, and offers.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
       <tr><td class="cl-num">2.7</td><td class="cl-what">Subject-level dashboard</td><td class="cl-why">No visibility of application demand by subject across the trust. Timetabling decisions made without data.</td><td class="cl-out">Application pipeline by subject (A-level, BTEC, T-Level) across all schools. Filter and compare vs trust average.</td><td><span class="pill pill-mat">MAT+</span></td></tr>
-      <tr><td colspan="5" class="cl-phase">🔵 ApplicaaOne</td></tr>
+      <tr><td colspan="5" class="cl-phase">🔵 ApplicaaOne &nbsp;<span style="font-size:10px;font-weight:400;color:var(--g500);">Own design system — redesigned independently of DS Lookbook</span></td></tr>
       <tr><td class="cl-num">2.8</td><td class="cl-what">Course discovery redesign</td><td class="cl-why">45,000+ courses in a list with poor filtering. Students can't find what they need. High abandonment before any course interaction.</td><td class="cl-out">Filter by subject type, location radius, qualification level. Compare up to three schools. Save to shortlist.</td><td><span class="pill pill-one">ApplicaaOne</span></td></tr>
       <tr><td class="cl-num">2.9</td><td class="cl-what">School profile pages</td><td class="cl-why">All school profiles look identical. Nothing helps parents understand what makes a school distinctive.</td><td class="cl-out">Photo hero, key stats, filterable course list, open events, verified reviews, persistent Apply/Book Visit CTA.</td><td><span class="pill pill-one">ApplicaaOne</span></td></tr>
       <tr><td class="cl-num">2.10</td><td class="cl-what">Verified review system</td><td class="cl-why">105 reviews for 45,000+ courses. Reviews are unverified and often very short — unconvincing for parents making decisions for their child.</td><td class="cl-out">Reviews gated by confirmed event attendance. Minimum length enforced. Trust signal surfaced prominently.</td><td><span class="pill pill-one">ApplicaaOne</span></td></tr>
@@ -403,15 +403,15 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ph-info">
       <div class="ph-date">March – April 2026 · 4 weeks</div>
       <h2>Phase 0 — Shared Foundation</h2>
-      <p>Establish the Admissions+ design system using the DS Lookbook — the single shared reference for how every component, pattern, colour, and interaction should look and behave. Every improvement in Phases 1–4 is built using this language. Without it, each screen is built from scratch and drifts from everything else.</p>
+      <p>Establish the Admissions+ and MAT+ design foundation using the DS Lookbook. ApplicaaOne uses a separate design system and is out of scope for this phase. Every improvement in Phase 1 and the Admissions+/MAT+ tracks of Phase 2 is built using this shared language. Without it, each screen is built from scratch and drifts from everything else.</p>
     </div>
   </div>
 
   <div class="slabel">What is the DS Lookbook?</div>
   <div class="card" style="margin-bottom:14px;">
     <div class="card-body" style="font-size:13px;line-height:1.7;">
-      The DS Lookbook at <a href="https://designsaplus.com/lookbook/" target="_blank" style="color:var(--navy);font-weight:600;">designsaplus.com/lookbook</a> is the Admissions+ design system — a living reference that documents every reusable component, shared pattern, and design token used across the product. It is the source of truth for how things look and behave.<br><br>
-      When a developer needs to build a new screen, they start here. When a designer proposes a change, they document it here first. When two screens look different, the Lookbook is the arbiter of which is correct.
+      The DS Lookbook at <a href="https://designsaplus.com/lookbook/" target="_blank" style="color:var(--navy);font-weight:600;">designsaplus.com/lookbook</a> is the shared design system for <strong>Admissions+</strong> and <strong>MAT+</strong> — a living reference documenting every reusable component, shared pattern, and design token across both products. It is the source of truth for how things look and behave in these two products.<br><br>
+      <strong>ApplicaaOne uses a separate design system.</strong> Its redesign in Phase 2 is carried out within its own DS, independently of the Lookbook. When two Admissions+ or MAT+ screens look different, the Lookbook is the arbiter of which is correct.
     </div>
   </div>
 
@@ -551,7 +551,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ph-info">
       <div class="ph-date">July – October 2026 · 12 weeks · 3 parallel tracks</div>
       <h2>Phase 2 — Product Redesigns</h2>
-      <p>Full screen and flow redesigns using the DS components built in Phases 0–1. Each product runs its own track in parallel — Admissions+, MAT+, and ApplicaaOne ship independently without waiting for each other.</p>
+      <p>Full screen and flow redesigns across three parallel tracks. Admissions+ and MAT+ use the DS Lookbook components established in Phase 0. ApplicaaOne is redesigned independently within its own design system. All three tracks ship without waiting for each other.</p>
     </div>
   </div>
 
@@ -574,7 +574,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </div>
     </div>
     <div class="lane lane-one">
-      <div class="lane-hdr"><span>🔵</span> ApplicaaOne</div>
+      <div class="lane-hdr"><span>🔵</span> ApplicaaOne <span style="font-size:10px;font-weight:400;opacity:.7;margin-left:4px;">own DS</span></div>
       <div class="lane-body">
         <div class="li"><div class="li-title">Course discovery redesign</div><div class="li-desc">Filter by subject type (A-level, BTEC, T-Level), location, qualification level. Compare up to three schools. Save to shortlist. 45,000+ courses need real discoverability.</div><div class="li-impact">↑ Application conversion</div></div>
         <div class="li"><div class="li-title">School profile pages</div><div class="li-desc">Photo hero, key stats, course list, open events, verified reviews, persistent Apply/Book Visit CTA. All profiles currently look identical.</div><div class="li-impact">↑ Visit and application bookings</div></div>
@@ -635,7 +635,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </div>
     </div>
     <div style="margin-top:12px;padding:10px 12px;background:var(--sky-light);border-radius:7px;font-size:12px;color:var(--sky);font-weight:600;">
-      Phase 3 extends the DS foundation to all 13 products. Phases 0–2 focused on Post-16 (Admissions+, MAT+, ApplicaaOne). Phase 3 brings the rest of the family into a shared design language.
+      Phase 3 extends shared standards to all 13 products. Admissions+ and MAT+ use the DS Lookbook. ApplicaaOne has its own DS. Phase 3 aligns both systems on shared accessibility, mobile, motion, and governance standards — without merging them.
     </div>
   </div>
 
@@ -644,18 +644,18 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="card-icon">🗂️</div>
       <div class="card-title">Ecosystem-wide DS audit</div>
       <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
-      <div class="card-body">Applicaa's 13 products have grown independently. A school buying Admissions+ Post-16 and Options+ experiences two completely different visual languages. Common elements — headers, status badges, tables, filters — look and behave differently in each product. No product team can reuse what another has built.<br><br>This audit maps every product's screens against the DS component library. It identifies what each product can adopt immediately, what needs adapting, and what's genuinely unique to that product.</div>
+      <div class="card-body">Applicaa's 13 products have grown independently. Admissions+ and MAT+ share the DS Lookbook. ApplicaaOne has its own DS. The remaining 10 products have neither — each has grown its own visual patterns. A buyer using Admissions+ and Options+ experiences two completely different products.<br><br>This audit maps every product against both design systems. It identifies which DS each product is closest to, what they can adopt immediately, and what needs adapting. The goal is not to merge the two systems — it is to align them on shared standards.</div>
       <div class="divline"></div>
-      <div class="outcome">Shared header, navigation, and status patterns adopted by all 13 products. Every team knows what's in the DS and how to use it. Reuse replaces rebuild.</div>
+      <div class="outcome">Every product mapped to its nearest DS. Shared header, navigation, and status patterns adopted across the family. Both design systems documented and governed.</div>
       <div class="impact-row"><span class="tag">Shorter build time per product</span><span class="tag">Consistent cross-product UX</span><span class="tag">Shared identity for Applicaa brand</span></div>
     </div>
     <div class="card">
       <div class="card-icon">🎨</div>
       <div class="card-title">Product identity system</div>
       <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
-      <div class="card-body">Each product has its own colour personality — Exams+ gold, Options+ teal, MAT+ purple. Without rules, this is inconsistency. With rules, it becomes a feature: every product feels distinctly Applicaa while still being recognisably itself.<br><br>The DS defines a "brand layer": which visual tokens each product can customise (accent colour, product icon) and which are fixed across the whole family (spacing, typography, interaction patterns, accessibility standards).</div>
+      <div class="card-body">Two design systems exist: the DS Lookbook (Admissions+/MAT+) and ApplicaaOne's own DS. Each of the remaining 11 products also has colour personalities — Exams+ gold, Options+ teal, Bursary16+ green. Without rules, this is inconsistency. With rules, it becomes a feature.<br><br>Phase 3 defines which tokens are fixed across both design systems (accessibility standards, spacing, typography) and which each product can customise (accent colour, product icon). Neither DS is absorbed into the other.</div>
       <div class="divline"></div>
-      <div class="outcome">Clear rules distinguishing shared standards from intentional product differentiation. Adopted first by Bursary+, Applicaa Futures, and Local Authorities — the products furthest from the current DS.</div>
+      <div class="outcome">Both design systems documented with a shared governance layer. Clear rules for what is fixed (shared) and what is flexible (per-product). Adopted by Bursary+, Applicaa Futures, and Local Authorities first.</div>
     </div>
     <div class="card">
       <div class="card-icon">♿</div>
@@ -677,9 +677,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="card-icon">📖</div>
       <div class="card-title">DS contribution guide and governance</div>
       <div class="card-products"><span class="pill pill-ecosystem">All 13 products</span></div>
-      <div class="card-body">No documented contribution process. Bootstrap leakage in Admissions+ is the visible symptom — lack of governance is the cause. With 13 product teams contributing to a shared DS without rules, divergence grows exponentially. What Phase 0 fixed will return.</div>
+      <div class="card-body">Neither the DS Lookbook nor ApplicaaOne's DS has a documented contribution process. Bootstrap leakage in Admissions+ is the visible symptom. With 13 products and two separate design systems, divergence without governance grows exponentially. What Phase 0 fixed will return.</div>
       <div class="divline"></div>
-      <div class="outcome">Published guide: naming conventions, documentation requirements, accessibility checklist, PR criteria. Automated linter blocks legacy classes from being merged by any team.</div>
+      <div class="outcome">Published contribution guide for both design systems: naming conventions, documentation requirements, accessibility checklist, PR criteria. Automated linter for the DS Lookbook. Equivalent process established for the ApplicaaOne DS.</div>
     </div>
     <div class="card">
       <div class="card-icon">✨</div>
@@ -878,9 +878,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <tr>
       <td><strong>Phase 0</strong><br><span style="font-size:10px;color:var(--g400)">Shared Foundation</span></td>
       <td>Mar–Apr</td>
-      <td>Build and publish 9 core DS Lookbook components for Admissions+: filter chips, date/time picker, empty state, loading state, record detail panel, bulk action bar, KPI card, searchable multi-select, shared calendar.</td>
-      <td><span class="pill pill-admissions">Admissions+</span></td>
-      <td>9 reusable components in DS Lookbook. The building blocks every Phase 1–4 improvement depends on.</td>
+      <td>Establish the DS Lookbook for Admissions+ and MAT+ — component library, design tokens, shared patterns. ApplicaaOne uses its own separate DS and is out of scope for Phase 0.</td>
+      <td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td>
+      <td>DS Lookbook foundation in place. All Phase 1 improvements build from this shared language.</td>
     </tr>
     <tr>
       <td><strong>Phase 1</strong><br><span style="font-size:10px;color:var(--g400)">Quick Wins</span></td>
@@ -892,16 +892,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <tr>
       <td><strong>Phase 2</strong><br><span style="font-size:10px;color:var(--g400)">Product Redesigns</span></td>
       <td>Jul–Oct</td>
-      <td>Three parallel tracks: Admissions+ (form, parent status, offers), MAT+ (dashboard, diff view, subject data), ApplicaaOne (course discovery, school profiles, registration).</td>
+      <td>Three parallel tracks: Admissions+ and MAT+ redesigned using DS Lookbook components. ApplicaaOne redesigned independently within its own DS (course discovery, school profiles, registration).</td>
       <td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span> <span class="pill pill-one">ApplicaaOne</span></td>
-      <td>Significantly improved experience for staff, parents, and students on each product.</td>
+      <td>Significantly improved experience on each product. Each track ships independently.</td>
     </tr>
     <tr>
       <td><strong>Phase 3</strong><br><span style="font-size:10px;color:var(--g400)">Scale &amp; Polish</span></td>
       <td>Nov</td>
-      <td>DS foundation extends to all 13 products across 6 school types. Ecosystem audit, product identity system, WCAG 2.1 AA, mobile pass, motion standards, governance guide.</td>
+      <td>Two DS systems (Lookbook + ApplicaaOne DS) aligned on shared accessibility, mobile, motion, and governance standards. Ecosystem audit maps all 13 products to their nearest DS.</td>
       <td><span class="pill pill-ecosystem">All 13 products</span></td>
-      <td>One coherent platform. Legal compliance. Works on every device. Every team building from the same foundation.</td>
+      <td>Both DS systems governed. Shared standards across the full product family. Legal compliance. Works on every device.</td>
     </tr>
     <tr>
       <td><strong>Phase 4</strong><br><span style="font-size:10px;color:var(--g400)">AI-Native</span></td>
