@@ -448,7 +448,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ph-info">
       <div class="ph-date">May – June 2026 · 8 weeks</div>
       <h2>Phase 1 — Quick Wins</h2>
-      <p>Improve UI/UX across three areas using the DS foundation from Phase 0 — without redesigning screens yet. Settings gets better navigation and findability. Processes get consistent feedback, error handling, and status visibility. Customised Areas get DS component consistency applied to the screens schools configure most. Every item ships independently.</p>
+      <p>Apply DS components to improve UI/UX across Settings, Processes, and Customised Areas — without redesigning screens yet. Each item is independently shippable and targets the highest-friction areas school staff encounter daily.</p>
     </div>
   </div>
 
@@ -457,27 +457,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="card">
       <div class="card-icon">⚙️</div>
       <div class="card-title">Restructure settings navigation</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">8 top-level sections with no logical grouping. "School Settings" mixes IT admin, finance, and daily-use items together. "Enrolment Settings" and "Enrolment Navigator" sit as orphaned items with no clear relationship. Staff cannot predict where anything lives without clicking through every section.</div>
+      <div class="card-body">Reorganise the 8 top-level sections into four audience-based groups. Add short descriptions to each group. Apply the DS active state pattern so the current page is always visible.</div>
       <div class="divline"></div>
-      <div class="outcome">Four audience-based groups: Form &amp; Application, School Admin, Enrolment, Advanced. Short descriptions per group. Active state clear at a glance. Settings search for direct access.</div>
-      <div class="impact-row"><span class="tag">Fewer support tickets</span><span class="tag">Faster onboarding</span></div>
-    </div>
-    <div class="card">
-      <div class="card-icon">📍</div>
-      <div class="card-title">Active state and wayfinding</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">The current active settings page is indicated only by a colour change in text — no background highlight, no visual indicator. On a 20+ item settings list, staff lose their position easily. Apply the DS active state pattern consistently and add breadcrumb context above settings pages.</div>
-      <div class="divline"></div>
-      <div class="outcome">Staff always know where they are in settings. Breadcrumb shows path. Active item visually distinct from all others.</div>
+      <div class="outcome">Staff find settings faster. Fewer support requests. Faster onboarding for new staff.</div>
     </div>
     <div class="card">
       <div class="card-icon">🔍</div>
-      <div class="card-title">Settings search</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">With 20+ settings pages across 8 sections, staff who know what they want should not have to browse the full tree. A DS search input at the top of the settings nav returns matching pages as they type. Results show the page name and which group it belongs to.</div>
+      <div class="card-title">Settings search and wayfinding</div>
+      <div class="card-body">Add a DS search input to the settings nav so staff can reach any page by name. Add breadcrumb context above each settings page to confirm where they are in the tree.</div>
       <div class="divline"></div>
-      <div class="outcome">Any setting reached in under 5 seconds by name. Browsing the nav becomes optional.</div>
+      <div class="outcome">Any setting reached in seconds. Browsing the nav becomes optional.</div>
     </div>
   </div>
 
@@ -486,61 +475,48 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="card">
       <div class="card-icon">📋</div>
       <div class="card-title">Application Form settings</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">The application form builder and its settings screens use bespoke patterns — field configuration, section ordering, conditional logic — none reflected in DS. Inputs, toggles, and layout diverge from every other settings screen. Apply DS form group, section, toggle, and label components throughout.</div>
+      <div class="card-body">Apply DS form group, section title, toggle, and label components to the form builder and field configuration screens. No redesign — component alignment only.</div>
       <div class="divline"></div>
-      <div class="outcome">Form settings use the same component patterns as every other settings screen. Staff configure forms faster with fewer errors. Changes feel predictable.</div>
+      <div class="outcome">Form settings feel consistent with the rest of the product. Staff configure forms with less friction.</div>
     </div>
     <div class="card">
       <div class="card-icon">📨</div>
       <div class="card-title">Communications — Forms, Surveys, Templates</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">Email templates, SMS templates, forms, and surveys each use different editors, different preview styles, and different save/publish flows. No shared component language exists across these communication tools. Apply DS rich text editor, preview panel, status badge, and form group components consistently across all four.</div>
+      <div class="card-body">Apply DS rich text editor, preview panel, and status badge consistently across email templates, SMS templates, enquiry forms, and surveys. One editing experience across all four.</div>
       <div class="divline"></div>
-      <div class="outcome">One consistent editing experience across all communication types. Preview looks the same everywhere. Save and publish flow is identical. Staff learn it once.</div>
-      <div class="impact-row"><span class="tag">Fewer configuration errors</span><span class="tag">Faster template creation</span></div>
+      <div class="outcome">Staff learn the communication editor once and apply it everywhere. Fewer configuration errors.</div>
     </div>
     <div class="card">
       <div class="card-icon">📤</div>
       <div class="card-title">Import and export</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></div>
-      <div class="card-body">Imports run silently — no progress feedback, technical error messages on failure, no fix guidance. Exports trigger an immediate download with no format choice and no history. A lost file means starting the full export over. Apply DS progress bar, empty state, and plain-language error components.</div>
+      <div class="card-body">Add DS progress and error components to the import flow. Add format selection and a download history panel to the export flow. Replace silent or technical feedback with plain language.</div>
       <div class="divline"></div>
-      <div class="outcome">Import shows live progress and plain-language errors with fix guidance. Export offers format choice and keeps the last 5 downloads with re-download links.</div>
+      <div class="outcome">Staff know what is happening during imports and can repeat exports without support.</div>
     </div>
   </div>
 
   <div class="slabel">Customised Areas</div>
-  <div class="card" style="margin-bottom:12px;">
-    <div class="card-body" style="font-size:12px;line-height:1.7;color:var(--g600);">
-      Customised Areas are the screens schools configure individually — timetables, offer management, and enrolment checklists are all set up differently per school. These screens have grown without DS coverage, so each school’s configuration experience is visually inconsistent with the rest of the product. Phase 1 applies DS components — not a redesign.
-    </div>
-  </div>
   <div class="grid3">
     <div class="card">
       <div class="card-icon">🗓️</div>
       <div class="card-title">Timetable</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">Timetable configuration is one of the highest-traffic screens during school setup. It uses bespoke layout, form patterns, and table styles not aligned to DS. Apply shared layout, DS form group, data table, and status badge components. The timetable builder looks and behaves like the rest of the product.</div>
+      <div class="card-body">Apply DS layout, form group, data table, and status badge to the timetable configuration screens. Aligns a high-traffic setup area with the rest of the product without rebuilding it.</div>
       <div class="divline"></div>
-      <div class="outcome">Timetable setup feels familiar from day one. Staff use the same patterns they already know. Fewer configuration errors during initial setup.</div>
+      <div class="outcome">Timetable setup uses familiar patterns. Fewer errors during initial school configuration.</div>
     </div>
     <div class="card">
       <div class="card-icon">🎫</div>
       <div class="card-title">Offer management</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">All offer states — conditional, unconditional, waitlisted, declined — look identical. No pipeline summary. Bulk offer actions require opening each record individually. Apply DS status badges to offer rows, add a pipeline summary using DS metric card, and apply the bulk action bar for multi-row operations.</div>
+      <div class="card-body">Apply DS status badges to offer rows, add a pipeline summary using the metric card component, and apply the bulk action bar for multi-row operations. No workflow changes — visual clarity only.</div>
       <div class="divline"></div>
-      <div class="outcome">Offer states visually distinct. Pipeline summary visible at the top of the list. Bulk offers processed in one action instead of one by one.</div>
-      <div class="impact-row"><span class="tag">Faster offer rounds</span><span class="tag">↓ Click time per offer</span></div>
+      <div class="outcome">Offer states distinct at a glance. Pipeline totals visible. Bulk actions available without opening individual records.</div>
     </div>
     <div class="card">
       <div class="card-icon">📝</div>
       <div class="card-title">Enrolment checklist</div>
-      <div class="card-products"><span class="pill pill-admissions">Admissions+</span></div>
-      <div class="card-body">After a student accepts an offer, the system has no way to track enrolment progress. No checklist, no completion visibility, no automated follow-up reminders. Apply DS card, progress component, and notification components to introduce a lightweight per-student enrolment tracker without rebuilding the screen.</div>
+      <div class="card-body">Apply DS card and progress components to introduce a per-student enrolment tracker. Completion percentage visible on the list view. Automated reminders for outstanding steps.</div>
       <div class="divline"></div>
-      <div class="outcome">Per-student enrolment checklist. Completion percentage on the list view. Automated reminders for outstanding steps sent without manual follow-up.</div>
+      <div class="outcome">Staff can see enrolment progress at a glance. No manual follow-up needed for outstanding steps.</div>
     </div>
   </div>
 </div>
