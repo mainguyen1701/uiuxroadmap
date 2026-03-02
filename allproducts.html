@@ -383,6 +383,22 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .trust-vs-item{font-size:11px;color:rgba(255,255,255,.65);padding:2px 0;line-height:1.4;}
 .trust-source{font-size:10px;color:rgba(255,255,255,.25);margin-top:18px;font-style:italic;}
 @media(max-width:700px){.trust-execution{padding-left:18px;}.trust-exec-vs{grid-template-columns:1fr;}}
+
+.aiskill-section{margin:0 0 28px;}
+.aiskill-row{display:grid;grid-template-columns:180px 1fr;gap:16px;margin-bottom:12px;align-items:start;}
+.aiskill-phase{background:var(--navy);border-radius:8px;padding:12px 14px;color:white;text-align:center;}
+.aiskill-phase-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.5);margin-bottom:4px;}
+.aiskill-phase-name{font-size:12px;font-weight:800;color:white;line-height:1.3;margin-bottom:4px;}
+.aiskill-phase-date{font-size:10px;color:#EC634B;font-weight:700;}
+.aiskill-content{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.aiskill-col{background:var(--g50);border:1px solid var(--g200);border-radius:8px;padding:11px 13px;}
+.aiskill-col-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--g400);margin-bottom:7px;}
+.aiskill-col-label.learn{color:#7c3aed;}
+.aiskill-col-label.tool{color:#0f766e;}
+.aiskill-col-label.outcome{color:var(--navy);}
+.aiskill-item{font-size:11px;color:var(--g700);padding:3px 0;border-bottom:1px solid var(--g100);line-height:1.4;}
+.aiskill-item:last-child{border-bottom:none;}
+@media(max-width:800px){.aiskill-row{grid-template-columns:1fr;}.aiskill-content{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -398,6 +414,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <a href="#phase2">Phase 2</a>
   <a href="#phase3">Phase 3</a>
   <a href="#phase4">Phase 4</a>
+  <a href="#aiskills">AI Skills</a>
   <a href="#metrics">Outcomes</a>
 </nav>
 
@@ -1689,6 +1706,215 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </tbody>
 </table></div>
 
+</div>
+
+<hr class="divider">
+
+<!-- AI SKILLS -->
+<div id="aiskills">
+  <div class="section-heading">AI Skills Plan</div>
+  <div class="section-sub">What the design team needs to learn, which tools to use, and what it unlocks — phase by phase.</div>
+
+  <div class="aiskill-section">
+
+    <div class="aiskill-row">
+      <div class="aiskill-phase">
+        <div class="aiskill-phase-label">Phase 0</div>
+        <div class="aiskill-phase-name">Shared Foundation</div>
+        <div class="aiskill-phase-date">Done — Feb 2026</div>
+      </div>
+      <div class="aiskill-content">
+        <div class="aiskill-col">
+          <div class="aiskill-col-label learn">Skills to build</div>
+          <div class="aiskill-item">Using AI to write and improve component documentation</div>
+          <div class="aiskill-item">Prompting AI to audit design inconsistencies from screenshots</div>
+          <div class="aiskill-item">AI-assisted token naming and organisation</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label tool">Tools</div>
+          <div class="aiskill-item">Claude — component spec writing</div>
+          <div class="aiskill-item">Figma AI — pattern suggestions</div>
+          <div class="aiskill-item">Notion AI — DS documentation</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label outcome">Unlocks</div>
+          <div class="aiskill-item">DS Lookbook entries written 3x faster</div>
+          <div class="aiskill-item">Inconsistency audit completed without manual review of every screen</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aiskill-row">
+      <div class="aiskill-phase" style="background:#1d4ed8;">
+        <div class="aiskill-phase-label">Phase 1</div>
+        <div class="aiskill-phase-name">Quick Wins</div>
+        <div class="aiskill-phase-date">Mar 2026 ◉</div>
+      </div>
+      <div class="aiskill-content">
+        <div class="aiskill-col">
+          <div class="aiskill-col-label learn">Skills to build</div>
+          <div class="aiskill-item">Prompt engineering for component mapping — describe a screen, get DS component recommendations</div>
+          <div class="aiskill-item">Vibe coding — generating HTML/Tailwind from a description and DS token set</div>
+          <div class="aiskill-item">AI-assisted micro-copy writing — error messages, labels, helper text</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label tool">Tools</div>
+          <div class="aiskill-item">Cursor — in-codebase design edits</div>
+          <div class="aiskill-item">v0.dev — quick screen scaffolding</div>
+          <div class="aiskill-item">Claude — copy and spec writing</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label outcome">Unlocks</div>
+          <div class="aiskill-item">Settings and process screens updated without full design handoff</div>
+          <div class="aiskill-item">Error messages rewritten across all Phase 1 screens in one session</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aiskill-row">
+      <div class="aiskill-phase" style="background:#0369a1;">
+        <div class="aiskill-phase-label">Phase 2</div>
+        <div class="aiskill-phase-name">Validated Prototypes</div>
+        <div class="aiskill-phase-date">Apr 2026</div>
+      </div>
+      <div class="aiskill-content">
+        <div class="aiskill-col">
+          <div class="aiskill-col-label learn">Skills to build</div>
+          <div class="aiskill-item">AI research synthesis — uploading interview transcripts and support tickets, asking Claude to surface patterns</div>
+          <div class="aiskill-item">Multi-variant prototyping — generating 4–6 layouts from a single DS-context prompt</div>
+          <div class="aiskill-item">AI accessibility pre-check — flagging WCAG issues before engineering handoff</div>
+          <div class="aiskill-item">Empathy mapping with AI — feeding qualitative data to surface the Thinks quadrant</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label tool">Tools</div>
+          <div class="aiskill-item">Claude Projects — research synthesis</div>
+          <div class="aiskill-item">v0.dev + Cursor — prototype generation</div>
+          <div class="aiskill-item">Figma Able / axe DevTools — accessibility</div>
+          <div class="aiskill-item">Dovetail AI — user research analysis</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label outcome">Unlocks</div>
+          <div class="aiskill-item">Research synthesis in hours not days</div>
+          <div class="aiskill-item">Validated prototypes in weeks not months (59% productivity gain)</div>
+          <div class="aiskill-item">Accessibility issues caught before build, not after</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aiskill-row">
+      <div class="aiskill-phase" style="background:#7c3aed;">
+        <div class="aiskill-phase-label">Phase 3</div>
+        <div class="aiskill-phase-name">Scale and Polish</div>
+        <div class="aiskill-phase-date">Apr 2026 — parallel</div>
+      </div>
+      <div class="aiskill-content">
+        <div class="aiskill-col">
+          <div class="aiskill-col-label learn">Skills to build</div>
+          <div class="aiskill-item">AI-powered DS audit — feed screen exports, get deviation report against token set</div>
+          <div class="aiskill-item">Automated accessibility testing — running AI-assisted WCAG checks across all 13 products</div>
+          <div class="aiskill-item">AI governance documentation — generating contribution guides and review checklists</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label tool">Tools</div>
+          <div class="aiskill-item">Claude — DS deviation analysis from screenshots</div>
+          <div class="aiskill-item">axe DevTools — automated WCAG audit</div>
+          <div class="aiskill-item">Figma AI — cross-product consistency check</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label outcome">Unlocks</div>
+          <div class="aiskill-item">All 13 products audited without manual screen-by-screen review</div>
+          <div class="aiskill-item">WCAG 2.1 AA compliance checked programmatically</div>
+          <div class="aiskill-item">DS governance docs generated and maintained with AI</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aiskill-row">
+      <div class="aiskill-phase" style="background:#4f46e5;">
+        <div class="aiskill-phase-label">Phase 4 — Stage 1</div>
+        <div class="aiskill-phase-name">Admissions Copilot UX</div>
+        <div class="aiskill-phase-date">Jun–Sep 2026</div>
+      </div>
+      <div class="aiskill-content">
+        <div class="aiskill-col">
+          <div class="aiskill-col-label learn">Skills to build</div>
+          <div class="aiskill-item">Conversational flow design — mapping intents, fallbacks, and escalation paths</div>
+          <div class="aiskill-item">Prompt design — writing system prompts that shape AI tone and boundaries for school context</div>
+          <div class="aiskill-item">Designing AI confidence UI — three-level indicator system, trust arc, first-interaction design</div>
+          <div class="aiskill-item">Natural language query interface design — input, response format, suggested prompts</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label tool">Tools</div>
+          <div class="aiskill-item">Claude / GPT-4 — prototype AI responses for testing</div>
+          <div class="aiskill-item">Voiceflow — conversational flow prototyping</div>
+          <div class="aiskill-item">Vercel AI SDK — generative UI prototyping</div>
+          <div class="aiskill-item">NN/G conversational design frameworks</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label outcome">Unlocks</div>
+          <div class="aiskill-item">AI assistant panel designed and prototype-tested before engineering builds it</div>
+          <div class="aiskill-item">Anomaly flag UI and natural language query interface validated with school staff</div>
+          <div class="aiskill-item">AI DS component set (confidence indicators, handoff card) published in Lookbook</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aiskill-row">
+      <div class="aiskill-phase" style="background:#7c3aed;">
+        <div class="aiskill-phase-label">Phase 4 — Stage 2</div>
+        <div class="aiskill-phase-name">Application Reviewer UX</div>
+        <div class="aiskill-phase-date">Sep 2026–Feb 2027</div>
+      </div>
+      <div class="aiskill-content">
+        <div class="aiskill-col">
+          <div class="aiskill-col-label learn">Skills to build</div>
+          <div class="aiskill-item">Designing for AI explainability — showing reasoning, not just recommendation</div>
+          <div class="aiskill-item">Human-in-the-loop interface patterns — approval flows, override design, audit trail</div>
+          <div class="aiskill-item">Ethical AI design — bias disclosure, transparency requirements, safeguarding considerations in EdTech</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label tool">Tools</div>
+          <div class="aiskill-item">Claude — simulate AI review outputs for prototype testing</div>
+          <div class="aiskill-item">Figma — approval flow and override interface design</div>
+          <div class="aiskill-item">PAIR Guidebook (Google) — human-AI interaction patterns</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label outcome">Unlocks</div>
+          <div class="aiskill-item">Review summary panel and human approval interface validated before build</div>
+          <div class="aiskill-item">Every AI decision has a designed override — governance-ready from day one</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aiskill-row">
+      <div class="aiskill-phase" style="background:#9333ea;">
+        <div class="aiskill-phase-label">Phase 4 — Stage 3</div>
+        <div class="aiskill-phase-name">Enrolment Engine UX</div>
+        <div class="aiskill-phase-date">Dec 2026–Jun 2027</div>
+      </div>
+      <div class="aiskill-content">
+        <div class="aiskill-col">
+          <div class="aiskill-col-label learn">Skills to build</div>
+          <div class="aiskill-item">Data visualisation for AI predictions — confidence ranges, forecast uncertainty, at-risk scoring</div>
+          <div class="aiskill-item">Designing for AI-timed actions — showing reasoning for communication timing recommendations</div>
+          <div class="aiskill-item">AI evaluation — measuring trust score, escalation rate, task completion across AI-assisted flows</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label tool">Tools</div>
+          <div class="aiskill-item">D3.js / Observable — forecast data visualisation prototyping</div>
+          <div class="aiskill-item">Claude — simulate enrolment prediction outputs for testing</div>
+          <div class="aiskill-item">FullStory / Hotjar — measure AI interaction patterns post-launch</div>
+        </div>
+        <div class="aiskill-col">
+          <div class="aiskill-col-label outcome">Unlocks</div>
+          <div class="aiskill-item">Enrolment forecast dashboard and at-risk signal UI validated with coordinators</div>
+          <div class="aiskill-item">AI-timed communication interface with human approval tested before build</div>
+          <div class="aiskill-item">Full AI evaluation framework in place across all three stages</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <div class="footer">
