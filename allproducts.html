@@ -399,6 +399,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .aiskill-item{font-size:11px;color:var(--g700);padding:3px 0;border-bottom:1px solid var(--g100);line-height:1.4;}
 .aiskill-item:last-child{border-bottom:none;}
 @media(max-width:800px){.aiskill-row{grid-template-columns:1fr;}.aiskill-content{grid-template-columns:1fr;}}
+
+#overview,#timeline,#metrics,#checklist,#risks,#aiskills{scroll-margin-top:56px;}
 </style>
 </head>
 <body>
@@ -420,17 +422,17 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 </nav>
 
 
-<section class="vision-section" id="vision">
+<section class="vision-section" id="vision" style="scroll-margin-top:0;">
   <div class="vision-inner">
     <div class="vision-eyebrow">Design Leadership Vision — 2026</div>
     <h2 class="vision-headline">Design is what stands between<br><span>good AI and trusted AI.</span></h2>
     <p class="vision-body">
-      When a family applies to a sixth form, when a school makes an offer, when a student enrols — these are high-stakes moments. The design should match that weight. One coherent product. Fast, clear, trustworthy. <strong style="color:white;">Consistency by April. AI begins June.</strong>
+      Phases 0–3 build the foundation — one consistent, trustworthy product across 13 schools. Phase 4 deploys AI on top of it. The sequence matters: AI earns trust faster when the design already has it. <strong style="color:white;">Consistency by April. AI begins June.</strong>
     </p>
 
     <div class="northstar">
       <div class="northstar-label">North Star</div>
-      <div class="northstar-text">"A school admin who knows Admissions+ can pick up any Applicaa product and feel at home within minutes — because the patterns, the language, and the logic are the same everywhere."</div>
+      <div class="northstar-text">"A school using any Applicaa product trusts it enough to let AI assist their most important decisions — because the design earned that trust first."</div>
     </div>
 
     <div class="nowstate">
@@ -1167,7 +1169,17 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ph-info">
       <div class="ph-date">By April 2026 — parallel with Phase 2</div>
       <h2>Phase 3 — Scale and Polish</h2>
-      <p>The DS foundation built in Phases 0–2 expands to the full Applicaa product ecosystem — 13 products across 6 school types, from Nursery &amp; Primary to Local Authorities. Every product gets shared identity, accessibility compliance, and mobile quality. Governance rules prevent the same inconsistencies from returning as the team grows.</p>
+      <p>Phase 3 is what makes the AI in Phase 4 safe to deploy at scale. A consistent, accessible, governed foundation across all 13 products — so when AI features land, they land on solid ground.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#34d399;margin-bottom:6px;">Deliverable 1 — DS Standards Report</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.75);line-height:1.55;">Every product scored against the shared token and component baseline. 13 scores. Prioritised gap list. WCAG 2.1 AA and mobile results included. Ready by end of March.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#34d399;margin-bottom:6px;">Deliverable 2 — Governance Framework</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.75);line-height:1.55;">DS contribution guide. Review checklist. Automated linter config. Product identity rules. Motion standards. Prevents drift from recurring as the team grows. Ready by mid-April.</div>
+        </div>
+      </div>
     </div>
   </div>
 
