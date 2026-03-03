@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applicaa UI/UX — Strategy 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+:root{
+  --navy:#263C91;--navy-dark:#1a2d6e;--navy-light:#e8ecf8;
+  --coral:#EC634B;
+  --green:#16a34a;--green-light:#dcfce7;
+  --amber:#d97706;--amber-light:#fef3c7;
+  --purple:#7e22ce;--purple-light:#f5f3ff;
+  --sky:#0284c7;--sky-light:#e0f2fe;
+  --rose:#be185d;--rose-light:#fce7f3;
+  --teal:#0d9488;--teal-light:#ccfbf1;
+  --g50:#f9fafb;--g100:#f3f4f6;--g200:#e5e7eb;--g300:#d1d5db;
+  --g400:#9ca3af;--g500:#6b7280;--g600:#4b5563;--g700:#374151;--g900:#111827;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--g50);color:var(--g900);font-size:14px;line-height:1.6;}
+
+/* CROSS-DOC NAV */
+.crossnav{background:var(--navy-dark);color:white;padding:7px 20px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;flex-wrap:wrap;position:sticky;top:0;z-index:200;}
+.crossnav-label{opacity:.6;margin-right:4px;}
+.crossnav a{color:rgba(255,255,255,.6);text-decoration:none;padding:2px 8px;border-radius:4px;transition:opacity .15s;}
+.crossnav a:hover{opacity:1;color:white;}
+.crossnav a.active{color:white;text-decoration:underline;opacity:1;}
+
+/* NAV */
+.sticky-nav{position:sticky;top:34px;z-index:100;background:white;border-bottom:1px solid var(--g200);overflow-x:auto;display:flex;}
+.sticky-nav a{padding:11px 15px;font-size:12px;font-weight:600;color:var(--g500);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;flex-shrink:0;}
+.sticky-nav a:hover{color:var(--navy);border-color:var(--navy);}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 60%,#3a5abf 100%);color:white;}
+.header-inner{max-width:1280px;margin:0 auto;padding:34px 24px 32px;}
+.header-logo{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
+.header-logo svg{width:30px;height:30px;}
+.header-logo span{font-size:13px;font-weight:600;opacity:.8;}
+.header h1{font-size:28px;font-weight:800;letter-spacing:-.5px;margin-bottom:7px;}
+.header p{font-size:14px;opacity:.8;max-width:960px;line-height:1.6;}
+.header-meta{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap;}
+.hm .lbl{font-size:10px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.7px;display:block;}
+.hm .val{font-size:12px;font-weight:600;}
+
+/* CONTAINER */
+.container{max-width:1280px;margin:0 auto;padding:28px 24px 60px;}
+
+/* HELPERS */
+.divider{border:none;border-top:1px solid var(--g200);margin:38px 0;}
+.section-heading{font-size:20px;font-weight:800;letter-spacing:-.3px;margin-bottom:5px;}
+.section-sub{font-size:13px;color:var(--g700);margin-bottom:22px;line-height:1.6;max-width:820px;}
+.pill{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;}
+.pill-admissions{background:#e0e7ff;color:#3730a3;}
+.pill-one{background:var(--navy-light);color:var(--navy);}
+.pill-mat{background:#f0fdf4;color:#15803d;}
+.pill-all{background:var(--g100);color:var(--g700);}
+.pill-ecosystem{background:#fdf4ff;color:#7e22ce;}
+
+/* OVERVIEW CARDS */
+.ov-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin-bottom:22px;}
+.ov-card{background:white;border:1px solid var(--g200);border-radius:11px;padding:16px 18px;}
+.ov-card .num{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:-1px;}
+.ov-card .desc{font-size:12px;color:var(--g700);margin-top:2px;}
+
+/* VISION SECTION */
+.vision-section{background:linear-gradient(160deg,#0f1f6e 0%,var(--navy) 60%,#1a4aa8 100%);color:white;padding:52px 0 44px;}
+.vision-inner{max-width:1280px;margin:0 auto;padding:0 24px;}
+.vision-eyebrow{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#EC634B;margin-bottom:14px;}
+.vision-headline{font-size:32px;font-weight:900;line-height:1.15;letter-spacing:-.5px;max-width:820px;margin-bottom:20px;}
+.vision-headline span{color:#EC634B;}
+.vision-body{font-size:14px;line-height:1.75;color:rgba(255,255,255,.92);max-width:760px;margin-bottom:32px;}
+.northstar{background:rgba(236,99,75,.12);border:1px solid rgba(236,99,75,.35);border-radius:10px;padding:18px 20px;max-width:860px;}
+.northstar-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:#EC634B;margin-bottom:8px;}
+.northstar-text{font-size:15px;font-weight:700;color:white;line-height:1.5;}
+
+/* SUMMARY TABLE */
+.sum-wrap{overflow-x:auto;border-radius:11px;border:1px solid var(--g200);}
+.sum-table{width:100%;border-collapse:collapse;background:white;font-size:12px;}
+.sum-table th{background:var(--g50);padding:9px 13px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:1px solid var(--g200);}
+.sum-table td{padding:11px 13px;border-bottom:1px solid var(--g100);vertical-align:middle;line-height:1.5;color:var(--g700);}
+.sum-table tr:last-child td{border-bottom:none;}
+.sum-table tr:hover td{background:var(--g50);}
+
+/* CARDS */
+.card{background:white;border:1px solid var(--g200);border-radius:10px;padding:14px 16px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+
+/* FOOTER */
+.footer{text-align:center;padding:28px;color:var(--g600);font-size:11px;border-top:1px solid var(--g200);margin-top:36px;}
+
+@media(max-width:960px){
+  .ov-grid{grid-template-columns:repeat(3,1fr);}
+  .grid3{grid-template-columns:1fr;}
+  .header-inner{padding:26px 16px 24px;}
+  .container{padding:22px 16px 48px;}
+  .header h1{font-size:22px;}
+  .sum-table th:nth-child(3),.sum-table td:nth-child(3){display:none;}
+}
+@media(max-width:600px){
+  .ov-grid{grid-template-columns:1fr 1fr;}
+  .vision-headline{font-size:22px;}
+  .sum-table th:nth-child(4),.sum-table td:nth-child(4){display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- CROSS-DOC NAV -->
+<div class="crossnav">
+  <span class="crossnav-label">Applicaa UI/UX 2026:</span>
+  <a href="strategy.html" class="active">Strategy ↗</a>
+  <a href="delivery.html">Delivery ↗</a>
+  <a href="design.html">Design ↗</a>
+  <a href="applicaaone-roadmap.html">ApplicaaOne ↗</a>
+</div>
+
+<nav class="sticky-nav">
+  <a href="#vision">Vision</a>
+  <a href="#overview">Overview</a>
+  <a href="#roadmap">Roadmap</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#outcomes">Outcomes</a>
+  <a href="#risks">Risks</a>
+</nav>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M37.47 38L29.43 17.99H26.34L18.27 38H21.12L22.89 33.53H32.85L34.62 38H37.47ZM32.13 31.34H23.64L27.87 20.54L32.13 31.34Z" fill="white"/>
+        <path d="M39 18V14H37V18H33V20H37V24H39V20H43V18H39Z" fill="#EC634B"/>
+      </svg>
+      <span>Applicaa</span>
+    </div>
+    <h1>Applicaa UI/UX — Strategy 2026</h1>
+    <p>Board and executive summary — prepared by Emma</p>
+    <div class="header-meta">
+      <div class="hm"><span class="lbl">Products</span><span class="val">Admissions+ · MAT+ · Full ecosystem</span></div>
+      <div class="hm"><span class="lbl">Horizon</span><span class="val">Feb – Dec 2026</span></div>
+      <div class="hm"><span class="lbl">Phases</span><span class="val">5 (Phase 0 – 4)</span></div>
+      <div class="hm"><span class="lbl">Prepared by</span><span class="val">Emma Nguyen</span></div>
+      <div class="hm"><span class="lbl">Updated</span><span class="val">March 2026</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- VISION -->
+<section class="vision-section" id="vision" style="scroll-margin-top:68px;">
+  <div class="vision-inner">
+    <div class="vision-eyebrow">Design Leadership Vision — 2026</div>
+    <h2 class="vision-headline">Design is what stands between<br><span>good AI and trusted AI.</span></h2>
+    <p class="vision-body">
+      Phases 0–3 build the foundation — one consistent, trustworthy product across 13 schools. Phase 4 deploys AI on top of it. The sequence matters: AI earns trust faster when the design already has it. <strong style="color:white;">Consistency by April. AI begins June.</strong>
+    </p>
+    <div class="northstar">
+      <div class="northstar-label">North Star</div>
+      <div class="northstar-text">"A school using any Applicaa product trusts it enough to let AI assist their most important decisions — because the design earned that trust first."</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+<!-- OVERVIEW STATS -->
+<div id="overview" style="scroll-margin-top:68px;">
+  <div class="ov-grid">
+    <div class="ov-card"><div class="num">13</div><div class="desc">Products in ecosystem</div></div>
+    <div class="ov-card"><div class="num">5</div><div class="desc">Delivery phases</div></div>
+    <div class="ov-card"><div class="num">1</div><div class="desc">Shared design system — DS Lookbook</div></div>
+    <div class="ov-card"><div class="num" style="font-size:18px;letter-spacing:-1px;">Feb–Jun</div><div class="desc">2026 delivery horizon</div></div>
+    <div class="ov-card"><div class="num">3</div><div class="desc">Core products — Phases 0–2</div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ROADMAP AT A GLANCE -->
+<div id="roadmap" style="scroll-margin-top:68px;">
+  <div class="section-heading">Roadmap at a Glance</div>
+  <div class="section-sub">Five phases. Every improvement builds from the phase before it.</div>
+  <div class="sum-wrap">
+    <table class="sum-table">
+      <thead>
+        <tr><th>Phase</th><th>Date</th><th>Scope</th><th>Definition of Done</th><th>Products</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Phase 0</strong><br><span style="font-size:10px;color:var(--g600)">Shared Foundation</span></td>
+          <td>Feb 2026 ✓</td>
+          <td>Establish the DS Lookbook for Admissions+ and MAT+ — component library, design tokens, shared patterns. Every Phase 1 and 2 improvement builds from this foundation.</td>
+          <td>DS Lookbook published and peer-reviewed with engineering. All Phase 1 improvements build from this shared language.</td>
+          <td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td>
+        </tr>
+        <tr>
+          <td><strong>Phase 1</strong><br><span style="font-size:10px;color:var(--g600)">Quick Wins</span></td>
+          <td>Mar 2026 ◉</td>
+          <td>DS Lookbook components applied to settings navigation, form configuration, communications, import/export, timetable, offer management, and enrolment checklist.</td>
+          <td>All 8 items live in the product. Staff experience measurably improved. Support ticket baseline established.</td>
+          <td><span class="pill pill-all">All</span></td>
+        </tr>
+        <tr>
+          <td><strong>Phase 2</strong><br><span style="font-size:10px;color:var(--g600)">Product Redesigns</span></td>
+          <td>Apr 2026<br><span style="font-size:10px;color:var(--g600)">Validated prototypes</span></td>
+          <td>Two parallel tracks: Admissions+ (application form, parent status, offer management) and MAT+ (trust dashboard, school comparison, subject data). AI-accelerated prototyping — validated with school staff before build.</td>
+          <td>Each prototype tested with ≥5 school staff. 80% task success on core flows before engineering handoff.</td>
+          <td><span class="pill pill-admissions">Admissions+</span> <span class="pill pill-mat">MAT+</span></td>
+        </tr>
+        <tr>
+          <td><strong>Phase 3</strong><br><span style="font-size:10px;color:var(--g600)">Scale &amp; Polish</span></td>
+          <td>Apr 2026<br><span style="font-size:10px;color:var(--g600)">Parallel with Phase 2</span></td>
+          <td>DS Lookbook extended to all 13 products. Ecosystem audit, WCAG 2.1 AA accessibility, mobile, motion standards, and DS governance framework.</td>
+          <td>DS Standards Report signed off by all product leads. Governance framework live. Linter running in CI. All critical accessibility findings fixed.</td>
+          <td><span class="pill pill-ecosystem">All 13 products</span></td>
+        </tr>
+        <tr>
+          <td><strong>Phase 4</strong><br><span style="font-size:10px;color:var(--g600)">AI-Native</span></td>
+          <td>Jun – Dec 2026</td>
+          <td>Three staged UX releases: Admissions Copilot (Jun–Sep), Application Reviewer (Sep–Dec), Enrolment Engine (Dec). AI DS component set ships before Stage 1.</td>
+          <td>Each stage user-tested with ≥3 school staff before release. Human override designed into every AI interaction. AI DS components in Lookbook before any feature ships.</td>
+          <td><span class="pill pill-all">All</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TIMELINE -->
+<div id="timeline" style="scroll-margin-top:68px;">
+  <div class="section-heading">Timeline</div>
+  <div class="section-sub">Two milestones. Everything else serves them.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 28px;">
+    <div style="background:linear-gradient(135deg,#263C91,#1a4aa8);border-radius:12px;padding:24px 26px;color:white;">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:rgba(255,255,255,.5);margin-bottom:8px;">Milestone 1</div>
+      <div style="font-size:28px;font-weight:900;letter-spacing:-1px;margin-bottom:4px;">April 2026</div>
+      <div style="font-size:16px;font-weight:800;color:#EC634B;margin-bottom:14px;">Consistency</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.82);line-height:1.65;">
+        Phases 0–3 complete. DS Lookbook established. Quick wins shipped. Admissions+ and MAT+ prototypes validated with school staff. All 13 products audited and on a shared foundation. WCAG 2.1 AA compliant.
+      </div>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;">
+        <div style="font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px;"><span style="color:#34d399;font-weight:800;">✓</span> Phase 0 — DS Lookbook (Feb, done)</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px;"><span style="color:#EC634B;font-weight:800;">◉</span> Phase 1 — Quick Wins (Mar, in progress)</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px;"><span style="color:rgba(255,255,255,.5);font-weight:800;">→</span> Phase 2 — Validated prototypes (Apr)</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px;"><span style="color:rgba(255,255,255,.5);font-weight:800;">→</span> Phase 3 — Scale &amp; Polish (Apr, parallel)</div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:12px;padding:24px 26px;color:white;">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:rgba(255,255,255,.5);margin-bottom:8px;">Milestone 2</div>
+      <div style="font-size:28px;font-weight:900;letter-spacing:-1px;margin-bottom:4px;">June 2026</div>
+      <div style="font-size:16px;font-weight:800;color:#818cf8;margin-bottom:14px;">AI begins</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.82);line-height:1.65;">
+        Phase 4 Stage 1 launches. Admissions Copilot UX ships — AI assistant panel, anomaly flags, natural language queries. AI DS components in Lookbook before any product uses them. Human oversight built in from day one.
+      </div>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;">
+        <div style="font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px;"><span style="color:#818cf8;font-weight:800;">→</span> Stage 1 — Admissions Copilot (Jun–Sep)</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px;"><span style="color:rgba(255,255,255,.5);font-weight:800;">→</span> Stage 2 — Application Reviewer (Sep–Dec 2026)</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px;"><span style="color:rgba(255,255,255,.5);font-weight:800;">→</span> Stage 3 — Enrolment Engine (Begins Dec 2026)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- OUTCOMES -->
+<div id="outcomes" style="scroll-margin-top:68px;">
+  <div class="section-heading">Expected Outcomes</div>
+  <div class="section-sub">How we measure whether the roadmap is working — targets, baselines, and owners.</div>
+  <div class="grid3">
+    <div class="card">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;">📋 For school staff and parents</div>
+      <div style="font-size:12px;">
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Application completion rate <span style="font-size:10px;">(baseline ~60%)</span></span><span style="font-weight:700;color:var(--navy);">90%+</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Time to complete <span style="font-size:10px;">(baseline ~45 min)</span></span><span style="font-weight:700;color:var(--navy);">&lt;15 min</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Parent satisfaction rating</span><span style="font-weight:700;color:var(--navy);">4.5 / 5</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;"><span style="color:var(--g600);">Parents comfortable with AI</span><span style="font-weight:700;color:var(--navy);">80%+</span></div>
+        <div style="margin-top:8px;font-size:10px;color:var(--g500);">Owner: Design · Measured via: Analytics + surveys</div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;">📈 For the business</div>
+      <div style="font-size:12px;">
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Support tickets <span style="font-size:10px;">(baseline: Zendesk)</span></span><span style="font-weight:700;color:var(--navy);">-50% by May</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Staff time saved / school / week</span><span style="font-weight:700;color:var(--navy);">30+ hrs</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">All 13 products on shared DS</span><span style="font-weight:700;color:var(--navy);">Apr 2026</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;"><span style="color:var(--g600);">Offer round processing time</span><span style="font-weight:700;color:var(--navy);">-40% by Jun</span></div>
+        <div style="margin-top:8px;font-size:10px;color:var(--g500);">Owner: PM · Measured via: Zendesk + task timing study</div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;">🎯 For the design team</div>
+      <div style="font-size:12px;">
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Build and test AI prototypes</span><span style="font-weight:700;color:var(--navy);">Sep 2026</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">Research driving product decisions</span><span style="font-weight:700;color:var(--navy);">Jul 2026</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--g100);"><span style="color:var(--g600);">AI pattern library published</span><span style="font-weight:700;color:var(--navy);">Nov 2026</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;"><span style="color:var(--g600);">Empathy mapping sessions run</span><span style="font-weight:700;color:var(--navy);">1 per Phase 2 screen</span></div>
+        <div style="margin-top:8px;font-size:10px;color:var(--g500);">Owner: Emma · Measured via: DS Lookbook + research log</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- RISKS -->
+<div id="risks" style="scroll-margin-top:68px;">
+  <div class="section-heading">Risks and Mitigations</div>
+  <div class="section-sub">Three risks the team has identified and how each is managed.</div>
+  <div style="display:flex;flex-direction:column;gap:10px;max-width:900px;margin-top:16px;">
+    <div style="display:grid;grid-template-columns:24px 1fr 1fr;gap:14px;background:var(--g50);border:1px solid var(--g200);border-radius:9px;padding:14px 16px;align-items:start;">
+      <div style="font-size:18px;">⏱️</div>
+      <div><div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">Timeline risk</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Phase 2 and Phase 3 run in parallel in March–April. If research synthesis or engineering availability slips, the April milestone moves.</div></div>
+      <div><div style="font-size:11px;font-weight:800;color:#15803d;margin-bottom:4px;">Mitigation</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">AI-accelerated prototyping (v0, Cursor, Claude) compresses Phase 2 from months to weeks. Phase 2 scope is prototypes only — not builds. If one product track slips, the other ships independently.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:24px 1fr 1fr;gap:14px;background:var(--g50);border:1px solid var(--g200);border-radius:9px;padding:14px 16px;align-items:start;">
+      <div style="font-size:18px;">🔧</div>
+      <div><div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">Engineering dependency</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Phases 1–3 require engineering capacity to implement validated designs. If engineering is unavailable or reprioritised, shipped designs may lag.</div></div>
+      <div><div style="font-size:11px;font-weight:800;color:#15803d;margin-bottom:4px;">Mitigation</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Designers build HTML and Tailwind prototypes directly — reducing engineering effort on each item. Phase 1 items are independently shippable, so the team can flex around engineering capacity without losing the whole phase.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:24px 1fr 1fr;gap:14px;background:var(--g50);border:1px solid var(--g200);border-radius:9px;padding:14px 16px;align-items:start;">
+      <div style="font-size:18px;">🤖</div>
+      <div><div style="font-size:11px;font-weight:800;color:#b45309;margin-bottom:4px;">AI capability uncertainty</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Phase 4 AI features depend on engineering building the underlying models on schedule (AR 2 roadmap). If AI capabilities ship later, Phase 4 UX design stages shift accordingly.</div></div>
+      <div><div style="font-size:11px;font-weight:800;color:#15803d;margin-bottom:4px;">Mitigation</div><div style="font-size:11px;color:var(--g700);line-height:1.5;">Phase 4 UX design leads engineering — shared AI DS components, confidence patterns, and escalation flows are designed and in the Lookbook before any AI feature ships. Design is never the blocker.</div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<div class="footer">
+  Applicaa UI/UX — Strategy 2026 &nbsp;·&nbsp; Emma Nguyen &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; Board and executive summary
+</div>
+
+</body>
+</html>
