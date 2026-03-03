@@ -207,9 +207,18 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   .vision-principles{grid-template-columns:1fr;}
   .ai-stat-row{grid-template-columns:1fr 1fr;}
 }
+
+/* Cross-doc nav */
+.suite-nav{background:#1a2d6e;padding:0;display:flex;align-items:center;overflow-x:auto;}
+.suite-nav-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.4);padding:10px 16px;white-space:nowrap;border-right:1px solid rgba(255,255,255,.1);}
+.suite-nav a{font-size:12px;font-weight:600;color:rgba(255,255,255,.55);padding:10px 15px;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;flex-shrink:0;transition:color .15s;}
+.suite-nav a:hover{color:white;}
+.suite-nav a.active{color:white;border-bottom-color:#EC634B;}
+
 </style>
 </head>
 <body>
+<div class="suite-nav"><span class="suite-nav-label">Applicaa UI/UX 2026</span><a href="strategy.html">Strategy</a><a href="delivery.html">Delivery</a><a href="design.html" class="active">Design</a><a href="applicaaone-roadmap.html">ApplicaaOne</a></div>
 
 <!-- CROSS-DOC NAV -->
 <div class="crossnav">
