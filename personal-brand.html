@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Brand & Content Plan — Emma Nguyen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#263C91;--navy-dark:#1a2d6e;--navy-light:#e8ecf8;
+  --coral:#EC634B;--coral-light:#fdf0ed;
+  --green:#15803d;--green-light:#f0fdf4;--green-border:#86efac;
+  --amber:#d97706;--amber-light:#fef3c7;--amber-border:#fde047;
+  --purple:#7e22ce;--purple-light:#f5f3ff;--purple-border:#c4b5fd;
+  --g50:#f9fafb;--g100:#f3f4f6;--g200:#e5e7eb;--g400:#9ca3af;
+  --g500:#6b7280;--g600:#4b5563;--g700:#374151;--g900:#111827;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--g50);color:var(--g900);font-size:14px;line-height:1.6;}
+
+.header{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 60%,#3a5abf 100%);color:white;padding:40px 24px 36px;}
+.header-inner{max-width:900px;margin:0 auto;}
+.eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.45);margin-bottom:12px;}
+.header h1{font-size:28px;font-weight:800;letter-spacing:-.5px;margin-bottom:10px;line-height:1.2;}
+.header-sub{font-size:14px;color:rgba(255,255,255,.75);max-width:680px;line-height:1.65;}
+.brand-line{display:inline-block;margin-top:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:10px 16px;font-size:15px;font-weight:700;color:white;font-style:italic;}
+
+.container{max-width:900px;margin:0 auto;padding:36px 24px 64px;}
+hr.div{border:none;border-top:1px solid var(--g200);margin:36px 0;}
+
+.section-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--g400);margin-bottom:6px;}
+.section-title{font-size:20px;font-weight:800;letter-spacing:-.3px;margin-bottom:6px;}
+.section-sub{font-size:13px;color:var(--g600);line-height:1.65;margin-bottom:20px;max-width:720px;}
+
+/* Identity card */
+.identity-card{background:white;border:1px solid var(--g200);border-radius:14px;padding:24px 28px;margin-bottom:20px;}
+.identity-core{font-size:16px;font-weight:700;color:var(--g900);line-height:1.6;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--g100);}
+.identity-core em{color:var(--navy);font-style:normal;}
+
+/* Compare table */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g200);border-radius:12px;overflow:hidden;margin-bottom:20px;}
+.compare-col{background:white;padding:18px 20px;}
+.compare-col.old{background:var(--g50);}
+.compare-col-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
+.compare-col.old .compare-col-label{color:var(--g400);}
+.compare-col.new .compare-col-label{color:var(--navy);}
+.compare-item{font-size:13px;color:var(--g700);padding:7px 0;border-bottom:1px solid var(--g100);line-height:1.5;}
+.compare-item:last-child{border-bottom:none;padding-bottom:0;}
+.compare-col.old .compare-item{color:var(--g500);}
+.compare-col.new .compare-item{color:var(--g900);font-weight:500;}
+
+/* Themes */
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.theme{border-radius:12px;padding:20px 22px;border:1px solid var(--g200);}
+.theme-1{background:var(--coral-light);border-color:#f5c4bb;}
+.theme-2{background:var(--purple-light);border-color:var(--purple-border);}
+.theme-3{background:var(--navy-light);border-color:#c2cdf0;}
+.theme-num{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;}
+.theme-1 .theme-num{color:var(--coral);}
+.theme-2 .theme-num{color:var(--purple);}
+.theme-3 .theme-num{color:var(--navy);}
+.theme-title{font-size:15px;font-weight:800;color:var(--g900);margin-bottom:8px;}
+.theme-desc{font-size:12px;color:var(--g700);line-height:1.65;margin-bottom:10px;}
+.theme-eg{font-size:11px;font-style:italic;color:var(--g500);line-height:1.55;padding-top:8px;border-top:1px solid rgba(0,0,0,.06);}
+
+/* Post shape */
+.post-shape{background:white;border:1px solid var(--g200);border-radius:12px;padding:18px 20px;margin-bottom:12px;}
+.shape-step{display:flex;gap:12px;align-items:flex-start;}
+.shape-num{width:24px;height:24px;border-radius:50%;background:var(--navy);color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.shape-text{font-size:13px;color:var(--g700);line-height:1.6;}
+.shape-text strong{color:var(--g900);}
+
+/* Content plan */
+.plan-table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--g200);}
+.plan-table th{background:var(--g50);padding:9px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g500);border-bottom:1px solid var(--g200);}
+.plan-table td{padding:12px 14px;border-bottom:1px solid var(--g100);vertical-align:top;font-size:13px;color:var(--g700);line-height:1.55;}
+.plan-table tr:last-child td{border-bottom:none;}
+.plan-table tr:hover td{background:var(--g50);}
+.wk{font-size:11px;font-weight:800;color:var(--g400);white-space:nowrap;}
+.post-title{color:var(--g900);font-weight:600;margin-bottom:3px;}
+.post-note{font-size:11px;color:var(--g500);font-style:italic;}
+.tag{display:inline-block;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;white-space:nowrap;}
+.tag-1{background:var(--coral-light);color:#b8391f;}
+.tag-2{background:var(--purple-light);color:var(--purple);}
+.tag-3{background:var(--navy-light);color:var(--navy);}
+
+/* Todos */
+.todo-section{margin-bottom:20px;}
+.todo-group{background:white;border:1px solid var(--g200);border-radius:12px;overflow:hidden;margin-bottom:14px;}
+.todo-group-header{padding:12px 16px;font-size:12px;font-weight:800;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--g100);}
+.todo-group-header.red{background:var(--coral-light);color:#b8391f;}
+.todo-group-header.amber{background:var(--amber-light);color:#92400e;}
+.todo-group-header.green{background:var(--green-light);color:var(--green);}
+.todo-item{display:flex;align-items:flex-start;gap:12px;padding:11px 16px;border-bottom:1px solid var(--g100);}
+.todo-item:last-child{border-bottom:none;}
+.todo-cb{width:16px;height:16px;border:2px solid var(--g300);border-radius:4px;flex-shrink:0;margin-top:1px;}
+.todo-text{font-size:13px;color:var(--g700);line-height:1.5;flex:1;}
+.todo-text strong{color:var(--g900);}
+.todo-time{font-size:10px;font-weight:700;color:var(--g400);white-space:nowrap;margin-top:2px;}
+
+.footer{background:var(--navy-dark);color:rgba(255,255,255,.45);text-align:center;padding:20px;font-size:11px;}
+
+@media(max-width:700px){
+  .themes{grid-template-columns:1fr;}
+  .compare{grid-template-columns:1fr;}
+  .header h1{font-size:22px;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="eyebrow">Personal Brand · Emma Nguyen · March 2026</div>
+    <h1>Brand Definition &amp; Content Plan</h1>
+    <div class="header-sub">A story-driven LinkedIn presence built around growth mindset and self-reflection — targeting remote international roles and foreign companies in Vietnam.</div>
+    <div class="brand-line">"Learning out loud."</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- BRAND IDENTITY -->
+<div class="section-label">Brand identity</div>
+<div class="section-title">Who Emma is — in one sentence</div>
+<div class="section-sub">Not a credentials story. Not an origin story. An ongoing process.</div>
+
+<div class="identity-card">
+  <div class="identity-core">A designer who <em>examines her own thinking as rigorously as she examines a product</em> — and shares what she finds.</div>
+  <div style="font-size:13px;color:var(--g600);line-height:1.7;">
+    You don't just grow — you notice yourself growing. You archive roadmaps when they no longer serve. You watch session recordings when the data doesn't make sense. You ask <em>why</em> the plan was wrong, not just that it was wrong. That quality of self-reflection is rare, and it's what makes everything else you do more credible.<br><br>
+    <strong style="color:var(--g900);">This is not a highlight reel. It's the actual process of changing your mind, updating your assumptions, and moving forward with more clarity than before.</strong>
+  </div>
+</div>
+
+<!-- SHIFT TABLE -->
+<div class="section-label" style="margin-top:28px;">What changed</div>
+<div class="section-title" style="margin-bottom:16px;">Old angle vs new angle</div>
+<div class="compare">
+  <div class="compare-col old">
+    <div class="compare-col-label">Old angle — leave behind</div>
+    <div class="compare-item">I got in without a design degree</div>
+    <div class="compare-item">Credentials and background</div>
+    <div class="compare-item">The unlikely origin</div>
+    <div class="compare-item">What I came from</div>
+    <div class="compare-item">AI makes me faster</div>
+  </div>
+  <div class="compare-col new">
+    <div class="compare-col-label">New angle — lead with this</div>
+    <div class="compare-item">I archived a 3-year plan when I realised it was wrong</div>
+    <div class="compare-item">Thinking and evolution</div>
+    <div class="compare-item">The ongoing process</div>
+    <div class="compare-item">How I keep changing</div>
+    <div class="compare-item">AI made building faster — not thinking faster</div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- 3 THEMES -->
+<div class="section-label">Content pillars</div>
+<div class="section-title">3 story themes</div>
+<div class="section-sub">Every post belongs to one of these. Not topics — recurring chapters in the same ongoing story.</div>
+
+<div class="themes">
+  <div class="theme theme-1">
+    <div class="theme-num">Theme 1</div>
+    <div class="theme-title">When I was wrong</div>
+    <div class="theme-desc">Specific moments of changed thinking. Not failures — shifts. The plan that got archived. The screen that kept failing until you looked upstream. The workflow you abandoned for a better one.</div>
+    <div class="theme-eg">"What changed, and what it taught me."</div>
+  </div>
+  <div class="theme theme-2">
+    <div class="theme-num">Theme 2</div>
+    <div class="theme-title">What I'm figuring out now</div>
+    <div class="theme-desc">Live thinking. Questions without answers yet. What you're reading, testing, noticing. Not expertise — curiosity in progress.</div>
+    <div class="theme-eg">"The thing I'm still working out."</div>
+  </div>
+  <div class="theme theme-3">
+    <div class="theme-num">Theme 3</div>
+    <div class="theme-title">What I notice</div>
+    <div class="theme-desc">Observations about design, AI, and work that most people don't say out loud. Small, specific, honest. No listicles — just one clear thought told well.</div>
+    <div class="theme-eg">"The thing everyone's thinking but not saying."</div>
+  </div>
+</div>
+
+<!-- POST SHAPE -->
+<div class="section-label" style="margin-top:28px;">Post format</div>
+<div class="section-title" style="margin-bottom:12px;">Every post has the same shape</div>
+<div class="post-shape">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <div class="shape-step">
+      <div class="shape-num">1</div>
+      <div class="shape-text"><strong>One specific moment or observation</strong> — not a general statement. A scene, a day, a conversation.</div>
+    </div>
+    <div class="shape-step">
+      <div class="shape-num">2</div>
+      <div class="shape-text"><strong>What it made you question</strong> — the honest tension. What you thought before. Why that changed.</div>
+    </div>
+    <div class="shape-step">
+      <div class="shape-num">3</div>
+      <div class="shape-text"><strong>Where you landed — or where you're still going</strong> — resolution or open question. Both are valid.</div>
+    </div>
+  </div>
+</div>
+<div style="font-size:12px;color:var(--g500);margin-top:8px;margin-bottom:28px;">No listicles. No "here are 5 tips." No generic advice. Just one clear thought, told honestly.</div>
+
+<hr class="div">
+
+<!-- CONTENT PLAN -->
+<div class="section-label">Content plan</div>
+<div class="section-title">12 weeks — story-driven posts</div>
+<div class="section-sub">One post per week. Each one a specific moment, not a framework.</div>
+
+<table class="plan-table">
+  <thead>
+    <tr>
+      <th>Wk</th>
+      <th>Post</th>
+      <th>Theme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="wk">1</td>
+      <td>
+        <div class="post-title">"AI made the building faster. It didn't make the thinking faster."</div>
+        <div class="post-note">Already drafted — ready to post</div>
+      </td>
+      <td><span class="tag tag-1">When I was wrong</span></td>
+    </tr>
+    <tr>
+      <td class="wk">2</td>
+      <td>
+        <div class="post-title">"I used to think shipping fast was the goal. Then I watched a user spend 4 minutes on a screen that should take 30 seconds."</div>
+        <div class="post-note">A session recording moment — no company detail needed</div>
+      </td>
+      <td><span class="tag tag-3">What I notice</span></td>
+    </tr>
+    <tr>
+      <td class="wk">3</td>
+      <td>
+        <div class="post-title">"I've changed my mind about Figma."</div>
+        <div class="post-note">The shift from mockups to code — framed as a belief that evolved, not a tool review</div>
+      </td>
+      <td><span class="tag tag-1">When I was wrong</span></td>
+    </tr>
+    <tr>
+      <td class="wk">4</td>
+      <td>
+        <div class="post-title">"I don't know yet how to design for AI trust. Here's what I'm currently thinking."</div>
+        <div class="post-note">A live open question — no need to have the answer</div>
+      </td>
+      <td><span class="tag tag-2">What I'm figuring out</span></td>
+    </tr>
+    <tr>
+      <td class="wk">5</td>
+      <td>
+        <div class="post-title">Medium article: "What I got wrong in 2019 — and what I'd tell myself now"</div>
+        <div class="post-note">Publish on Medium, share on LinkedIn. The 7-year arc told through a growth lens.</div>
+      </td>
+      <td><span class="tag tag-1">When I was wrong</span></td>
+    </tr>
+    <tr>
+      <td class="wk">6</td>
+      <td>
+        <div class="post-title">"The question I ask before starting any design: what would have to be true for this screen to not need to exist?"</div>
+        <div class="post-note">One sentence hook, 3 paragraphs of honest unpacking</div>
+      </td>
+      <td><span class="tag tag-3">What I notice</span></td>
+    </tr>
+    <tr>
+      <td class="wk">7</td>
+      <td>
+        <div class="post-title">"I keep a running doc called 'Things I Was Wrong About.' Here's what's in it right now."</div>
+        <div class="post-note">3 specific belief shifts — recent, honest, specific</div>
+      </td>
+      <td><span class="tag tag-1">When I was wrong</span> <span class="tag tag-2" style="margin-left:4px;">What I'm figuring out</span></td>
+    </tr>
+    <tr>
+      <td class="wk">8</td>
+      <td>
+        <div class="post-title">"I've been reading about how people make decisions under uncertainty. It's changed how I design confirmation screens."</div>
+        <div class="post-note">Links reading to real design decision — shows intellectual curiosity + applied thinking</div>
+      </td>
+      <td><span class="tag tag-2">What I'm figuring out</span></td>
+    </tr>
+    <tr>
+      <td class="wk">9</td>
+      <td>
+        <div class="post-title">"Three things I believed about UX research a year ago that I don't believe anymore."</div>
+        <div class="post-note">Be specific — name the beliefs, not just "I learned a lot"</div>
+      </td>
+      <td><span class="tag tag-1">When I was wrong</span></td>
+    </tr>
+    <tr>
+      <td class="wk">10</td>
+      <td>
+        <div class="post-title">"The hardest part of growth mindset nobody talks about: you have to be willing to look stupid in front of your past self."</div>
+        <div class="post-note">The meta-reflection post — your most shareable piece</div>
+      </td>
+      <td><span class="tag tag-3">What I notice</span></td>
+    </tr>
+    <tr>
+      <td class="wk">11</td>
+      <td>
+        <div class="post-title">"What designing for people under pressure for 7 years taught me."</div>
+        <div class="post-note">EdTech insight — school admissions is high-stakes. No product names needed.</div>
+      </td>
+      <td><span class="tag tag-3">What I notice</span></td>
+    </tr>
+    <tr>
+      <td class="wk">12</td>
+      <td>
+        <div class="post-title">"What I'm still trying to figure out — an honest mid-year reflection."</div>
+        <div class="post-note">Open questions, not accomplishments. Ends the first quarter with honesty, not a highlight reel.</div>
+      </td>
+      <td><span class="tag tag-2">What I'm figuring out</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="div">
+
+<!-- TODOS -->
+<div class="section-label">Action list</div>
+<div class="section-title">LinkedIn updates — in priority order</div>
+<div class="section-sub">Fix the profile before growing the audience. These take under 30 minutes total.</div>
+
+<div class="todo-group">
+  <div class="todo-group-header red">🔴 Do today — under 10 minutes total</div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Update headline</strong> — replace pipe-separated keywords with something human.<br>
+    <span style="font-size:12px;color:var(--g500);">Suggested: "Senior Product Designer &amp; PM · AI-native products · designing straight to code · EdTech"</span></div>
+    <div class="todo-time">2 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Fix duplicate current role at Applicaa</strong> — "Product Designer — Dec 2019 – Present" needs an end date of Sep 2025. Currently showing two active roles simultaneously.</div>
+    <div class="todo-time">2 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Close "Event volunteer at ULAS — Present"</strong> — showing as 8 years active simultaneously with your design roles. Give it an end date.</div>
+    <div class="todo-time">1 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Update location to Hanoi, Vietnam</strong> — changes which recruiters and foreign-company hiring managers see you in search results.</div>
+    <div class="todo-time">1 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Post Week 1 content</strong> — "AI made the building faster. It didn't make the thinking faster." Draft is ready.</div>
+    <div class="todo-time">5 min</div>
+  </div>
+</div>
+
+<div class="todo-group">
+  <div class="todo-group-header amber">🟠 This week — 30–60 minutes total</div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Rewrite About section opener</strong> — replace generic corporate language with your actual story. Lead with growth, not credentials.<br>
+    <span style="font-size:12px;color:var(--g500);">Draft: "I've spent 7 years at the same company — and redesigned the same screens four times. The first time I made them look better. The fourth time I questioned whether they should exist."</span></div>
+    <div class="todo-time">15 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Remove 2 Medium articles from Featured</strong> — Applicaa Website Redesign (2020) and Startup Internship (2019) are both outdated.</div>
+    <div class="todo-time">2 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Pin Seeds post to Featured</strong> — your best-performing content, tells your story, already written.</div>
+    <div class="todo-time">2 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Cut skills from 47 to 5–10</strong> — keep: Product Design, UX Research, HTML &amp; CSS, Design Systems, Prototyping. Remove the rest.</div>
+    <div class="todo-time">5 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Comment on 3 posts daily</strong> — more reach than posting. Your name appears in other people's networks. 2–3 sentences, genuine, no "great post!"</div>
+    <div class="todo-time">10 min/day</div>
+  </div>
+</div>
+
+<div class="todo-group">
+  <div class="todo-group-header green">✅ This month — when you have time</div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Write Medium retrospective</strong> — "What I got wrong in 2019 — and what I'd tell myself now." Replaces both old Medium articles. Publish Week 5.</div>
+    <div class="todo-time">2–3 hrs</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Add one number to each Applicaa job description</strong> — impact, scale, or outcome. No specifics that breach NDA — even "5+ products" or "13-product ecosystem" works.</div>
+    <div class="todo-time">15 min</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Connect with 10 people per week</strong> — target: designers at NAB Vietnam, NashTech Hanoi, UK EdTech companies, Canadian SaaS designers and recruiters.</div>
+    <div class="todo-time">10 min/week</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-cb"></div>
+    <div class="todo-text"><strong>Update banner image</strong> — replace Admissions+ product banner with something that signals your personal brand. A quote, a design tool screenshot, or a simple typographic banner.</div>
+    <div class="todo-time">30 min</div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">Emma Nguyen · Personal Brand Plan · March 2026 · Private document</div>
+
+</body>
+</html>
