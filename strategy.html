@@ -22,11 +22,11 @@
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--g50);color:var(--g900);font-size:14px;line-height:1.6;}
 
 /* CROSS-DOC NAV */
-.crossnav{background:var(--navy-dark);color:white;padding:7px 20px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;flex-wrap:wrap;position:sticky;top:0;z-index:200;}
-.crossnav-label{opacity:.6;margin-right:4px;}
-.crossnav a{color:rgba(255,255,255,.6);text-decoration:none;padding:2px 8px;border-radius:4px;transition:opacity .15s;}
-.crossnav a:hover{opacity:1;color:white;}
-.crossnav a.active{color:white;text-decoration:underline;opacity:1;}
+
+
+
+
+
 
 /* NAV */
 .sticky-nav{position:sticky;top:34px;z-index:100;background:white;border-bottom:1px solid var(--g200);overflow-x:auto;display:flex;}
@@ -109,26 +109,28 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 
 /* Cross-doc suite nav */
-div.suite-nav{background:#1a2d6e;padding:0;display:flex;align-items:center;overflow-x:auto;position:relative;z-index:200;}
-div.suite-nav .suite-nav-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.4);padding:10px 16px;white-space:nowrap;border-right:1px solid rgba(255,255,255,.12);}
-div.suite-nav a{font-size:12px;font-weight:600;color:rgba(255,255,255,.6) !important;padding:10px 16px;text-decoration:none !important;white-space:nowrap;border-bottom:2px solid transparent !important;flex-shrink:0;transition:color .15s;}
-div.suite-nav a:hover{color:white !important;}
-div.suite-nav a.active{color:white !important;border-bottom-color:#EC634B !important;}
 
+
+
+
+
+
+
+/* Suite nav */
+div.suite-nav{background:#1a2d6e;padding:0;display:flex;align-items:center;overflow-x:auto;position:sticky;top:0;z-index:300;}
+div.suite-nav .suite-nav-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.4);padding:10px 16px;white-space:nowrap;border-right:1px solid rgba(255,255,255,.12);}
+div.suite-nav a{font-size:12px;font-weight:600;color:rgba(255,255,255,.6)!important;padding:10px 16px;text-decoration:none!important;white-space:nowrap;border-bottom:2px solid transparent!important;flex-shrink:0;}
+div.suite-nav a:hover{color:white!important;}
+div.suite-nav a.active{color:white!important;border-bottom-color:#EC634B!important;}
 </style>
 </head>
 <body>
 <div class="suite-nav"><span class="suite-nav-label">Applicaa UI/UX 2026</span><a href="strategy.html" class="active">Strategy</a><a href="delivery.html">Delivery</a><a href="design.html">Design</a><a href="applicaaone-roadmap.html">ApplicaaOne</a></div>
 
 
+
 <!-- CROSS-DOC NAV -->
-<div class="crossnav">
-  <span class="crossnav-label">Applicaa UI/UX 2026:</span>
-  <a href="strategy.html" class="active">Strategy ↗</a>
-  <a href="delivery.html">Delivery ↗</a>
-  <a href="design.html">Design ↗</a>
-  <a href="applicaaone-roadmap.html">ApplicaaOne ↗</a>
-</div>
+
 
 <nav class="sticky-nav">
   <a href="#vision">Vision</a>
