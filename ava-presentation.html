@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ava AI Agent - Stakeholder Presentation</title>
+    <style>
+        :root {
+            --navy: #263C91;
+            --coral: #EC634B;
+            --navy-light: #e8ecf8;
+            --coral-light: #fdf0ed;
+            --gray-50: #f9fafb;
+            --gray-900: #111827;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+        .slide {
+            min-height: 100vh;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .slide-title {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2d6e 100%);
+            color: white;
+            text-align: center;
+        }
+        .slide-title h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .slide-title p {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+        h2 {
+            font-size: 36px;
+            color: var(--navy);
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--coral);
+            padding-bottom: 15px;
+        }
+        h3 {
+            font-size: 24px;
+            color: var(--navy);
+            margin: 30px 0 15px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--coral);
+        }
+        .card h4 {
+            font-size: 20px;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+        .card p, .card li {
+            font-size: 16px;
+            color: #4b5563;
+        }
+        .card ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .card li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background: var(--coral-light);
+            border-left: 4px solid var(--coral);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box h4 {
+            color: #92400e;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+        }
+        .stat-box .number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--navy);
+            display: block;
+        }
+        .stat-box .label {
+            font-size: 16px;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+        .phase-list {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .phase {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .phase::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--coral);
+            font-size: 24px;
+        }
+        .phase:last-child::after {
+            display: none;
+        }
+        .phase-number {
+            width: 50px;
+            height: 50px;
+            background: var(--navy);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+        .phase-title {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+        .phase-time {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .nav {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--navy);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background: var(--navy-light);
+            color: var(--navy);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--navy-light);
+            color: var(--navy);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide slide-title">
+    <h1>Meet Ava</h1>
+    <p>Your AI Admissions Assistant</p>
+    <p style="margin-top: 40px; font-size: 18px;">Bridging AI innovation with UK EdTech trust</p>
+</div>
+
+<!-- Slide 2: The Problem -->
+<div class="slide">
+    <h2>The Challenge</h2>
+    <div class="grid-2">
+        <div class="card">
+            <h4>For School Staff</h4>
+            <ul>
+                <li>200+ applications to process manually</li>
+                <li>Repetitive chase emails and scheduling</li>
+                <li>Complex SortingHat allocations take hours</li>
+                <li>Working evenings and weekends during peak</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>Current State</h4>
+            <ul>
+                <li>Siloed tools (spreadsheets, email, MIS)</li>
+                <li>No visibility into team workload</li>
+                <li>Audit trails are manual and error-prone</li>
+                <li>Safeguarding risks from missed flags</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>The Opportunity</h4>
+        <p>AI can handle 70% of routine tasks, freeing staff to focus on high-value decisions that require human judgment.</p>
+    </div>
+</div>
+
+<!-- Slide 3: Meet Ava -->
+<div class="slide">
+    <h2>Who is Ava?</h2>
+    <div class="grid-3">
+        <div class="card">
+            <h4>Competent</h4>
+            <p>Knows admissions inside out. References criteria, previous years, and patterns to make informed suggestions.</p>
+        </div>
+        <div class="card">
+            <h4>Humble</h4>
+            <p>Admits when unsure. Asks for help. Learns from corrections. Never pretends to know everything.</p>
+        </div>
+        <div class="card">
+            <h4>Transparent</h4>
+            <p>Shows her work. Explains reasoning. Offers confidence scores. No black box decisions.</p>
+        </div>
+    </div>
+    <div class="grid-3" style="margin-top: 20px;">
+        <div class="card">
+            <h4>Supportive</h4>
+            <p>Wants you to succeed. Celebrates wins. Never judges. Handles the repetitive work so you can focus.</p>
+        </div>
+        <div class="card">
+            <h4>Diligent</h4>
+            <p>Double-checks before acting. Flags edge cases. Admits mistakes immediately. Cares about accuracy.</p>
+        </div>
+        <div class="card">
+            <h4>Honest</h4>
+            <p>Owns errors directly. Explains what went wrong. Shows how she's fixing it. Learns transparently.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: How It Works -->
+<div class="slide">
+    <h2>Four Levels of Autonomy</h2>
+    <p style="font-size: 18px; color: #6b7280; margin-bottom: 30px;">Ava operates at different autonomy levels depending on task complexity and risk.</p>
+    
+    <table>
+        <tr>
+            <th>Level</th>
+            <th>Name</th>
+            <th>How It Works</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><span class="tag">L1</span></td>
+            <td>Shadow</td>
+            <td>Ava observes, suggests, waits for your decision</td>
+            <td>Learning your preferences</td>
+        </tr>
+        <tr>
+            <td><span class="tag">L2</span></td>
+            <td>Draft & Confirm</td>
+            <td>Ava prepares, shows preview, needs approval</td>
+            <td>Send offer letters</td>
+        </tr>
+        <tr>
+            <td><span class="tag">L3</span></td>
+            <td>Act & Notify</td>
+            <td>Ava executes, tells you after, can undo</td>
+            <td>Generate weekly report</td>
+        </tr>
+        <tr>
+            <td><span class="tag">L4</span></td>
+            <td>Autopilot</td>
+            <td>Ava runs independently, escalates exceptions</td>
+            <td>Routine reminders</td>
+        </tr>
+    </table>
+    
+    <div class="highlight-box">
+        <h4>Safeguarding Rule</h4>
+        <p>All external communications (emails to parents) and SEND/EHCP cases are Level 2 — human approval required.</p>
+    </div>
+</div>
+
+<!-- Slide 5: The Interface -->
+<div class="slide">
+    <h2>The Workspace: Kanban + Command</h2>
+    <div class="grid-2">
+        <div class="card">
+            <h4>Kanban Board</h4>
+            <ul>
+                <li><strong>Working:</strong> Ava is processing</li>
+                <li><strong>Waiting:</strong> Needs your approval</li>
+                <li><strong>Complete:</strong> Done, with undo available</li>
+            </ul>
+            <p style="margin-top: 15px;">Visual progress bars, confidence scores, step-by-step visibility.</p>
+        </div>
+        <div class="card">
+            <h4>Command Palette</h4>
+            <ul>
+                <li>Cmd+K for instant access</li>
+                <li>Natural language or shortcuts</li>
+                <li>Rich previews before execution</li>
+                <li>Keyboard-first for speed</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid-2" style="margin-top: 20px;">
+        <div class="card">
+            <h4>Chat Drawer</h4>
+            <p>Conversational interface maintains Ava's warm, supportive voice. Ask anything, get contextual help.</p>
+        </div>
+        <div class="card">
+            <h4>Team View</h4>
+            <p>See who's working on what. Handoff tasks. Shared context. No more "where did I leave off?"</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Labour Visibility -->
+<div class="slide">
+    <h2>Trust Through Transparency</h2>
+    <h3>Every Action Shows the Work</h3>
+    
+    <div class="grid-2">
+        <div class="card">
+            <h4>Before: Black Box</h4>
+            <p style="background: #fef2f2; padding: 15px; border-radius: 8px;">"Processing complete. 12 emails sent."</p>
+            <ul>
+                <li>What did Ava actually do?</li>
+                <li>Who was contacted?</li>
+                <li>What did the emails say?</li>
+                <li>Can I undo if needed?</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>After: Labour Visibility</h4>
+            <p style="background: #f0fdf4; padding: 15px; border-radius: 8px;">"Drafted 12 personalised emails. Preview shows recipients and content. Approve to send. Undo available for 24 hours."</p>
+            <ul>
+                <li>Preview every message</li>
+                <li>Edit before sending</li>
+                <li>See confidence scores</li>
+                <li>Full audit trail</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>The Principle</h4>
+        <p>"AI made the building faster. It didn't make the thinking faster." — Users see reasoning, not just results.</p>
+    </div>
+</div>
+
+<!-- Slide 7: Safety & Compliance -->
+<div class="slide">
+    <h2>Built for UK Education</h2>
+    <div class="grid-3">
+        <div class="card">
+            <h4>GDPR Compliant</h4>
+            <ul>
+                <li>Self-hosted infrastructure</li>
+                <li>No data leaves your system</li>
+                <li>12-month auto-delete</li>
+                <li>Complete audit trails</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>KCSIE Aligned</h4>
+            <ul>
+                <li>SEND/EHCP automatic escalation</li>
+                <li>Safeguarding flag detection</li>
+                <li>DSL notification system</li>
+                <li>Human review for all flags</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>Children's Code</h4>
+            <ul>
+                <li>Privacy by design</li>
+                <li>No profiling without consent</li>
+                <li>Age-appropriate interactions</li>
+                <li>Transparent data use</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px;">
+        <h3>Safeguarding: Non-Negotiable</h3>
+        <div class="card" style="border-left-color: #dc2626;">
+            <p><strong>Rule:</strong> Any mention of harm, abuse, or safeguarding concerns immediately escalates to DSL. Ava never handles these alone.</p>
+            <p style="margin-top: 10px;"><strong>Training:</strong> RLHF reward model includes -100 penalty for any safeguarding miss. 100% detection required.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Learning & Improvement -->
+<div class="slide">
+    <h2>Continuous Learning</h2>
+    <div class="grid-2">
+        <div class="card">
+            <h4>From Every Interaction</h4>
+            <ul>
+                <li>👍/👎 on every suggestion</li>
+                <li>"Teach me" button for corrections</li>
+                <li>Pattern recognition ("You corrected me 3x on tone")</li>
+                <li>Weekly preference calibration</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>To Better Performance</h4>
+            <ul>
+                <li>SFT: Learn from demonstrations</li>
+                <li>Reward Model: Learn preferences</li>
+                <li>RL: Practice with feedback</li>
+                <li>Monthly retraining cycles</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>Character Integrity</h4>
+        <p>Ava doesn't just learn tasks — she learns <em>your school's culture</em>. Formal vs casual, detailed vs brief, proactive vs responsive. Every correction shapes her personality.</p>
+    </div>
+</div>
+
+<!-- Slide 9: Impact -->
+<div class="slide">
+    <h2>Expected Impact</h2>
+    <div class="grid-3">
+        <div class="stat-box">
+            <span class="number">38 hrs</span>
+            <span class="label">Time saved per week</span>
+        </div>
+        <div class="stat-box">
+            <span class="number">70%</span>
+            <span class="label">Routine tasks automated</span>
+        </div>
+        <div class="stat-box">
+            <span class="number">50%</span>
+            <span class="label">Faster processing</span>
+        </div>
+    </div>
+    
+    <div class="grid-3" style="margin-top: 40px;">
+        <div class="card">
+            <h4>Staff Experience</h4>
+            <ul>
+                <li>No more evening/weekend work</li>
+                <li>Focus on decisions, not data entry</li>
+                <li>Full context for every choice</li>
+                <li>Team coordination built-in</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>Family Experience</h4>
+            <ul>
+                <li>Faster response times</li>
+                <li>Consistent communication</li>
+                <li>No missed deadlines</li>
+                <li>Professional, warm tone</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>School Outcomes</h4>
+            <ul>
+                <li>Cost savings: £15k-25k/year</li>
+                <li>Audit-ready documentation</li>
+                <li>Reduced compliance risk</li>
+                <li>Higher offer acceptance rates</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Implementation -->
+<div class="slide">
+    <h2>12-Week Implementation</h2>
+    
+    <div class="phase-list">
+        <div class="phase">
+            <div class="phase-number">1</div>
+            <div class="phase-title">Foundation</div>
+            <div class="phase-time">Weeks 1-4</div>
+            <p style="font-size: 14px; margin-top: 10px;">Core kanban, task cards, basic chat</p>
+        </div>
+        <div class="phase">
+            <div class="phase-number">2</div>
+            <div class="phase-title">Visibility</div>
+            <div class="phase-time">Weeks 5-6</div>
+            <p style="font-size: 14px; margin-top: 10px;">Progress bars, confidence scores, previews</p>
+        </div>
+        <div class="phase">
+            <div class="phase-number">3</div>
+            <div class="phase-title">Power Features</div>
+            <div class="phase-time">Weeks 7-8</div>
+            <p style="font-size: 14px; margin-top: 10px;">Command palette, shortcuts, filters</p>
+        </div>
+        <div class="phase">
+            <div class="phase-number">4</div>
+            <div class="phase-title">Team</div>
+            <div class="phase-time">Weeks 9-10</div>
+            <p style="font-size: 14px; margin-top: 10px;">Presence, handoffs, activity feed</p>
+        </div>
+        <div class="phase">
+            <div class="phase-number">5</div>
+            <div class="phase-title">Polish</div>
+            <div class="phase-time">Weeks 11-12</div>
+            <p style="font-size: 14px; margin-top: 10px;">Mobile, accessibility, performance</p>
+        </div>
+    </div>
+    
+    <div class="highlight-box" style="margin-top: 40px;">
+        <h4>Go-Live Strategy</h4>
+        <p><strong>Phase 0 (Weeks 1-2):</strong> L1 only — Ava watches, suggests, staff decides<br>
+        <strong>Phase 1 (Weeks 3-6):</strong> L2 for internal, L1 for external<br>
+        <strong>Phase 2 (Weeks 7+):</strong> Gradual L3 where confidence high</p>
+    </div>
+</div>
+
+<!-- Slide 11: Investment -->
+<div class="slide">
+    <h2>Investment & Support</h2>
+    
+    <div class="grid-2">
+        <div class="card">
+            <h4>Whats Included</h4>
+            <ul>
+                <li>Full Ava platform (self-hosted)</li>
+                <li>Initial model training on your data</li>
+                <li>Staff training & onboarding</li>
+                <li>12-month support & updates</li>
+                <li>Quarterly model retraining</li>
+                <li>Compliance audit support</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>Ongoing Costs</h4>
+            <ul>
+                <li>Infrastructure: £2,800-6,300/month</li>
+                <li>Support: £1,500/month</li>
+                <li>Retraining: £5,000/quarter</li>
+                <li style="margin-top: 15px;"><strong>ROI: 6-9 months</strong></li>
+                <li>Break-even: 30+ saved hours/month</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>Risk Mitigation</h4>
+        <p>Start on staging with anonymised data. 4-week pilot with 2-3 staff. Full rollback available anytime. No lock-in — your data, your infrastructure.</p>
+    </div>
+</div>
+
+<!-- Slide 12: Q&A -->
+<div class="slide slide-title">
+    <h1>Questions?</h1>
+    <p style="margin-top: 40px;">14 comprehensive design documents available</p>
+    <p style="margin-top: 20px; font-size: 18px;">Technical • UX • Operations • Training • Compliance</p>
+    <p style="margin-top: 40px; font-size: 16px;">Emma Nguyen, Product Designer<br>Ava AI Agent Project</p>
+</div>
+
+</body>
+</html>
