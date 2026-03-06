@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ava Workspace - 4 Improved Concepts (Polished)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #263C91;
+            --navy-600: #1e2f73;
+            --coral: #EC634B;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-500: #64748b;
+            --gray-800: #1e293b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--gray-100); }
+        .nav { background: var(--navy); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav h1 { font-size: 1.25rem; }
+        .concept-select { display: flex; gap: 0.5rem; }
+        .concept-btn { padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); border: none; color: white; border-radius: 6px; cursor: pointer; }
+        .concept-btn.active { background: var(--coral); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .concept-panel { display: none; }
+        .concept-panel.active { display: block; }
+        .concept-header { background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .concept-header h2 { margin-bottom: 0.5rem; }
+        .workspace { background: white; border-radius: 16px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); min-height: 600px; overflow: hidden; }
+        
+        /* Concept D - Kanban (Improved) */
+        .kanban-workspace { display: flex; flex-direction: column; height: 600px; }
+        .kanban-header { background: linear-gradient(135deg, var(--navy), var(--navy-600)); color: white; padding: 1.5rem 2rem; }
+        .kanban-branding { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .kanban-avatar { width: 40px; height: 40px; background: var(--coral); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
+        .kanban-title h3 { font-size: 1.125rem; }
+        .kanban-subtitle { opacity: 0.8; font-size: 0.875rem; }
+        .stats-bar { display: flex; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .stat { text-align: center; }
+        .stat-value { font-size: 1.5rem; font-weight: 700; }
+        .stat-label { font-size: 0.75rem; opacity: 0.8; }
+        .kanban-board { display: flex; gap: 1rem; padding: 1.5rem; background: var(--gray-50); flex: 1; overflow-x: auto; }
+        .kanban-column { flex: 1; min-width: 300px; background: var(--gray-100); border-radius: 12px; padding: 1rem; }
+        .column-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 3px solid; }
+        .column-working .column-header { border-color: var(--warning); }
+        .column-waiting .column-header { border-color: #3b82f6; }
+        .column-complete .column-header { border-color: var(--success); }
+        .column-title { font-weight: 600; font-size: 0.875rem; }
+        .column-count { background: var(--gray-200); padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .task-card { background: white; border-radius: 10px; padding: 1rem; margin-bottom: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid var(--gray-200); }
+        .task-card:hover { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .task-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .task-icon { font-size: 1.25rem; }
+        .task-title { font-weight: 600; font-size: 0.875rem; flex: 1; }
+        .confidence-badge { font-size: 0.625rem; padding: 0.125rem 0.5rem; border-radius: 12px; font-weight: 600; }
+        .confidence-high { background: #d1fae5; color: #065f46; }
+        .confidence-medium { background: #fef3c7; color: #92400e; }
+        .confidence-low { background: #fee2e2; color: #991b1b; }
+        .progress-section { margin: 0.75rem 0; }
+        .progress-bar { height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .progress-fill.working { background: var(--warning); }
+        .progress-stats { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--gray-500); margin-top: 0.25rem; }
+        .task-meta { font-size: 0.75rem; color: var(--gray-500); margin-top: 0.5rem; }
+        .task-actions { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+        .btn { padding: 0.5rem 1rem; border-radius: 6px; border: none; font-size: 0.75rem; font-weight: 500; cursor: pointer; }
+        .btn-primary { background: var(--coral); color: white; }
+        .btn-secondary { background: var(--gray-100); color: var(--gray-800); }
+        .btn-success { background: var(--success); color: white; }
+        .preview-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 0.75rem; margin: 0.5rem 0; font-size: 0.75rem; }
+        .preview-box ul { list-style: none; margin: 0.25rem 0; }
+        .preview-box li { padding: 0.125rem 0; }
+        .warning-box { background: #fef3c7; border-left: 4px solid var(--warning); padding: 0.75rem; border-radius: 0 8px 8px 0; font-size: 0.75rem; margin-top: 0.5rem; }
+        .success-stats { display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; }
+        .success-stat { display: flex; align-items: center; gap: 0.25rem; }
+        .bottom-bar { display: flex; gap: 1rem; padding: 1rem 2rem; background: white; border-top: 1px solid var(--gray-200); }
+        .command-input { flex: 1; display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; background: var(--gray-100); border-radius: 8px; font-size: 0.875rem; color: var(--gray-500); }
+        .chat-toggle { padding: 0.75rem 1.5rem; background: var(--navy); color: white; border-radius: 8px; display: flex; align-items: center; gap: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <h1>🎨 Ava Workspace - 4 Improved Concepts</h1>
+        <div class="concept-select">
+            <button class="concept-btn active" onclick="showConcept('d')">D: Kanban ★</button>
+            <button class="concept-btn" onclick="showConcept('a')">A: Chat</button>
+            <button class="concept-btn" onclick="showConcept('b')">B: Command</button>
+            <button class="concept-btn" onclick="showConcept('c')">C: Feed</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Concept D: Kanban (Improved & Recommended) -->
+        <div id="concept-d" class="concept-panel active">
+            <div class="concept-header">
+                <div>
+                    <h2>Concept D: Kanban Workspace ★ RECOMMENDED</h2>
+                    <p>Best labour visibility, clear L1/L2/L3 mapping, natural team workflow</p>
+                </div>
+            </div>
+            <div class="workspace">
+                <div class="kanban-workspace">
+                    <div class="kanban-header">
+                        <div class="kanban-branding">
+                            <div class="kanban-avatar">🤖</div>
+                            <div class="kanban-title">
+                                <h3>Applicaa Ava - Workspace</h3>
+                                <div class="kanban-subtitle">Your AI admissions assistant</div>
+                            </div>
+                        </div>
+                        <div class="stats-bar">
+                            <div class="stat"><div class="stat-value">12</div><div class="stat-label">NEW</div></div>
+                            <div class="stat"><div class="stat-value">3</div><div class="stat-label">TO CHASE</div></div>
+                            <div class="stat"><div class="stat-value">1</div><div class="stat-label">DEADLINE</div></div>
+                            <div class="stat"><div class="stat-value">135</div><div class="stat-label">TOTAL</div></div>
+                        </div>
+                    </div>
+                    <div class="kanban-board">
+                        <div class="kanban-column column-working">
+                            <div class="column-header">
+                                <span class="column-title">🔴 WORKING (L3)</span>
+                                <span class="column-count">2</span>
+                            </div>
+                            <div class="task-card">
+                                <div class="task-header">
+                                    <span class="task-icon">📄</span>
+                                    <span class="task-title">Chase Missing Documents</span>
+                                    <span class="confidence-badge confidence-high">92%</span>
+                                </div>
+                                <div class="progress-section">
+                                    <div class="progress-bar"><div class="progress-fill working" style="width: 67%"></div></div>
+                                    <div class="progress-stats">
+                                        <span>8 of 12 sent</span>
+                                        <span>ETA: 3 min</span>
+                                    </div>
+                                </div>
+                                <div class="task-meta">Last: Emily Smith • Opened 2 min ago</div>
+                                <div class="task-actions">
+                                    <button class="btn btn-secondary">View</button>
+                                    <button class="btn btn-secondary">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="task-card">
+                                <div class="task-header">
+                                    <span class="task-icon">🟡</span>
+                                    <span class="task-title">SortingHat Allocation Review</span>
+                                    <span class="confidence-badge confidence-medium">78%</span>
+                                </div>
+                                <div class="progress-section">
+                                    <div class="progress-bar"><div class="progress-fill working" style="width: 15%"></div></div>
+                                    <div class="progress-stats">
+                                        <span>Analyzing 45 applications</span>
+                                        <span>3 need review</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn btn-secondary">Preview</button>
+                                    <button class="btn btn-secondary">Adjust</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kanban-column column-waiting">
+                            <div class="column-header">
+                                <span class="column-title">🔵 WAITING (L2)</span>
+                                <span class="column-count">1</span>
+                            </div>
+                            <div class="task-card">
+                                <div class="task-header">
+                                    <span class="task-icon">📝</span>
+                                    <span class="task-title">Draft: Conditional Offer</span>
+                                    <span class="confidence-badge confidence-high">94%</span>
+                                </div>
+                                <div class="preview-box">
+                                    <strong>Marcus Chen</strong>
+                                    <ul>
+                                        <li>✅ Predicted grades</li>
+                                        <li>✅ Interview score</li>
+                                        <li>✅ Reference</li>
+                                    </ul>
+                                    Conditions: 3 (Maths, English, Science)
+                                </div>
+                                <div class="warning-box">
+                                    ⚠️ Similar case withdrew — consider interview
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn btn-success">✓ Approve</button>
+                                    <button class="btn btn-secondary">Edit</button>
+                                    <button class="btn btn-secondary">Reject</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kanban-column column-complete">
+                            <div class="column-header">
+                                <span class="column-title">🟢 COMPLETE (L1)</span>
+                                <span class="column-count">1</span>
+                            </div>
+                            <div class="task-card">
+                                <div class="task-header">
+                                    <span class="task-icon">✅</span>
+                                    <span class="task-title">Offer Sent — 12 Students</span>
+                                </div>
+                                <div class="preview-box">
+                                    <div class="success-stats">
+                                        <span class="success-stat">🎉 11 delivered</span>
+                                        <span class="success-stat">⏳ 1 pending</span>
+                                        <span class="success-stat">👀 3 opened (27%)</span>
+                                    </div>
+                                </div>
+                                <div class="task-meta">09:45 • Took 3.2s • 2 staff online</div>
+                                <div class="task-actions">
+                                    <button class="btn btn-secondary">View Confirmations</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-bar">
+                        <div class="command-input">
+                            <span>⌘</span> Command... (e.g., "chase incomplete")
+                        </div>
+                        <div class="chat-toggle">
+                            💬 Ask Ava
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showConcept(id) {
+            document.querySelectorAll('.concept-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.concept-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('concept-' + id).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
