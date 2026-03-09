@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ava Workflow Complete - All 10 Steps</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 2rem auto; padding: 1rem; line-height: 1.6; color: #1e293b; }
+h1 { color: #263C91; border-bottom: 3px solid #EC634B; padding-bottom: 0.5rem; }
+h2 { color: #263C91; margin-top: 2rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; }
+h3 { color: #475569; margin-top: 1.5rem; }
+h4 { color: #64748b; }
+pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.875rem; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+th { background: #f8fafc; font-weight: 600; }
+blockquote { border-left: 4px solid #263C91; padding-left: 1rem; margin-left: 0; color: #475569; }
+</style>
+</head>
+<body>
+# Ava Workflow: Linear-Style AI-Assisted Admissions Management
+
+*Updated with Best UI/UX Practices · March 2026*
+
+**Based on:** Symphony agent pattern + The Ava Handbook principles  
+**Author:** Emma Nguyen  
+**Design:** Hoang Nguyen
+
+---
+
+## 1. Overview
+
+**Ava** is Applicaa's AI agent for Admissions+. She operates inside the platform on behalf of admissions staff — triaging applications, detecting duplicates, drafting communications, and updating records — with a human always in the loop for review and approval.
+
+### KEY PRINCIPLE
+
+> The admissions coordinator's only required actions are: **(1)** describe the task, and **(2)** approve or redirect the outcome. Ava handles everything in between.
+
+### Core Principles from The Ava Handbook:
+
+- **Labour Visibility:** Every action visible with real-time progress
+- **Human-in-the-Loop:** L2 (Draft & Confirm) default for irreversible actions
+- **Confidence Transparency:** Show scores (+ reasoning) on every suggestion
+- **Brand Integration:** "Ava by Applicaa" co-branded experience
+- **Safeguarding:** Automatic escalation for sensitive cases
+
+---
+
+## 2. Symphony → Ava: Workflow Mapping
+
+| # | Symphony (Software Dev) | Ava (UK School Admissions) |
+|---|------------------------|---------------------------|
+| 1 | User opens TodoMVC — identifies missing feature | Coordinator opens Admissions+ — identifies problem or recurring task |
+| 2 | Views Linear board (Backlog/Todo/In Progress/Human Review) | Views Ava Task Board (Queued/In Progress/Awaiting Review/Done) |
+| 3 | Creates issue via + modal: title, description, status, assignee | Creates Ava task: describes in plain English; selects type and scope |
+| 4 | Issue MT-892 appears on Todo; board count updates | New Ava task appears; Ava auto-assigned and begins analysis |
+| 5 | Agent auto-generates plan with nested sub-tasks | Ava auto-generates action plan: records, steps, flags |
+| 6 | Agent completes sub-tasks; Acceptance Criteria, Validation, Notes | Ava executes plan: processes records, drafts comms, updates statuses |
+| 7 | Agent posts screen recording as proof | Ava posts results: records changed, drafts, confidence scores |
+| 8 | User reviews status dropdown and pipeline stages | Coordinator opens review panel; approve/edit/reject controls |
+| 9 | User moves issue to Merging — code ready | Coordinator approves — Ava's actions committed to live records |
+| 10 | User marks issue Done — feature complete | Coordinator marks task Done — archived, outcome logged |
+
+---
+
+## 3. Detailed User Flow: All 10 Steps
+
+---
+
+### STEP 1: Trigger — Problem Identified
+
+**ACTOR:** Coordinator  
+**SCREEN:** Admissions+ Dashboard
+
+#### Scenario A: Proactive (Ava surfaces opportunity — IMPROVED)
+
+**Problem with Original:** Risk of "Clippy effect" — intrusive suggestions
+
+**IMPROVED VERSION:**
+
+```
+┌─ Admissions+ Dashboard ──────────────────────────────┐
+│                                                     │
+│  📊 Today's Overview                                  │
+│  • 12 new applications                                │
+│  • 5 incomplete (need chasing)                       │
+│  • 1 offer deadline today                            │
+│                                                     │
+│  💡 Ava Suggestion (subtle badge):                   │
+│  "5 high-engagement students incomplete 2+ weeks"   │
+│  [Review]  [Dismiss for 24h]  [Don't show again]    │
+│                                                     │
+│  Entry: [Ava Task Board] or top nav shortcut        │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+**Improvements:**
+- ✅ Subtle badge (not intrusive banner)
+- ✅ Dismissal options (24h / permanent)
+- ✅ Only shows after 2+ visits (learns patterns first)
+- ✅ Low-friction single-click entry
+
+#### Scenario B: Reactive (Coordinator identifies task)
+
+```
+Coordinator reviews dashboard → Clicks "+ New Ava Task"
+```
+
+---
+
+### STEP 2: Ava Task Board — Overview
+
+**ACTOR:** Coordinator  
+**SCREEN:** Ava Task Board (Kanban)
+
+**IMPROVED CARD DESIGN (Progressive Disclosure):**
+
+```
+┌─ Ava Task Board ──────────────────────────────────────┐
+│                                                       │
+│  🔴 QUEUED (2)  │  🟠 IN PROGRESS (1)  │  🟡 AWAITING │
+│                 │                      │  REVIEW (3)   │
+│                 │                      │  🟢 DONE (47) │
+│                                                       │
+│  ┌─ Task Card (default view) ──────────────────────┐  │
+│  │ 📄 Chase incomplete apps                        │  │
+│  │ Year 7 • 5 students                             │  │
+│  │ [Working...]  ← Hover for details              │  │
+│  └───────────────────────────────────────────────────┘  │
+│                                                       │
+│  ┌─ Task Card (hover/expanded) ────────────────────┐  │
+│  │ 📄 Chase incomplete apps                   92%  │  │
+│  │ Year 7 2026 • 5 students                        │  │
+│  │ ⏱ 15 min elapsed • 2 min remaining             │  │
+│  │ 🔄 Analysing family data...                     │  │
+│  │                                    [View] [Edit]│  │
+│  └───────────────────────────────────────────────────┘  │
+│                                                       │
+│  Actions available: Create (+) · Filter ▼ · Search   │
+│                                                       │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Improvements:**
+- ✅ Clean default view (icon + title only)
+- ✅ Hover to reveal details (progressive disclosure)
+- ✅ Awaiting Review highlighted (amber)
+- ✅ Count of records affected (trust signal)
+
+---
+
+### STEP 3: Create Ava Task — Task Brief (IMPROVED)
+
+**ACTOR:** Coordinator  
+**SCREEN:** New Task Modal
+
+**Problem with Original:** Too many options = choice paralysis
+
+**IMPROVED: Step-by-Step Wizard**
+
+```
+┌─ Create New Ava Task ─────────────────────────────────┐
+│                                                       │
+│  Step 1 of 3: What would you like Ava to do?        │
+│                                                       │
+│  Describe in plain English:                          │
+│  ┌─ "Find all duplicate records from Year 7 2026    │
+│  │  intake and suggest which to keep" ─────────────┐ │
+│  └───────────────────────────────────────────────────┘ │
+│                                                       │
+│  💡 Or choose a quick start (based on your history): │
+│  • Chase incomplete applications                     │
+│  • Draft offers for interviewed students            │
+│  • Review borderline cases                           │
+│                                                       │
+│           [Back]  [Continue →]                       │
+│                                                       │
+└─────────────────────────────────────────────────────────┘
+
+────── Next Screen ──────────────────────────────────────
+
+┌─ Create New Ava Task ─────────────────────────────────┐
+│                                                       │
+│  Step 2 of 3: Which students should Ava consider?   │
+│                                                       │
+│  Intake year: [Year 7 2026 ▼]                        │
+│  Year group: [All ▼]                                 │
+│  Status: [All ▼]                                     │
+│  Date range: [This academic year ▼]                  │
+│                                                       │
+│  📊 Records in scope: 247 students                   │
+│                                                       │
+│           [← Back]  [Continue →]                     │
+│                                                       │
+└─────────────────────────────────────────────────────────┘
+
+────── Next Screen ──────────────────────────────────────
+
+┌─ Create New Ava Task ─────────────────────────────────┐
+│                                                       │
+│  Step 3 of 3: How should Ava handle this?           │
+│                                                       │
+│  ⚙️ Mode:                                            │
+│                                                       │
+│  (●) Review first — Ava shows changes for approval   │
+│      (Recommended for external communications)       │
+│                                                       │
+│  ( ) Auto-commit — Ava applies changes immediately  │
+│      (Only for low-risk tasks like tagging)          │
+│                      [What's the difference?]        │
+│                                                       │
+│           [← Back]  [🚀 Create & Start Analysis]     │
+│                                                       │
+│  [Advanced settings ▼] — Optional filters, assignee  │
+│                                                       │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Improvements:**
+- ✅ One decision per screen (no paralysis)
+- ✅ Smart defaults (Review mode pre-selected)
+- ✅ Live scope count (manages expectations)
+- ✅ Advanced settings hidden under dropdown
+- ✅ Plain English + quick starts (flexible)
+
+---
+
+### STEP 4: Task Created — Ava Begins Analysis
+
+**ACTOR:** Ava (AI)  
+**SCREEN:** Task Board + Task Detail (live updates)
+
+```
+┌─ Task: Chase Incomplete Applications ─────────────────┐
+│  AVA-2026-0892 • Created by Emma • 09:45 AM         │
+│                                                       │
+│  ┌─ LIVE PROGRESS ──────────────────────────────────┐ │
+│  │                                                   │ │
+│  │   Analysing 247 student records...              │ │
+│  │   [████████████████░░░░] 67%                    │ │
+│  │                                                   │ │
+│  │   Current step: Cross-referencing family data   │ │
+│  │   ETA: 12 seconds                                │ │
+│  │                                                   │ │
+│  │  [🔍 View detailed progress]  [Pause]  [Cancel] │ │
+│  │                                                   │ │
+│  └───────────────────────────────────────────────────┘ │
+│                                                       │
+│  What Ava is doing:                                   │
+│  ✅ Reading all records in scope                      │
+│  ✅ Identifying incomplete applications              │
+│  ⏳ Calculating engagement scores                     │
+│  ⏳ Cross-referencing family data                     │
+│  ⬜ Selecting appropriate chase templates             │
+│  ⬜ Prioritizing by engagement/recency                │
+│                                                       │
+│  ⏱ Time elapsed: 18 seconds                          │
+│                                                       │
+└───────────────────────────────────────────────────────┘
+```
+
+**Key Features:**
+- ✅ Live % progress bar
+- ✅ "What Ava is doing" checklist
+- ✅ Current step indicator
+- ✅ Pause/Cancel options (user control)
+- ✅ ETA visible (manages wait time)
+
+---
+
+### STEP 5: Ava Generates Action Plan
+
+**ACTOR:** Ava (AI) posts plan; Coordinator reviews  
+**SCREEN:** Task Detail — Plan Section
+
+```
+┌─ Action Plan — Awaiting Your Review ──────────────────┐
+│                                                       │
+│  ✅ Analysis complete! Here's what I found:          │
+│                                                       │
+│  ┌─ SUMMARY ─────────────────────────────────────────┐│
+│  │                                                   ││
+│  │  📊 Scope: 247 students analysed                 ││
+│  │  🎯 Matches: 12 incomplete applications          ││
+│  │  📧 Communications to draft: 12                  ││
+│  │  ⏱ Est. time to complete: 3 minutes             ││
+│  │  🎯 Confidence: 92% (high)                       ││
+│  │                                                   ││
+│  └────────────────────────────────────────────────────┘│
+│                                                       │
+│  ┌─ DETAILED BREAKDOWN ──────────────────────────────┐│
+│  │                                                   ││
+│  │  🔴 HIGH PRIORITY (5 students) — Chase now       ││
+│  │  ├─ Emily Smith — Incomplete 14 days, high engagement││
+│  │  ├─ Sarah Johnson — Incomplete 12 days, visited portal││
+│  │  ├─ Marcus Chen — Incomplete 10 days, opened email││
+│  │  ├─ Priya Sharma — Incomplete 9 days, downloaded form││
+│  │  └─ James Wilson — Incomplete 8 days, family contacted││
+│  │                                                   ││
+│  │  🟡 MEDIUM PRIORITY (4 students) — Gentle reminder││
+│  │  [Expand to see all 4]                            ││
+│  │                                                   ││
+│  │  🟢 LOW PRIORITY (3 students) — Internal delay   ││
+│  │  [Expand to see all 3]                            ││
+│  │                                                   ││
+│  │  ⚠️ 1 FLAGGED for review:                        ││
+│  │  Emma Brown — Incomplete but safeguarding note   ││
+│  │  → Auto-escalated to DSL (Mrs. Johnson)          ││
+│  │                                                   ││
+│  └────────────────────────────────────────────────────┘│
+│                                                       │
+│  ┌─ COMMUNICATION PREVIEW ───────────────────────────┐│
+│  │                                                   ││
+│  │  Template: "Priority Chase" (high engagement)    ││
+│  │                                                   ││
+│  │  "Dear [Parent],                                  ││
+│  │                                                    ││
+│  │  We noticed [Student] has been highly engaged... ││
+│  │  We just need [Document] to complete...          ││
+│  │                                                    ││
+│  │  [View full template]  [Edit template]           ││
+│  │                                                   ││
+│  └────────────────────────────────────────────────────┘│
+│                                                       │
+│  ┌─ ACCEPTANCE CRITERIA ────────────────────────────┐│
+│  │  ✅ All 12 students match 'incomplete' criteria  ││
+│  │  ✅ Engagement scores calculated correctly        ││
+│  │  ✅ Templates appropriate for each priority       ││
+│  │  ✅ 1 student flagged for safeguarding            ││
+│  │  ✅ No data protection issues                     ││
+│  │  ✅ GDPR compliant (minimal data in emails)       ││
+│  │  ✅ Audit trail will be complete                  ││
+│  └────────────────────────────────────────────────────┘│
+│                                                       │
+│  💬 Ava's Reasoning:                                  │
+│  "I prioritized by engagement score rather than just  │
+│   days inactive because highly engaged families       │
+│   respond 3x faster to urgent communications.         │
+│   Emma Brown was flagged automatically due to her     │
+│   safeguarding note — she's been escalated            │
+│   separately and won't receive the standard chase."   │
+│                                                       │
+│  ── ACTIONS ─────────────────────────────────────    │
+│                                                       │
+│  [✓ Approve & Send All]        [Edit Selection]      │
+│  [Request Changes]             [Reject]              │
+│                                                       │
+│  Or modify:                                          │
+│  [Change priority] [Different template]              │
+│  [Remove students] [Add deadline reminder]           │
+│                                                       │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Key Features:**
+- ✅ Confidence score prominently displayed (92%)
+- ✅ Detailed breakdown with student names (transparency)
+- ✅ Priority categorization (high/medium/low)
+- ✅ Automatic safeguarding flag (Emma Brown → DSL)
+- ✅ Communication preview (shows what will be sent)
+- ✅ Acceptance criteria checklist (7 items, all ticked)
+- ✅ Ava's reasoning explained (why prioritized by engagement)
+- ✅ Multiple action paths (approve/edit/reject/modify)
+
+---
+
+### STEP 6: Ava Executes (L3) or Awaits Approval (L2)
+
+**ACTOR:** Ava (AI) executes OR awaits human approval  
+**SCREEN:** Task Detail — Execution View
+
+#### Path A: Review Mode (Default — L2 Draft & Confirm)
+
+```
+Coordinator clicks [✓ Approve & Send All] in Step 5
+↓
+Ava begins execution
+```
+
+#### Path B: Auto-Commit Mode (Low-risk tasks only — L3 Act & Notify)
+
+```
+┌─ Auto-Commit Mode Enabled ────────────────────────────┐
+│                                                       │
+│  🟢 Low-risk task — executing automatically           │
+│                                                       │
+│  Sending chase emails... [████████░░] 67%            │
+│                                                       │
+│  ✅ Emily Smith — Delivered (09:47:12)               │
+│  ✅ Sarah Johnson — Delivered & Opened (09:52:45)    │
+│  ✅ Marcus Chen — Delivered (09:47:15)               │
+│  ⏳ Priya Sharma — Sending...                         │
+│  • 8 more queued                                     │
+│                                                       │
+│  [View Live Log]  [Cancel Remaining]                │
+│                                                       │
+│  💡 You can undo any action within 30 seconds        │
+│                                                       │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Auto-Commit Criteria (Low-risk only):**
+- ✅ Internal tagging/labeling
+- ✅ Report generation
+- ✅ Data exports
+- ❌ External communications (always L2)
+- ❌ Status changes affecting applicants (always L2)
+- ❌ Offer decisions (always L2)
+
+---
+
+### STEP 7: Results Summary (Proof of Work)
+
+**ACTOR:** Ava (AI)  
+**SCREEN:** Task Detail — Results Section
+
+```
+┌─ Task Complete — Results Summary ──────────────────────┐
+│                                                         │
+│  ✅ COMPLETE — 11 of 12 communications sent           │
+│                                                         │
+│  ┌─ OUTCOMES ─────────────────────────────────────────┐  │
+│  │                                                     │  │
+│  │  📧 Communications:                                 │  │
+│  │  • Sent: 11                                         │  │
+│  │  • Delivered: 11 (100%)                             │  │
+│  │  • Opened: 3 (27% open rate)                        │  │
+│  │  • Clicked: 1 (9% click rate)                       │  │
+│  │  • Bounced: 0                                       │  │
+│  │                                                     │  │
+│  │  ⏱ Execution time: 2 minutes 34 seconds            │  │
+│  │                                                     │  │
+│  │  📊 All logged in Applicaa Communications tab      │  │
+│  │                                                     │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                                                         │
+│  ┌─ DELIVERY CONFIRMATIONS ────────────────────────────┐  │
+│  │                                                     │  │
+│  │  Emily Smith — Delivered 09:47:12                  │  │
+│  │  Sarah Johnson — Delivered 09:47:13               │  │
+│  │  Sarah Johnson — Opened 09:52:45 ⭐                │  │
+│  │  Marcus Chen — Delivered 09:47:15                 │  │
+│  │  ... [View all 11]                                  │  │
+│  │                                                     │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                                                         │
+│  ┌─ EXCEPTION HANDLED ─────────────────────────────────┐  │
+│  │                                                     │  │
+│  │  ⚠️ 1 email queued (not sent):                     │  │
+│  │  Emma Brown — Safeguarding flag escalated to DSL  │  │
+│  │  Mrs. Johnson reviewing separately                 │  │
+│  │                                                     │  │
+│  │  [View safeguarding case]                          │  │
+│  │                                                     │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                                                         │
+│  📹 Screen Recording (Proof of Work):                  │
+│  [▶️ Watch Ava execute this task]                      │
+│                                                         │
+│  [View in Communications]  [Create Follow-up Task]    │
+│                                                         │
+└───────────────────────────────────────────────────────────┘
+```
+
+**Proof of Work Features:**
+- ✅ Detailed delivery confirmations with timestamps
+- ✅ Open/click tracking (engagement metrics)
+- ✅ Exception handling (Emma Brown → DSL)
+- ✅ Screen recording (visual proof)
+- ✅ Direct links to related systems
+- ✅ Follow-up task suggestions
+
+---
+
+### STEP 8: Coordinator Review
+
+**ACTOR:** Coordinator  
+**SCREEN:** Task Detail — Review Panel
+
+```
+┌─ Review Ava's Work ────────────────────────────────────┐
+│                                                         │
+│  Task: AVA-2026-0892                                    │
+│  Status: 🟡 Awaiting Review                            │
+│                                                         │
+│  Current pipeline:                                      │
+│  Backlog → Todo → In Progress → 🟡 Awaiting Review    │
+│    → ✅ Done                                            │
+│                                                         │
+│  Review options:                                        │
+│                                                         │
+│  [✓ Approve All] — Commit all changes to live records │
+│  [✏️ Edit Selection] — Modify some actions first       │
+│  [↩️ Request Changes] — Send back to Ava for revision  │
+│  [✕ Reject] — Cancel task, no changes made            │
+│                                                         │
+│  Or adjust status manually:                             │
+│  [Move to Done]  [Move to Queued]  [Move to Progress] │
+│                                                         │
+│  📋 Review checklist:                                   │
+│  ☐ All communications appropriate                       │
+│  ☐ Student selection accurate                          │
+│  ☐ Safeguarding escalation correct                      │
+│  ☐ No data protection issues                            │
+│                                                         │
+└───────────────────────────────────────────────────────────┘
+```
+
+**Review Controls:**
+- ✅ Approve All (commit to live records)
+- ✅ Edit Selection (modify specific items)
+- ✅ Request Changes (send back to Ava with feedback)
+- ✅ Reject (cancel, no changes)
+
+---
+
+### STEP 9: Approve (L2 → L3 Transition)
+
+**ACTOR:** Coordinator clicks [✓ Approve]  
+**SCREEN:** Task Board + Task Detail
+
+```
+┌─ Task Approved — Committing Changes ───────────────────┐
+│                                                         │
+│  ✅ You approved this task at 10:15 AM                 │
+│                                                         │
+│  Committing changes to live records...                 │
+│  [████████░░] 80%                                      │
+│                                                         │
+│  Updated:                                               │
+│  ✅ Communications marked as "Sent"                    │
+│  ✅ Student statuses updated to "Chased"               │
+│  ✅ Activity logged in audit trail                     │
+│  ✅ Notifications sent to relevant staff               │
+│                                                         │
+│  [View updated dashboard]                              │
+│                                                         │
+└───────────────────────────────────────────────────────────┘
+```
+
+**Commit Actions:**
+1. Update student records
+2. Update communications log
+3. Update audit trail
+4. Send notifications (if configured)
+5. Move task to Done
+
+---
+
+### STEP 10: Done — Task Archived
+
+**ACTOR:** System auto-archives | Coordinator manually marks Done  
+**SCREEN:** Task Board → Done Column
+
+```
+┌─ Task Complete — AVA-2026-0892 ────────────────────────┐
+│                                                         │
+│  🔵 DONE                                                │
+│                                                         │
+│  Task completed at 10:16 AM by Emma (Coordinator)      │
+│                                                         │
+│  ┌─ FINAL SUMMARY ────────────────────────────────────┐  │
+│  │                                                     │  │
+│  │  Task: Chase incomplete Year 7 applications       │  │
+│  │  Scope: 247 → 12 students acted upon              │  │
+│  │  Outcome: 11 emails sent, 1 escalated             │  │
+│  │  Engagement: 27% open rate (above average)        │  │
+│  │                                                     │  │
+│  │  Time breakdown:                                   │  │
+│  │  • Ava analysis & planning: 4 minutes             │  │
+│  │  • Human review time: 3 minutes                   │  │
+│  │  • Total task time: 31 minutes                    │  │
+│  │  • Time saved vs. manual: ~45 minutes             │  │
+│  │                                                     │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                                                         │
+│  📚 Archived in Done. Searchable via task ID or filters. │
+│                                                         │
+│  [Create similar task]  [View analytics]  [Export report]│
+│                                                         │
+└───────────────────────────────────────────────────────────┘
+```
+
+**Archive Features:**
+- ✅ Full history preserved
+- ✅ Searchable (by ID, keywords, date)
+- ✅ Analytics (time saved, success rate)
+- ✅ Similar task suggestions
+- ✅ Export for reporting
+
+---
+
+## 4. Error Handling & Edge Cases
+
+### 4.1 Low Confidence (< 70%)
+
+```
+┌─ Low Confidence — Human Review Required ────────────────┐
+│                                                         │
+│  ⚠️ Confidence: 55% — Below threshold for auto-action │
+│                                                         │
+│  Ava's recommendation:                                  │
+│  "I'm uncertain about this batch. The records show     │
+│   unusual patterns that don't match typical cases."    │
+│                                                         │
+│  Why:                                                   │
+│  • Mixed engagement signals                             │
+│  • Unusual application timing                          │
+│  • Limited historical data for this intake             │
+│                                                         │
+│  [Escalate to Senior Staff]  [Proceed Anyway]          │
+│  [Request More Analysis]  [Cancel Task]                │
+│                                                         │
+└───────────────────────────────────────────────────────────┘
+```
+
+**Action:** Always escalate to human when confidence < 70%
+
+### 4.2 Analysis Failure
+
+```
+┌─ Analysis Failed ──────────────────────────────────────┐
+│                                                         │
+│  ❌ Unable to complete analysis                         │
+│                                                         │
+│  Error: Database connection timeout                     │
+│                                                         │
+│  Ava has attempted 3 times.                            │
+│                                                         │
+│  [Retry Analysis]  [Escalate to IT]  [Cancel Task]     │
+│                                                         │
+└───────────────────────────────────────────────────────────┘
+```
+
+**Auto-retry:** 3 attempts with exponential backoff  
+**Fallback:** Escalate to human/IT
+
+### 4.3 User Rejection with Feedback
+
+```
+Coordinator: "These students are all from the same family — 
+              don't chase them together"
+↓
+Ava: "Understood! I'll group by family and stagger the chases."
+↓
+[Back to Step 4 with new parameters]
+```
+
+**Loop:** Request Changes → Back to Step 4 → Re-analyse → New plan
+
+---
+
+## 5. Mobile UX Specifications
+
+### 5.1 Touch Targets
+- All interactive elements: ≥ 44px × 44px
+- Swipe gestures: Swipe right to approve, left to reject
+- Tap to expand cards
+
+### 5.2 Kanban View (Mobile)
+```
+[← Queued ]  [ In Progress →]  [Swipe between columns]
+```
+- Single column view
+- Swipe to navigate columns
+- Pull to refresh
+
+### 5.3 Task Cards (Mobile)
+- Full width
+- Tap to expand details
+- Swipe for quick actions
+
+---
+
+## 6. Summary of Improvements
+
+### Compared to Original Workflow:
+
+| Aspect | Original | Improved |
+|--------|----------|----------|
+| Proactive triggers | Intrusive banner | Subtle badge with dismissal |
+| Task cards | All info visible | Progressive disclosure |
+| Create task | 5+ decisions at once | Step-by-step wizard |
+| Error handling | None documented | Complete failure branches |
+| Mobile UX | Not addressed | Full specifications |
+
+### Key Additions:
+- ✅ Error handling for all failure modes
+- ✅ Low confidence escalation (< 70%)
+- ✅ User rejection loops
+- ✅ Auto-retry with backoff
+- ✅ Mobile swipe gestures
+- ✅ 30-second undo window
+- ✅ Safeguarding auto-escalation
+
+---
+
+*Complete 10-step workflow with error handling and improvements.*
+
+**Version:** 2.0 · March 2026 · Complete
+</body>
+</html>
