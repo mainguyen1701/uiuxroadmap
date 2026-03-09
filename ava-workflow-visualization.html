@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ava Workflow Visualization</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #263C91 0%, #1e2f73 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .header p { opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        
+        /* Workflow Overview */
+        .workflow-overview {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .workflow-overview h2 { color: #263C91; margin-bottom: 1rem; }
+        
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .flow-step {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 200px;
+            text-align: center;
+            position: relative;
+        }
+        .flow-step.active { border-color: #EC634B; background: #fff5f5; }
+        .flow-step.human { border-color: #263C91; }
+        .flow-step.ai { border-color: #22c55e; }
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #263C91;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .step-title { font-weight: 600; margin-bottom: 0.25rem; }
+        .step-actor { font-size: 0.75rem; color: #64748b; }
+        
+        /* Screen Mockups */
+        .screen-section { margin: 3rem 0; }
+        .screen-section h2 { color: #263C91; margin-bottom: 1rem; border-bottom: 2px solid #EC634B; padding-bottom: 0.5rem; }
+        .screen-mockup {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        .mockup-header {
+            background: linear-gradient(135deg, #263C91, #1e2f73);
+            color: white;
+            padding: 1rem 1.5rem;
+        }
+        .mockup-content { padding: 1.5rem; }
+        .mockup-content pre {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.875rem;
+        }
+        
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .comparison-table th, .comparison-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        .comparison-table th { background: #f1f5f9; font-weight: 600; }
+        .comparison-table tr:hover { background: #f8fafc; }
+        
+        /* Recommendations */
+        .recommendation { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+        .recommendation.p0 { background: #fee2e2; border-left-color: #ef4444; }
+        .recommendation.p1 { background: #dbeafe; border-left-color: #3b82f6; }
+        
+        /* Rating Stars */
+        .rating { display: flex; gap: 0.25rem; }
+        .star { color: #fbbf24; }
+        .star.empty { color: #e2e8f0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎨 Ava Workflow Visualization</h1>
+        <p>Linear-Style AI-Assisted Admissions Management</p>
+    </div>
+    
+    <div class="container">
+        <div class="workflow-overview">
+            <h2>📋 Workflow Overview</h2>
+            <p><strong>10 Steps:</strong> From trigger identification to task completion</p>
+            <p><strong>Key Pattern:</strong> Human = Decision Maker (2 actions) | AI = Executor (everything else)</p>
+            
+            <div class="flow-diagram">
+                <div class="flow-step human">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Trigger</div>
+                    <div class="step-actor">Human</div>
+                </div>
+                <div class="flow-step human">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Board</div>
+                    <div class="step-actor">Human</div>
+                </div>
+                <div class="flow-step human">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Create</div>
+                    <div class="step-actor">Human</div>
+                </div>
+                <div class="flow-step ai">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Analyze</div>
+                    <div class="step-actor">Ava</div>
+                </div>
+                <div class="flow-step ai">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Plan</div>
+                    <div class="step-actor">Ava</div>
+                </div>
+                <div class="flow-step ai">
+                    <div class="step-number">6</div>
+                    <div class="step-title">Execute</div>
+                    <div class="step-actor">Ava</div>
+                </div>
+                <div class="flow-step ai">
+                    <div class="step-number">7</div>
+                    <div class="step-title">Results</div>
+                    <div class="step-actor">Ava</div>
+                </div>
+                <div class="flow-step human">
+                    <div class="step-number">8</div>
+                    <div class="step-title">Review</div>
+                    <div class="step-actor">Human</div>
+                </div>
+                <div class="flow-step human">
+                    <div class="step-number">9</div>
+                    <div class="step-title">Approve</div>
+                    <div class="step-actor">Human</div>
+                </div>
+                <div class="flow-step human">
+                    <div class="step-number">10</div>
+                    <div class="step-title">Done</div>
+                    <div class="step-actor">Human</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="screen-section">
+            <h2>🔍 Critical Review: Best UI/UX Practices</h2>
+            
+            <h3>✅ Strengths</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Area</th>
+                    <th>Implementation</th>
+                    <th>Rating</th>
+                </tr>
+                <tr>
+                    <td>Labour Visibility</td>
+                    <td>Live progress bars, checklists, detailed reasoning</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Human Control</td>
+                    <td>Clear L2/L3 distinction, review mode default</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Confidence Transparency</td>
+                    <td>Scores displayed with reasoning</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Proactive Triggers</td>
+                    <td>Ambient suggestions, not just reactive</td>
+                    <td>⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Kanban Clarity</td>
+                    <td>4 clear columns, visual hierarchy</td>
+                    <td>⭐⭐⭐⭐</td>
+                </tr>
+            </table>
+            
+            <h3>❌ Critical Issues</h3>
+            
+            <div class="recommendation p0">
+                <strong>🔴 P0: Steps 6-10 Missing/Corrupted</strong><br>
+                The file ends at Step 5. Steps 6-10 (Execute, Results, Review, Approve, Done) are missing or corrupted.<br>
+                <strong>Fix:</strong> Rewrite complete Steps 6-10 with error handling branches.
+            </div>
+            
+            <div class="recommendation p0">
+                <strong>🔴 P0: "Clippy Effect" Risk</strong><br>
+                Step 1 shows Ava suggesting "Chase them now?" — this could feel intrusive like Microsoft Clippy.<br>
+                <strong>Fix:</strong> 
+                <ul>
+                    <li>Only suggest after learning patterns (2+ visits)</li>
+                    <li>Add "Don't show again for 24h" dismissal</li>
+                    <li>Use subtle badge, not intrusive banner</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation p0">
+                <strong>🔴 P0: No Error Handling</strong><br>
+                Missing: What if Ava fails? What if confidence <70%? What if user rejects? Network errors?<br>
+                <strong>Fix:</strong> Add error branches:
+                <ul>
+                    <li>Analysis failure → Retry / Escalate to human</li>
+                    <li>Low confidence (<70%) → Always escalate</li>
+                    <li>Rejection → Back to Step 4 with feedback</li>
+                    <li>Network timeout → Auto-retry 3x, then notify</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation p1">
+                <strong>🔵 P1: Cognitive Overload in Step 2</strong><br>
+Task cards show: icon + title + year group + record count + status + time + confidence % = too much.<br>
+<strong>Fix:</strong> Progressive disclosure - show confidence on hover, simplified default view.
+            </div>
+            
+            <div class="recommendation p1">
+                <strong>🔵 P1: Choice Paralysis in Step 3</strong><br>
+Create Task modal has: plain English + 3 suggestions + dropdowns + mode selector = 5+ decisions.<br>
+<strong>Fix:</strong> Step-by-step wizard with smart defaults. Hide advanced options.
+            </div>
+            
+            <div class="recommendation p1">
+                <strong>🔵 P1: No Mobile UX</strong><br>
+All mockups are desktop. No mobile considerations.<br>
+<strong>Fix:</strong> Add mobile specs: touch targets ≥44px, swipe gestures, simplified column views.
+            </div>
+            
+            <h3>📊 Overall Assessment</h3>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Criteria</th>
+                    <th>Rating</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Labour Visibility</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>Excellent progress bars and checklists</td>
+                </tr>
+                <tr>
+                    <td>Human Control</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>Clear L2/L3 distinction</td>
+                </tr>
+                <tr>
+                    <td>Confidence Transparency</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>Scores with reasoning</td>
+                </tr>
+                <tr>
+                    <td>Simplicity</td>
+                    <td>⭐⭐⭐</td>
+                    <td>Overwhelming in places</td>
+                </tr>
+                <tr>
+                    <td>Error Handling</td>
+                    <td>⭐⭐</td>
+                    <td>Missing failure branches</td>
+                </tr>
+                <tr>
+                    <td>Mobile UX</td>
+                    <td>⭐</td>
+                    <td>Not addressed</td>
+                </tr>
+            </table>
+            
+            <h3>🎯 Priority Fixes</h3>
+            
+            <div class="recommendation p0">
+                <strong>Immediate (Do Now):</strong>
+                <ol>
+                    <li>Complete Steps 6-10 (currently missing)</li>
+                    <li>Add error handling branches</li>
+                    <li>Fix "Clippy effect" in proactive suggestions</li>
+                </ol>
+            </div>
+            
+            <div class="recommendation p1">
+                <strong>Short-term (This Week):</strong>
+                <ol>
+                    <li>Simplify Step 2 cards (progressive disclosure)</li>
+                    <li>Redesign Step 3 as wizard (reduce choices)</li>
+                    <li>Add mobile specifications</li>
+                </ol>
+            </div>
+            
+            <div class="recommendation">
+                <strong>Long-term (Backlog):</strong>
+                <ol>
+                    <li>User testing on proactive suggestions</li>
+                    <li>A/B test simplified vs. detailed views</li>
+                    <li>Accessibility audit (WCAG AA)</li>
+                </ol>
+            </div>
+            
+            <h3>💡 Specific UI Fixes</h3>
+            
+            <h4>Fix 1: Proactive Suggestions (Step 1)</h4>
+            <p><strong>Current:</strong> Intrusive banner</p>
+            <p><strong>Improved:</strong></p>
+            <div class="preview">
+┌─ Dashboard ──────────────────────────┐
+│  ...                                   │
+│  💡 5 students need chasing [Review] │
+│  ...                                   │
+└────────────────────────────────────────┘
+            </div>
+            <p>Small badge, not banner. Dismissible.</p>
+            
+            <h4>Fix 2: Task Cards (Step 2)</h4>
+            <p><strong>Current:</strong> Too much info</p>
+            <p><strong>Improved:</strong></p>
+            <div class="preview">
+┌─ Task Card ──────────────┐
+│ 📄 Chase incomplete        │
+│ Year 7 • 5 students        │
+│ [Working...]               │
+└────────────────────────────┘
+            </div>
+            <p>Hover to see: confidence %, time elapsed, actions</p>
+            
+            <h4>Fix 3: Create Task (Step 3)</h4>
+            <p><strong>Current:</strong> 5+ decisions at once</p>
+            <p><strong>Improved: Wizard</strong></p>
+            <div class="preview">
+Step 1/3: What do you want to do?
+[Describe in plain English]
+
+Step 2/3: Which students?
+[Year 7 2026 ▼] [All statuses ▼]
+
+Step 3/3: Review settings
+(•) Review first (recommended)
+[Create Task]
+            </div>
+            <p>One decision per step, smart defaults</p>
+            
+            <h3>📱 Mobile Specifications (Missing)</h3>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Element</th>
+                    <th>Desktop</th>
+                    <th>Mobile</th>
+                </tr>
+                <tr>
+                    <td>Kanban columns</td>
+                    <td>4 side-by-side</td>
+                    <td>Swipeable tabs or single column</td>
+                </tr>
+                <tr>
+                    <td>Task cards</td>
+                    <td>Hover for details</td>
+                    <td>Tap to expand</td>
+                </tr>
+                <tr>
+                    <td>Actions</td>
+                    <td>Buttons visible</td>
+                    <td>Swipe gestures + buttons</td>
+                </tr>
+                <tr>
+                    <td>Touch targets</td>
+                    <td>Any size</td>
+                    <td>≥44px minimum</td>
+                </tr>
+            </table>
+            
+            <h3>🎯 Next Steps</h3>
+            
+            <p><strong>Immediate:</strong></p>
+            <ol>
+                <li>Complete Steps 6-10 in the workflow document</li>
+                <li>Add error handling branches</li>
+                <li>Fix proactive suggestion intrusiveness</li>
+            </ol>
+            
+            <p><strong>This Week:</strong></p>
+            <ol>
+                <li>Simplify Step 2 cards (progressive disclosure)</li>
+                <li>Redesign Step 3 as wizard</li>
+                <li>Add mobile specifications</li>
+            </ol>
+            
+            <p><strong>Backlog:</strong></p>
+            <ol>
+                <li>User testing on proactive suggestions</li>
+                <li>A/B test simplified vs detailed views</li>
+                <li>Accessibility audit (WCAG AA)</li>
+            </ol>
+            
+            <h3>📊 Final Rating</h3>
+            
+            <div style="display: flex; gap: 2rem; margin: 2rem 0;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 700; color: #22c55e;">4/5</div>
+                    <div>Overall Score</div>
+                </div>
+                <div style="flex: 1;">
+                    <div style="margin-bottom: 0.5rem;"><strong>Strengths:</strong> Labour visibility, human control, confidence transparency</div>
+                    <div style="margin-bottom: 0.5rem;"><strong>Weaknesses:</strong> Missing error handling, overwhelming in places, no mobile UX</div>
+                    <div><strong>Verdict:</strong> Strong foundation with clear improvement path</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #64748b; margin-top: 3rem;">
+                <em>Review completed · March 2026</em>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
